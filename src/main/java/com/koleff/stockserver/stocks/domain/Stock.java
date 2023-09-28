@@ -1,12 +1,14 @@
 package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Stock")
 @Table(name = "stock")
+@NoArgsConstructor
 public class Stock {
     @Id
     @SequenceGenerator(

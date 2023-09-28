@@ -1,11 +1,13 @@
 package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
 @Entity(name = "IntraDay")
 @Table(name = "intra_day")
+@NoArgsConstructor
 public class IntraDay {
     @Id
     @SequenceGenerator(

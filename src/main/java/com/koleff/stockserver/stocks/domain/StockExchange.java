@@ -1,9 +1,11 @@
 package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity(name = "StockExchange")
 @Table(name = "stock_exchange")
+@NoArgsConstructor
 public class StockExchange {
     @Id
     @SequenceGenerator(
