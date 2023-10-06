@@ -1,5 +1,8 @@
-package com.koleff.stockserver.stocks.exceptions;
+package com.koleff.stockserver.stocks.controller;
 
+import com.koleff.stockserver.stocks.exceptions.ApiException;
+import com.koleff.stockserver.stocks.exceptions.ApiRequestException;
+import com.koleff.stockserver.stocks.exceptions.StockNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
