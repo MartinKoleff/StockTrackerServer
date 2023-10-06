@@ -143,6 +143,14 @@ public class Stock {
         return endOfDay;
     }
 
+    public List<IntraDay> getIntraDay() {
+        return intraDay;
+    }
+
+    public List<StockExchange> getStockExchange() {
+        return stockExchange;
+    }
+
     public void setEndOfDay(List<EndOfDay> endOfDay) {
         this.endOfDay = endOfDay;
     }
