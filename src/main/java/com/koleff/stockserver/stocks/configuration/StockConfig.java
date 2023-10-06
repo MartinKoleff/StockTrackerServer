@@ -19,7 +19,6 @@ public class StockConfig {
     @Value("${info.company.name}")
     private String companyName;
 
-    @Autowired //inject in constructor...
     private Environment environment;
 
     @Bean
