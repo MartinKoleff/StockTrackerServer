@@ -1,6 +1,8 @@
 package com.koleff.stockserver.stocks.configuration;
 
 import com.koleff.stockserver.stocks.InfoApp;
+import com.koleff.stockserver.stocks.domain.Stock;
+import com.koleff.stockserver.stocks.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -11,8 +13,8 @@ import org.springframework.core.env.Environment;
 @Configuration
 public class StockConfig {
 
-    @Value("${app.useFakeStudentRepository:false}")
-    private Boolean useFakeStudentRepository;
+    @Value("${app.useFakeStockRepository:false}")
+    private Boolean useFakeStockRepository;
 
     @Value("${info.company.name}")
     private String companyName;
