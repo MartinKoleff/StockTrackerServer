@@ -5,11 +5,11 @@ import org.springframework.http.HttpStatus;
 import java.time.ZonedDateTime;
 
 public class ApiException {
-    private String message;
-    private Throwable throwable;
-    private HttpStatus httpStatus;
-    private int httpStatusCode;
-    private ZonedDateTime time;
+    private final String message;
+    private final Throwable throwable;
+    private final HttpStatus httpStatus;
+    private final int httpStatusCode;
+    private final ZonedDateTime time;
 
     public ApiException(String message, Throwable throwable, HttpStatus httpStatus, ZonedDateTime time) {
         this.message = message;

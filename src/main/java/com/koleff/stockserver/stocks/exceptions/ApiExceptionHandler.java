@@ -29,8 +29,8 @@ public class ApiExceptionHandler {
         );
     }
 
-    @ExceptionHandler(value = TickerNotFoundException.class)
-    public ResponseEntity<Object> handleTickerNotFoundException(TickerNotFoundException e){
+    @ExceptionHandler(value = StockNotFoundException.class)
+    public ResponseEntity<Object> handleStockNotFoundException(StockNotFoundException e){
 
         //Returned to the client
         ApiException payload = new ApiException(
