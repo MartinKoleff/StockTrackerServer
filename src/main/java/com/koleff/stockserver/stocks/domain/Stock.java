@@ -1,5 +1,6 @@
 package com.koleff.stockserver.stocks.domain;
 
+import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -50,15 +51,17 @@ public @Data class Stock implements Serializable {
     private String country;
 
     @Column(
-            name = "has_intra_day",
+            name = "has_intraday",
             nullable = false
     )
+    @SerializedName("has_intraday")
     private Boolean hasIntraDay;
 
     @Column(
             name = "has_end_of_day",
             nullable = false
     )
+    @SerializedName("has_end_of_day")
     private Boolean hasEndOfDay;
 
     @OneToMany(
@@ -67,7 +70,7 @@ public @Data class Stock implements Serializable {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
-    private List<EndOfDay> endOfDay = new ArrayList<>();
+    private List<EndOfDay> endOfDay;
 
     @OneToMany(
             mappedBy = "stock",
@@ -75,7 +78,7 @@ public @Data class Stock implements Serializable {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
-    private List<IntraDay> intraDay = new ArrayList<>();
+    private List<IntraDay> intraDay;
 
     @OneToMany(
             mappedBy = "stock",
@@ -83,6 +86,7 @@ public @Data class Stock implements Serializable {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
+    private List<StockExchange> stockExchange;
 
     @Override
     public String toString() {
