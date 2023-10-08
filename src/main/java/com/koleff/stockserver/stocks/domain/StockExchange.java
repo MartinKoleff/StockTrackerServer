@@ -1,11 +1,13 @@
 package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity(name = "StockExchange")
 @Table(name = "stock_exchange")
 @NoArgsConstructor
+@AllArgsConstructor
 public class StockExchange {
     @Id
     @SequenceGenerator(
@@ -77,8 +79,7 @@ public class StockExchange {
     )
     private String website;
 
-    @ManyToOne
-//    @MapsId("id")
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "stock_id",
             nullable = false,
@@ -90,18 +91,6 @@ public class StockExchange {
             )
     )
     private Stock stock;
-
-    public StockExchange(Long id, Long stockId, String name, String acronym, String exchange, String country, String countryCode, String city, String website) {
-        this.id = id;
-        this.stockId = stockId;
-        this.name = name;
-        this.acronym = acronym;
-        this.exchange = exchange;
-        this.country = country;
-        this.countryCode = countryCode;
-        this.city = city;
-        this.website = website;
-    }
 
     public Long getId() {
         return id;

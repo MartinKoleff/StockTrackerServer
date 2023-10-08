@@ -1,6 +1,7 @@
 package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
@@ -8,6 +9,7 @@ import java.sql.Date;
 @Entity(name = "EndOfDay")
 @Table(name = "end_of_day")
 @NoArgsConstructor
+@AllArgsConstructor
 public class EndOfDay { //rename to EOD
     @Id
     @SequenceGenerator(
@@ -103,8 +105,7 @@ public class EndOfDay { //rename to EOD
     )
     private Date date;
 
-    @ManyToOne
-//    @MapsId("id")
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "stock_id",
             nullable = false,
@@ -116,23 +117,6 @@ public class EndOfDay { //rename to EOD
             )
     )
     private Stock stock;
-
-    public EndOfDay(Long id, Long stockId, Double open, Double close, Double high, Double low, Double volume, Double adjOpen, Double adjClose, Double adjHigh, Double adjLow, Double adjVolume, Double splitFactor, Date date) {
-        this.id = id;
-        this.stockId = stockId;
-        this.open = open;
-        this.close = close;
-        this.high = high;
-        this.low = low;
-        this.volume = volume;
-        this.adjOpen = adjOpen;
-        this.adjClose = adjClose;
-        this.adjHigh = adjHigh;
-        this.adjLow = adjLow;
-        this.adjVolume = adjVolume;
-        this.splitFactor = splitFactor;
-        this.date = date;
-    }
 
     public Long getId() {
         return id;

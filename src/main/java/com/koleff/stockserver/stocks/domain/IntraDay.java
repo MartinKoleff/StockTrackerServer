@@ -1,6 +1,7 @@
 package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
@@ -8,6 +9,7 @@ import java.sql.Date;
 @Entity(name = "IntraDay")
 @Table(name = "intra_day")
 @NoArgsConstructor
+@AllArgsConstructor
 public class IntraDay {
     @Id
     @SequenceGenerator(
@@ -72,8 +74,7 @@ public class IntraDay {
     )
     private Date date;
 
-    @ManyToOne
-//    @MapsId("id")
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "stock_id",
             nullable = false,
@@ -85,17 +86,6 @@ public class IntraDay {
             )
     )
     private Stock stock;
-
-    public IntraDay(Long id, Double open, Double close, Double high, Double low, Double volume, Double splitFactor, Date date) {
-        this.id = id;
-        this.open = open;
-        this.close = close;
-        this.high = high;
-        this.low = low;
-        this.volume = volume;
-        this.splitFactor = splitFactor;
-        this.date = date;
-    }
 
     public Long getId() {
         return id;

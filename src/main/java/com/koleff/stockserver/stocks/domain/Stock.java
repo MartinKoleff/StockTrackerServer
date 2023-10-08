@@ -1,6 +1,7 @@
 package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 @Entity(name = "Stock")
 @Table(name = "stock")
 @NoArgsConstructor
+@AllArgsConstructor
 public class Stock {
     @Id
     @SequenceGenerator(
@@ -81,15 +83,6 @@ public class Stock {
             fetch = FetchType.LAZY
     )
     private List<StockExchange> stockExchange = new ArrayList<>();
-
-    public Stock(Long id, String name, String tag, String country, Boolean hasIntraDay, Boolean hasEndOfDay) {
-        this.id = id;
-        this.name = name;
-        this.tag = tag;
-        this.country = country;
-        this.hasIntraDay = hasIntraDay;
-        this.hasEndOfDay = hasEndOfDay;
-    }
 
     public Long getId() {
         return id;
