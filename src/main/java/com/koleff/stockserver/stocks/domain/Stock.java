@@ -2,16 +2,17 @@ package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity(name = "Stock")
 @Table(name = "stock")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Stock {
+public @Data class Stock implements Serializable {
     @Id
     @SequenceGenerator(
             name = "stock_sequence",
@@ -82,71 +83,6 @@ public class Stock {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
-    private List<StockExchange> stockExchange = new ArrayList<>();
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public Boolean getHasIntraDay() {
-        return hasIntraDay;
-    }
-
-    public void setHasIntraDay(Boolean hasIntraDay) {
-        this.hasIntraDay = hasIntraDay;
-    }
-
-    public Boolean getHasEndOfDay() {
-        return hasEndOfDay;
-    }
-
-    public void setHasEndOfDay(Boolean hasEndOfDay) {
-        this.hasEndOfDay = hasEndOfDay;
-    }
-
-    public List<EndOfDay> getEndOfDay() {
-        return endOfDay;
-    }
-
-    public List<IntraDay> getIntraDay() {
-        return intraDay;
-    }
-
-    public List<StockExchange> getStockExchange() {
-        return stockExchange;
-    }
-
-    public void setEndOfDay(List<EndOfDay> endOfDay) {
-        this.endOfDay = endOfDay;
-    }
 
     @Override
     public String toString() {

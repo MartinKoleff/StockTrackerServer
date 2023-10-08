@@ -2,15 +2,17 @@ package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 @Entity(name = "EndOfDay")
 @Table(name = "end_of_day")
 @NoArgsConstructor
 @AllArgsConstructor
-public class EndOfDay { //rename to EOD
+public @Data class EndOfDay implements Serializable { //rename to EOD
     @Id
     @SequenceGenerator(
             name = "eod_sequence",
@@ -117,118 +119,6 @@ public class EndOfDay { //rename to EOD
             )
     )
     private Stock stock;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getStockId() {
-        return stockId;
-    }
-
-    public void setStockId(Long stockId) {
-        this.stockId = stockId;
-    }
-
-    public Double getOpen() {
-        return open;
-    }
-
-    public void setOpen(Double open) {
-        this.open = open;
-    }
-
-    public Double getClose() {
-        return close;
-    }
-
-    public void setClose(Double close) {
-        this.close = close;
-    }
-
-    public Double getHigh() {
-        return high;
-    }
-
-    public void setHigh(Double high) {
-        this.high = high;
-    }
-
-    public Double getLow() {
-        return low;
-    }
-
-    public void setLow(Double low) {
-        this.low = low;
-    }
-
-    public Double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(Double volume) {
-        this.volume = volume;
-    }
-
-    public Double getAdjOpen() {
-        return adjOpen;
-    }
-
-    public void setAdjOpen(Double adjOpen) {
-        this.adjOpen = adjOpen;
-    }
-
-    public Double getAdjClose() {
-        return adjClose;
-    }
-
-    public void setAdjClose(Double adjClose) {
-        this.adjClose = adjClose;
-    }
-
-    public Double getAdjHigh() {
-        return adjHigh;
-    }
-
-    public void setAdjHigh(Double adjHigh) {
-        this.adjHigh = adjHigh;
-    }
-
-    public Double getAdjLow() {
-        return adjLow;
-    }
-
-    public void setAdjLow(Double adjLow) {
-        this.adjLow = adjLow;
-    }
-
-    public Double getAdjVolume() {
-        return adjVolume;
-    }
-
-    public void setAdjVolume(Double adjVolume) {
-        this.adjVolume = adjVolume;
-    }
-
-    public Double getSplitFactor() {
-        return splitFactor;
-    }
-
-    public void setSplitFactor(Double splitFactor) {
-        this.splitFactor = splitFactor;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     @Override
     public String toString() {

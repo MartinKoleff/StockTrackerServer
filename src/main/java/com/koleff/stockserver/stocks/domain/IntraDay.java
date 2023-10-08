@@ -2,15 +2,17 @@ package com.koleff.stockserver.stocks.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 @Entity(name = "IntraDay")
 @Table(name = "intra_day")
 @NoArgsConstructor
 @AllArgsConstructor
-public class IntraDay {
+public @Data class IntraDay implements Serializable {
     @Id
     @SequenceGenerator(
             name = "intra_day_sequence",
@@ -86,78 +88,6 @@ public class IntraDay {
             )
     )
     private Stock stock;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getStockId() {
-        return stockId;
-    }
-
-    public void setStockId(Long stockId) {
-        this.stockId = stockId;
-    }
-
-    public Double getOpen() {
-        return open;
-    }
-
-    public void setOpen(Double open) {
-        this.open = open;
-    }
-
-    public Double getClose() {
-        return close;
-    }
-
-    public void setClose(Double close) {
-        this.close = close;
-    }
-
-    public Double getHigh() {
-        return high;
-    }
-
-    public void setHigh(Double high) {
-        this.high = high;
-    }
-
-    public Double getLow() {
-        return low;
-    }
-
-    public void setLow(Double low) {
-        this.low = low;
-    }
-
-    public Double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(Double volume) {
-        this.volume = volume;
-    }
-
-    public Double getSplitFactor() {
-        return splitFactor;
-    }
-
-    public void setSplitFactor(Double splitFactor) {
-        this.splitFactor = splitFactor;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     @Override
     public String toString() {
