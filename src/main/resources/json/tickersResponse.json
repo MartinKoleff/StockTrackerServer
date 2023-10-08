@@ -1,0 +1,1604 @@
+{
+    "data": [
+        {
+            "name": "Microsoft Corporation",
+            "tag": "MSFT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Apple Inc",
+            "tag": "AAPL",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Amazon.com Inc",
+            "tag": "AMZN",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Alphabet Inc - Class C",
+            "tag": "GOOG",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Alphabet Inc - Class A",
+            "tag": "GOOGL",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Alibaba Group Holding Ltd",
+            "tag": "BABA",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Meta Platforms Inc - Class A",
+            "tag": "FB",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "BERKSHIRE HATHAWAY INC",
+            "tag": "BRK.B",
+            "has_intraday": false,
+            "has_end_of_day": false,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "BERKSHIRE HATHAWAY INC",
+            "tag": "BRK.A",
+            "has_intraday": false,
+            "has_end_of_day": false,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Vodafone Group plc",
+            "tag": "VOD",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Visa Inc - Class A",
+            "tag": "V",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "JPMorgan Chase & Company",
+            "tag": "JPM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Johnson & Johnson",
+            "tag": "JNJ",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Walmart Inc",
+            "tag": "WMT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Mastercard Incorporated - Class A",
+            "tag": "MA",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Procter & Gamble Company",
+            "tag": "PG",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Taiwan Semiconductor Manufacturing",
+            "tag": "TSM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Chunghwa Telecom",
+            "tag": "CHT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Roche Holding AG",
+            "tag": "RHHBF",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "OTC Markets",
+                "acronym": "",
+                "mic": "OTCM",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.otcmarkets.com"
+            }
+        },
+        {
+            "name": "Roche Holding AG",
+            "tag": "RHHVF",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "OTC Markets",
+                "acronym": "",
+                "mic": "OTCM",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.otcmarkets.com"
+            }
+        },
+        {
+            "name": "AT&T Inc",
+            "tag": "T",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Unitedhealth Group Inc",
+            "tag": "UNH",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Bank Of America Corp",
+            "tag": "BAC",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Home Depot Inc",
+            "tag": "HD",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Intel Corp",
+            "tag": "INTC",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Coca-Cola Company",
+            "tag": "KO",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Verizon Communications Inc",
+            "tag": "VZ",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Roche Holding AG",
+            "tag": "RHHBY",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "OTC Markets",
+                "acronym": "",
+                "mic": "OTCM",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.otcmarkets.com"
+            }
+        },
+        {
+            "name": "Exxon Mobil Corp",
+            "tag": "XOM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Walt Disney Co (The)",
+            "tag": "DIS",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Merck & Co Inc",
+            "tag": "MRK",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Novartis AG",
+            "tag": "NVS",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Comcast Corp - Class A",
+            "tag": "CMCSA",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Pfizer Inc",
+            "tag": "PFE",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "PepsiCo Inc",
+            "tag": "PEP",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Toyota Motor Corporation",
+            "tag": "TM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Chevron Corp",
+            "tag": "CVX",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Adobe Inc",
+            "tag": "ADBE",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Cisco Systems Inc",
+            "tag": "CSCO",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Wells Fargo & Company",
+            "tag": "WFC",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "NVIDIA Corp",
+            "tag": "NVDA",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Netflix Inc",
+            "tag": "NFLX",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Oracle Corp",
+            "tag": "ORCL",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Boeing Company",
+            "tag": "BA",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "China Mobile Ltd ADR",
+            "tag": "CHL",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Salesforce Inc",
+            "tag": "CRM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Sap SE",
+            "tag": "SAP",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "McDonald`s Corp",
+            "tag": "MCD",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Nike Inc - Class B",
+            "tag": "NKE",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Abbott Laboratories",
+            "tag": "ABT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Citigroup Inc",
+            "tag": "C",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Medtronic Plc",
+            "tag": "MDT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "HSBC Holdings plc",
+            "tag": "HSBC",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Tesla Inc",
+            "tag": "TSLA",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Costco Wholesale Corp",
+            "tag": "COST",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Bristol-Myers Squibb Company",
+            "tag": "BMY",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "HSBC HOLDINGS PLC ADR EACH REPR 1/40 PREF SERIES '",
+            "tag": "HSBC/PA",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "PayPal Holdings Inc",
+            "tag": "PYPL",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Philip Morris International Inc",
+            "tag": "PM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "NextEra Energy Inc",
+            "tag": "NEE",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Abbvie Inc",
+            "tag": "ABBV",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Lilly(Eli) & Company",
+            "tag": "LLY",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "AMGEN Inc",
+            "tag": "AMGN",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Sanofi",
+            "tag": "SNY",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Thermo Fisher Scientific Inc",
+            "tag": "TMO",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "ASML Holding NV",
+            "tag": "ASML",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Astrazeneca plc",
+            "tag": "AZN",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Accenture plc - Class A",
+            "tag": "ACN",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "International Business Machines Corp",
+            "tag": "IBM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Honeywell International Inc",
+            "tag": "HON",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "UNITED TECHNOLOGIES CORP",
+            "tag": "UTX",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "TotalEnergies SE",
+            "tag": "TOT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Broadcom Inc",
+            "tag": "AVGO",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Texas Instruments Inc",
+            "tag": "TXN",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Novo Nordisk",
+            "tag": "NVO",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Union Pacific Corp",
+            "tag": "UNP",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Royal Bank Of Canada",
+            "tag": "RY",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "BP plc",
+            "tag": "BP",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Lockheed Martin Corp",
+            "tag": "LMT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "American Tower Corp",
+            "tag": "AMT",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Linde Plc.",
+            "tag": "LIN",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "GSK Plc",
+            "tag": "GSK",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Danaher Corp",
+            "tag": "DHR",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Charter Communications Inc - Class A",
+            "tag": "CHTR",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "HDFC Bank Ltd",
+            "tag": "HDB",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "General Electric Company",
+            "tag": "GE",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Starbucks Corp",
+            "tag": "SBUX",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Anheuser-Busch InBev SA/NV",
+            "tag": "BUD",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Gilead Sciences Inc",
+            "tag": "GILD",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "Toronto Dominion Bank",
+            "tag": "TD",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Sinopec Shanghai Petrochemical Co. Ltd",
+            "tag": "SHI",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Qualcomm Inc",
+            "tag": "QCOM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "NASDAQ Stock Exchange",
+                "acronym": "NASDAQ",
+                "mic": "XNAS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nasdaq.com"
+            }
+        },
+        {
+            "name": "American Express Company",
+            "tag": "AXP",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "ROYAL DUTCH SHELL ADR EA REP 2 CL'A' EUR0.07",
+            "tag": "RDS.A",
+            "has_intraday": false,
+            "has_end_of_day": false,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Fidelity National Information Services Inc",
+            "tag": "FIS",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "British American Tobacco Plc",
+            "tag": "BTI",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "3M Company",
+            "tag": "MMM",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Lowe`s Cos. Inc",
+            "tag": "LOW",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "Diageo plc",
+            "tag": "DEO",
+            "has_intraday": false,
+            "has_end_of_day": true,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        },
+        {
+            "name": "ROYAL DUTCH SHELL ADR EA REP 2 CL'B' EUR0.07",
+            "tag": "RDS.B",
+            "has_intraday": false,
+            "has_end_of_day": false,
+            "country": null,
+            "stock_exchange": {
+                "name": "New York Stock Exchange",
+                "acronym": "NYSE",
+                "mic": "XNYS",
+                "country": "USA",
+                "country_code": "US",
+                "city": "New York",
+                "website": "www.nyse.com"
+            }
+        }
+    ]
+}
