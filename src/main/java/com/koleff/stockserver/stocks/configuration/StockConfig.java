@@ -1,8 +1,8 @@
 package com.koleff.stockserver.stocks.configuration;
 
 import com.koleff.stockserver.stocks.InfoApp;
-import com.koleff.stockserver.stocks.domain.Stock;
-import com.koleff.stockserver.stocks.repository.StockRepository;
+import com.koleff.stockserver.stocks.dto.wrapper.StocksWrapper;
+import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -19,6 +19,7 @@ public class StockConfig {
     @Value("${info.company.name}")
     private String companyName;
 
+    @Autowired
     private Environment environment;
 
     @Bean
@@ -31,6 +32,12 @@ public class StockConfig {
                     infoApp.getDescription(),
                     infoApp.getVersion()
             );
+
+            JsonUtil<StocksWrapper> jsonParser = new JsonUtil<StocksWrapper>(StocksWrapper.class);
+            String json = jsonParser.getJson("tickersResponse.json");
+            StocksWrapper data = jsonParser.convertJson(json);
+
+            System.out.println(data.getStockList());
         };
     }
 }
