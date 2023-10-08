@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.dto.wrapper;
+package com.koleff.stockserver.stocks.domain.wrapper;
 
 import com.google.gson.annotations.SerializedName;
 import com.koleff.stockserver.stocks.domain.Stock;
