@@ -1,5 +1,7 @@
 package com.koleff.stockserver.stocks.domain;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,12 +27,15 @@ public @Data class StockExchange implements Serializable {
     @Column(
             name = "id"
     )
+    @SerializedName("id")
     private Long id;
 
     @Column(
             name = "stock_id",
             nullable = false
     )
+    @SerializedName("stock_id")
+    @Expose(serialize = false, deserialize = false)
     private Long stockId;
 
     @Column(
@@ -38,6 +43,7 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("name")
     private String name;
 
     @Column(
@@ -45,6 +51,7 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("acronym")
     private String acronym;
 
     @Column(
@@ -52,6 +59,7 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("exchange")
     private String exchange;
 
     @Column(
@@ -59,6 +67,7 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("country")
     private String country;
 
     @Column(
@@ -66,6 +75,7 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("country_code")
     private String countryCode;
 
     @Column(
@@ -73,6 +83,7 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("city")
     private String city;
 
     @Column(
@@ -80,6 +91,7 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("website")
     private String website;
 
     @OneToOne(fetch = FetchType.LAZY)

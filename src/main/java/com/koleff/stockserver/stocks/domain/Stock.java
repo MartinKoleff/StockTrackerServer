@@ -1,5 +1,6 @@
 package com.koleff.stockserver.stocks.domain;
 
+import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +27,7 @@ public @Data class Stock implements Serializable {
     @Column(
             name = "id"
     )
+    @SerializedName("id")
     private Long id;
 
     @Column(
@@ -33,6 +35,7 @@ public @Data class Stock implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("name")
     private String name;
 
     @Column(
@@ -40,6 +43,7 @@ public @Data class Stock implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @SerializedName("tag")
     private String tag;
 
     @Column(
@@ -53,12 +57,14 @@ public @Data class Stock implements Serializable {
             name = "has_intraday",
             nullable = false
     )
+    @SerializedName("has_intraday")
     private Boolean hasIntraDay;
 
     @Column(
             name = "has_end_of_day",
             nullable = false
     )
+    @SerializedName("has_end_of_day")
     private Boolean hasEndOfDay;
 
     @OneToMany(

@@ -1,5 +1,7 @@
 package com.koleff.stockserver.stocks.domain;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,54 +28,64 @@ public @Data class IntraDay implements Serializable {
     @Column(
             name = "id"
     )
+    @SerializedName("id")
     private Long id;
 
     @Column(
             name = "stock_id",
             nullable = false
     )
+    @SerializedName("stock_id")
+    @Expose(serialize = false, deserialize = false)
     private Long stockId;
 
     @Column(
             name = "open",
             nullable = false
     )
+    @SerializedName("open")
     private Double open;
 
     @Column(
             name = "close",
             nullable = false
     )
+    @SerializedName("close")
     private Double close;
 
     @Column(
             name = "high",
             nullable = false
     )
+    @SerializedName("high")
     private Double high;
 
     @Column(
             name = "low",
             nullable = false
     )
+    @SerializedName("low")
     private Double low;
 
     @Column(
             name = "volume",
             nullable = false
     )
+    @SerializedName("volume")
     private Double volume;
 
     @Column(
             name = "split_factor",
             nullable = false
     )
+    @SerializedName("split_factor")
     private Double splitFactor;
 
     @Column(
             name = "date",
             nullable = false
     )
+    @SerializedName("date")
     private Date date;
 
     @ManyToOne(fetch = FetchType.LAZY)

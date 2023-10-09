@@ -1,5 +1,7 @@
 package com.koleff.stockserver.stocks.domain;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,12 +28,15 @@ public @Data class EndOfDay implements Serializable { //rename to EOD
     @Column(
             name = "id"
     )
+    @SerializedName("id")
     private Long id;
 
     @Column(
             name = "stock_id",
             nullable = false
     )
+    @SerializedName("stock_id")
+    @Expose(serialize = false, deserialize = false)
     private Long stockId;
 
 
@@ -39,72 +44,84 @@ public @Data class EndOfDay implements Serializable { //rename to EOD
             name = "open",
             nullable = false
     )
+    @SerializedName("open")
     private Double open;
 
     @Column(
             name = "close",
             nullable = false
     )
+    @SerializedName("close")
     private Double close;
 
     @Column(
             name = "high",
             nullable = false
     )
+    @SerializedName("high")
     private Double high;
 
     @Column(
             name = "low",
             nullable = false
     )
+    @SerializedName("low")
     private Double low;
 
     @Column(
             name = "volume",
             nullable = false
     )
+    @SerializedName("volume")
     private Double volume;
 
     @Column(
             name = "adj_open",
             nullable = false
     )
+    @SerializedName("adj_open")
     private Double adjOpen;
 
     @Column(
             name = "adj_close",
             nullable = false
     )
+    @SerializedName("adj_close")
     private Double adjClose;
 
     @Column(
             name = "adj_high",
             nullable = false
     )
+    @SerializedName("adj_high")
     private Double adjHigh;
 
     @Column(
             name = "adj_low",
             nullable = false
     )
+    @SerializedName("adj_low")
     private Double adjLow;
 
     @Column(
             name = "adj_volume",
             nullable = false
     )
+    @SerializedName("adj_volume")
     private Double adjVolume;
 
     @Column(
             name = "split_factor",
             nullable = false
     )
+    @SerializedName("split_factor")
     private Double splitFactor;
 
     @Column(
             name = "date",
             nullable = false
     )
+    @SerializedName("date")
     private Date date;
 
     @ManyToOne(fetch = FetchType.LAZY)
