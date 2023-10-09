@@ -15,6 +15,5 @@ import java.util.List;
 public @Data class StocksWrapper implements Serializable {
 
     @SerializedName("data")
-    @SerializedName("data")
     private List<StockDto> stockList;
 }
