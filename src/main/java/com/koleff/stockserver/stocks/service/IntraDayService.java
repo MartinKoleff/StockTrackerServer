@@ -52,5 +52,39 @@ public class IntraDayService {
                         )
                 );
     }
+
+    public void saveIntraDayList() {
+        JsonUtil<DataWrapper> jsonParser = new JsonUtil<DataWrapper>(); //to inject...
+        Type intraDayType = new TypeToken<DataWrapper<IntraDay>>() {}.getType();
+        jsonParser.setType(intraDayType);
+
+        stockRepository.findAll().stream()
+                .map(Stock::getTag)
+                .forEach(stockTag -> {
+                    //Configure json based on current stock
+                    String filePath = String.format("intraday%s.json", stockTag);
+
+                    //Load data from json
+                    String json = jsonParser.getJson(filePath);
+                    DataWrapper<IntraDay> data = jsonParser.convertJson(json);
+
+                    //Configure stock_id
+                    data.getData()
+                            .forEach(intraDay -> {
+                                intraDay.setStockId(
+                                        stockRepository.findStockByStockTag(stockTag)
+                                                .orElseThrow(
+                                                        () -> new IntraDayNotSavedException(
+                                                                String.format(
+                                                                        "Intra day for stock %s could not be saved.", stockTag
+                                                                )
+                                                        )
+                                                )
+                                                .getId()
+                                );
+                            });
+                    intraDayRepository.saveAll(data.getData());
+                });
+    }
 }
 

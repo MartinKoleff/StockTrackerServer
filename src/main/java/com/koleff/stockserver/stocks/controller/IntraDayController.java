@@ -15,4 +15,9 @@ public class IntraDayController {
     public IntraDayController(IntraDayService intraDayService) {
         this.intraDayService = intraDayService;
     }
+
+    @PutMapping(path = "save")
+    public void saveIntraDayList() {
+        intraDayService.saveIntraDayList();
+    }
 }
