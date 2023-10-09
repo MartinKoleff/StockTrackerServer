@@ -84,7 +84,7 @@ public @Data class StockExchange implements Serializable {
     )
     private String website;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "stock_id",
             nullable = false,

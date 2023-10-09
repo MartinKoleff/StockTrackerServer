@@ -80,13 +80,13 @@ public @Data class Stock implements Serializable {
     )
     private List<IntraDay> intraDay;
 
-    @OneToMany(
+    @OneToOne(
             mappedBy = "stock",
             orphanRemoval = true,
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
-    private List<StockExchange> stockExchange;
+    private StockExchange stockExchange;
 
     @Override
     public String toString() {
