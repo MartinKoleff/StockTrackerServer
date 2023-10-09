@@ -75,13 +75,6 @@ public @Data class IntraDay implements Serializable {
     private Double volume;
 
     @Column(
-            name = "split_factor",
-            nullable = false
-    )
-    @SerializedName("split_factor")
-    private Double splitFactor;
-
-    @Column(
             name = "date",
             nullable = false
     )
@@ -111,7 +104,6 @@ public @Data class IntraDay implements Serializable {
                 ", high=" + high +
                 ", low=" + low +
                 ", volume=" + volume +
-                ", splitFactor=" + splitFactor +
                 ", date=" + date +
                 '}';
     }

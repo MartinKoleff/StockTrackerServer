@@ -21,7 +21,6 @@ public class IntraDayDtoMapper implements Function<IntraDay, IntraDayDto> {
                 intraDay.getHigh(),
                 intraDay.getLow(),
                 intraDay.getVolume(),
-                intraDay.getSplitFactor(),
                 intraDay.getDate()
         );
     }

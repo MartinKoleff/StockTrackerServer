@@ -22,8 +22,6 @@ public record IntraDayDto(
         Double low,
         @SerializedName("volume")
         Double volume,
-        @SerializedName("split_factor")
-        Double splitFactor,
         @SerializedName("date")
         Date date
 ) {
