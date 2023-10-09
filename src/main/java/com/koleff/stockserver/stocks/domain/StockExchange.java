@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -67,7 +66,6 @@ public @Data class StockExchange implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
-    @SerializedName("country_code")
     private String countryCode;
 
     @Column(
