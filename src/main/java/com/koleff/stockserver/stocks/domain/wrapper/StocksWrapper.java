@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.domain.wrapper;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
+import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.dto.StockDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,5 +16,5 @@ import java.util.List;
 public @Data class StocksWrapper implements Serializable {
 
     @SerializedName("data")
-    private List<StockDto> stockList;
+    private List<Stock> stockList;
 }
