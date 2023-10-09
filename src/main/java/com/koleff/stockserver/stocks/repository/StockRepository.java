@@ -14,12 +14,13 @@ import java.util.Optional;
 @Repository
 @Transactional(readOnly = true)
 public interface StockRepository extends JpaRepository<Stock, Long> {
-
-    @Query("SELECT s FROM Stock s WHERE s.tag = ?1")
+    @Query(
+            value = "SELECT * FROM stock s WHERE s.tag = ?1",
+            nativeQuery = true)
     Optional<Stock> findStockByStockTag(String stockTag);
 
     @Query(
-            value = "SELECT * FROM stock WHERE has_intra_day = :hasIntraDay",
+            value = "SELECT * FROM stock s WHERE s.has_intraday = :hasIntraDay",
             nativeQuery = true)
     List<Stock> selectStockWhereHasIntraDayEqualTrue(
             @Param("hasIntraDay") Boolean hasIntraDay
