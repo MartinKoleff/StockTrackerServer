@@ -34,6 +34,6 @@ public record EndOfDayDto(
         @SerializedName("split_factor")
         Double splitFactor,
         @SerializedName("date")
-        Date date
+        String date
 ) {
 }

@@ -23,6 +23,6 @@ public record IntraDayDto(
         @SerializedName("volume")
         Double volume,
         @SerializedName("date")
-        Date date
+        String date
 ) {
 }

@@ -79,7 +79,7 @@ public @Data class IntraDay implements Serializable {
             nullable = false
     )
     @SerializedName("date")
-    private Date date;
+    private String date;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(

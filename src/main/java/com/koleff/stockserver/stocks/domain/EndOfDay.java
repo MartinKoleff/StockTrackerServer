@@ -122,7 +122,7 @@ public @Data class EndOfDay implements Serializable { //rename to EOD
             nullable = false
     )
     @SerializedName("date")
-    private Date date;
+    private String date;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
