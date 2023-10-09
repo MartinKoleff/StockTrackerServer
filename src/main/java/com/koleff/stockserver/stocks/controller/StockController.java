@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1")
+@RequestMapping(path = "api/v1/stock/")
 public class StockController {
 
+    @Autowired
     private final StockService stockService;
 
     @Autowired
@@ -27,5 +28,10 @@ public class StockController {
     @GetMapping(path = "{stockId}")
     public StockDto getStock(@PathVariable("stockId") Long id) {
         return stockService.getStock(id);
+    }
+
+    @PutMapping(path = "save")
+    public void saveStocks(){
+        stockService.saveStocks();
     }
 }
