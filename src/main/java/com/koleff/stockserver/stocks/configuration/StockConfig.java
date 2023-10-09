@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.configuration;
 
 import com.koleff.stockserver.stocks.InfoApp;
 import com.koleff.stockserver.stocks.domain.wrapper.StocksWrapper;
+import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +24,7 @@ public class StockConfig {
     private Environment environment;
 
     @Bean
-    CommandLineRunner commandLineRunner(InfoApp infoApp) {
+    CommandLineRunner commandLineRunner(InfoApp infoApp, StockRepository stockRepository) {
         return args -> {
             System.out.println(companyName);
             System.out.println(environment.getProperty("info.app.version"));
@@ -38,6 +39,11 @@ public class StockConfig {
             StocksWrapper data = jsonParser.convertJson(json);
 
             System.out.println(data);
+//            data.getStockList().forEach(stock -> {
+//                stockRepository.save(stock);
+//            });
+
+
         };
     }
 }

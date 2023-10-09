@@ -13,6 +13,7 @@ public class JsonUtil<T> {
 
     private final Class<T> type;
 
+    //Generics are created on build time. They are lost on run time.
     public JsonUtil(Class<T> type) {
         this.type = type;
     }
@@ -39,7 +40,6 @@ public class JsonUtil<T> {
 
     public T convertJson(String json){
         Gson gson = new Gson();
-//        Type collectionType = new TypeToken<T>(){}.getType();
         return gson.fromJson(json, type);
     }
 }
