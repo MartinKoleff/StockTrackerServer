@@ -1,30 +1,36 @@
 package com.koleff.stockserver.stocks.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.koleff.stockserver.stocks.domain.Stock;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-public record StockExchangeDto(
-        @JsonProperty("id")
-        Long id,
-        @JsonProperty("stock_id")
-        Long stockId,
-        @JsonProperty("name")
-        String name,
-        @JsonProperty("acronym")
-        String acronym,
-        @JsonProperty("exchange")
-        String exchange,
-        @JsonProperty("country")
-        String country,
-        @JsonProperty("country_code")
-        String countryCode,
-        @JsonProperty("city")
-        String city,
-        @JsonProperty("website")
-        String website
-//        @JsonProperty("stock")
-//        @JsonIgnore
-//        Stock stock
-) {
+public record StockExchangeDto (
+    @SerializedName("id")
+    Long id,
+
+    @SerializedName("stock_id")
+    @Expose(serialize = false, deserialize = false)
+    Long stockId,
+
+    @SerializedName("name")
+    String name,
+
+    @SerializedName("acronym")
+    String acronym,
+
+    @SerializedName("exchange")
+    String exchange,
+
+    @SerializedName("country")
+    String country,
+
+    @SerializedName("country_code")
+    String countryCode,
+
+    @SerializedName("city")
+    String city,
+
+    @SerializedName("website")
+    String website
+){
+
 }

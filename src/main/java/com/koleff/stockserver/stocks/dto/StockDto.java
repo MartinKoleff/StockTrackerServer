@@ -1,34 +1,37 @@
 package com.koleff.stockserver.stocks.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+import jakarta.annotation.Nullable;
 
 import java.util.List;
 
-public record StockDto(
-        @JsonProperty("id")
-//        @JsonIgnore()
+public record StockDto (
+        @SerializedName("id")
         Long id,
-        @JsonProperty("name")
-        String name,
-        @JsonProperty("tag")
-        String tag,
-        @JsonProperty("country")
-        String country,
-        @JsonProperty("has_intra_day")
-        Boolean hasIntraDay,
-        @JsonProperty("has_end_of_day")
-        Boolean hasEndOfDay,
-        @JsonProperty("end_of_day")
-        List<EndOfDayDto> endOfDayDtosList,
-        @JsonProperty("intra_day")
-        List<IntraDayDto> intraDayDtosList,
-        @JsonProperty("stock_exchange")
-        List<StockExchangeDto> stockExchangeDtosList
-) {
 
-    public String toJson() {
-        return new Gson().toJson(this);
-    }
+        @SerializedName("name")
+        String name,
+
+        @SerializedName("tag")
+         String tag,
+
+        @SerializedName("country")
+        @Nullable String country,
+
+        @SerializedName("has_intraday")
+        Boolean hasIntraDay,
+
+        @SerializedName("has_end_of_day")
+        Boolean hasEndOfDay,
+
+        @SerializedName("end_of_day")
+        List<EndOfDayDto> endOfDayDtosList,
+
+        @SerializedName("intra_day")
+        List<IntraDayDto> intraDayDtosList,
+
+        @SerializedName("stock_exchange")
+        StockExchangeDto stockExchangeDto
+){
+        
 }

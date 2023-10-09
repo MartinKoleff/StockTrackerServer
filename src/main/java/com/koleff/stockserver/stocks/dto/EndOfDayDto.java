@@ -1,42 +1,39 @@
 package com.koleff.stockserver.stocks.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.koleff.stockserver.stocks.domain.Stock;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.sql.Date;
 
 public record EndOfDayDto(
-        @JsonProperty("id")
+        @SerializedName("id")
         Long id,
-        @JsonProperty("stock_id")
+        @SerializedName("stock_id")
+        @Expose(serialize = false, deserialize = false)
         Long stockId,
-        @JsonProperty("open")
+        @SerializedName("open")
         Double open,
-        @JsonProperty("close")
+        @SerializedName("close")
         Double close,
-        @JsonProperty("high")
+        @SerializedName("high")
         Double high,
-        @JsonProperty("low")
+        @SerializedName("low")
         Double low,
-        @JsonProperty("volume")
+        @SerializedName("volume")
         Double volume,
-        @JsonProperty("adj_open")
+        @SerializedName("adj_open")
         Double adjustOpen,
-        @JsonProperty("adj_close")
+        @SerializedName("adj_close")
         Double adjustClose,
-        @JsonProperty("adj_high")
+        @SerializedName("adj_high")
         Double adjustHigh,
-        @JsonProperty("adj_low")
+        @SerializedName("adj_low")
         Double adjustLow,
-        @JsonProperty("adj_volume")
+        @SerializedName("adj_volume")
         Double adjustVolume,
-        @JsonProperty("split_factor")
+        @SerializedName("split_factor")
         Double splitFactor,
-        @JsonProperty("date")
+        @SerializedName("date")
         Date date
-//        @JsonProperty("stock")
-//        @JsonIgnore
-//        Stock stock
 ) {
 }
