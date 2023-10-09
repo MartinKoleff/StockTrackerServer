@@ -30,9 +30,7 @@ public class StockDtoMapper implements Function<Stock, StockDto> {
                 stock.getIntraDay().stream()
                         .map(intraDayDtoMapper)
                         .toList(),
-                stock.getStockExchange().stream()
-                        .map(stockExchangeDtoMapper)
-                        .toList()
+                stockExchangeDtoMapper.apply(stock.getStockExchange())
         );
 
     }
