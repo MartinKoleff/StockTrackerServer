@@ -15,9 +15,6 @@ public record StockDto (
         @SerializedName("tag")
          String tag,
 
-        @SerializedName("country")
-        @Nullable String country,
-
         @SerializedName("has_intraday")
         Boolean hasIntraDay,
 

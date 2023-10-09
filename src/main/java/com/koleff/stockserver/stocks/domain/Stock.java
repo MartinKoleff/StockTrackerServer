@@ -47,13 +47,6 @@ public @Data class Stock implements Serializable {
     private String tag;
 
     @Column(
-            name = "country",
-            nullable = true,
-            columnDefinition = "TEXT"
-    )
-    private String country;
-
-    @Column(
             name = "has_intraday",
             nullable = false
     )
@@ -97,7 +90,6 @@ public @Data class Stock implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", tag='" + tag + '\'' +
-                ", country='" + country + '\'' +
                 ", hasIntraDay=" + hasIntraDay +
                 ", hasEndOfDay=" + hasEndOfDay +
                 '}';

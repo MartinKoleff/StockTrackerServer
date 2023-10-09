@@ -20,7 +20,6 @@ public class StockDtoMapper implements Function<Stock, StockDto> {
                 stock.getId(),
                 stock.getName(),
                 stock.getTag(),
-                stock.getCountry(),
                 stock.getHasIntraDay(),
                 stock.getHasEndOfDay(),
                 stock.getEndOfDay()
