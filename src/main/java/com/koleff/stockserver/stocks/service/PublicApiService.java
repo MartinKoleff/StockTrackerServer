@@ -85,7 +85,7 @@ public class PublicApiService {
             publicApiClient.saveIntraDayToJSON(stockTag);
 
             //Re-call...
-            loadIntraDay(stockTag);
+            return loadIntraDay(stockTag);
         }
 
         //Parse json to entity
@@ -116,7 +116,7 @@ public class PublicApiService {
 
         if(stockTags.isEmpty()){
             stockService.saveStocks();
-            loadStockTags();
+            return loadStockTags();
         }
 
         return stockTags;
