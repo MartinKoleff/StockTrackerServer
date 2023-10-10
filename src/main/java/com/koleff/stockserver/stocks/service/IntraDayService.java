@@ -27,7 +27,7 @@ public class IntraDayService {
     @Autowired
     public IntraDayService(IntraDayRepository intraDayRepository,
                            IntraDayDtoMapper intraDayDtoMapper,
-                           StockRepository stockRepository, 
+                           StockRepository stockRepository,
                            JsonUtil<DataWrapper> jsonUtil) {
         this.intraDayRepository = intraDayRepository;
         this.intraDayDtoMapper = intraDayDtoMapper;
@@ -35,28 +35,37 @@ public class IntraDayService {
         this.jsonUtil = jsonUtil;
     }
 
-    public List<IntraDayDto> getIntraDayList() {
-        return intraDayRepository.findAll()
+    public List<IntraDayDto> getIntraDay(String stockTag) {
+        return intraDayRepository.findIntraDayByStockTag(stockTag)
+                .orElseThrow(
+                        () -> new IntraDayNotFoundException(
+                                String.format("Intra day for stock tag %s not found.",
+                                        stockTag
+                                )
+                        )
+                )
                 .stream()
                 .map(intraDayDtoMapper)
                 .toList();
     }
 
-    public IntraDayDto getIntraDay(Long id) {
-        return intraDayRepository.findById(id)
-                .stream()
-                .map(intraDayDtoMapper)
-                .findFirst()
+    public List<IntraDayDto> getIntraDay(Long id) {
+        return intraDayRepository.findAllById(id)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
-                                String.format("Intra day with id %d not found.", id
+                                String.format("Intra day with id %d not found.",
+                                        id
                                 )
                         )
-                );
+                )
+                .stream()
+                .map(intraDayDtoMapper)
+                .toList();
     }
 
     public void saveIntraDay() {
-        Type intraDayType = new TypeToken<DataWrapper<IntraDay>>() {}.getType();
+        Type intraDayType = new TypeToken<DataWrapper<IntraDay>>() {
+        }.getType();
         jsonUtil.setType(intraDayType);
 
         stockRepository.findAll().stream()
@@ -77,7 +86,8 @@ public class IntraDayService {
                                                 .orElseThrow(
                                                         () -> new IntraDayNotSavedException(
                                                                 String.format(
-                                                                        "Intra day for stock %s could not be saved.", stockTag
+                                                                        "Intra day for stock %s could not be saved.",
+                                                                        stockTag
                                                                 )
                                                         )
                                                 )
