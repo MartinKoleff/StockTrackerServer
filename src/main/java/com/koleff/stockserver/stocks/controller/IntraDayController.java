@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.controller;
 
-import com.koleff.stockserver.stocks.dto.StockDto;
 import com.koleff.stockserver.stocks.service.IntraDayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,7 @@ public class IntraDayController {
     }
 
     @PutMapping(path = "save")
-    public void saveIntraDayList() {
-        intraDayService.saveIntraDayList();
+    public void saveIntraDay() {
+        intraDayService.saveIntraDay();
     }
 }

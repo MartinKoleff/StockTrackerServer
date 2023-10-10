@@ -53,7 +53,7 @@ public class IntraDayService {
                 );
     }
 
-    public void saveIntraDayList() {
+    public void saveIntraDay() {
         JsonUtil<DataWrapper> jsonParser = new JsonUtil<DataWrapper>(); //to inject...
         Type intraDayType = new TypeToken<DataWrapper<IntraDay>>() {}.getType();
         jsonParser.setType(intraDayType);
