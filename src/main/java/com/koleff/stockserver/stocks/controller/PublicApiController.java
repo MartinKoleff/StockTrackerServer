@@ -1,30 +1,63 @@
 package com.koleff.stockserver.stocks.controller;
 
+import com.koleff.stockserver.stocks.client.PublicApiClient;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+import com.koleff.stockserver.stocks.service.PublicApiService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "publicApi/v1/")
 public class PublicApiController {
 
-    @Value("${apiKey}")
-    private String apiKey;
+    private final PublicApiService publicApiService;
+    private final PublicApiClient publicApiClient;
 
-    @GetMapping("intraday/{stockTag}")
-    public DataWrapper getIntraDay(@PathVariable("stockTag") String stockTag){
-        String url = String.format("http://api.marketstack.com/v1/intraday?access_key=%s&symbols=%s",
-                apiKey,
-                stockTag);
+    @Autowired
+    public PublicApiController(PublicApiService publicApiService,
+                               PublicApiClient publicApiClient) {
+        this.publicApiService = publicApiService;
+        this.publicApiClient = publicApiClient;
+    }
 
-        //Call remote API
-        RestTemplate restTemplate = new RestTemplate();
-        DataWrapper<IntraDay> response = restTemplate.getForObject(url, DataWrapper.class);
-        return response;
+    /**
+     * Get from remote API
+     */
+    @GetMapping("intraday/get/{stockTag}")
+    public DataWrapper<IntraDay> getIntraDay(@PathVariable("stockTag") String stockTag) {
+        return publicApiClient.getIntraDay(stockTag);
+    }
+
+    /**
+     * Save to DB
+     */
+    @PutMapping("intraday/save/{stockTag}")
+    public void saveIntraDay(@PathVariable("stockTag") String stockTag) {
+        publicApiService.saveIntraDay(stockTag);
+    }
+
+    /**
+     * Save all to DB
+     */
+    @PutMapping("intraday/save/all")
+    public void saveIntraDays() {
+        publicApiService.saveIntraDays();
+    }
+
+    /**
+     * Load from JSON
+     */
+    @GetMapping("intraday/load/{stockTag}")
+    public void loadIntraDay(@PathVariable("stockTag") String stockTag) {
+        publicApiService.loadIntraDay(stockTag);
+    }
+
+    /**
+     * Load all from JSON
+     */
+    @GetMapping("intraday/load/all")
+    public void loadIntraDays() {
+        publicApiService.loadIntraDays();
     }
 }
