@@ -60,4 +60,44 @@ public class JsonUtil<T> {
         Gson gson = new Gson();
         return gson.fromJson(json, type);
     }
+
+    /**
+     * Saves data to JSON
+     */
+    public void exportToJson(T response, String requestName, String stockTag) { //To automate requestName and stockTag to fetch from response...
+        String filePath;
+
+        //Create file path based on request
+        switch (requestName) {
+            case "intraday":
+                String jsonPath = String.format("intraday%s", stockTag);
+                filePath = String.format(resourcePath, jsonPath);
+                break;
+            default:
+                return;
+        }
+
+        //Convert response to JSON
+        String json;
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        try {
+            json = ow.writeValueAsString(response);
+        } catch (JsonProcessingException e) {
+            System.out.println("JSON could not be created.");
+            return;
+        }
+
+        //Write JSON in file
+        File jsonFile = new File(filePath);
+        try {
+            FileWriter file = new FileWriter(jsonFile);
+            file.write(json);
+            file.close();
+        } catch (IOException e) {
+            System.out.println("JSON could not be exported to file.");
+            return;
+        }
+
+        System.out.printf("JSON file created: %s\n", json);
+    }
 }
