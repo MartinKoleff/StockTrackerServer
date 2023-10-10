@@ -11,6 +11,7 @@ import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileReader;
@@ -18,6 +19,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
+@Component
 public class JsonUtil<T> {
 
     private Type type;
