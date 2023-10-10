@@ -19,11 +19,15 @@ public class StockService {
 
     private final StockRepository stockRepository;
     private final StockDtoMapper stockDtoMapper;
+    private final JsonUtil<DataWrapper> jsonUtil;
 
     @Autowired
-    public StockService(StockRepository stockRepository, StockDtoMapper stockDtoMapper) { //@Qualifier(value = "fake")
+    public StockService(StockRepository stockRepository,
+                        StockDtoMapper stockDtoMapper,
+                        JsonUtil<DataWrapper> jsonUtil) { //@Qualifier(value = "fake")
         this.stockRepository = stockRepository;
         this.stockDtoMapper = stockDtoMapper;
+        this.jsonUtil = jsonUtil;
     }
 
     public List<StockDto> getStocks() {
@@ -43,13 +47,12 @@ public class StockService {
     }
 
     public void saveStocks() {
-        JsonUtil<DataWrapper> jsonParser = new JsonUtil<DataWrapper>(); //to inject...
         Type stockType = new TypeToken<DataWrapper<Stock>>() {}.getType();
-        jsonParser.setType(stockType);
+        jsonUtil.setType(stockType);
 
         //Load data from json
-        String json = jsonParser.getJson("tickers.json");
-        DataWrapper<Stock> data = jsonParser.convertJson(json);
+        String json = jsonUtil.loadJson("tickers.json");
+        DataWrapper<Stock> data = jsonUtil.convertJson(json);
 
         System.out.println(data);
         stockRepository.saveAll(data.getData());

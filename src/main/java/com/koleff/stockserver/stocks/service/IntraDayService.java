@@ -16,21 +16,23 @@ import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class IntraDayService {
     private final IntraDayRepository intraDayRepository;
     private final StockRepository stockRepository;
     private final IntraDayDtoMapper intraDayDtoMapper;
+    private final JsonUtil<DataWrapper> jsonUtil;
 
     @Autowired
     public IntraDayService(IntraDayRepository intraDayRepository,
                            IntraDayDtoMapper intraDayDtoMapper,
-                           StockRepository stockRepository) {
+                           StockRepository stockRepository, 
+                           JsonUtil<DataWrapper> jsonUtil) {
         this.intraDayRepository = intraDayRepository;
         this.intraDayDtoMapper = intraDayDtoMapper;
         this.stockRepository = stockRepository;
+        this.jsonUtil = jsonUtil;
     }
 
     public List<IntraDayDto> getIntraDayList() {
@@ -54,9 +56,8 @@ public class IntraDayService {
     }
 
     public void saveIntraDay() {
-        JsonUtil<DataWrapper> jsonParser = new JsonUtil<DataWrapper>(); //to inject...
         Type intraDayType = new TypeToken<DataWrapper<IntraDay>>() {}.getType();
-        jsonParser.setType(intraDayType);
+        jsonUtil.setType(intraDayType);
 
         stockRepository.findAll().stream()
                 .map(Stock::getTag)
@@ -65,8 +66,8 @@ public class IntraDayService {
                     String filePath = String.format("intraday%s.json", stockTag);
 
                     //Load data from json
-                    String json = jsonParser.getJson(filePath);
-                    DataWrapper<IntraDay> data = jsonParser.convertJson(json);
+                    String json = jsonUtil.loadJson(filePath);
+                    DataWrapper<IntraDay> data = jsonUtil.convertJson(json);
 
                     //Configure stock_id
                     data.getData()
@@ -83,6 +84,7 @@ public class IntraDayService {
                                                 .getId()
                                 );
                             });
+                    //Save data entities to DB
                     intraDayRepository.saveAll(data.getData());
                 });
     }
