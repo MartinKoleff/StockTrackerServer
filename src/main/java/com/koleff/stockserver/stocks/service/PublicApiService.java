@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.service;
 
 import com.google.gson.reflect.TypeToken;
 import com.koleff.stockserver.stocks.client.PublicApiClient;
+import com.koleff.stockserver.stocks.controller.StockController;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
@@ -22,16 +23,19 @@ public class PublicApiService {
 
     private final JsonUtil<DataWrapper> jsonUtil;
     private final StockRepository stockRepository;
+    private final StockService stockService;
     private final IntraDayRepository intraDayRepository;
     private final PublicApiClient publicApiClient;
 
     @Autowired
     public PublicApiService(
             StockRepository stockRepository,
+            StockService stockService,
             IntraDayRepository intraDayRepository,
             PublicApiClient publicApiClient,
             JsonUtil<DataWrapper> jsonUtil) {
         this.stockRepository = stockRepository;
+        this.stockService = stockService;
         this.intraDayRepository = intraDayRepository;
         this.publicApiClient = publicApiClient;
         this.jsonUtil = jsonUtil;
@@ -105,15 +109,17 @@ public class PublicApiService {
     }
 
     private List<String> loadStockTags() {
-//     List<String> stockTags = stockRepository.findAll()
-//                .stream()
-//                .map(Stock::getTag)
-//                .toList();
-
-        return stockRepository.getStockTags()
+        List<String> stockTags = stockRepository.getStockTags()
                 .orElseThrow()
                 .stream()
                 .toList();
+
+        if(stockTags.isEmpty()){
+            stockService.saveStocks();
+            loadStockTags();
+        }
+
+        return stockTags;
     }
 }
 
