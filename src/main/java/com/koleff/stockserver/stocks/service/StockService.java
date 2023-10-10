@@ -66,6 +66,4 @@ public class StockService {
         System.out.println(data);
         stockRepository.saveAll(data.getData());
     }
-
-
 }

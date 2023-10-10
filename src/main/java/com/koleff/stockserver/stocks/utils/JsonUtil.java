@@ -47,7 +47,7 @@ public class JsonUtil<T> {
 
             json = data.toJSONString();
         } catch (IOException | ParseException e) {
-            System.out.println("Failed to parse JSON.");
+            System.out.printf("Failed to parse JSON. File exists -> %s\n", jsonFile.exists());
         }
 
         return json;
@@ -70,7 +70,7 @@ public class JsonUtil<T> {
         //Create file path based on request
         switch (requestName) {
             case "intraday":
-                String jsonPath = String.format("intraday%s", stockTag);
+                String jsonPath = String.format("intraday%s.json", stockTag);
                 filePath = String.format(resourcePath, jsonPath);
                 break;
             default:
