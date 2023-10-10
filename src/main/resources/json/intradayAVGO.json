@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 858.0,
+    "high" : 867.51,
+    "low" : 855.73,
+    "last" : 866.94,
+    "close" : 855.88,
+    "volume" : 10557.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 858.0,
+    "high" : 863.01,
+    "low" : 855.73,
+    "last" : 863.01,
+    "close" : 855.88,
+    "volume" : 3390.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.46,
+    "high" : 856.61,
+    "low" : 837.83,
+    "last" : 855.88,
+    "close" : 845.26,
+    "volume" : 1575985.0,
+    "date" : "2023-10-10T00:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.74,
+    "high" : 855.59,
+    "low" : 838.77,
+    "last" : 852.17,
+    "close" : 845.26,
+    "volume" : 35133.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.74,
+    "high" : 854.79,
+    "low" : 838.77,
+    "last" : 853.69,
+    "close" : 845.26,
+    "volume" : 25913.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.74,
+    "high" : 849.18,
+    "low" : 838.77,
+    "last" : 848.31,
+    "close" : 845.26,
+    "volume" : 21902.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.74,
+    "high" : 849.18,
+    "low" : 838.77,
+    "last" : 844.35,
+    "close" : 845.26,
+    "volume" : 17231.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.74,
+    "high" : 849.18,
+    "low" : 838.85,
+    "last" : 842.895,
+    "close" : 845.26,
+    "volume" : 10363.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.74,
+    "high" : 849.18,
+    "low" : 838.85,
+    "last" : 848.46,
+    "close" : 845.26,
+    "volume" : 5197.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.88,
+    "high" : 845.775,
+    "low" : 812.145,
+    "last" : 844.38,
+    "close" : 823.86,
+    "volume" : 30443.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.88,
+    "high" : 841.2,
+    "low" : 812.145,
+    "last" : 841.14,
+    "close" : 823.86,
+    "volume" : 21334.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 837.4,
+    "high" : 838.15,
+    "low" : 837.4,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.88,
+    "high" : 838.165,
+    "low" : 812.145,
+    "last" : 837.875,
+    "close" : 823.86,
+    "volume" : 12127.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.88,
+    "high" : 827.85,
+    "low" : 812.145,
+    "last" : 826.48,
+    "close" : 823.86,
+    "volume" : 6837.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.88,
+    "high" : 826.25,
+    "low" : 812.145,
+    "last" : 816.0,
+    "close" : 823.86,
+    "volume" : 2450.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 821.36,
+    "high" : 828.62,
+    "low" : 815.635,
+    "last" : 827.74,
+    "close" : 823.81,
+    "volume" : 21069.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 821.36,
+    "high" : 827.24,
+    "low" : 815.635,
+    "last" : 825.68,
+    "close" : 823.81,
+    "volume" : 16061.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 821.36,
+    "high" : 827.24,
+    "low" : 815.635,
+    "last" : 823.55,
+    "close" : 823.81,
+    "volume" : 11044.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 821.36,
+    "high" : 827.24,
+    "low" : 815.635,
+    "last" : 819.89,
+    "close" : 823.81,
+    "volume" : 8275.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 821.36,
+    "high" : 827.24,
+    "low" : 815.635,
+    "last" : 817.86,
+    "close" : 823.81,
+    "volume" : 6585.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 821.36,
+    "high" : 827.24,
+    "low" : 821.0,
+    "last" : 821.76,
+    "close" : 823.81,
+    "volume" : 2370.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 820.33,
+    "high" : 830.58,
+    "low" : 816.3025,
+    "last" : 823.81,
+    "close" : 814.83,
+    "volume" : 1641706.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.2,
+    "high" : 830.24,
+    "low" : 816.75,
+    "last" : 821.39,
+    "close" : 814.83,
+    "volume" : 38840.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.2,
+    "high" : 830.24,
+    "low" : 816.75,
+    "last" : 817.12,
+    "close" : 814.83,
+    "volume" : 35113.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.2,
+    "high" : 830.24,
+    "low" : 816.75,
+    "last" : 822.22,
+    "close" : 814.83,
+    "volume" : 32603.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.2,
+    "high" : 830.24,
+    "low" : 816.75,
+    "last" : 825.47,
+    "close" : 814.83,
+    "volume" : 30682.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.2,
+    "high" : 830.24,
+    "low" : 816.75,
+    "last" : 817.585,
+    "close" : 814.83,
+    "volume" : 22850.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.2,
+    "high" : 830.24,
+    "low" : 818.2,
+    "last" : 828.35,
+    "close" : 814.83,
+    "volume" : 13740.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 827.0,
+    "high" : 835.75,
+    "low" : 808.91,
+    "last" : 814.83,
+    "close" : 834.95,
+    "volume" : 1876086.0,
+    "date" : "2023-10-04T00:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.63,
+    "high" : 835.81,
+    "low" : 810.69,
+    "last" : 812.23,
+    "close" : 834.95,
+    "volume" : 36283.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.63,
+    "high" : 835.81,
+    "low" : 812.58,
+    "last" : 813.365,
+    "close" : 834.95,
+    "volume" : 28615.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.63,
+    "high" : 835.81,
+    "low" : 816.065,
+    "last" : 821.36,
+    "close" : 834.95,
+    "volume" : 23578.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.63,
+    "high" : 835.81,
+    "low" : 816.065,
+    "last" : 817.04,
+    "close" : 834.95,
+    "volume" : 20466.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.63,
+    "high" : 835.81,
+    "low" : 820.15,
+    "last" : 820.42,
+    "close" : 834.95,
+    "volume" : 13472.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.63,
+    "high" : 835.81,
+    "low" : 827.35,
+    "last" : 832.675,
+    "close" : 834.95,
+    "volume" : 3741.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.5,
+    "high" : 838.46,
+    "low" : 824.16,
+    "last" : 826.86,
+    "close" : 830.58,
+    "volume" : 30678.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.5,
+    "high" : 838.46,
+    "low" : 824.16,
+    "last" : 829.89,
+    "close" : 830.58,
+    "volume" : 27286.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.5,
+    "high" : 838.46,
+    "low" : 824.16,
+    "last" : 827.375,
+    "close" : 830.58,
+    "volume" : 24636.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.5,
+    "high" : 838.46,
+    "low" : 824.16,
+    "last" : 829.51,
+    "close" : 830.58,
+    "volume" : 21342.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.5,
+    "high" : 836.15,
+    "low" : 824.16,
+    "last" : 832.09,
+    "close" : 830.58,
+    "volume" : 15172.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.5,
+    "high" : 835.82,
+    "low" : 824.16,
+    "last" : 833.415,
+    "close" : 830.58,
+    "volume" : 7283.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.11,
+    "high" : 844.0,
+    "low" : 822.91,
+    "last" : 831.11,
+    "close" : 832.0,
+    "volume" : 22606.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.11,
+    "high" : 844.0,
+    "low" : 822.91,
+    "last" : 825.07,
+    "close" : 832.0,
+    "volume" : 17072.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.11,
+    "high" : 844.0,
+    "low" : 826.26,
+    "last" : 826.26,
+    "close" : 832.0,
+    "volume" : 11634.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.11,
+    "high" : 844.0,
+    "low" : 828.97,
+    "last" : 831.2,
+    "close" : 832.0,
+    "volume" : 9627.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.11,
+    "high" : 844.0,
+    "low" : 836.25,
+    "last" : 837.22,
+    "close" : 832.0,
+    "volume" : 6514.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 840.11,
+    "high" : 842.91,
+    "low" : 836.25,
+    "last" : 840.97,
+    "close" : 832.0,
+    "volume" : 3515.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.98,
+    "high" : 830.98,
+    "low" : 830.98,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 831.04,
+    "high" : 831.04,
+    "low" : 831.04,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.52,
+    "high" : 838.82,
+    "low" : 814.91,
+    "last" : 834.72,
+    "close" : 816.81,
+    "volume" : 14303.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.52,
+    "high" : 838.82,
+    "low" : 814.91,
+    "last" : 838.61,
+    "close" : 816.81,
+    "volume" : 10224.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.52,
+    "high" : 829.4,
+    "low" : 814.91,
+    "last" : 829.39,
+    "close" : 816.81,
+    "volume" : 6515.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 818.52,
+    "high" : 824.74,
+    "low" : 814.91,
+    "last" : 824.74,
+    "close" : 816.81,
+    "volume" : 1627.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 819.94,
+    "high" : 822.765,
+    "low" : 804.39,
+    "last" : 818.03,
+    "close" : 816.19,
+    "volume" : 26486.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 819.94,
+    "high" : 822.765,
+    "low" : 804.39,
+    "last" : 806.57,
+    "close" : 816.19,
+    "volume" : 23628.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 819.94,
+    "high" : 822.765,
+    "low" : 804.39,
+    "last" : 807.12,
+    "close" : 816.19,
+    "volume" : 21592.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 819.94,
+    "high" : 822.765,
+    "low" : 807.42,
+    "last" : 807.68,
+    "close" : 816.19,
+    "volume" : 18340.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 819.94,
+    "high" : 822.765,
+    "low" : 811.43,
+    "last" : 812.62,
+    "close" : 816.19,
+    "volume" : 13151.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 819.94,
+    "high" : 822.765,
+    "low" : 818.14,
+    "last" : 820.03,
+    "close" : 816.19,
+    "volume" : 4909.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 829.17,
+    "high" : 830.265,
+    "low" : 811.21,
+    "last" : 816.19,
+    "close" : 833.89,
+    "volume" : 1764138.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.04,
+    "high" : 830.14,
+    "low" : 813.73,
+    "last" : 814.82,
+    "close" : 833.89,
+    "volume" : 28963.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.04,
+    "high" : 830.14,
+    "low" : 816.285,
+    "last" : 818.14,
+    "close" : 833.89,
+    "volume" : 23038.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.04,
+    "high" : 830.14,
+    "low" : 817.74,
+    "last" : 820.37,
+    "close" : 833.89,
+    "volume" : 18378.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.04,
+    "high" : 830.14,
+    "low" : 817.74,
+    "last" : 819.54,
+    "close" : 833.89,
+    "volume" : 16302.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.04,
+    "high" : 830.14,
+    "low" : 817.74,
+    "last" : 822.36,
+    "close" : 833.89,
+    "volume" : 12473.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.04,
+    "high" : 830.14,
+    "low" : 819.065,
+    "last" : 820.415,
+    "close" : 833.89,
+    "volume" : 6696.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.04,
+    "high" : 830.04,
+    "low" : 830.04,
+    "last" : 830.04,
+    "close" : 833.89,
+    "volume" : 5.0,
+    "date" : "2023-09-26T13:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 828.0,
+    "high" : 838.5599,
+    "low" : 823.01,
+    "last" : 833.89,
+    "close" : 829.08,
+    "volume" : 1564758.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.35,
+    "high" : 837.93,
+    "low" : 824.54,
+    "last" : 827.59,
+    "close" : 829.08,
+    "volume" : 28756.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 831.615,
+    "high" : 831.615,
+    "low" : 831.615,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 830.96,
+    "high" : 830.96,
+    "low" : 830.96,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.35,
+    "high" : 837.93,
+    "low" : 824.54,
+    "last" : 833.38,
+    "close" : 829.08,
+    "volume" : 17725.0,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.35,
+    "high" : 837.93,
+    "low" : 824.54,
+    "last" : 829.52,
+    "close" : 829.08,
+    "volume" : 13524.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.35,
+    "high" : 837.93,
+    "low" : 824.54,
+    "last" : 835.04,
+    "close" : 829.08,
+    "volume" : 6823.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 812.71,
+    "high" : 829.515,
+    "low" : 810.49,
+    "last" : 824.33,
+    "close" : 808.36,
+    "volume" : 51708.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 812.71,
+    "high" : 829.515,
+    "low" : 810.49,
+    "last" : 823.99,
+    "close" : 808.36,
+    "volume" : 41929.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 812.71,
+    "high" : 829.515,
+    "low" : 810.49,
+    "last" : 827.765,
+    "close" : 808.36,
+    "volume" : 28282.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 825.9,
+    "high" : 825.9,
+    "low" : 825.9,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 812.71,
+    "high" : 823.7,
+    "low" : 810.49,
+    "last" : 823.135,
+    "close" : 808.36,
+    "volume" : 17565.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 812.71,
+    "high" : 821.09,
+    "low" : 810.49,
+    "last" : 820.625,
+    "close" : 808.36,
+    "volume" : 10753.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 773.92,
+    "high" : 821.925,
+    "low" : 773.01,
+    "last" : 813.67,
+    "close" : 830.57,
+    "volume" : 152214.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 773.92,
+    "high" : 821.925,
+    "low" : 773.01,
+    "last" : 815.87,
+    "close" : 830.57,
+    "volume" : 143706.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 773.92,
+    "high" : 818.98,
+    "low" : 773.01,
+    "last" : 816.32,
+    "close" : 830.57,
+    "volume" : 135085.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 773.92,
+    "high" : 813.43,
+    "low" : 773.01,
+    "last" : 800.64,
+    "close" : 830.57,
+    "volume" : 104972.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 773.92,
+    "high" : 813.43,
+    "low" : 773.01,
+    "last" : 806.65,
+    "close" : 830.57,
+    "volume" : 90933.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 773.92,
+    "high" : 813.43,
+    "low" : 773.01,
+    "last" : 800.27,
+    "close" : 830.57,
+    "volume" : 62391.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 773.92,
+    "high" : 781.03,
+    "low" : 773.01,
+    "last" : 779.29,
+    "close" : 830.57,
+    "volume" : 273.0,
+    "date" : "2023-09-21T13:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 846.8,
+    "high" : 849.82,
+    "low" : 840.5,
+    "last" : 841.28,
+    "close" : 849.2,
+    "volume" : 19056.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 846.8,
+    "high" : 849.82,
+    "low" : 841.21,
+    "last" : 844.96,
+    "close" : 849.2,
+    "volume" : 15741.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 846.8,
+    "high" : 849.82,
+    "low" : 841.21,
+    "last" : 846.5,
+    "close" : 849.2,
+    "volume" : 13264.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 846.8,
+    "high" : 849.82,
+    "low" : 841.21,
+    "last" : 847.935,
+    "close" : 849.2,
+    "volume" : 11156.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 846.8,
+    "high" : 849.82,
+    "low" : 841.21,
+    "last" : 846.71,
+    "close" : 849.2,
+    "volume" : 8250.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 846.8,
+    "high" : 849.82,
+    "low" : 841.21,
+    "last" : 846.825,
+    "close" : 849.2,
+    "volume" : 3828.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 849.93,
+    "high" : 851.03,
+    "low" : 838.76,
+    "last" : 847.045,
+    "close" : 850.0,
+    "volume" : 31967.0,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 849.93,
+    "high" : 849.93,
+    "low" : 838.76,
+    "last" : 848.27,
+    "close" : 850.0,
+    "volume" : 28036.0,
+    "date" : "2023-09-19T18:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 849.93,
+    "high" : 849.93,
+    "low" : 838.76,
+    "last" : 844.245,
+    "close" : 850.0,
+    "volume" : 20401.0,
+    "date" : "2023-09-19T17:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 849.93,
+    "high" : 849.93,
+    "low" : 838.76,
+    "last" : 844.8,
+    "close" : 850.0,
+    "volume" : 16155.0,
+    "date" : "2023-09-19T16:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 849.93,
+    "high" : 849.93,
+    "low" : 838.76,
+    "last" : 843.49,
+    "close" : 850.0,
+    "volume" : 10954.0,
+    "date" : "2023-09-19T15:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 849.93,
+    "high" : 849.93,
+    "low" : 839.12,
+    "last" : 839.505,
+    "close" : 850.0,
+    "volume" : 5492.0,
+    "date" : "2023-09-19T14:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 847.66,
+    "high" : 856.23,
+    "low" : 840.02,
+    "last" : 846.86,
+    "close" : 851.68,
+    "volume" : 33429.0,
+    "date" : "2023-09-18T19:00:00+0000",
+    "symbol" : "AVGO",
+    "exchange" : "IEXG"
+  } ]
+}

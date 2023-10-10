@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 574.78,
+    "high" : 582.605,
+    "low" : 570.09,
+    "last" : 581.865,
+    "close" : 571.76,
+    "volume" : 66698.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.78,
+    "high" : 581.32,
+    "low" : 570.09,
+    "last" : 579.75,
+    "close" : 571.76,
+    "volume" : 45404.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.78,
+    "high" : 577.11,
+    "low" : 570.09,
+    "last" : 577.11,
+    "close" : 571.76,
+    "volume" : 9296.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 564.01,
+    "high" : 579.79,
+    "low" : 564.01,
+    "last" : 572.0,
+    "close" : 565.22,
+    "volume" : 171845.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.48,
+    "high" : 574.48,
+    "low" : 574.48,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 564.01,
+    "high" : 579.79,
+    "low" : 564.01,
+    "last" : 571.23,
+    "close" : 565.22,
+    "volume" : 116368.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 564.01,
+    "high" : 579.79,
+    "low" : 564.01,
+    "last" : 571.165,
+    "close" : 565.22,
+    "volume" : 89170.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 564.01,
+    "high" : 579.79,
+    "low" : 564.01,
+    "last" : 568.835,
+    "close" : 565.22,
+    "volume" : 65809.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 564.01,
+    "high" : 579.79,
+    "low" : 564.01,
+    "last" : 579.43,
+    "close" : 565.22,
+    "volume" : 28972.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 544.0,
+    "high" : 566.3592,
+    "low" : 542.71,
+    "last" : 565.22,
+    "close" : 541.48,
+    "volume" : 4745172.0,
+    "date" : "2023-10-07T00:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 543.95,
+    "high" : 562.78,
+    "low" : 542.67,
+    "last" : 562.31,
+    "close" : 541.48,
+    "volume" : 93259.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 543.95,
+    "high" : 560.56,
+    "low" : 542.67,
+    "last" : 559.48,
+    "close" : 541.48,
+    "volume" : 84554.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 543.95,
+    "high" : 559.19,
+    "low" : 542.67,
+    "last" : 557.995,
+    "close" : 541.48,
+    "volume" : 75553.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 543.95,
+    "high" : 558.565,
+    "low" : 542.67,
+    "last" : 557.7,
+    "close" : 541.48,
+    "volume" : 61285.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 543.95,
+    "high" : 554.62,
+    "low" : 542.67,
+    "last" : 554.17,
+    "close" : 541.48,
+    "volume" : 42413.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 543.95,
+    "high" : 553.935,
+    "low" : 542.67,
+    "last" : 550.63,
+    "close" : 541.48,
+    "volume" : 17702.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 533.09,
+    "high" : 541.86,
+    "low" : 532.13,
+    "last" : 541.485,
+    "close" : 531.46,
+    "volume" : 72823.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 538.67,
+    "high" : 538.67,
+    "low" : 538.67,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 533.09,
+    "high" : 541.09,
+    "low" : 532.13,
+    "last" : 538.54,
+    "close" : 531.46,
+    "volume" : 49684.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 533.09,
+    "high" : 541.09,
+    "low" : 532.13,
+    "last" : 539.33,
+    "close" : 531.46,
+    "volume" : 41916.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 533.09,
+    "high" : 541.09,
+    "low" : 532.13,
+    "last" : 535.22,
+    "close" : 531.46,
+    "volume" : 24569.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 533.09,
+    "high" : 541.09,
+    "low" : 532.13,
+    "last" : 536.94,
+    "close" : 531.46,
+    "volume" : 4650.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 521.67,
+    "high" : 536.09,
+    "low" : 521.67,
+    "last" : 530.03,
+    "close" : 525.19,
+    "volume" : 58888.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 528.55,
+    "high" : 528.55,
+    "low" : 528.55,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 521.67,
+    "high" : 536.09,
+    "low" : 521.67,
+    "last" : 531.06,
+    "close" : 525.19,
+    "volume" : 50566.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 521.67,
+    "high" : 536.09,
+    "low" : 521.67,
+    "last" : 530.27,
+    "close" : 525.19,
+    "volume" : 45806.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 530.655,
+    "high" : 530.655,
+    "low" : 530.655,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 521.67,
+    "high" : 534.08,
+    "low" : 521.67,
+    "last" : 533.4,
+    "close" : 525.19,
+    "volume" : 10043.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 536.18,
+    "high" : 537.34,
+    "low" : 516.88,
+    "last" : 522.73,
+    "close" : 538.29,
+    "volume" : 83181.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 536.18,
+    "high" : 537.34,
+    "low" : 516.88,
+    "last" : 520.46,
+    "close" : 538.29,
+    "volume" : 70950.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 536.18,
+    "high" : 537.34,
+    "low" : 516.88,
+    "last" : 518.225,
+    "close" : 538.29,
+    "volume" : 59548.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 536.18,
+    "high" : 537.34,
+    "low" : 517.4,
+    "last" : 518.28,
+    "close" : 538.29,
+    "volume" : 46821.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 536.18,
+    "high" : 537.34,
+    "low" : 521.955,
+    "last" : 525.04,
+    "close" : 538.29,
+    "volume" : 31624.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 536.18,
+    "high" : 537.34,
+    "low" : 528.46,
+    "last" : 529.32,
+    "close" : 538.29,
+    "volume" : 13226.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 537.28,
+    "high" : 537.28,
+    "low" : 527.03,
+    "last" : 529.79,
+    "close" : 537.13,
+    "volume" : 56232.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 537.28,
+    "high" : 537.28,
+    "low" : 527.03,
+    "last" : 528.29,
+    "close" : 537.13,
+    "volume" : 46898.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 537.28,
+    "high" : 537.28,
+    "low" : 527.03,
+    "last" : 527.69,
+    "close" : 537.13,
+    "volume" : 41069.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 537.28,
+    "high" : 537.28,
+    "low" : 528.51,
+    "last" : 531.55,
+    "close" : 537.13,
+    "volume" : 31949.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 537.28,
+    "high" : 537.28,
+    "low" : 528.51,
+    "last" : 534.48,
+    "close" : 537.13,
+    "volume" : 23592.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 537.28,
+    "high" : 537.28,
+    "low" : 528.51,
+    "last" : 531.46,
+    "close" : 537.13,
+    "volume" : 11631.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 545.49,
+    "high" : 546.085,
+    "low" : 532.2,
+    "last" : 537.13,
+    "close" : 544.45,
+    "volume" : 2967708.0,
+    "date" : "2023-09-30T00:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 545.62,
+    "high" : 546.085,
+    "low" : 532.255,
+    "last" : 538.73,
+    "close" : 544.45,
+    "volume" : 58493.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 545.62,
+    "high" : 546.085,
+    "low" : 532.255,
+    "last" : 535.01,
+    "close" : 544.45,
+    "volume" : 44259.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 545.62,
+    "high" : 546.085,
+    "low" : 532.38,
+    "last" : 532.585,
+    "close" : 544.45,
+    "volume" : 33256.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 545.62,
+    "high" : 546.085,
+    "low" : 534.71,
+    "last" : 534.95,
+    "close" : 544.45,
+    "volume" : 24980.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 545.62,
+    "high" : 546.085,
+    "low" : 538.14,
+    "last" : 539.06,
+    "close" : 544.45,
+    "volume" : 19457.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 545.62,
+    "high" : 546.085,
+    "low" : 538.23,
+    "last" : 540.035,
+    "close" : 544.45,
+    "volume" : 9894.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 549.69,
+    "high" : 551.41,
+    "low" : 542.96,
+    "last" : 543.47,
+    "close" : 549.76,
+    "volume" : 44316.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 549.69,
+    "high" : 551.41,
+    "low" : 543.3,
+    "last" : 545.665,
+    "close" : 549.76,
+    "volume" : 33730.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 549.69,
+    "high" : 551.41,
+    "low" : 544.485,
+    "last" : 545.025,
+    "close" : 549.76,
+    "volume" : 25398.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 549.69,
+    "high" : 551.41,
+    "low" : 544.585,
+    "last" : 544.675,
+    "close" : 549.76,
+    "volume" : 21520.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 549.69,
+    "high" : 551.41,
+    "low" : 546.44,
+    "last" : 548.325,
+    "close" : 549.76,
+    "volume" : 13783.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 549.69,
+    "high" : 551.41,
+    "low" : 546.44,
+    "last" : 549.4,
+    "close" : 549.76,
+    "volume" : 4881.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.91,
+    "high" : 551.77,
+    "low" : 543.66,
+    "last" : 548.16,
+    "close" : 550.01,
+    "volume" : 52110.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.91,
+    "high" : 551.77,
+    "low" : 543.66,
+    "last" : 544.19,
+    "close" : 550.01,
+    "volume" : 40044.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.91,
+    "high" : 551.77,
+    "low" : 543.66,
+    "last" : 544.14,
+    "close" : 550.01,
+    "volume" : 34884.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 546.27,
+    "high" : 546.27,
+    "low" : 546.27,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.91,
+    "high" : 551.77,
+    "low" : 546.205,
+    "last" : 547.07,
+    "close" : 550.01,
+    "volume" : 17494.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.91,
+    "high" : 551.77,
+    "low" : 548.22,
+    "last" : 548.405,
+    "close" : 550.01,
+    "volume" : 7525.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.7,
+    "high" : 554.13,
+    "low" : 548.0,
+    "last" : 550.01,
+    "close" : 552.29,
+    "volume" : 1864471.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 551.35,
+    "high" : 554.13,
+    "low" : 548.25,
+    "last" : 549.08,
+    "close" : 552.29,
+    "volume" : 48161.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 551.35,
+    "high" : 554.13,
+    "low" : 548.25,
+    "last" : 549.175,
+    "close" : 552.29,
+    "volume" : 41023.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 551.35,
+    "high" : 554.13,
+    "low" : 548.25,
+    "last" : 550.7,
+    "close" : 552.29,
+    "volume" : 35715.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 551.35,
+    "high" : 554.13,
+    "low" : 548.25,
+    "last" : 550.27,
+    "close" : 552.29,
+    "volume" : 30090.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 551.35,
+    "high" : 554.13,
+    "low" : 549.23,
+    "last" : 551.95,
+    "close" : 552.29,
+    "volume" : 22173.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 551.35,
+    "high" : 554.13,
+    "low" : 549.23,
+    "last" : 552.065,
+    "close" : 552.29,
+    "volume" : 6183.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.1,
+    "high" : 552.662,
+    "low" : 545.7501,
+    "last" : 552.29,
+    "close" : 550.54,
+    "volume" : 1686515.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.17,
+    "high" : 552.54,
+    "low" : 546.0,
+    "last" : 550.58,
+    "close" : 550.54,
+    "volume" : 41091.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.17,
+    "high" : 552.54,
+    "low" : 546.0,
+    "last" : 549.89,
+    "close" : 550.54,
+    "volume" : 33828.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 550.88,
+    "high" : 550.88,
+    "low" : 550.88,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.17,
+    "high" : 552.54,
+    "low" : 546.0,
+    "last" : 552.12,
+    "close" : 550.54,
+    "volume" : 21358.0,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.17,
+    "high" : 552.17,
+    "low" : 546.0,
+    "last" : 546.0,
+    "close" : 550.54,
+    "volume" : 14095.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.17,
+    "high" : 552.17,
+    "low" : 546.52,
+    "last" : 546.99,
+    "close" : 550.54,
+    "volume" : 4140.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 548.81,
+    "high" : 555.49,
+    "low" : 547.6273,
+    "last" : 550.54,
+    "close" : 550.13,
+    "volume" : 2354187.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.07,
+    "high" : 555.345,
+    "low" : 547.655,
+    "last" : 550.88,
+    "close" : 550.13,
+    "volume" : 59403.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.07,
+    "high" : 555.345,
+    "low" : 547.655,
+    "last" : 551.61,
+    "close" : 550.13,
+    "volume" : 50746.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 554.05,
+    "high" : 554.05,
+    "low" : 554.05,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 553.63,
+    "high" : 553.63,
+    "low" : 553.63,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 552.07,
+    "high" : 554.92,
+    "low" : 547.655,
+    "last" : 554.62,
+    "close" : 550.13,
+    "volume" : 35452.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 549.21,
+    "high" : 549.21,
+    "low" : 549.21,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.58,
+    "high" : 567.35,
+    "low" : 542.56,
+    "last" : 550.34,
+    "close" : 569.64,
+    "volume" : 118527.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.58,
+    "high" : 567.35,
+    "low" : 542.56,
+    "last" : 549.44,
+    "close" : 569.64,
+    "volume" : 104470.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.58,
+    "high" : 567.35,
+    "low" : 542.56,
+    "last" : 546.68,
+    "close" : 569.64,
+    "volume" : 92334.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.58,
+    "high" : 567.35,
+    "low" : 542.56,
+    "last" : 543.81,
+    "close" : 569.64,
+    "volume" : 73831.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.58,
+    "high" : 567.35,
+    "low" : 549.14,
+    "last" : 549.9,
+    "close" : 569.64,
+    "volume" : 54366.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.58,
+    "high" : 567.35,
+    "low" : 553.37,
+    "last" : 555.94,
+    "close" : 569.64,
+    "volume" : 22071.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.95,
+    "high" : 576.95,
+    "low" : 569.19,
+    "last" : 573.08,
+    "close" : 574.96,
+    "volume" : 51284.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.95,
+    "high" : 576.95,
+    "low" : 569.19,
+    "last" : 574.52,
+    "close" : 574.96,
+    "volume" : 45069.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.95,
+    "high" : 576.95,
+    "low" : 569.19,
+    "last" : 573.885,
+    "close" : 574.96,
+    "volume" : 39042.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 571.3,
+    "high" : 571.3,
+    "low" : 571.3,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.95,
+    "high" : 576.95,
+    "low" : 569.19,
+    "last" : 571.77,
+    "close" : 574.96,
+    "volume" : 19796.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.95,
+    "high" : 576.95,
+    "low" : 569.19,
+    "last" : 571.68,
+    "close" : 574.96,
+    "volume" : 12035.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 571.62,
+    "high" : 578.41,
+    "low" : 570.63,
+    "last" : 574.96,
+    "close" : 571.28,
+    "volume" : 2186004.0,
+    "date" : "2023-09-20T00:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 570.72,
+    "high" : 578.24,
+    "low" : 570.655,
+    "last" : 574.34,
+    "close" : 571.28,
+    "volume" : 47404.0,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 570.72,
+    "high" : 578.24,
+    "low" : 570.655,
+    "last" : 572.935,
+    "close" : 571.28,
+    "volume" : 41822.0,
+    "date" : "2023-09-19T18:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 572.4,
+    "high" : 572.4,
+    "low" : 572.4,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-19T17:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 570.72,
+    "high" : 578.24,
+    "low" : 570.655,
+    "last" : 573.01,
+    "close" : 571.28,
+    "volume" : 32229.0,
+    "date" : "2023-09-19T16:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 570.72,
+    "high" : 578.24,
+    "low" : 570.655,
+    "last" : 574.94,
+    "close" : 571.28,
+    "volume" : 24625.0,
+    "date" : "2023-09-19T15:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 570.72,
+    "high" : 576.58,
+    "low" : 570.655,
+    "last" : 575.67,
+    "close" : 571.28,
+    "volume" : 12019.0,
+    "date" : "2023-09-19T14:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 575.5,
+    "high" : 577.64,
+    "low" : 564.39,
+    "last" : 570.85,
+    "close" : 575.66,
+    "volume" : 64297.0,
+    "date" : "2023-09-18T19:00:00+0000",
+    "symbol" : "LLY",
+    "exchange" : "IEXG"
+  } ]
+}

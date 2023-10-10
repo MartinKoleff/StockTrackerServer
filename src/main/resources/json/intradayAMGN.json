@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 270.775,
+    "high" : 271.56,
+    "low" : 268.15,
+    "last" : 271.07,
+    "close" : 271.54,
+    "volume" : 11499.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.775,
+    "high" : 270.99,
+    "low" : 268.25,
+    "last" : 268.6,
+    "close" : 271.54,
+    "volume" : 2390.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.04,
+    "high" : 272.6,
+    "low" : 268.58,
+    "last" : 271.54,
+    "close" : 267.47,
+    "volume" : 2284259.0,
+    "date" : "2023-10-10T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.33,
+    "high" : 272.57,
+    "low" : 268.66,
+    "last" : 271.66,
+    "close" : 267.47,
+    "volume" : 40033.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.33,
+    "high" : 272.57,
+    "low" : 268.66,
+    "last" : 272.02,
+    "close" : 267.47,
+    "volume" : 37000.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.33,
+    "high" : 272.57,
+    "low" : 268.66,
+    "last" : 269.58,
+    "close" : 267.47,
+    "volume" : 30707.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.33,
+    "high" : 272.57,
+    "low" : 268.66,
+    "last" : 270.32,
+    "close" : 267.47,
+    "volume" : 24984.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.33,
+    "high" : 272.57,
+    "low" : 268.66,
+    "last" : 268.78,
+    "close" : 267.47,
+    "volume" : 19768.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.33,
+    "high" : 272.57,
+    "low" : 269.36,
+    "last" : 272.05,
+    "close" : 267.47,
+    "volume" : 9562.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.15,
+    "high" : 268.5914,
+    "low" : 262.23,
+    "last" : 267.47,
+    "close" : 265.08,
+    "volume" : 2837982.0,
+    "date" : "2023-10-07T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.31,
+    "high" : 268.34,
+    "low" : 268.27,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.16,
+    "high" : 268.525,
+    "low" : 262.21,
+    "last" : 267.69,
+    "close" : 265.08,
+    "volume" : 47908.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.16,
+    "high" : 268.165,
+    "low" : 262.21,
+    "last" : 267.43,
+    "close" : 265.08,
+    "volume" : 42147.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.16,
+    "high" : 268.165,
+    "low" : 262.21,
+    "last" : 268.01,
+    "close" : 265.08,
+    "volume" : 35638.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.16,
+    "high" : 266.8,
+    "low" : 262.21,
+    "last" : 265.63,
+    "close" : 265.08,
+    "volume" : 24249.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.16,
+    "high" : 265.86,
+    "low" : 262.21,
+    "last" : 265.73,
+    "close" : 265.08,
+    "volume" : 12232.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.19,
+    "high" : 267.9179,
+    "low" : 262.54,
+    "last" : 265.08,
+    "close" : 265.44,
+    "volume" : 2883744.0,
+    "date" : "2023-10-06T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.91,
+    "high" : 264.91,
+    "low" : 264.91,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 265.19,
+    "high" : 265.19,
+    "low" : 265.19,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.02,
+    "high" : 267.77,
+    "low" : 264.03,
+    "last" : 265.035,
+    "close" : 265.44,
+    "volume" : 23825.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.02,
+    "high" : 267.77,
+    "low" : 264.03,
+    "last" : 264.03,
+    "close" : 265.44,
+    "volume" : 18995.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.02,
+    "high" : 267.77,
+    "low" : 264.43,
+    "last" : 264.81,
+    "close" : 265.44,
+    "volume" : 14203.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.02,
+    "high" : 267.77,
+    "low" : 265.83,
+    "last" : 266.76,
+    "close" : 265.44,
+    "volume" : 4969.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 262.1,
+    "high" : 266.14,
+    "low" : 260.91,
+    "last" : 265.44,
+    "close" : 261.01,
+    "volume" : 2526427.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 261.39,
+    "high" : 265.38,
+    "low" : 260.96,
+    "last" : 265.32,
+    "close" : 261.01,
+    "volume" : 43764.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 261.39,
+    "high" : 264.99,
+    "low" : 260.96,
+    "last" : 264.15,
+    "close" : 261.01,
+    "volume" : 34626.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 261.39,
+    "high" : 264.99,
+    "low" : 260.96,
+    "last" : 264.78,
+    "close" : 261.01,
+    "volume" : 29318.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 261.39,
+    "high" : 264.08,
+    "low" : 260.96,
+    "last" : 264.05,
+    "close" : 261.01,
+    "volume" : 20040.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 261.39,
+    "high" : 263.195,
+    "low" : 260.96,
+    "last" : 261.475,
+    "close" : 261.01,
+    "volume" : 14498.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 261.39,
+    "high" : 263.195,
+    "low" : 261.39,
+    "last" : 262.8,
+    "close" : 261.01,
+    "volume" : 4046.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.04,
+    "high" : 266.025,
+    "low" : 259.67,
+    "last" : 261.01,
+    "close" : 266.31,
+    "volume" : 2797944.0,
+    "date" : "2023-10-04T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.485,
+    "high" : 265.89,
+    "low" : 259.75,
+    "last" : 261.92,
+    "close" : 266.31,
+    "volume" : 72871.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.485,
+    "high" : 265.89,
+    "low" : 259.75,
+    "last" : 261.68,
+    "close" : 266.31,
+    "volume" : 66614.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.485,
+    "high" : 265.89,
+    "low" : 259.75,
+    "last" : 261.69,
+    "close" : 266.31,
+    "volume" : 58883.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.485,
+    "high" : 265.89,
+    "low" : 259.75,
+    "last" : 260.36,
+    "close" : 266.31,
+    "volume" : 50777.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.485,
+    "high" : 265.89,
+    "low" : 261.45,
+    "last" : 262.16,
+    "close" : 266.31,
+    "volume" : 30558.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.485,
+    "high" : 265.89,
+    "low" : 262.64,
+    "last" : 265.28,
+    "close" : 266.31,
+    "volume" : 11770.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.71,
+    "high" : 268.49,
+    "low" : 264.38,
+    "last" : 266.31,
+    "close" : 268.76,
+    "volume" : 1912279.0,
+    "date" : "2023-10-03T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 265.55,
+    "high" : 265.55,
+    "low" : 265.55,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.44,
+    "high" : 268.49,
+    "low" : 264.42,
+    "last" : 265.65,
+    "close" : 268.76,
+    "volume" : 39714.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.44,
+    "high" : 268.49,
+    "low" : 264.46,
+    "last" : 264.48,
+    "close" : 268.76,
+    "volume" : 35859.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.44,
+    "high" : 268.49,
+    "low" : 264.99,
+    "last" : 265.13,
+    "close" : 268.76,
+    "volume" : 30285.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.44,
+    "high" : 268.49,
+    "low" : 265.74,
+    "last" : 266.3,
+    "close" : 268.76,
+    "volume" : 17531.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.44,
+    "high" : 268.49,
+    "low" : 265.74,
+    "last" : 267.6,
+    "close" : 268.76,
+    "volume" : 4696.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.95,
+    "high" : 270.95,
+    "low" : 267.285,
+    "last" : 268.405,
+    "close" : 270.82,
+    "volume" : 46113.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.95,
+    "high" : 270.95,
+    "low" : 267.65,
+    "last" : 267.98,
+    "close" : 270.82,
+    "volume" : 36945.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.95,
+    "high" : 270.95,
+    "low" : 268.63,
+    "last" : 268.68,
+    "close" : 270.82,
+    "volume" : 33047.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.95,
+    "high" : 270.95,
+    "low" : 268.63,
+    "last" : 269.02,
+    "close" : 270.82,
+    "volume" : 26857.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.95,
+    "high" : 270.95,
+    "low" : 268.63,
+    "last" : 270.12,
+    "close" : 270.82,
+    "volume" : 22769.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.95,
+    "high" : 270.95,
+    "low" : 269.48,
+    "last" : 269.65,
+    "close" : 270.82,
+    "volume" : 15265.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.79,
+    "high" : 271.38,
+    "low" : 266.539,
+    "last" : 270.82,
+    "close" : 268.98,
+    "volume" : 2430682.0,
+    "date" : "2023-09-29T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.475,
+    "high" : 271.355,
+    "low" : 266.62,
+    "last" : 270.48,
+    "close" : 268.98,
+    "volume" : 61866.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.475,
+    "high" : 271.09,
+    "low" : 266.62,
+    "last" : 270.43,
+    "close" : 268.98,
+    "volume" : 55665.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.475,
+    "high" : 271.09,
+    "low" : 266.62,
+    "last" : 269.96,
+    "close" : 268.98,
+    "volume" : 51023.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.475,
+    "high" : 270.93,
+    "low" : 266.62,
+    "last" : 270.57,
+    "close" : 268.98,
+    "volume" : 29628.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.475,
+    "high" : 270.37,
+    "low" : 266.62,
+    "last" : 269.89,
+    "close" : 268.98,
+    "volume" : 23682.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.475,
+    "high" : 269.7,
+    "low" : 266.62,
+    "last" : 269.01,
+    "close" : 268.98,
+    "volume" : 9028.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.73,
+    "high" : 273.61,
+    "low" : 266.76,
+    "last" : 268.98,
+    "close" : 269.04,
+    "volume" : 2331917.0,
+    "date" : "2023-09-28T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.69,
+    "high" : 273.52,
+    "low" : 266.77,
+    "last" : 269.575,
+    "close" : 269.04,
+    "volume" : 66904.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.69,
+    "high" : 273.52,
+    "low" : 266.77,
+    "last" : 267.23,
+    "close" : 269.04,
+    "volume" : 52161.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.69,
+    "high" : 273.52,
+    "low" : 267.44,
+    "last" : 267.71,
+    "close" : 269.04,
+    "volume" : 45992.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.69,
+    "high" : 268.69,
+    "low" : 268.69,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.69,
+    "high" : 273.52,
+    "low" : 268.34,
+    "last" : 268.95,
+    "close" : 269.04,
+    "volume" : 28993.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 271.69,
+    "high" : 273.52,
+    "low" : 271.58,
+    "last" : 272.845,
+    "close" : 269.04,
+    "volume" : 14661.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.68,
+    "high" : 269.885,
+    "low" : 265.67,
+    "last" : 269.04,
+    "close" : 266.86,
+    "volume" : 2367722.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.09,
+    "high" : 269.46,
+    "low" : 265.87,
+    "last" : 269.27,
+    "close" : 266.86,
+    "volume" : 41031.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.09,
+    "high" : 268.92,
+    "low" : 265.87,
+    "last" : 268.32,
+    "close" : 266.86,
+    "volume" : 35130.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.09,
+    "high" : 268.52,
+    "low" : 265.87,
+    "last" : 268.41,
+    "close" : 266.86,
+    "volume" : 28455.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.15,
+    "high" : 268.15,
+    "low" : 268.15,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.09,
+    "high" : 268.115,
+    "low" : 265.87,
+    "last" : 268.115,
+    "close" : 266.86,
+    "volume" : 12869.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 266.09,
+    "high" : 267.07,
+    "low" : 265.92,
+    "last" : 266.78,
+    "close" : 266.86,
+    "volume" : 4271.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.54,
+    "high" : 267.805,
+    "low" : 265.01,
+    "last" : 266.86,
+    "close" : 267.7,
+    "volume" : 1705278.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.61,
+    "high" : 267.61,
+    "low" : 265.135,
+    "last" : 266.445,
+    "close" : 267.7,
+    "volume" : 31605.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.61,
+    "high" : 267.61,
+    "low" : 265.135,
+    "last" : 266.74,
+    "close" : 267.7,
+    "volume" : 28323.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.61,
+    "high" : 267.61,
+    "low" : 265.135,
+    "last" : 266.565,
+    "close" : 267.7,
+    "volume" : 25266.0,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.61,
+    "high" : 267.61,
+    "low" : 265.135,
+    "last" : 266.53,
+    "close" : 267.7,
+    "volume" : 22321.0,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.61,
+    "high" : 267.61,
+    "low" : 265.29,
+    "last" : 265.56,
+    "close" : 267.7,
+    "volume" : 14206.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.61,
+    "high" : 267.61,
+    "low" : 265.51,
+    "last" : 265.96,
+    "close" : 267.7,
+    "volume" : 4256.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 267.67,
+    "high" : 269.495,
+    "low" : 266.52,
+    "last" : 267.7,
+    "close" : 269.41,
+    "volume" : 1894137.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 269.08,
+    "high" : 269.415,
+    "low" : 266.6,
+    "last" : 267.87,
+    "close" : 269.41,
+    "volume" : 32882.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 269.08,
+    "high" : 269.415,
+    "low" : 266.6,
+    "last" : 268.035,
+    "close" : 269.41,
+    "volume" : 29506.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 269.08,
+    "high" : 269.415,
+    "low" : 266.6,
+    "last" : 268.74,
+    "close" : 269.41,
+    "volume" : 25894.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 268.71,
+    "high" : 268.71,
+    "low" : 268.71,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 269.08,
+    "high" : 269.415,
+    "low" : 266.6,
+    "last" : 268.41,
+    "close" : 269.41,
+    "volume" : 16161.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 269.08,
+    "high" : 269.08,
+    "low" : 266.6,
+    "last" : 268.1,
+    "close" : 269.41,
+    "volume" : 4495.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.6,
+    "high" : 270.6,
+    "low" : 270.6,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 269.05,
+    "high" : 269.05,
+    "low" : 269.05,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.66,
+    "high" : 272.28,
+    "low" : 267.76,
+    "last" : 268.915,
+    "close" : 271.46,
+    "volume" : 30607.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.66,
+    "high" : 272.28,
+    "low" : 267.76,
+    "last" : 268.555,
+    "close" : 271.46,
+    "volume" : 18747.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.66,
+    "high" : 272.28,
+    "low" : 267.76,
+    "last" : 269.05,
+    "close" : 271.46,
+    "volume" : 13535.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 270.66,
+    "high" : 272.28,
+    "low" : 267.76,
+    "last" : 269.39,
+    "close" : 271.46,
+    "volume" : 7220.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.62,
+    "high" : 273.09,
+    "low" : 264.24,
+    "last" : 272.56,
+    "close" : 264.31,
+    "volume" : 91182.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.62,
+    "high" : 272.36,
+    "low" : 264.24,
+    "last" : 271.79,
+    "close" : 264.31,
+    "volume" : 71597.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.62,
+    "high" : 272.09,
+    "low" : 264.24,
+    "last" : 272.06,
+    "close" : 264.31,
+    "volume" : 55504.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.62,
+    "high" : 270.86,
+    "low" : 264.24,
+    "last" : 270.85,
+    "close" : 264.31,
+    "volume" : 36772.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.62,
+    "high" : 269.89,
+    "low" : 264.24,
+    "last" : 269.53,
+    "close" : 264.31,
+    "volume" : 20535.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 264.62,
+    "high" : 266.65,
+    "low" : 264.24,
+    "last" : 266.64,
+    "close" : 264.31,
+    "volume" : 2758.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.14,
+    "high" : 265.77,
+    "low" : 262.44,
+    "last" : 264.31,
+    "close" : 263.15,
+    "volume" : 1528372.0,
+    "date" : "2023-09-20T00:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.365,
+    "high" : 265.73,
+    "low" : 262.45,
+    "last" : 263.58,
+    "close" : 263.15,
+    "volume" : 42233.0,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 263.365,
+    "high" : 265.73,
+    "low" : 262.45,
+    "last" : 264.09,
+    "close" : 263.15,
+    "volume" : 38893.0,
+    "date" : "2023-09-19T18:00:00+0000",
+    "symbol" : "AMGN",
+    "exchange" : "IEXG"
+  } ]
+}

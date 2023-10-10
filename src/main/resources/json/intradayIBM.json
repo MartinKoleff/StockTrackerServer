@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 142.6,
+    "high" : 143.415,
+    "low" : 142.34,
+    "last" : 143.12,
+    "close" : 142.2,
+    "volume" : 25335.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.6,
+    "high" : 142.98,
+    "low" : 142.34,
+    "last" : 142.71,
+    "close" : 142.2,
+    "volume" : 17450.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.6,
+    "high" : 142.98,
+    "low" : 142.34,
+    "last" : 142.98,
+    "close" : 142.2,
+    "volume" : 7814.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.3,
+    "high" : 142.4,
+    "low" : 140.68,
+    "last" : 142.2,
+    "close" : 142.03,
+    "volume" : 2354396.0,
+    "date" : "2023-10-10T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.205,
+    "high" : 142.395,
+    "low" : 140.68,
+    "last" : 141.93,
+    "close" : 142.03,
+    "volume" : 64032.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.205,
+    "high" : 142.395,
+    "low" : 140.68,
+    "last" : 141.86,
+    "close" : 142.03,
+    "volume" : 55783.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.205,
+    "high" : 142.395,
+    "low" : 140.68,
+    "last" : 141.15,
+    "close" : 142.03,
+    "volume" : 48080.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.205,
+    "high" : 142.395,
+    "low" : 140.68,
+    "last" : 141.04,
+    "close" : 142.03,
+    "volume" : 36418.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.205,
+    "high" : 142.395,
+    "low" : 140.68,
+    "last" : 140.89,
+    "close" : 142.03,
+    "volume" : 27451.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.205,
+    "high" : 142.395,
+    "low" : 141.25,
+    "last" : 141.46,
+    "close" : 142.03,
+    "volume" : 8236.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 141.4,
+    "high" : 142.94,
+    "low" : 140.11,
+    "last" : 142.03,
+    "close" : 141.52,
+    "volume" : 3511347.0,
+    "date" : "2023-10-07T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 141.35,
+    "high" : 142.915,
+    "low" : 140.125,
+    "last" : 142.73,
+    "close" : 141.52,
+    "volume" : 55581.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.37,
+    "high" : 142.37,
+    "low" : 142.35,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 141.35,
+    "high" : 142.49,
+    "low" : 140.125,
+    "last" : 142.08,
+    "close" : 141.52,
+    "volume" : 37682.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 141.35,
+    "high" : 142.41,
+    "low" : 140.125,
+    "last" : 142.41,
+    "close" : 141.52,
+    "volume" : 29167.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 141.35,
+    "high" : 141.365,
+    "low" : 140.125,
+    "last" : 141.18,
+    "close" : 141.52,
+    "volume" : 14778.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 141.35,
+    "high" : 141.35,
+    "low" : 140.25,
+    "last" : 140.72,
+    "close" : 141.52,
+    "volume" : 4085.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.9,
+    "high" : 141.7,
+    "low" : 140.19,
+    "last" : 141.52,
+    "close" : 141.07,
+    "volume" : 3223910.0,
+    "date" : "2023-10-06T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.75,
+    "high" : 141.69,
+    "low" : 140.21,
+    "last" : 141.63,
+    "close" : 141.07,
+    "volume" : 40323.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.75,
+    "high" : 141.565,
+    "low" : 140.21,
+    "last" : 141.46,
+    "close" : 141.07,
+    "volume" : 28481.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.75,
+    "high" : 141.255,
+    "low" : 140.21,
+    "last" : 140.955,
+    "close" : 141.07,
+    "volume" : 21002.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.75,
+    "high" : 141.255,
+    "low" : 140.29,
+    "last" : 140.31,
+    "close" : 141.07,
+    "volume" : 12532.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.75,
+    "high" : 141.255,
+    "low" : 140.46,
+    "last" : 140.46,
+    "close" : 141.07,
+    "volume" : 7754.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.75,
+    "high" : 141.255,
+    "low" : 140.72,
+    "last" : 141.07,
+    "close" : 141.07,
+    "volume" : 1813.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.37,
+    "high" : 141.2004,
+    "low" : 139.99,
+    "last" : 141.07,
+    "close" : 140.39,
+    "volume" : 2637779.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.5,
+    "high" : 141.085,
+    "low" : 139.99,
+    "last" : 140.73,
+    "close" : 140.39,
+    "volume" : 27120.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.5,
+    "high" : 141.085,
+    "low" : 139.99,
+    "last" : 140.43,
+    "close" : 140.39,
+    "volume" : 24175.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.5,
+    "high" : 141.085,
+    "low" : 139.99,
+    "last" : 140.82,
+    "close" : 140.39,
+    "volume" : 22046.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.5,
+    "high" : 141.085,
+    "low" : 139.99,
+    "last" : 140.995,
+    "close" : 140.39,
+    "volume" : 18625.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.5,
+    "high" : 140.5,
+    "low" : 139.99,
+    "last" : 140.13,
+    "close" : 140.39,
+    "volume" : 11261.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.5,
+    "high" : 140.5,
+    "low" : 140.13,
+    "last" : 140.38,
+    "close" : 140.39,
+    "volume" : 3813.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.87,
+    "high" : 141.64,
+    "low" : 140.0,
+    "last" : 140.39,
+    "close" : 140.8,
+    "volume" : 3284421.0,
+    "date" : "2023-10-04T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.92,
+    "high" : 141.625,
+    "low" : 140.0,
+    "last" : 140.12,
+    "close" : 140.8,
+    "volume" : 64699.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.92,
+    "high" : 141.625,
+    "low" : 140.0,
+    "last" : 140.53,
+    "close" : 140.8,
+    "volume" : 55996.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.92,
+    "high" : 141.625,
+    "low" : 140.0,
+    "last" : 140.73,
+    "close" : 140.8,
+    "volume" : 39449.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.47,
+    "high" : 140.47,
+    "low" : 140.47,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.92,
+    "high" : 141.625,
+    "low" : 140.0,
+    "last" : 140.35,
+    "close" : 140.8,
+    "volume" : 15518.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.92,
+    "high" : 141.625,
+    "low" : 140.635,
+    "last" : 141.09,
+    "close" : 140.8,
+    "volume" : 5824.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.04,
+    "high" : 141.45,
+    "low" : 139.86,
+    "last" : 140.8,
+    "close" : 140.3,
+    "volume" : 3275461.0,
+    "date" : "2023-10-03T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.2,
+    "high" : 141.38,
+    "low" : 139.86,
+    "last" : 140.68,
+    "close" : 140.3,
+    "volume" : 46908.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.2,
+    "high" : 141.38,
+    "low" : 139.86,
+    "last" : 140.9,
+    "close" : 140.3,
+    "volume" : 40553.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.2,
+    "high" : 141.38,
+    "low" : 139.86,
+    "last" : 140.75,
+    "close" : 140.3,
+    "volume" : 33670.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.2,
+    "high" : 141.38,
+    "low" : 139.86,
+    "last" : 140.37,
+    "close" : 140.3,
+    "volume" : 29202.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.2,
+    "high" : 141.38,
+    "low" : 139.86,
+    "last" : 140.365,
+    "close" : 140.3,
+    "volume" : 16396.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 140.2,
+    "high" : 141.38,
+    "low" : 139.86,
+    "last" : 141.15,
+    "close" : 140.3,
+    "volume" : 7968.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.08,
+    "high" : 142.08,
+    "low" : 139.61,
+    "last" : 140.5,
+    "close" : 141.58,
+    "volume" : 87282.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.08,
+    "high" : 142.08,
+    "low" : 139.61,
+    "last" : 139.7,
+    "close" : 141.58,
+    "volume" : 80989.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.08,
+    "high" : 142.08,
+    "low" : 140.36,
+    "last" : 140.38,
+    "close" : 141.58,
+    "volume" : 72656.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.08,
+    "high" : 142.08,
+    "low" : 140.47,
+    "last" : 140.555,
+    "close" : 141.58,
+    "volume" : 61882.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.08,
+    "high" : 142.08,
+    "low" : 140.9,
+    "last" : 141.49,
+    "close" : 141.58,
+    "volume" : 47287.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.08,
+    "high" : 142.08,
+    "low" : 140.9,
+    "last" : 141.83,
+    "close" : 141.58,
+    "volume" : 13580.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.14,
+    "high" : 142.282,
+    "low" : 140.205,
+    "last" : 141.58,
+    "close" : 143.17,
+    "volume" : 5783422.0,
+    "date" : "2023-09-29T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.64,
+    "high" : 142.65,
+    "low" : 140.2,
+    "last" : 141.41,
+    "close" : 143.17,
+    "volume" : 143447.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.64,
+    "high" : 142.65,
+    "low" : 140.2,
+    "last" : 141.36,
+    "close" : 143.17,
+    "volume" : 126601.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.64,
+    "high" : 142.65,
+    "low" : 140.2,
+    "last" : 141.12,
+    "close" : 143.17,
+    "volume" : 109639.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.64,
+    "high" : 142.65,
+    "low" : 140.2,
+    "last" : 141.24,
+    "close" : 143.17,
+    "volume" : 91849.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.64,
+    "high" : 142.65,
+    "low" : 140.2,
+    "last" : 140.86,
+    "close" : 143.17,
+    "volume" : 67527.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 142.64,
+    "high" : 142.65,
+    "low" : 140.2,
+    "last" : 140.61,
+    "close" : 143.17,
+    "volume" : 37694.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 143.53,
+    "high" : 143.73,
+    "low" : 141.765,
+    "last" : 143.13,
+    "close" : 143.24,
+    "volume" : 87264.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 143.53,
+    "high" : 143.73,
+    "low" : 141.765,
+    "last" : 142.29,
+    "close" : 143.24,
+    "volume" : 71992.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 143.53,
+    "high" : 143.73,
+    "low" : 142.14,
+    "last" : 142.27,
+    "close" : 143.24,
+    "volume" : 61089.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 143.53,
+    "high" : 143.73,
+    "low" : 142.14,
+    "last" : 142.24,
+    "close" : 143.24,
+    "volume" : 53862.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 143.53,
+    "high" : 143.73,
+    "low" : 142.505,
+    "last" : 142.805,
+    "close" : 143.24,
+    "volume" : 41428.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 143.53,
+    "high" : 143.73,
+    "low" : 142.505,
+    "last" : 143.12,
+    "close" : 143.24,
+    "volume" : 20862.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.51,
+    "high" : 146.17,
+    "low" : 143.0201,
+    "last" : 143.24,
+    "close" : 146.48,
+    "volume" : 4824654.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.52,
+    "high" : 146.17,
+    "low" : 143.25,
+    "last" : 143.38,
+    "close" : 146.48,
+    "volume" : 86254.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.52,
+    "high" : 146.17,
+    "low" : 143.435,
+    "last" : 143.73,
+    "close" : 146.48,
+    "volume" : 68215.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.52,
+    "high" : 146.17,
+    "low" : 144.22,
+    "last" : 144.26,
+    "close" : 146.48,
+    "volume" : 48978.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.52,
+    "high" : 146.17,
+    "low" : 144.315,
+    "last" : 144.42,
+    "close" : 146.48,
+    "volume" : 42030.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.52,
+    "high" : 146.17,
+    "low" : 144.815,
+    "last" : 145.06,
+    "close" : 146.48,
+    "volume" : 19643.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.52,
+    "high" : 146.16,
+    "low" : 145.35,
+    "last" : 146.11,
+    "close" : 146.48,
+    "volume" : 7053.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 146.57,
+    "high" : 147.43,
+    "low" : 146.25,
+    "last" : 146.48,
+    "close" : 146.91,
+    "volume" : 2694245.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 146.44,
+    "high" : 147.41,
+    "low" : 146.29,
+    "last" : 146.53,
+    "close" : 146.91,
+    "volume" : 26533.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 146.84,
+    "high" : 146.84,
+    "low" : 146.84,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 146.44,
+    "high" : 147.41,
+    "low" : 146.29,
+    "last" : 146.8,
+    "close" : 146.91,
+    "volume" : 18161.0,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 146.44,
+    "high" : 147.3,
+    "low" : 146.29,
+    "last" : 147.08,
+    "close" : 146.91,
+    "volume" : 15773.0,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 146.44,
+    "high" : 147.3,
+    "low" : 146.29,
+    "last" : 146.59,
+    "close" : 146.91,
+    "volume" : 7971.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 146.44,
+    "high" : 147.23,
+    "low" : 146.29,
+    "last" : 147.165,
+    "close" : 146.91,
+    "volume" : 3314.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.41,
+    "high" : 148.1,
+    "low" : 146.82,
+    "last" : 146.91,
+    "close" : 147.38,
+    "volume" : 2562216.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.595,
+    "high" : 148.09,
+    "low" : 146.93,
+    "last" : 147.08,
+    "close" : 147.38,
+    "volume" : 23099.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.595,
+    "high" : 148.09,
+    "low" : 146.93,
+    "last" : 147.28,
+    "close" : 147.38,
+    "volume" : 19320.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.62,
+    "high" : 147.62,
+    "low" : 147.62,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.595,
+    "high" : 148.09,
+    "low" : 146.93,
+    "last" : 147.15,
+    "close" : 147.38,
+    "volume" : 13704.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.595,
+    "high" : 148.09,
+    "low" : 146.93,
+    "last" : 147.56,
+    "close" : 147.38,
+    "volume" : 10003.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.36,
+    "high" : 147.36,
+    "low" : 147.36,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 149.0,
+    "high" : 149.25,
+    "low" : 147.31,
+    "last" : 147.38,
+    "close" : 149.83,
+    "volume" : 4944786.0,
+    "date" : "2023-09-22T00:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 148.71,
+    "high" : 149.115,
+    "low" : 147.36,
+    "last" : 148.33,
+    "close" : 149.83,
+    "volume" : 63053.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 148.71,
+    "high" : 149.115,
+    "low" : 147.36,
+    "last" : 148.34,
+    "close" : 149.83,
+    "volume" : 58859.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 148.71,
+    "high" : 149.115,
+    "low" : 147.36,
+    "last" : 148.19,
+    "close" : 149.83,
+    "volume" : 56989.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 148.71,
+    "high" : 149.115,
+    "low" : 147.36,
+    "last" : 148.38,
+    "close" : 149.83,
+    "volume" : 50857.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 148.71,
+    "high" : 149.115,
+    "low" : 147.36,
+    "last" : 148.07,
+    "close" : 149.83,
+    "volume" : 37793.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 148.71,
+    "high" : 149.115,
+    "low" : 147.755,
+    "last" : 147.755,
+    "close" : 149.83,
+    "volume" : 15853.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 148.71,
+    "high" : 148.79,
+    "low" : 148.42,
+    "last" : 148.47,
+    "close" : 149.83,
+    "volume" : 248.0,
+    "date" : "2023-09-21T13:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.73,
+    "high" : 151.92,
+    "low" : 147.7,
+    "last" : 150.47,
+    "close" : 146.52,
+    "volume" : 219269.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.73,
+    "high" : 151.92,
+    "low" : 147.7,
+    "last" : 149.7,
+    "close" : 146.52,
+    "volume" : 171765.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.73,
+    "high" : 151.92,
+    "low" : 147.7,
+    "last" : 150.51,
+    "close" : 146.52,
+    "volume" : 133702.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.73,
+    "high" : 151.92,
+    "low" : 147.7,
+    "last" : 151.57,
+    "close" : 146.52,
+    "volume" : 106522.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.73,
+    "high" : 150.905,
+    "low" : 147.7,
+    "last" : 150.875,
+    "close" : 146.52,
+    "volume" : 61504.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 147.73,
+    "high" : 149.405,
+    "low" : 147.7,
+    "last" : 149.25,
+    "close" : 146.52,
+    "volume" : 14655.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 145.01,
+    "high" : 146.71,
+    "low" : 144.75,
+    "last" : 146.38,
+    "close" : 145.09,
+    "volume" : 42644.0,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "IBM",
+    "exchange" : "IEXG"
+  } ]
+}

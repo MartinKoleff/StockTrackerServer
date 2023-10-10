@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 40.57,
+    "high" : 40.585,
+    "low" : 40.355,
+    "last" : 40.57,
+    "close" : 39.76,
+    "volume" : 29080.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.57,
+    "high" : 40.58,
+    "low" : 40.355,
+    "last" : 40.47,
+    "close" : 39.76,
+    "volume" : 7347.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.56,
+    "high" : 39.88,
+    "low" : 39.48,
+    "last" : 39.76,
+    "close" : 40.48,
+    "volume" : 1699520.0,
+    "date" : "2023-10-10T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.61,
+    "high" : 39.88,
+    "low" : 39.475,
+    "last" : 39.82,
+    "close" : 40.48,
+    "volume" : 32767.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.61,
+    "high" : 39.835,
+    "low" : 39.475,
+    "last" : 39.835,
+    "close" : 40.48,
+    "volume" : 26698.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.54,
+    "high" : 39.54,
+    "low" : 39.54,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.61,
+    "high" : 39.74,
+    "low" : 39.475,
+    "last" : 39.54,
+    "close" : 40.48,
+    "volume" : 18139.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.515,
+    "high" : 39.515,
+    "low" : 39.515,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.61,
+    "high" : 39.74,
+    "low" : 39.555,
+    "last" : 39.69,
+    "close" : 40.48,
+    "volume" : 4821.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.03,
+    "high" : 40.58,
+    "low" : 39.86,
+    "last" : 40.48,
+    "close" : 39.78,
+    "volume" : 2522104.0,
+    "date" : "2023-10-07T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.045,
+    "high" : 40.575,
+    "low" : 39.855,
+    "last" : 40.515,
+    "close" : 39.78,
+    "volume" : 31973.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.525,
+    "high" : 40.525,
+    "low" : 40.525,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.43,
+    "high" : 40.43,
+    "low" : 40.43,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.045,
+    "high" : 40.535,
+    "low" : 39.855,
+    "last" : 40.53,
+    "close" : 39.78,
+    "volume" : 21435.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.045,
+    "high" : 40.255,
+    "low" : 39.855,
+    "last" : 40.14,
+    "close" : 39.78,
+    "volume" : 13470.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.045,
+    "high" : 40.255,
+    "low" : 40.005,
+    "last" : 40.1,
+    "close" : 39.78,
+    "volume" : 4058.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.18,
+    "high" : 39.82,
+    "low" : 39.17,
+    "last" : 39.78,
+    "close" : 39.31,
+    "volume" : 2021659.0,
+    "date" : "2023-10-06T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.18,
+    "high" : 39.735,
+    "low" : 39.175,
+    "last" : 39.73,
+    "close" : 39.31,
+    "volume" : 31423.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.605,
+    "high" : 39.625,
+    "low" : 39.6,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.18,
+    "high" : 39.725,
+    "low" : 39.175,
+    "last" : 39.51,
+    "close" : 39.31,
+    "volume" : 19297.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.18,
+    "high" : 39.725,
+    "low" : 39.175,
+    "last" : 39.46,
+    "close" : 39.31,
+    "volume" : 14486.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.645,
+    "high" : 39.645,
+    "low" : 39.645,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.18,
+    "high" : 39.535,
+    "low" : 39.175,
+    "last" : 39.53,
+    "close" : 39.31,
+    "volume" : 3898.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.37,
+    "high" : 39.39,
+    "low" : 38.92,
+    "last" : 39.31,
+    "close" : 39.32,
+    "volume" : 1748871.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.175,
+    "high" : 39.175,
+    "low" : 39.175,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.13,
+    "high" : 39.13,
+    "low" : 39.13,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.41,
+    "high" : 39.41,
+    "low" : 38.915,
+    "last" : 39.25,
+    "close" : 39.32,
+    "volume" : 22954.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.41,
+    "high" : 39.41,
+    "low" : 38.915,
+    "last" : 39.2,
+    "close" : 39.32,
+    "volume" : 19709.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.41,
+    "high" : 39.41,
+    "low" : 38.925,
+    "last" : 38.945,
+    "close" : 39.32,
+    "volume" : 12175.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.41,
+    "high" : 39.41,
+    "low" : 39.21,
+    "last" : 39.21,
+    "close" : 39.32,
+    "volume" : 3031.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.61,
+    "high" : 39.645,
+    "low" : 39.125,
+    "last" : 39.32,
+    "close" : 39.02,
+    "volume" : 3028891.0,
+    "date" : "2023-10-04T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.29,
+    "high" : 39.29,
+    "low" : 39.29,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.25,
+    "high" : 39.25,
+    "low" : 39.25,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.62,
+    "high" : 39.62,
+    "low" : 39.125,
+    "last" : 39.33,
+    "close" : 39.02,
+    "volume" : 66250.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.62,
+    "high" : 39.62,
+    "low" : 39.125,
+    "last" : 39.205,
+    "close" : 39.02,
+    "volume" : 57860.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.62,
+    "high" : 39.62,
+    "low" : 39.165,
+    "last" : 39.29,
+    "close" : 39.02,
+    "volume" : 41009.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.62,
+    "high" : 39.62,
+    "low" : 39.27,
+    "last" : 39.29,
+    "close" : 39.02,
+    "volume" : 8801.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.42,
+    "high" : 39.45,
+    "low" : 38.895,
+    "last" : 39.02,
+    "close" : 39.46,
+    "volume" : 2230387.0,
+    "date" : "2023-10-03T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.405,
+    "high" : 39.46,
+    "low" : 38.89,
+    "last" : 38.945,
+    "close" : 39.46,
+    "volume" : 39370.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 38.99,
+    "high" : 38.99,
+    "low" : 38.99,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 38.97,
+    "high" : 38.97,
+    "low" : 38.97,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.405,
+    "high" : 39.46,
+    "low" : 38.965,
+    "last" : 39.02,
+    "close" : 39.46,
+    "volume" : 18770.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.405,
+    "high" : 39.46,
+    "low" : 38.965,
+    "last" : 39.02,
+    "close" : 39.46,
+    "volume" : 10796.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.405,
+    "high" : 39.46,
+    "low" : 39.165,
+    "last" : 39.25,
+    "close" : 39.46,
+    "volume" : 2863.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.93,
+    "high" : 39.96,
+    "low" : 39.41,
+    "last" : 39.46,
+    "close" : 39.68,
+    "volume" : 1376105.0,
+    "date" : "2023-09-30T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.9,
+    "high" : 39.96,
+    "low" : 39.405,
+    "last" : 39.55,
+    "close" : 39.68,
+    "volume" : 23056.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.425,
+    "high" : 39.425,
+    "low" : 39.425,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.585,
+    "high" : 39.585,
+    "low" : 39.565,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.9,
+    "high" : 39.96,
+    "low" : 39.625,
+    "last" : 39.66,
+    "close" : 39.68,
+    "volume" : 13790.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.835,
+    "high" : 39.835,
+    "low" : 39.835,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.855,
+    "high" : 39.88,
+    "low" : 39.85,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.3,
+    "high" : 39.77,
+    "low" : 39.275,
+    "last" : 39.68,
+    "close" : 39.16,
+    "volume" : 1577753.0,
+    "date" : "2023-09-29T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.32,
+    "high" : 39.775,
+    "low" : 39.265,
+    "last" : 39.68,
+    "close" : 39.16,
+    "volume" : 39405.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.32,
+    "high" : 39.775,
+    "low" : 39.265,
+    "last" : 39.63,
+    "close" : 39.16,
+    "volume" : 35555.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.67,
+    "high" : 39.67,
+    "low" : 39.67,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.32,
+    "high" : 39.775,
+    "low" : 39.265,
+    "last" : 39.72,
+    "close" : 39.16,
+    "volume" : 31096.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.32,
+    "high" : 39.67,
+    "low" : 39.265,
+    "last" : 39.63,
+    "close" : 39.16,
+    "volume" : 23367.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.32,
+    "high" : 39.445,
+    "low" : 39.265,
+    "last" : 39.44,
+    "close" : 39.16,
+    "volume" : 7037.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.18,
+    "high" : 39.19,
+    "low" : 38.865,
+    "last" : 39.16,
+    "close" : 38.97,
+    "volume" : 1314187.0,
+    "date" : "2023-09-28T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.17,
+    "high" : 39.19,
+    "low" : 38.865,
+    "last" : 39.09,
+    "close" : 38.97,
+    "volume" : 29165.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.17,
+    "high" : 39.19,
+    "low" : 38.865,
+    "last" : 38.945,
+    "close" : 38.97,
+    "volume" : 25847.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.17,
+    "high" : 39.19,
+    "low" : 38.935,
+    "last" : 39.01,
+    "close" : 38.97,
+    "volume" : 23220.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.105,
+    "high" : 39.105,
+    "low" : 39.09,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 38.965,
+    "high" : 38.965,
+    "low" : 38.965,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.11,
+    "high" : 39.11,
+    "low" : 39.11,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.16,
+    "high" : 39.36,
+    "low" : 38.91,
+    "last" : 38.97,
+    "close" : 39.42,
+    "volume" : 1123504.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 38.93,
+    "high" : 38.93,
+    "low" : 38.93,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.135,
+    "high" : 39.365,
+    "low" : 38.975,
+    "last" : 39.005,
+    "close" : 39.42,
+    "volume" : 22855.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.135,
+    "high" : 39.365,
+    "low" : 39.1,
+    "last" : 39.11,
+    "close" : 39.42,
+    "volume" : 18611.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.135,
+    "high" : 39.365,
+    "low" : 39.1,
+    "last" : 39.12,
+    "close" : 39.42,
+    "volume" : 17188.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.135,
+    "high" : 39.365,
+    "low" : 39.13,
+    "last" : 39.26,
+    "close" : 39.42,
+    "volume" : 10328.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.135,
+    "high" : 39.365,
+    "low" : 39.13,
+    "last" : 39.35,
+    "close" : 39.42,
+    "volume" : 5413.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.21,
+    "high" : 39.455,
+    "low" : 39.05,
+    "last" : 39.42,
+    "close" : 39.54,
+    "volume" : 1677600.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.41,
+    "high" : 39.41,
+    "low" : 39.41,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.41,
+    "high" : 39.41,
+    "low" : 39.41,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.37,
+    "high" : 39.37,
+    "low" : 39.37,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.37,
+    "high" : 39.37,
+    "low" : 39.37,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.115,
+    "high" : 39.115,
+    "low" : 39.115,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.215,
+    "high" : 39.245,
+    "low" : 39.045,
+    "last" : 39.225,
+    "close" : 39.54,
+    "volume" : 8746.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.05,
+    "high" : 40.0501,
+    "low" : 39.46,
+    "last" : 39.54,
+    "close" : 39.26,
+    "volume" : 2023488.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.01,
+    "high" : 40.025,
+    "low" : 39.46,
+    "last" : 39.54,
+    "close" : 39.26,
+    "volume" : 38558.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.53,
+    "high" : 39.53,
+    "low" : 39.53,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.01,
+    "high" : 40.025,
+    "low" : 39.58,
+    "last" : 39.605,
+    "close" : 39.26,
+    "volume" : 31049.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.01,
+    "high" : 40.025,
+    "low" : 39.615,
+    "last" : 39.635,
+    "close" : 39.26,
+    "volume" : 27079.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.01,
+    "high" : 40.025,
+    "low" : 39.705,
+    "last" : 39.72,
+    "close" : 39.26,
+    "volume" : 16205.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 40.01,
+    "high" : 40.025,
+    "low" : 39.8,
+    "last" : 39.9,
+    "close" : 39.26,
+    "volume" : 6360.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.52,
+    "high" : 39.64,
+    "low" : 39.25,
+    "last" : 39.26,
+    "close" : 39.11,
+    "volume" : 1513372.0,
+    "date" : "2023-09-22T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.52,
+    "high" : 39.65,
+    "low" : 39.335,
+    "last" : 39.355,
+    "close" : 39.11,
+    "volume" : 28773.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.52,
+    "high" : 39.65,
+    "low" : 39.335,
+    "last" : 39.44,
+    "close" : 39.11,
+    "volume" : 26575.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.52,
+    "high" : 39.65,
+    "low" : 39.335,
+    "last" : 39.375,
+    "close" : 39.11,
+    "volume" : 21875.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.52,
+    "high" : 39.65,
+    "low" : 39.335,
+    "last" : 39.4,
+    "close" : 39.11,
+    "volume" : 17853.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.52,
+    "high" : 39.65,
+    "low" : 39.335,
+    "last" : 39.48,
+    "close" : 39.11,
+    "volume" : 12108.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.52,
+    "high" : 39.57,
+    "low" : 39.335,
+    "last" : 39.415,
+    "close" : 39.11,
+    "volume" : 6021.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.51,
+    "high" : 39.74,
+    "low" : 39.09,
+    "last" : 39.11,
+    "close" : 39.45,
+    "volume" : 1629489.0,
+    "date" : "2023-09-21T00:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.51,
+    "high" : 39.745,
+    "low" : 39.335,
+    "last" : 39.38,
+    "close" : 39.45,
+    "volume" : 30588.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.51,
+    "high" : 39.745,
+    "low" : 39.42,
+    "last" : 39.43,
+    "close" : 39.45,
+    "volume" : 19548.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.51,
+    "high" : 39.745,
+    "low" : 39.51,
+    "last" : 39.59,
+    "close" : 39.45,
+    "volume" : 16274.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.59,
+    "high" : 39.59,
+    "low" : 39.59,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.51,
+    "high" : 39.745,
+    "low" : 39.51,
+    "last" : 39.635,
+    "close" : 39.45,
+    "volume" : 7531.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 39.51,
+    "high" : 39.695,
+    "low" : 39.51,
+    "last" : 39.685,
+    "close" : 39.45,
+    "volume" : 2959.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "HSBC",
+    "exchange" : "IEXG"
+  } ]
+}

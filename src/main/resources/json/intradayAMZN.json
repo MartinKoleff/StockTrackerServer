@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 128.22,
+    "high" : 130.71,
+    "low" : 128.065,
+    "last" : 130.505,
+    "close" : 128.26,
+    "volume" : 317205.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.22,
+    "high" : 129.975,
+    "low" : 128.065,
+    "last" : 129.71,
+    "close" : 128.26,
+    "volume" : 231669.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.22,
+    "high" : 129.575,
+    "low" : 128.065,
+    "last" : 129.39,
+    "close" : 128.26,
+    "volume" : 120763.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.43,
+    "high" : 128.79,
+    "low" : 124.76,
+    "last" : 128.43,
+    "close" : 127.96,
+    "volume" : 451994.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.43,
+    "high" : 128.365,
+    "low" : 124.76,
+    "last" : 128.205,
+    "close" : 127.96,
+    "volume" : 362277.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.43,
+    "high" : 127.005,
+    "low" : 124.76,
+    "last" : 126.84,
+    "close" : 127.96,
+    "volume" : 307578.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.43,
+    "high" : 126.98,
+    "low" : 124.76,
+    "last" : 126.45,
+    "close" : 127.96,
+    "volume" : 258986.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.43,
+    "high" : 126.98,
+    "low" : 124.76,
+    "last" : 125.565,
+    "close" : 127.96,
+    "volume" : 210752.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.43,
+    "high" : 126.98,
+    "low" : 124.76,
+    "last" : 126.21,
+    "close" : 127.96,
+    "volume" : 132823.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.43,
+    "high" : 126.71,
+    "low" : 126.3,
+    "last" : 126.58,
+    "close" : 127.96,
+    "volume" : 909.0,
+    "date" : "2023-10-09T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.23,
+    "high" : 128.465,
+    "low" : 123.25,
+    "last" : 127.93,
+    "close" : 125.96,
+    "volume" : 954602.0,
+    "date" : "2023-10-06T20:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.05,
+    "high" : 128.06,
+    "low" : 127.97,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.23,
+    "high" : 127.655,
+    "low" : 123.25,
+    "last" : 127.545,
+    "close" : 125.96,
+    "volume" : 598611.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.23,
+    "high" : 127.4,
+    "low" : 123.25,
+    "last" : 127.175,
+    "close" : 125.96,
+    "volume" : 512490.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.23,
+    "high" : 127.24,
+    "low" : 123.25,
+    "last" : 127.17,
+    "close" : 125.96,
+    "volume" : 432386.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.23,
+    "high" : 126.25,
+    "low" : 123.25,
+    "last" : 125.985,
+    "close" : 125.96,
+    "volume" : 259155.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.23,
+    "high" : 126.25,
+    "low" : 123.25,
+    "last" : 124.93,
+    "close" : 125.96,
+    "volume" : 129973.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.23,
+    "high" : 126.25,
+    "low" : 123.25,
+    "last" : 123.53,
+    "close" : 125.96,
+    "volume" : 9347.0,
+    "date" : "2023-10-06T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.61,
+    "high" : 127.61,
+    "low" : 124.34,
+    "last" : 126.305,
+    "close" : 127.0,
+    "volume" : 455560.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.61,
+    "high" : 127.61,
+    "low" : 124.34,
+    "last" : 125.965,
+    "close" : 127.0,
+    "volume" : 398645.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.61,
+    "high" : 127.61,
+    "low" : 124.34,
+    "last" : 125.67,
+    "close" : 127.0,
+    "volume" : 307246.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.61,
+    "high" : 127.61,
+    "low" : 124.34,
+    "last" : 125.1,
+    "close" : 127.0,
+    "volume" : 251852.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.61,
+    "high" : 127.61,
+    "low" : 124.365,
+    "last" : 124.49,
+    "close" : 127.0,
+    "volume" : 167591.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.61,
+    "high" : 127.61,
+    "low" : 125.38,
+    "last" : 125.43,
+    "close" : 127.0,
+    "volume" : 67337.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 125.37,
+    "high" : 127.365,
+    "low" : 125.37,
+    "last" : 126.465,
+    "close" : 124.72,
+    "volume" : 602713.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 125.37,
+    "high" : 127.365,
+    "low" : 125.37,
+    "last" : 126.205,
+    "close" : 124.72,
+    "volume" : 506130.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 125.37,
+    "high" : 127.365,
+    "low" : 125.37,
+    "last" : 126.6,
+    "close" : 124.72,
+    "volume" : 435040.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 125.37,
+    "high" : 127.365,
+    "low" : 125.37,
+    "last" : 126.325,
+    "close" : 124.72,
+    "volume" : 332485.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 125.37,
+    "high" : 127.365,
+    "low" : 125.37,
+    "last" : 126.145,
+    "close" : 124.72,
+    "volume" : 200527.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 125.37,
+    "high" : 127.265,
+    "low" : 125.37,
+    "last" : 126.315,
+    "close" : 124.72,
+    "volume" : 98890.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.65,
+    "high" : 128.69,
+    "low" : 124.43,
+    "last" : 124.56,
+    "close" : 129.46,
+    "volume" : 703466.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.65,
+    "high" : 128.69,
+    "low" : 124.59,
+    "last" : 124.68,
+    "close" : 129.46,
+    "volume" : 633406.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.65,
+    "high" : 128.69,
+    "low" : 124.81,
+    "last" : 125.57,
+    "close" : 129.46,
+    "volume" : 535117.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.65,
+    "high" : 128.69,
+    "low" : 124.81,
+    "last" : 125.12,
+    "close" : 129.46,
+    "volume" : 450182.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.65,
+    "high" : 128.69,
+    "low" : 125.19,
+    "last" : 125.24,
+    "close" : 129.46,
+    "volume" : 326719.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.65,
+    "high" : 128.69,
+    "low" : 126.825,
+    "last" : 127.44,
+    "close" : 129.46,
+    "volume" : 111047.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 128.65,
+    "high" : 128.69,
+    "low" : 128.13,
+    "last" : 128.16,
+    "close" : 129.46,
+    "volume" : 762.0,
+    "date" : "2023-10-03T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.05,
+    "high" : 130.465,
+    "low" : 126.54,
+    "last" : 128.975,
+    "close" : 127.12,
+    "volume" : 663924.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.05,
+    "high" : 130.465,
+    "low" : 126.54,
+    "last" : 128.84,
+    "close" : 127.12,
+    "volume" : 603827.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.05,
+    "high" : 130.465,
+    "low" : 126.54,
+    "last" : 128.88,
+    "close" : 127.12,
+    "volume" : 533481.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.05,
+    "high" : 130.465,
+    "low" : 126.54,
+    "last" : 129.09,
+    "close" : 127.12,
+    "volume" : 477816.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.05,
+    "high" : 129.56,
+    "low" : 126.54,
+    "last" : 129.07,
+    "close" : 127.12,
+    "volume" : 342439.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.05,
+    "high" : 128.72,
+    "low" : 126.54,
+    "last" : 128.7,
+    "close" : 127.12,
+    "volume" : 214003.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.05,
+    "high" : 127.33,
+    "low" : 126.97,
+    "last" : 127.01,
+    "close" : 127.12,
+    "volume" : 489.0,
+    "date" : "2023-10-02T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.24,
+    "high" : 129.155,
+    "low" : 126.33,
+    "last" : 127.37,
+    "close" : 125.98,
+    "volume" : 730750.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.24,
+    "high" : 129.155,
+    "low" : 126.33,
+    "last" : 126.77,
+    "close" : 125.98,
+    "volume" : 643378.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.24,
+    "high" : 129.155,
+    "low" : 127.06,
+    "last" : 127.2,
+    "close" : 125.98,
+    "volume" : 500232.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.24,
+    "high" : 129.155,
+    "low" : 127.24,
+    "last" : 127.685,
+    "close" : 125.98,
+    "volume" : 434786.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.24,
+    "high" : 129.155,
+    "low" : 127.24,
+    "last" : 128.505,
+    "close" : 125.98,
+    "volume" : 343609.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 127.24,
+    "high" : 129.155,
+    "low" : 127.24,
+    "last" : 128.545,
+    "close" : 125.98,
+    "volume" : 176130.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.73,
+    "high" : 126.585,
+    "low" : 123.03,
+    "last" : 125.9,
+    "close" : 125.98,
+    "volume" : 818478.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.73,
+    "high" : 126.585,
+    "low" : 123.03,
+    "last" : 125.78,
+    "close" : 125.98,
+    "volume" : 738533.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.73,
+    "high" : 126.585,
+    "low" : 123.03,
+    "last" : 125.93,
+    "close" : 125.98,
+    "volume" : 683609.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.73,
+    "high" : 126.12,
+    "low" : 123.03,
+    "last" : 125.915,
+    "close" : 125.98,
+    "volume" : 623379.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.73,
+    "high" : 125.21,
+    "low" : 123.03,
+    "last" : 124.62,
+    "close" : 125.98,
+    "volume" : 501360.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.73,
+    "high" : 125.21,
+    "low" : 123.03,
+    "last" : 124.06,
+    "close" : 125.98,
+    "volume" : 346444.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.73,
+    "high" : 125.21,
+    "low" : 124.41,
+    "last" : 124.63,
+    "close" : 125.98,
+    "volume" : 2095.0,
+    "date" : "2023-09-28T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.09,
+    "high" : 127.495,
+    "low" : 124.14,
+    "last" : 126.07,
+    "close" : 125.98,
+    "volume" : 1027026.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.09,
+    "high" : 127.495,
+    "low" : 124.14,
+    "last" : 125.1,
+    "close" : 125.98,
+    "volume" : 934860.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.09,
+    "high" : 127.495,
+    "low" : 124.14,
+    "last" : 124.59,
+    "close" : 125.98,
+    "volume" : 793805.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.09,
+    "high" : 127.495,
+    "low" : 124.14,
+    "last" : 124.505,
+    "close" : 125.98,
+    "volume" : 661686.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 124.28,
+    "high" : 124.29,
+    "low" : 124.17,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.09,
+    "high" : 127.495,
+    "low" : 125.4,
+    "last" : 126.12,
+    "close" : 125.98,
+    "volume" : 169701.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 126.09,
+    "high" : 126.33,
+    "low" : 125.65,
+    "last" : 126.19,
+    "close" : 125.98,
+    "volume" : 4082.0,
+    "date" : "2023-09-27T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.95,
+    "high" : 131.03,
+    "low" : 125.72,
+    "last" : 125.84,
+    "close" : 131.27,
+    "volume" : 1345329.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.95,
+    "high" : 131.03,
+    "low" : 126.72,
+    "last" : 126.995,
+    "close" : 131.27,
+    "volume" : 1138422.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.95,
+    "high" : 131.03,
+    "low" : 126.72,
+    "last" : 127.61,
+    "close" : 131.27,
+    "volume" : 1001061.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.95,
+    "high" : 131.03,
+    "low" : 126.72,
+    "last" : 127.22,
+    "close" : 131.27,
+    "volume" : 841662.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.95,
+    "high" : 131.03,
+    "low" : 126.76,
+    "last" : 127.03,
+    "close" : 131.27,
+    "volume" : 618388.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.95,
+    "high" : 131.03,
+    "low" : 127.995,
+    "last" : 128.18,
+    "close" : 131.27,
+    "volume" : 213315.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.17,
+    "high" : 131.78,
+    "low" : 128.785,
+    "last" : 131.31,
+    "close" : 129.12,
+    "volume" : 773741.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.17,
+    "high" : 131.78,
+    "low" : 128.785,
+    "last" : 131.58,
+    "close" : 129.12,
+    "volume" : 710474.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.17,
+    "high" : 131.78,
+    "low" : 128.785,
+    "last" : 131.31,
+    "close" : 129.12,
+    "volume" : 645777.0,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 131.19,
+    "high" : 131.235,
+    "low" : 131.17,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.17,
+    "high" : 131.175,
+    "low" : 128.785,
+    "last" : 130.455,
+    "close" : 129.12,
+    "volume" : 345207.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.17,
+    "high" : 131.175,
+    "low" : 128.785,
+    "last" : 131.17,
+    "close" : 129.12,
+    "volume" : 108523.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.17,
+    "high" : 130.17,
+    "low" : 129.67,
+    "last" : 129.8,
+    "close" : 129.12,
+    "volume" : 1872.0,
+    "date" : "2023-09-25T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.9,
+    "high" : 132.04,
+    "low" : 128.51,
+    "last" : 129.41,
+    "close" : 129.33,
+    "volume" : 848845.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.9,
+    "high" : 132.04,
+    "low" : 129.18,
+    "last" : 129.58,
+    "close" : 129.33,
+    "volume" : 764378.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.9,
+    "high" : 132.04,
+    "low" : 130.23,
+    "last" : 130.93,
+    "close" : 129.33,
+    "volume" : 644205.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.9,
+    "high" : 132.04,
+    "low" : 130.23,
+    "last" : 130.87,
+    "close" : 129.33,
+    "volume" : 574757.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.9,
+    "high" : 131.79,
+    "low" : 130.23,
+    "last" : 131.31,
+    "close" : 129.33,
+    "volume" : 440163.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.9,
+    "high" : 131.79,
+    "low" : 130.64,
+    "last" : 131.33,
+    "close" : 129.33,
+    "volume" : 212750.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 130.9,
+    "high" : 131.26,
+    "low" : 130.88,
+    "last" : 131.21,
+    "close" : 129.33,
+    "volume" : 2541.0,
+    "date" : "2023-09-22T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 132.39,
+    "high" : 132.5,
+    "low" : 129.82,
+    "last" : 129.865,
+    "close" : 135.29,
+    "volume" : 1106939.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 132.39,
+    "high" : 132.5,
+    "low" : 130.405,
+    "last" : 130.905,
+    "close" : 135.29,
+    "volume" : 980437.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 132.39,
+    "high" : 132.5,
+    "low" : 130.405,
+    "last" : 130.615,
+    "close" : 135.29,
+    "volume" : 885362.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 132.39,
+    "high" : 132.5,
+    "low" : 130.445,
+    "last" : 130.88,
+    "close" : 135.29,
+    "volume" : 730594.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 132.39,
+    "high" : 132.5,
+    "low" : 130.54,
+    "last" : 131.145,
+    "close" : 135.29,
+    "volume" : 589698.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 132.39,
+    "high" : 132.5,
+    "low" : 130.54,
+    "last" : 130.885,
+    "close" : 135.29,
+    "volume" : 306418.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 132.39,
+    "high" : 132.5,
+    "low" : 131.35,
+    "last" : 131.73,
+    "close" : 135.29,
+    "volume" : 4244.0,
+    "date" : "2023-09-21T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 138.11,
+    "high" : 139.37,
+    "low" : 136.41,
+    "last" : 136.9,
+    "close" : 137.63,
+    "volume" : 412762.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 138.11,
+    "high" : 139.37,
+    "low" : 136.61,
+    "last" : 136.73,
+    "close" : 137.63,
+    "volume" : 313006.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 138.11,
+    "high" : 139.37,
+    "low" : 136.87,
+    "last" : 137.415,
+    "close" : 137.63,
+    "volume" : 268901.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 138.11,
+    "high" : 139.37,
+    "low" : 136.87,
+    "last" : 137.435,
+    "close" : 137.63,
+    "volume" : 250668.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 138.11,
+    "high" : 139.37,
+    "low" : 137.23,
+    "last" : 137.36,
+    "close" : 137.63,
+    "volume" : 182799.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 138.11,
+    "high" : 139.37,
+    "low" : 137.91,
+    "last" : 138.43,
+    "close" : 137.63,
+    "volume" : 98176.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 138.11,
+    "high" : 138.57,
+    "low" : 138.03,
+    "last" : 138.49,
+    "close" : 137.63,
+    "volume" : 1547.0,
+    "date" : "2023-09-20T13:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 136.96,
+    "high" : 137.045,
+    "low" : 136.91,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 139.83,
+    "high" : 139.83,
+    "low" : 135.56,
+    "last" : 137.18,
+    "close" : 139.98,
+    "volume" : 962058.0,
+    "date" : "2023-09-19T18:00:00+0000",
+    "symbol" : "AMZN",
+    "exchange" : "IEXG"
+  } ]
+}

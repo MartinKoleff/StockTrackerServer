@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 111.53,
+    "high" : 112.975,
+    "low" : 110.5,
+    "last" : 112.93,
+    "close" : 111.8,
+    "volume" : 67389.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.53,
+    "high" : 112.16,
+    "low" : 110.5,
+    "last" : 112.0,
+    "close" : 111.8,
+    "volume" : 50184.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.53,
+    "high" : 111.73,
+    "low" : 110.5,
+    "last" : 111.7,
+    "close" : 111.8,
+    "volume" : 16693.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.93,
+    "high" : 111.89,
+    "low" : 109.5,
+    "last" : 111.61,
+    "close" : 110.88,
+    "volume" : 97858.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.93,
+    "high" : 111.575,
+    "low" : 109.5,
+    "last" : 111.39,
+    "close" : 110.88,
+    "volume" : 75008.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.93,
+    "high" : 110.775,
+    "low" : 109.5,
+    "last" : 110.355,
+    "close" : 110.88,
+    "volume" : 61525.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.93,
+    "high" : 110.65,
+    "low" : 109.5,
+    "last" : 110.58,
+    "close" : 110.88,
+    "volume" : 53732.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.19,
+    "high" : 110.215,
+    "low" : 110.15,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.93,
+    "high" : 110.53,
+    "low" : 109.5,
+    "last" : 109.96,
+    "close" : 110.88,
+    "volume" : 14457.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.025,
+    "high" : 111.04,
+    "low" : 111.0,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.37,
+    "high" : 111.22,
+    "low" : 108.07,
+    "last" : 110.78,
+    "close" : 109.8,
+    "volume" : 129090.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.37,
+    "high" : 111.22,
+    "low" : 108.07,
+    "last" : 110.45,
+    "close" : 109.8,
+    "volume" : 109307.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.37,
+    "high" : 111.22,
+    "low" : 108.07,
+    "last" : 110.95,
+    "close" : 109.8,
+    "volume" : 87743.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.37,
+    "high" : 111.22,
+    "low" : 108.07,
+    "last" : 109.75,
+    "close" : 109.8,
+    "volume" : 53630.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.37,
+    "high" : 111.22,
+    "low" : 108.07,
+    "last" : 108.54,
+    "close" : 109.8,
+    "volume" : 20530.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.695,
+    "high" : 110.445,
+    "low" : 108.965,
+    "last" : 110.22,
+    "close" : 109.85,
+    "volume" : 48937.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.695,
+    "high" : 110.445,
+    "low" : 108.965,
+    "last" : 110.06,
+    "close" : 109.85,
+    "volume" : 41333.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.365,
+    "high" : 109.405,
+    "low" : 109.345,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 108.97,
+    "high" : 108.97,
+    "low" : 108.97,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.695,
+    "high" : 110.445,
+    "low" : 109.065,
+    "last" : 109.29,
+    "close" : 109.85,
+    "volume" : 30937.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.695,
+    "high" : 110.445,
+    "low" : 109.44,
+    "last" : 109.64,
+    "close" : 109.85,
+    "volume" : 14231.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.8,
+    "high" : 111.07,
+    "low" : 108.8,
+    "last" : 109.85,
+    "close" : 110.19,
+    "volume" : 7189401.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.54,
+    "high" : 110.99,
+    "low" : 108.81,
+    "last" : 109.5,
+    "close" : 110.19,
+    "volume" : 83363.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.54,
+    "high" : 110.99,
+    "low" : 108.91,
+    "last" : 108.98,
+    "close" : 110.19,
+    "volume" : 74062.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.54,
+    "high" : 110.99,
+    "low" : 109.085,
+    "last" : 109.47,
+    "close" : 110.19,
+    "volume" : 61015.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.54,
+    "high" : 110.99,
+    "low" : 109.085,
+    "last" : 110.195,
+    "close" : 110.19,
+    "volume" : 48740.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.54,
+    "high" : 110.99,
+    "low" : 109.14,
+    "last" : 109.26,
+    "close" : 110.19,
+    "volume" : 28008.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.54,
+    "high" : 110.99,
+    "low" : 110.06,
+    "last" : 110.25,
+    "close" : 110.19,
+    "volume" : 10880.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.29,
+    "high" : 112.22,
+    "low" : 109.66,
+    "last" : 109.72,
+    "close" : 111.1,
+    "volume" : 134213.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.29,
+    "high" : 112.22,
+    "low" : 109.88,
+    "last" : 110.19,
+    "close" : 111.1,
+    "volume" : 120458.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.29,
+    "high" : 112.22,
+    "low" : 109.95,
+    "last" : 110.86,
+    "close" : 111.1,
+    "volume" : 88740.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.29,
+    "high" : 112.22,
+    "low" : 109.95,
+    "last" : 110.9,
+    "close" : 111.1,
+    "volume" : 77281.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.29,
+    "high" : 112.22,
+    "low" : 109.95,
+    "last" : 110.89,
+    "close" : 111.1,
+    "volume" : 58651.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.29,
+    "high" : 112.14,
+    "low" : 109.95,
+    "last" : 112.14,
+    "close" : 111.1,
+    "volume" : 21197.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.23,
+    "high" : 111.79,
+    "low" : 109.61,
+    "last" : 109.97,
+    "close" : 111.06,
+    "volume" : 106819.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.23,
+    "high" : 111.79,
+    "low" : 109.88,
+    "last" : 110.35,
+    "close" : 111.06,
+    "volume" : 84814.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.23,
+    "high" : 111.79,
+    "low" : 109.88,
+    "last" : 110.37,
+    "close" : 111.06,
+    "volume" : 79258.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.23,
+    "high" : 111.79,
+    "low" : 109.88,
+    "last" : 110.84,
+    "close" : 111.06,
+    "volume" : 69183.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.23,
+    "high" : 111.735,
+    "low" : 109.88,
+    "last" : 110.61,
+    "close" : 111.06,
+    "volume" : 44080.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.23,
+    "high" : 111.575,
+    "low" : 109.88,
+    "last" : 111.51,
+    "close" : 111.06,
+    "volume" : 31681.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.88,
+    "high" : 112.23,
+    "low" : 110.64,
+    "last" : 111.06,
+    "close" : 111.1,
+    "volume" : 4869282.0,
+    "date" : "2023-09-30T00:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.96,
+    "high" : 112.37,
+    "low" : 110.63,
+    "last" : 111.48,
+    "close" : 111.1,
+    "volume" : 40662.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.96,
+    "high" : 112.37,
+    "low" : 110.63,
+    "last" : 110.72,
+    "close" : 111.1,
+    "volume" : 36256.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.96,
+    "high" : 112.37,
+    "low" : 110.915,
+    "last" : 111.07,
+    "close" : 111.1,
+    "volume" : 31940.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.96,
+    "high" : 112.37,
+    "low" : 111.04,
+    "last" : 111.42,
+    "close" : 111.1,
+    "volume" : 26287.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.96,
+    "high" : 112.37,
+    "low" : 111.31,
+    "last" : 111.69,
+    "close" : 111.1,
+    "volume" : 16319.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.96,
+    "high" : 112.37,
+    "low" : 111.555,
+    "last" : 112.08,
+    "close" : 111.1,
+    "volume" : 9015.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.9,
+    "high" : 111.77,
+    "low" : 109.215,
+    "last" : 110.99,
+    "close" : 109.19,
+    "volume" : 88072.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.9,
+    "high" : 111.77,
+    "low" : 109.215,
+    "last" : 110.83,
+    "close" : 109.19,
+    "volume" : 72701.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.9,
+    "high" : 111.77,
+    "low" : 109.215,
+    "last" : 111.4,
+    "close" : 109.19,
+    "volume" : 57984.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.9,
+    "high" : 111.77,
+    "low" : 109.215,
+    "last" : 111.73,
+    "close" : 109.19,
+    "volume" : 48234.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.9,
+    "high" : 110.77,
+    "low" : 109.215,
+    "last" : 110.53,
+    "close" : 109.19,
+    "volume" : 34468.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.9,
+    "high" : 110.55,
+    "low" : 109.215,
+    "last" : 110.54,
+    "close" : 109.19,
+    "volume" : 13201.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.58,
+    "high" : 110.75,
+    "low" : 107.43,
+    "last" : 109.09,
+    "close" : 109.72,
+    "volume" : 174860.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.58,
+    "high" : 110.75,
+    "low" : 107.43,
+    "last" : 107.94,
+    "close" : 109.72,
+    "volume" : 151913.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.58,
+    "high" : 110.75,
+    "low" : 108.04,
+    "last" : 108.135,
+    "close" : 109.72,
+    "volume" : 131028.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.58,
+    "high" : 110.75,
+    "low" : 108.3,
+    "last" : 108.57,
+    "close" : 109.72,
+    "volume" : 105445.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.58,
+    "high" : 110.75,
+    "low" : 108.3,
+    "last" : 108.635,
+    "close" : 109.72,
+    "volume" : 81915.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.58,
+    "high" : 110.75,
+    "low" : 108.375,
+    "last" : 108.55,
+    "close" : 109.72,
+    "volume" : 49984.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.65,
+    "high" : 110.64,
+    "low" : 109.46,
+    "last" : 109.6,
+    "close" : 110.43,
+    "volume" : 144106.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.65,
+    "high" : 110.64,
+    "low" : 109.575,
+    "last" : 110.32,
+    "close" : 110.43,
+    "volume" : 113809.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.65,
+    "high" : 110.64,
+    "low" : 109.575,
+    "last" : 110.17,
+    "close" : 110.43,
+    "volume" : 79477.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.65,
+    "high" : 110.64,
+    "low" : 109.575,
+    "last" : 109.99,
+    "close" : 110.43,
+    "volume" : 57153.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.65,
+    "high" : 110.64,
+    "low" : 109.575,
+    "last" : 110.0,
+    "close" : 110.43,
+    "volume" : 32434.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.65,
+    "high" : 110.64,
+    "low" : 109.575,
+    "last" : 110.35,
+    "close" : 110.43,
+    "volume" : 16056.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 106.84,
+    "high" : 110.48,
+    "low" : 106.7147,
+    "last" : 110.43,
+    "close" : 107.68,
+    "volume" : 6782528.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 106.85,
+    "high" : 110.35,
+    "low" : 106.77,
+    "last" : 109.67,
+    "close" : 107.68,
+    "volume" : 130560.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 106.85,
+    "high" : 110.35,
+    "low" : 106.77,
+    "last" : 110.09,
+    "close" : 107.68,
+    "volume" : 112556.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 106.85,
+    "high" : 110.35,
+    "low" : 106.77,
+    "last" : 109.78,
+    "close" : 107.68,
+    "volume" : 94996.0,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 106.85,
+    "high" : 110.045,
+    "low" : 106.77,
+    "last" : 109.625,
+    "close" : 107.68,
+    "volume" : 75185.0,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 106.85,
+    "high" : 109.26,
+    "low" : 106.77,
+    "last" : 108.9,
+    "close" : 107.68,
+    "volume" : 43041.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 106.85,
+    "high" : 108.455,
+    "low" : 106.77,
+    "last" : 108.34,
+    "close" : 107.68,
+    "volume" : 17514.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 108.77,
+    "high" : 109.7781,
+    "low" : 107.361,
+    "last" : 107.68,
+    "close" : 107.96,
+    "volume" : 6966978.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 108.96,
+    "high" : 109.775,
+    "low" : 108.115,
+    "last" : 108.46,
+    "close" : 107.96,
+    "volume" : 61527.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 108.96,
+    "high" : 109.775,
+    "low" : 108.115,
+    "last" : 108.9,
+    "close" : 107.96,
+    "volume" : 53561.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 109.375,
+    "high" : 109.375,
+    "low" : 109.345,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 108.96,
+    "high" : 109.775,
+    "low" : 108.115,
+    "last" : 109.02,
+    "close" : 107.96,
+    "volume" : 39594.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 108.96,
+    "high" : 109.775,
+    "low" : 108.115,
+    "last" : 109.17,
+    "close" : 107.96,
+    "volume" : 25151.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 108.96,
+    "high" : 109.15,
+    "low" : 108.115,
+    "last" : 108.615,
+    "close" : 107.96,
+    "volume" : 7385.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 107.92,
+    "high" : 109.58,
+    "low" : 107.78,
+    "last" : 108.65,
+    "close" : 109.22,
+    "volume" : 103300.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 107.92,
+    "high" : 109.58,
+    "low" : 107.78,
+    "last" : 108.77,
+    "close" : 109.22,
+    "volume" : 90613.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 107.92,
+    "high" : 109.58,
+    "low" : 107.78,
+    "last" : 108.67,
+    "close" : 109.22,
+    "volume" : 80661.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 107.92,
+    "high" : 109.58,
+    "low" : 107.78,
+    "last" : 109.06,
+    "close" : 109.22,
+    "volume" : 67357.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 107.92,
+    "high" : 109.58,
+    "low" : 107.78,
+    "last" : 109.25,
+    "close" : 109.22,
+    "volume" : 49844.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 107.92,
+    "high" : 109.255,
+    "low" : 107.78,
+    "last" : 108.55,
+    "close" : 109.22,
+    "volume" : 17733.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.16,
+    "high" : 111.8,
+    "low" : 110.275,
+    "last" : 110.41,
+    "close" : 110.72,
+    "volume" : 60830.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.16,
+    "high" : 111.8,
+    "low" : 110.5,
+    "last" : 110.62,
+    "close" : 110.72,
+    "volume" : 51027.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 110.915,
+    "high" : 110.935,
+    "low" : 110.91,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.16,
+    "high" : 111.8,
+    "low" : 110.78,
+    "last" : 111.4,
+    "close" : 110.72,
+    "volume" : 32646.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.16,
+    "high" : 111.8,
+    "low" : 110.86,
+    "last" : 111.13,
+    "close" : 110.72,
+    "volume" : 16384.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 111.16,
+    "high" : 111.8,
+    "low" : 111.15,
+    "last" : 111.27,
+    "close" : 110.72,
+    "volume" : 6875.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.355,
+    "high" : 112.355,
+    "low" : 109.91,
+    "last" : 110.32,
+    "close" : 112.75,
+    "volume" : 120996.0,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.355,
+    "high" : 112.355,
+    "low" : 109.91,
+    "last" : 110.86,
+    "close" : 112.75,
+    "volume" : 108499.0,
+    "date" : "2023-09-19T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.355,
+    "high" : 112.355,
+    "low" : 109.91,
+    "last" : 110.53,
+    "close" : 112.75,
+    "volume" : 97965.0,
+    "date" : "2023-09-19T17:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.355,
+    "high" : 112.355,
+    "low" : 110.215,
+    "last" : 110.52,
+    "close" : 112.75,
+    "volume" : 81105.0,
+    "date" : "2023-09-19T16:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.355,
+    "high" : 112.355,
+    "low" : 110.215,
+    "last" : 110.595,
+    "close" : 112.75,
+    "volume" : 67567.0,
+    "date" : "2023-09-19T15:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.355,
+    "high" : 112.355,
+    "low" : 110.815,
+    "last" : 110.915,
+    "close" : 112.75,
+    "volume" : 41475.0,
+    "date" : "2023-09-19T14:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.89,
+    "high" : 113.83,
+    "low" : 112.455,
+    "last" : 112.75,
+    "close" : 113.14,
+    "volume" : 5065120.0,
+    "date" : "2023-09-19T00:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.25,
+    "high" : 113.805,
+    "low" : 112.24,
+    "last" : 112.75,
+    "close" : 113.14,
+    "volume" : 62024.0,
+    "date" : "2023-09-18T19:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 112.25,
+    "high" : 113.805,
+    "low" : 112.24,
+    "last" : 113.495,
+    "close" : 113.14,
+    "volume" : 52195.0,
+    "date" : "2023-09-18T18:00:00+0000",
+    "symbol" : "QCOM",
+    "exchange" : "IEXG"
+  } ]
+}

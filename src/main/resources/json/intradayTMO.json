@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 495.71,
+    "high" : 499.51,
+    "low" : 493.05,
+    "last" : 498.26,
+    "close" : 496.13,
+    "volume" : 31598.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.71,
+    "high" : 498.28,
+    "low" : 493.05,
+    "last" : 497.89,
+    "close" : 496.13,
+    "volume" : 16311.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.71,
+    "high" : 495.71,
+    "low" : 493.05,
+    "last" : 495.44,
+    "close" : 496.13,
+    "volume" : 5128.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.0,
+    "high" : 497.66,
+    "low" : 490.3898,
+    "last" : 496.13,
+    "close" : 498.55,
+    "volume" : 1182473.0,
+    "date" : "2023-10-10T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.13,
+    "high" : 497.345,
+    "low" : 490.56,
+    "last" : 496.92,
+    "close" : 498.55,
+    "volume" : 40091.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.13,
+    "high" : 496.34,
+    "low" : 490.56,
+    "last" : 494.42,
+    "close" : 498.55,
+    "volume" : 30969.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.13,
+    "high" : 496.34,
+    "low" : 490.56,
+    "last" : 492.75,
+    "close" : 498.55,
+    "volume" : 26665.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.13,
+    "high" : 496.34,
+    "low" : 490.56,
+    "last" : 492.5,
+    "close" : 498.55,
+    "volume" : 20335.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.13,
+    "high" : 496.34,
+    "low" : 491.0,
+    "last" : 491.0,
+    "close" : 498.55,
+    "volume" : 11047.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.13,
+    "high" : 496.34,
+    "low" : 494.44,
+    "last" : 495.73,
+    "close" : 498.55,
+    "volume" : 5201.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.82,
+    "high" : 502.16,
+    "low" : 493.07,
+    "last" : 498.55,
+    "close" : 498.02,
+    "volume" : 1108436.0,
+    "date" : "2023-10-07T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 494.605,
+    "high" : 502.15,
+    "low" : 493.09,
+    "last" : 500.72,
+    "close" : 498.02,
+    "volume" : 28495.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 494.605,
+    "high" : 501.395,
+    "low" : 493.09,
+    "last" : 500.46,
+    "close" : 498.02,
+    "volume" : 20480.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 494.605,
+    "high" : 500.38,
+    "low" : 493.09,
+    "last" : 499.145,
+    "close" : 498.02,
+    "volume" : 16197.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 494.605,
+    "high" : 499.99,
+    "low" : 493.09,
+    "last" : 499.19,
+    "close" : 498.02,
+    "volume" : 10396.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 494.605,
+    "high" : 497.875,
+    "low" : 493.09,
+    "last" : 496.57,
+    "close" : 498.02,
+    "volume" : 6029.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 494.605,
+    "high" : 497.25,
+    "low" : 493.09,
+    "last" : 496.6,
+    "close" : 498.02,
+    "volume" : 2633.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 497.39,
+    "high" : 500.44,
+    "low" : 492.7,
+    "last" : 498.02,
+    "close" : 502.45,
+    "volume" : 917531.0,
+    "date" : "2023-10-06T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 499.685,
+    "high" : 500.69,
+    "low" : 492.79,
+    "last" : 498.14,
+    "close" : 502.45,
+    "volume" : 39313.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 499.685,
+    "high" : 500.69,
+    "low" : 492.79,
+    "last" : 497.01,
+    "close" : 502.45,
+    "volume" : 36610.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 499.685,
+    "high" : 500.69,
+    "low" : 492.79,
+    "last" : 495.03,
+    "close" : 502.45,
+    "volume" : 30950.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 495.47,
+    "high" : 495.47,
+    "low" : 495.47,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 499.685,
+    "high" : 500.69,
+    "low" : 495.31,
+    "last" : 495.8,
+    "close" : 502.45,
+    "volume" : 15945.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 499.685,
+    "high" : 500.69,
+    "low" : 497.255,
+    "last" : 498.95,
+    "close" : 502.45,
+    "volume" : 6444.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.21,
+    "high" : 503.1937,
+    "low" : 495.835,
+    "last" : 502.45,
+    "close" : 499.61,
+    "volume" : 1022088.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 500.17,
+    "high" : 502.12,
+    "low" : 495.99,
+    "last" : 501.0,
+    "close" : 499.61,
+    "volume" : 35198.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 500.17,
+    "high" : 502.12,
+    "low" : 495.99,
+    "last" : 499.69,
+    "close" : 499.61,
+    "volume" : 30964.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 500.17,
+    "high" : 502.12,
+    "low" : 495.99,
+    "last" : 498.36,
+    "close" : 499.61,
+    "volume" : 27513.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 500.17,
+    "high" : 502.12,
+    "low" : 495.99,
+    "last" : 499.36,
+    "close" : 499.61,
+    "volume" : 22967.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 500.17,
+    "high" : 502.12,
+    "low" : 496.165,
+    "last" : 496.195,
+    "close" : 499.61,
+    "volume" : 12425.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 500.17,
+    "high" : 502.12,
+    "low" : 497.66,
+    "last" : 497.66,
+    "close" : 499.61,
+    "volume" : 6387.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 492.9,
+    "high" : 502.5,
+    "low" : 492.6,
+    "last" : 499.61,
+    "close" : 495.79,
+    "volume" : 1559463.0,
+    "date" : "2023-10-04T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 491.76,
+    "high" : 502.445,
+    "low" : 491.76,
+    "last" : 500.04,
+    "close" : 495.79,
+    "volume" : 67133.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 491.76,
+    "high" : 502.445,
+    "low" : 491.76,
+    "last" : 498.265,
+    "close" : 495.79,
+    "volume" : 56542.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 491.76,
+    "high" : 502.445,
+    "low" : 491.76,
+    "last" : 499.16,
+    "close" : 495.79,
+    "volume" : 50199.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 491.76,
+    "high" : 502.445,
+    "low" : 491.76,
+    "last" : 498.96,
+    "close" : 495.79,
+    "volume" : 41577.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 491.76,
+    "high" : 502.27,
+    "low" : 491.76,
+    "last" : 502.27,
+    "close" : 495.79,
+    "volume" : 32554.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 491.76,
+    "high" : 501.555,
+    "low" : 491.76,
+    "last" : 501.555,
+    "close" : 495.79,
+    "volume" : 5625.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.08,
+    "high" : 506.99,
+    "low" : 490.68,
+    "last" : 495.79,
+    "close" : 506.17,
+    "volume" : 1652154.0,
+    "date" : "2023-10-03T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.33,
+    "high" : 503.4,
+    "low" : 490.74,
+    "last" : 491.89,
+    "close" : 506.17,
+    "volume" : 56380.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 492.83,
+    "high" : 492.83,
+    "low" : 492.83,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.33,
+    "high" : 503.4,
+    "low" : 490.74,
+    "last" : 492.03,
+    "close" : 506.17,
+    "volume" : 41699.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.33,
+    "high" : 503.4,
+    "low" : 493.3,
+    "last" : 493.365,
+    "close" : 506.17,
+    "volume" : 33697.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.33,
+    "high" : 503.4,
+    "low" : 494.7,
+    "last" : 495.5,
+    "close" : 506.17,
+    "volume" : 25346.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.33,
+    "high" : 503.4,
+    "low" : 499.0,
+    "last" : 499.51,
+    "close" : 506.17,
+    "volume" : 7780.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 509.21,
+    "high" : 510.99,
+    "low" : 504.77,
+    "last" : 506.17,
+    "close" : 503.02,
+    "volume" : 1380512.0,
+    "date" : "2023-09-30T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 508.76,
+    "high" : 509.68,
+    "low" : 504.77,
+    "last" : 506.65,
+    "close" : 503.02,
+    "volume" : 43049.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 508.76,
+    "high" : 509.68,
+    "low" : 505.21,
+    "last" : 505.49,
+    "close" : 503.02,
+    "volume" : 38271.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 508.76,
+    "high" : 509.68,
+    "low" : 505.675,
+    "last" : 506.99,
+    "close" : 503.02,
+    "volume" : 32608.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 506.26,
+    "high" : 506.26,
+    "low" : 506.26,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 508.76,
+    "high" : 509.68,
+    "low" : 505.675,
+    "last" : 507.23,
+    "close" : 503.02,
+    "volume" : 22775.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 508.76,
+    "high" : 509.68,
+    "low" : 505.675,
+    "last" : 508.25,
+    "close" : 503.02,
+    "volume" : 8624.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 502.05,
+    "high" : 507.4005,
+    "low" : 500.34,
+    "last" : 503.02,
+    "close" : 498.29,
+    "volume" : 1443330.0,
+    "date" : "2023-09-29T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.39,
+    "high" : 507.2,
+    "low" : 500.29,
+    "last" : 502.38,
+    "close" : 498.29,
+    "volume" : 60707.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.39,
+    "high" : 507.2,
+    "low" : 500.29,
+    "last" : 501.35,
+    "close" : 498.29,
+    "volume" : 51132.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.39,
+    "high" : 507.2,
+    "low" : 500.575,
+    "last" : 503.005,
+    "close" : 498.29,
+    "volume" : 41675.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.39,
+    "high" : 507.2,
+    "low" : 500.575,
+    "last" : 502.465,
+    "close" : 498.29,
+    "volume" : 34608.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.39,
+    "high" : 507.2,
+    "low" : 500.68,
+    "last" : 501.93,
+    "close" : 498.29,
+    "volume" : 22497.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.39,
+    "high" : 507.2,
+    "low" : 501.39,
+    "last" : 504.1,
+    "close" : 498.29,
+    "volume" : 8409.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 502.62,
+    "high" : 504.5725,
+    "low" : 494.92,
+    "last" : 498.29,
+    "close" : 501.59,
+    "volume" : 1343945.0,
+    "date" : "2023-09-28T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.47,
+    "high" : 503.89,
+    "low" : 494.925,
+    "last" : 498.585,
+    "close" : 501.59,
+    "volume" : 47054.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 496.18,
+    "high" : 496.18,
+    "low" : 496.18,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.47,
+    "high" : 503.89,
+    "low" : 496.395,
+    "last" : 497.08,
+    "close" : 501.59,
+    "volume" : 23717.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.47,
+    "high" : 503.89,
+    "low" : 497.59,
+    "last" : 498.65,
+    "close" : 501.59,
+    "volume" : 19572.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.47,
+    "high" : 503.89,
+    "low" : 498.38,
+    "last" : 498.495,
+    "close" : 501.59,
+    "volume" : 11637.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.47,
+    "high" : 503.89,
+    "low" : 500.93,
+    "last" : 502.29,
+    "close" : 501.59,
+    "volume" : 3276.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.0,
+    "high" : 506.44,
+    "low" : 500.84,
+    "last" : 501.59,
+    "close" : 505.66,
+    "volume" : 1189979.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.35,
+    "high" : 505.995,
+    "low" : 501.575,
+    "last" : 502.65,
+    "close" : 505.66,
+    "volume" : 45629.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.35,
+    "high" : 505.995,
+    "low" : 501.575,
+    "last" : 503.345,
+    "close" : 505.66,
+    "volume" : 38049.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.35,
+    "high" : 505.995,
+    "low" : 501.575,
+    "last" : 504.155,
+    "close" : 505.66,
+    "volume" : 26739.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.35,
+    "high" : 505.995,
+    "low" : 501.575,
+    "last" : 502.915,
+    "close" : 505.66,
+    "volume" : 18969.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.35,
+    "high" : 505.995,
+    "low" : 502.21,
+    "last" : 503.16,
+    "close" : 505.66,
+    "volume" : 9049.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.35,
+    "high" : 505.995,
+    "low" : 503.12,
+    "last" : 504.52,
+    "close" : 505.66,
+    "volume" : 3020.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.23,
+    "high" : 506.04,
+    "low" : 500.36,
+    "last" : 505.66,
+    "close" : 502.79,
+    "volume" : 961531.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.14,
+    "high" : 505.01,
+    "low" : 500.7,
+    "last" : 504.35,
+    "close" : 502.79,
+    "volume" : 40259.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.14,
+    "high" : 505.01,
+    "low" : 500.7,
+    "last" : 503.42,
+    "close" : 502.79,
+    "volume" : 31527.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.14,
+    "high" : 505.01,
+    "low" : 500.7,
+    "last" : 503.52,
+    "close" : 502.79,
+    "volume" : 24042.0,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 504.47,
+    "high" : 504.47,
+    "low" : 504.47,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.14,
+    "high" : 504.31,
+    "low" : 500.7,
+    "last" : 502.105,
+    "close" : 502.79,
+    "volume" : 13959.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.14,
+    "high" : 503.96,
+    "low" : 500.7,
+    "last" : 503.67,
+    "close" : 502.79,
+    "volume" : 4432.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 502.9,
+    "high" : 507.16,
+    "low" : 501.57,
+    "last" : 502.79,
+    "close" : 501.59,
+    "volume" : 1197981.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.42,
+    "high" : 506.94,
+    "low" : 502.43,
+    "last" : 504.46,
+    "close" : 501.59,
+    "volume" : 37328.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.42,
+    "high" : 506.94,
+    "low" : 502.43,
+    "last" : 505.2,
+    "close" : 501.59,
+    "volume" : 26646.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.42,
+    "high" : 506.94,
+    "low" : 502.43,
+    "last" : 506.085,
+    "close" : 501.59,
+    "volume" : 22800.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.42,
+    "high" : 506.94,
+    "low" : 502.43,
+    "last" : 505.25,
+    "close" : 501.59,
+    "volume" : 19541.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.42,
+    "high" : 506.33,
+    "low" : 502.43,
+    "last" : 505.02,
+    "close" : 501.59,
+    "volume" : 14876.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 503.42,
+    "high" : 506.33,
+    "low" : 502.43,
+    "last" : 503.925,
+    "close" : 501.59,
+    "volume" : 3744.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 502.43,
+    "high" : 503.805,
+    "low" : 499.56,
+    "last" : 501.59,
+    "close" : 504.89,
+    "volume" : 1606924.0,
+    "date" : "2023-09-22T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.2,
+    "high" : 503.98,
+    "low" : 499.77,
+    "last" : 500.855,
+    "close" : 504.89,
+    "volume" : 56780.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.2,
+    "high" : 503.98,
+    "low" : 499.77,
+    "last" : 500.81,
+    "close" : 504.89,
+    "volume" : 50058.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.2,
+    "high" : 503.98,
+    "low" : 499.77,
+    "last" : 500.095,
+    "close" : 504.89,
+    "volume" : 41061.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.2,
+    "high" : 503.98,
+    "low" : 499.77,
+    "last" : 501.03,
+    "close" : 504.89,
+    "volume" : 31480.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.2,
+    "high" : 503.98,
+    "low" : 499.77,
+    "last" : 500.59,
+    "close" : 504.89,
+    "volume" : 18319.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 501.2,
+    "high" : 503.98,
+    "low" : 499.77,
+    "last" : 501.43,
+    "close" : 504.89,
+    "volume" : 8309.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 511.37,
+    "high" : 511.92,
+    "low" : 504.16,
+    "last" : 504.89,
+    "close" : 508.74,
+    "volume" : 1271290.0,
+    "date" : "2023-09-21T00:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 510.555,
+    "high" : 511.605,
+    "low" : 506.0,
+    "last" : 506.0,
+    "close" : 508.74,
+    "volume" : 77202.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 510.555,
+    "high" : 511.605,
+    "low" : 508.17,
+    "last" : 508.935,
+    "close" : 508.74,
+    "volume" : 71707.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 510.555,
+    "high" : 511.605,
+    "low" : 508.48,
+    "last" : 509.73,
+    "close" : 508.74,
+    "volume" : 65166.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 509.01,
+    "high" : 509.01,
+    "low" : 509.01,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 510.02,
+    "high" : 510.02,
+    "low" : 510.02,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "TMO",
+    "exchange" : "IEXG"
+  } ]
+}

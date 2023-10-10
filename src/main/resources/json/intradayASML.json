@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 600.145,
+    "high" : 606.7,
+    "low" : 598.43,
+    "last" : 605.385,
+    "close" : 591.37,
+    "volume" : 32327.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 600.145,
+    "high" : 604.29,
+    "low" : 598.43,
+    "last" : 603.855,
+    "close" : 591.37,
+    "volume" : 10277.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 600.145,
+    "high" : 601.17,
+    "low" : 598.43,
+    "last" : 601.035,
+    "close" : 591.37,
+    "volume" : 2632.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 587.65,
+    "high" : 591.71,
+    "low" : 582.41,
+    "last" : 591.37,
+    "close" : 597.36,
+    "volume" : 738536.0,
+    "date" : "2023-10-10T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 587.23,
+    "high" : 591.325,
+    "low" : 582.85,
+    "last" : 589.56,
+    "close" : 597.36,
+    "volume" : 12842.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 587.23,
+    "high" : 591.325,
+    "low" : 582.85,
+    "last" : 590.895,
+    "close" : 597.36,
+    "volume" : 10854.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 586.03,
+    "high" : 586.03,
+    "low" : 586.03,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 587.23,
+    "high" : 588.715,
+    "low" : 582.85,
+    "last" : 585.53,
+    "close" : 597.36,
+    "volume" : 9080.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 584.32,
+    "high" : 584.32,
+    "low" : 584.32,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 587.23,
+    "high" : 588.715,
+    "low" : 582.85,
+    "last" : 587.49,
+    "close" : 597.36,
+    "volume" : 4192.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.79,
+    "high" : 600.49,
+    "low" : 577.6,
+    "last" : 597.36,
+    "close" : 581.69,
+    "volume" : 1042234.0,
+    "date" : "2023-10-07T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.15,
+    "high" : 599.83,
+    "low" : 576.15,
+    "last" : 598.57,
+    "close" : 581.69,
+    "volume" : 18141.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.15,
+    "high" : 598.36,
+    "low" : 576.15,
+    "last" : 597.87,
+    "close" : 581.69,
+    "volume" : 16425.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.15,
+    "high" : 597.57,
+    "low" : 576.15,
+    "last" : 595.59,
+    "close" : 581.69,
+    "volume" : 12514.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.15,
+    "high" : 597.22,
+    "low" : 576.15,
+    "last" : 597.09,
+    "close" : 581.69,
+    "volume" : 7182.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 586.81,
+    "high" : 586.81,
+    "low" : 586.81,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.15,
+    "high" : 583.955,
+    "low" : 576.15,
+    "last" : 579.93,
+    "close" : 581.69,
+    "volume" : 1403.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.48,
+    "high" : 583.48,
+    "low" : 583.48,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.83,
+    "high" : 586.65,
+    "low" : 575.69,
+    "last" : 583.38,
+    "close" : 590.86,
+    "volume" : 8898.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 581.5,
+    "high" : 581.5,
+    "low" : 581.5,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 580.31,
+    "high" : 580.31,
+    "low" : 580.31,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.83,
+    "high" : 586.65,
+    "low" : 576.82,
+    "last" : 577.12,
+    "close" : 590.86,
+    "volume" : 3490.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 582.85,
+    "high" : 582.85,
+    "low" : 582.85,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 584.17,
+    "high" : 591.84,
+    "low" : 580.455,
+    "last" : 590.86,
+    "close" : 570.6,
+    "volume" : 1325855.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.21,
+    "high" : 590.95,
+    "low" : 580.495,
+    "last" : 588.47,
+    "close" : 570.6,
+    "volume" : 21173.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.21,
+    "high" : 590.95,
+    "low" : 580.495,
+    "last" : 586.74,
+    "close" : 570.6,
+    "volume" : 18550.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.21,
+    "high" : 590.95,
+    "low" : 580.495,
+    "last" : 589.69,
+    "close" : 570.6,
+    "volume" : 15584.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.21,
+    "high" : 589.14,
+    "low" : 580.495,
+    "last" : 588.155,
+    "close" : 570.6,
+    "volume" : 12226.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 581.37,
+    "high" : 581.37,
+    "low" : 581.37,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.21,
+    "high" : 587.725,
+    "low" : 582.53,
+    "last" : 585.23,
+    "close" : 570.6,
+    "volume" : 3789.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.95,
+    "high" : 579.685,
+    "low" : 567.57,
+    "last" : 570.6,
+    "close" : 582.18,
+    "volume" : 1101284.0,
+    "date" : "2023-10-04T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 575.17,
+    "high" : 579.65,
+    "low" : 568.3,
+    "last" : 569.21,
+    "close" : 582.18,
+    "volume" : 17275.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 575.17,
+    "high" : 579.65,
+    "low" : 569.7,
+    "last" : 570.14,
+    "close" : 582.18,
+    "volume" : 15559.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.055,
+    "high" : 574.055,
+    "low" : 574.055,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 575.17,
+    "high" : 579.65,
+    "low" : 570.865,
+    "last" : 571.875,
+    "close" : 582.18,
+    "volume" : 11990.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 572.1,
+    "high" : 572.1,
+    "low" : 572.1,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 575.17,
+    "high" : 579.65,
+    "low" : 574.415,
+    "last" : 574.97,
+    "close" : 582.18,
+    "volume" : 2882.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.36,
+    "high" : 587.62,
+    "low" : 576.35,
+    "last" : 582.18,
+    "close" : 588.66,
+    "volume" : 811480.0,
+    "date" : "2023-10-03T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.53,
+    "high" : 587.36,
+    "low" : 576.49,
+    "last" : 577.97,
+    "close" : 588.66,
+    "volume" : 19267.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.53,
+    "high" : 587.36,
+    "low" : 578.99,
+    "last" : 580.315,
+    "close" : 588.66,
+    "volume" : 13685.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.53,
+    "high" : 587.36,
+    "low" : 579.55,
+    "last" : 579.935,
+    "close" : 588.66,
+    "volume" : 11333.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 581.22,
+    "high" : 581.22,
+    "low" : 581.22,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.53,
+    "high" : 587.36,
+    "low" : 579.55,
+    "last" : 580.42,
+    "close" : 588.66,
+    "volume" : 7189.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.53,
+    "high" : 587.36,
+    "low" : 582.87,
+    "last" : 585.24,
+    "close" : 588.66,
+    "volume" : 1456.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 600.43,
+    "high" : 600.855,
+    "low" : 586.76,
+    "last" : 588.66,
+    "close" : 580.65,
+    "volume" : 1017496.0,
+    "date" : "2023-09-30T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 601.05,
+    "high" : 601.05,
+    "low" : 586.78,
+    "last" : 591.74,
+    "close" : 580.65,
+    "volume" : 18653.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 587.395,
+    "high" : 587.395,
+    "low" : 587.395,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 601.05,
+    "high" : 601.05,
+    "low" : 588.545,
+    "last" : 588.545,
+    "close" : 580.65,
+    "volume" : 11718.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 601.05,
+    "high" : 601.05,
+    "low" : 588.9,
+    "last" : 590.345,
+    "close" : 580.65,
+    "volume" : 9773.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 594.33,
+    "high" : 594.33,
+    "low" : 594.33,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 598.3,
+    "high" : 598.3,
+    "low" : 598.3,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.23,
+    "high" : 588.3,
+    "low" : 563.995,
+    "last" : 580.65,
+    "close" : 574.53,
+    "volume" : 1112470.0,
+    "date" : "2023-09-29T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.2,
+    "high" : 588.105,
+    "low" : 563.995,
+    "last" : 580.03,
+    "close" : 574.53,
+    "volume" : 31731.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 582.385,
+    "high" : 582.385,
+    "low" : 582.385,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 584.7,
+    "high" : 584.7,
+    "low" : 584.7,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.2,
+    "high" : 586.95,
+    "low" : 563.995,
+    "last" : 586.95,
+    "close" : 574.53,
+    "volume" : 19668.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.2,
+    "high" : 579.07,
+    "low" : 563.995,
+    "last" : 578.33,
+    "close" : 574.53,
+    "volume" : 14890.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 566.2,
+    "high" : 574.685,
+    "low" : 563.995,
+    "last" : 574.685,
+    "close" : 574.53,
+    "volume" : 9006.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 578.0,
+    "high" : 582.18,
+    "low" : 564.28,
+    "last" : 574.53,
+    "close" : 572.71,
+    "volume" : 1477556.0,
+    "date" : "2023-09-28T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 577.81,
+    "high" : 582.1,
+    "low" : 564.63,
+    "last" : 572.25,
+    "close" : 572.71,
+    "volume" : 36338.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 577.81,
+    "high" : 582.1,
+    "low" : 564.63,
+    "last" : 567.66,
+    "close" : 572.71,
+    "volume" : 32093.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 567.07,
+    "high" : 567.07,
+    "low" : 567.07,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 577.81,
+    "high" : 582.1,
+    "low" : 566.91,
+    "last" : 567.73,
+    "close" : 572.71,
+    "volume" : 24219.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 577.81,
+    "high" : 582.1,
+    "low" : 573.59,
+    "last" : 574.28,
+    "close" : 572.71,
+    "volume" : 9190.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 577.81,
+    "high" : 582.1,
+    "low" : 577.81,
+    "last" : 580.385,
+    "close" : 572.71,
+    "volume" : 2085.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 576.4,
+    "high" : 578.77,
+    "low" : 567.92,
+    "last" : 572.71,
+    "close" : 586.13,
+    "volume" : 1471035.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 569.56,
+    "high" : 569.56,
+    "low" : 569.56,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.0,
+    "high" : 578.75,
+    "low" : 570.93,
+    "last" : 571.17,
+    "close" : 586.13,
+    "volume" : 31888.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.0,
+    "high" : 578.75,
+    "low" : 570.95,
+    "last" : 571.54,
+    "close" : 586.13,
+    "volume" : 26441.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 572.23,
+    "high" : 572.23,
+    "low" : 572.23,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.0,
+    "high" : 578.75,
+    "low" : 572.28,
+    "last" : 574.25,
+    "close" : 586.13,
+    "volume" : 13801.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 574.0,
+    "high" : 578.75,
+    "low" : 574.0,
+    "last" : 577.04,
+    "close" : 586.13,
+    "volume" : 5245.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.63,
+    "high" : 587.99,
+    "low" : 580.53,
+    "last" : 586.13,
+    "close" : 587.1,
+    "volume" : 607302.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.56,
+    "high" : 587.95,
+    "low" : 580.7,
+    "last" : 583.215,
+    "close" : 587.1,
+    "volume" : 16396.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.56,
+    "high" : 587.95,
+    "low" : 580.7,
+    "last" : 584.675,
+    "close" : 587.1,
+    "volume" : 12783.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 585.09,
+    "high" : 585.09,
+    "low" : 585.09,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 586.03,
+    "high" : 586.03,
+    "low" : 586.03,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.56,
+    "high" : 586.83,
+    "low" : 580.7,
+    "last" : 582.51,
+    "close" : 587.1,
+    "volume" : 5711.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 583.56,
+    "high" : 586.83,
+    "low" : 580.7,
+    "last" : 586.37,
+    "close" : 587.1,
+    "volume" : 2826.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 593.88,
+    "high" : 594.77,
+    "low" : 586.045,
+    "last" : 587.1,
+    "close" : 582.12,
+    "volume" : 837536.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 593.64,
+    "high" : 594.675,
+    "low" : 586.11,
+    "last" : 587.05,
+    "close" : 582.12,
+    "volume" : 15450.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 593.64,
+    "high" : 594.675,
+    "low" : 587.45,
+    "last" : 588.12,
+    "close" : 582.12,
+    "volume" : 12326.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 593.64,
+    "high" : 594.675,
+    "low" : 589.18,
+    "last" : 590.52,
+    "close" : 582.12,
+    "volume" : 10109.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 593.64,
+    "high" : 594.675,
+    "low" : 589.63,
+    "last" : 589.785,
+    "close" : 582.12,
+    "volume" : 7979.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 593.64,
+    "high" : 594.675,
+    "low" : 590.865,
+    "last" : 593.15,
+    "close" : 582.12,
+    "volume" : 5399.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 593.64,
+    "high" : 594.675,
+    "low" : 590.865,
+    "last" : 592.27,
+    "close" : 582.12,
+    "volume" : 1174.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 586.99,
+    "high" : 590.975,
+    "low" : 582.12,
+    "last" : 582.12,
+    "close" : 589.88,
+    "volume" : 1313752.0,
+    "date" : "2023-09-22T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 585.69,
+    "high" : 590.83,
+    "low" : 583.67,
+    "last" : 586.31,
+    "close" : 589.88,
+    "volume" : 113114.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 585.69,
+    "high" : 590.83,
+    "low" : 583.67,
+    "last" : 587.89,
+    "close" : 589.88,
+    "volume" : 93481.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 585.69,
+    "high" : 590.83,
+    "low" : 583.67,
+    "last" : 587.79,
+    "close" : 589.88,
+    "volume" : 77423.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 588.17,
+    "high" : 588.17,
+    "low" : 588.17,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 585.69,
+    "high" : 590.83,
+    "low" : 583.67,
+    "last" : 587.78,
+    "close" : 589.88,
+    "volume" : 47609.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 585.69,
+    "high" : 587.69,
+    "low" : 583.81,
+    "last" : 584.19,
+    "close" : 589.88,
+    "volume" : 26034.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 595.62,
+    "high" : 600.8299,
+    "low" : 589.75,
+    "last" : 589.88,
+    "close" : 593.77,
+    "volume" : 1095461.0,
+    "date" : "2023-09-21T00:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 595.08,
+    "high" : 600.69,
+    "low" : 594.0,
+    "last" : 596.76,
+    "close" : 593.77,
+    "volume" : 14032.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 595.08,
+    "high" : 599.67,
+    "low" : 594.0,
+    "last" : 596.96,
+    "close" : 593.77,
+    "volume" : 10184.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 595.08,
+    "high" : 599.67,
+    "low" : 594.0,
+    "last" : 598.97,
+    "close" : 593.77,
+    "volume" : 7052.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 597.63,
+    "high" : 597.63,
+    "low" : 597.63,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 595.08,
+    "high" : 599.67,
+    "low" : 594.0,
+    "last" : 596.95,
+    "close" : 593.77,
+    "volume" : 3240.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 595.08,
+    "high" : 599.67,
+    "low" : 594.0,
+    "last" : 597.85,
+    "close" : 593.77,
+    "volume" : 1175.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "ASML",
+    "exchange" : "IEXG"
+  } ]
+}

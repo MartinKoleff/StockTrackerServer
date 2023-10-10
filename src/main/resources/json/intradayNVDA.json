@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 452.75,
+    "high" : 462.34,
+    "low" : 450.94,
+    "last" : 461.49,
+    "close" : 452.73,
+    "volume" : 222372.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 452.75,
+    "high" : 458.385,
+    "low" : 450.94,
+    "last" : 458.32,
+    "close" : 452.73,
+    "volume" : 155603.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 452.75,
+    "high" : 456.19,
+    "low" : 450.94,
+    "last" : 455.89,
+    "close" : 452.73,
+    "volume" : 48198.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 452.75,
+    "high" : 452.98,
+    "low" : 452.3,
+    "last" : 452.76,
+    "close" : 452.73,
+    "volume" : 1533.0,
+    "date" : "2023-10-10T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.46,
+    "high" : 456.01,
+    "low" : 443.7,
+    "last" : 454.41,
+    "close" : 457.62,
+    "volume" : 367169.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.46,
+    "high" : 454.73,
+    "low" : 443.7,
+    "last" : 454.04,
+    "close" : 457.62,
+    "volume" : 338138.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.46,
+    "high" : 450.38,
+    "low" : 443.7,
+    "last" : 448.99,
+    "close" : 457.62,
+    "volume" : 301785.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.46,
+    "high" : 450.38,
+    "low" : 443.7,
+    "last" : 446.13,
+    "close" : 457.62,
+    "volume" : 277425.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.46,
+    "high" : 450.38,
+    "low" : 444.22,
+    "last" : 444.74,
+    "close" : 457.62,
+    "volume" : 222743.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.46,
+    "high" : 450.38,
+    "low" : 444.6,
+    "last" : 447.9,
+    "close" : 457.62,
+    "volume" : 145040.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.46,
+    "high" : 449.71,
+    "low" : 447.78,
+    "last" : 449.2,
+    "close" : 457.62,
+    "volume" : 6626.0,
+    "date" : "2023-10-09T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 455.99,
+    "high" : 455.99,
+    "low" : 455.69,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 446.75,
+    "high" : 456.41,
+    "low" : 439.4,
+    "last" : 454.95,
+    "close" : 446.88,
+    "volume" : 284745.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 446.75,
+    "high" : 456.19,
+    "low" : 439.4,
+    "last" : 455.28,
+    "close" : 446.88,
+    "volume" : 248548.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 446.75,
+    "high" : 455.41,
+    "low" : 439.4,
+    "last" : 455.33,
+    "close" : 446.88,
+    "volume" : 206560.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 446.75,
+    "high" : 450.315,
+    "low" : 439.4,
+    "last" : 449.04,
+    "close" : 446.88,
+    "volume" : 157479.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 446.75,
+    "high" : 447.1,
+    "low" : 439.4,
+    "last" : 441.46,
+    "close" : 446.88,
+    "volume" : 78448.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 446.75,
+    "high" : 447.1,
+    "low" : 439.4,
+    "last" : 440.19,
+    "close" : 446.88,
+    "volume" : 13024.0,
+    "date" : "2023-10-06T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 443.41,
+    "high" : 449.0,
+    "low" : 438.95,
+    "last" : 448.64,
+    "close" : 440.41,
+    "volume" : 316706.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 443.41,
+    "high" : 447.56,
+    "low" : 438.95,
+    "last" : 447.49,
+    "close" : 440.41,
+    "volume" : 265230.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 443.41,
+    "high" : 445.93,
+    "low" : 438.95,
+    "last" : 445.53,
+    "close" : 440.41,
+    "volume" : 227892.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 443.41,
+    "high" : 445.25,
+    "low" : 438.95,
+    "last" : 443.49,
+    "close" : 440.41,
+    "volume" : 201848.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 443.41,
+    "high" : 445.25,
+    "low" : 438.95,
+    "last" : 441.16,
+    "close" : 440.41,
+    "volume" : 172596.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 443.41,
+    "high" : 444.85,
+    "low" : 439.18,
+    "last" : 441.65,
+    "close" : 440.41,
+    "volume" : 81705.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 436.25,
+    "high" : 441.39,
+    "low" : 432.95,
+    "last" : 437.76,
+    "close" : 435.17,
+    "volume" : 285670.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 436.25,
+    "high" : 441.39,
+    "low" : 432.95,
+    "last" : 435.1,
+    "close" : 435.17,
+    "volume" : 262709.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 436.25,
+    "high" : 441.39,
+    "low" : 432.95,
+    "last" : 439.505,
+    "close" : 435.17,
+    "volume" : 237791.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 436.25,
+    "high" : 441.39,
+    "low" : 432.95,
+    "last" : 440.63,
+    "close" : 435.17,
+    "volume" : 209502.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 436.25,
+    "high" : 440.105,
+    "low" : 432.95,
+    "last" : 435.67,
+    "close" : 435.17,
+    "volume" : 168638.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 436.25,
+    "high" : 440.105,
+    "low" : 435.59,
+    "last" : 437.5,
+    "close" : 435.17,
+    "volume" : 88748.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 436.25,
+    "high" : 439.16,
+    "low" : 435.86,
+    "last" : 437.26,
+    "close" : 435.17,
+    "volume" : 6649.0,
+    "date" : "2023-10-04T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.21,
+    "high" : 451.225,
+    "low" : 433.99,
+    "last" : 435.62,
+    "close" : 447.82,
+    "volume" : 361532.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.21,
+    "high" : 451.225,
+    "low" : 435.135,
+    "last" : 435.985,
+    "close" : 447.82,
+    "volume" : 329460.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.21,
+    "high" : 451.225,
+    "low" : 435.97,
+    "last" : 439.605,
+    "close" : 447.82,
+    "volume" : 293345.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.21,
+    "high" : 451.225,
+    "low" : 435.97,
+    "last" : 436.57,
+    "close" : 447.82,
+    "volume" : 257234.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.21,
+    "high" : 451.225,
+    "low" : 436.92,
+    "last" : 437.285,
+    "close" : 447.82,
+    "volume" : 200371.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 449.21,
+    "high" : 451.225,
+    "low" : 445.72,
+    "last" : 449.69,
+    "close" : 447.82,
+    "volume" : 91643.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 439.5,
+    "high" : 451.75,
+    "low" : 437.67,
+    "last" : 444.555,
+    "close" : 434.99,
+    "volume" : 470700.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 439.5,
+    "high" : 451.75,
+    "low" : 437.67,
+    "last" : 446.5,
+    "close" : 434.99,
+    "volume" : 374155.0,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 439.5,
+    "high" : 451.75,
+    "low" : 437.67,
+    "last" : 446.47,
+    "close" : 434.99,
+    "volume" : 336159.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 439.5,
+    "high" : 451.75,
+    "low" : 437.67,
+    "last" : 447.03,
+    "close" : 434.99,
+    "volume" : 302333.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 439.5,
+    "high" : 450.3,
+    "low" : 437.67,
+    "last" : 447.9,
+    "close" : 434.99,
+    "volume" : 225333.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 439.5,
+    "high" : 447.69,
+    "low" : 437.67,
+    "last" : 446.99,
+    "close" : 434.99,
+    "volume" : 85266.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 439.5,
+    "high" : 440.5,
+    "low" : 438.7,
+    "last" : 438.74,
+    "close" : 434.99,
+    "volume" : 2497.0,
+    "date" : "2023-10-02T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 435.54,
+    "high" : 441.31,
+    "low" : 433.12,
+    "last" : 436.35,
+    "close" : 430.89,
+    "volume" : 245444.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 435.54,
+    "high" : 441.31,
+    "low" : 433.12,
+    "last" : 433.41,
+    "close" : 430.89,
+    "volume" : 220154.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 435.54,
+    "high" : 441.31,
+    "low" : 435.095,
+    "last" : 435.14,
+    "close" : 430.89,
+    "volume" : 198291.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 435.54,
+    "high" : 441.31,
+    "low" : 435.44,
+    "last" : 437.495,
+    "close" : 430.89,
+    "volume" : 184953.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 435.54,
+    "high" : 441.31,
+    "low" : 435.44,
+    "last" : 439.08,
+    "close" : 430.89,
+    "volume" : 157034.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 435.54,
+    "high" : 441.31,
+    "low" : 435.44,
+    "last" : 440.06,
+    "close" : 430.89,
+    "volume" : 100203.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 435.54,
+    "high" : 438.08,
+    "low" : 435.44,
+    "last" : 437.89,
+    "close" : 430.89,
+    "volume" : 5905.0,
+    "date" : "2023-09-29T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 424.78,
+    "high" : 434.475,
+    "low" : 421.19,
+    "last" : 430.01,
+    "close" : 424.68,
+    "volume" : 417045.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 424.78,
+    "high" : 434.475,
+    "low" : 421.19,
+    "last" : 431.545,
+    "close" : 424.68,
+    "volume" : 349679.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 424.78,
+    "high" : 434.475,
+    "low" : 421.19,
+    "last" : 431.88,
+    "close" : 424.68,
+    "volume" : 309194.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 424.78,
+    "high" : 434.475,
+    "low" : 421.19,
+    "last" : 433.56,
+    "close" : 424.68,
+    "volume" : 269053.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 424.78,
+    "high" : 430.21,
+    "low" : 421.19,
+    "last" : 427.16,
+    "close" : 424.68,
+    "volume" : 200428.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 424.78,
+    "high" : 428.9,
+    "low" : 421.19,
+    "last" : 428.38,
+    "close" : 424.68,
+    "volume" : 109559.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 424.78,
+    "high" : 426.86,
+    "low" : 424.25,
+    "last" : 424.79,
+    "close" : 424.68,
+    "volume" : 6417.0,
+    "date" : "2023-09-28T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 421.88,
+    "high" : 426.54,
+    "low" : 416.36,
+    "last" : 424.26,
+    "close" : 419.11,
+    "volume" : 468637.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 421.88,
+    "high" : 426.54,
+    "low" : 416.36,
+    "last" : 417.4,
+    "close" : 419.11,
+    "volume" : 370389.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 421.88,
+    "high" : 426.54,
+    "low" : 416.36,
+    "last" : 418.24,
+    "close" : 419.11,
+    "volume" : 338023.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 421.88,
+    "high" : 426.54,
+    "low" : 417.605,
+    "last" : 417.79,
+    "close" : 419.11,
+    "volume" : 304074.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 421.88,
+    "high" : 426.54,
+    "low" : 418.9,
+    "last" : 420.1,
+    "close" : 419.11,
+    "volume" : 230442.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 421.88,
+    "high" : 426.54,
+    "low" : 421.18,
+    "last" : 423.39,
+    "close" : 419.11,
+    "volume" : 112675.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.68,
+    "high" : 428.17,
+    "low" : 416.65,
+    "last" : 420.685,
+    "close" : 422.22,
+    "volume" : 361954.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.68,
+    "high" : 428.17,
+    "low" : 416.65,
+    "last" : 422.35,
+    "close" : 422.22,
+    "volume" : 321854.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.68,
+    "high" : 428.17,
+    "low" : 416.65,
+    "last" : 422.595,
+    "close" : 422.22,
+    "volume" : 287812.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.68,
+    "high" : 428.17,
+    "low" : 416.65,
+    "last" : 420.7,
+    "close" : 422.22,
+    "volume" : 252674.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.68,
+    "high" : 428.17,
+    "low" : 416.65,
+    "last" : 424.72,
+    "close" : 422.22,
+    "volume" : 184256.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.68,
+    "high" : 424.45,
+    "low" : 416.65,
+    "last" : 418.595,
+    "close" : 422.22,
+    "volume" : 77211.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.68,
+    "high" : 424.45,
+    "low" : 421.06,
+    "last" : 421.14,
+    "close" : 422.22,
+    "volume" : 4933.0,
+    "date" : "2023-09-26T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 412.53,
+    "high" : 425.35,
+    "low" : 411.44,
+    "last" : 419.28,
+    "close" : 416.1,
+    "volume" : 536729.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 412.53,
+    "high" : 425.35,
+    "low" : 411.44,
+    "last" : 421.22,
+    "close" : 416.1,
+    "volume" : 504948.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 412.53,
+    "high" : 425.35,
+    "low" : 411.44,
+    "last" : 420.93,
+    "close" : 416.1,
+    "volume" : 474195.0,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 422.29,
+    "high" : 422.29,
+    "low" : 421.93,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 412.53,
+    "high" : 425.35,
+    "low" : 411.44,
+    "last" : 419.605,
+    "close" : 416.1,
+    "volume" : 352628.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 412.53,
+    "high" : 424.525,
+    "low" : 411.44,
+    "last" : 422.52,
+    "close" : 416.1,
+    "volume" : 218039.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 412.53,
+    "high" : 414.46,
+    "low" : 411.44,
+    "last" : 413.22,
+    "close" : 416.1,
+    "volume" : 4761.0,
+    "date" : "2023-09-25T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 414.67,
+    "high" : 421.01,
+    "low" : 412.4,
+    "last" : 416.315,
+    "close" : 410.17,
+    "volume" : 384372.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 414.67,
+    "high" : 421.01,
+    "low" : 412.4,
+    "last" : 415.4,
+    "close" : 410.17,
+    "volume" : 349624.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 414.67,
+    "high" : 421.01,
+    "low" : 412.4,
+    "last" : 418.54,
+    "close" : 410.17,
+    "volume" : 315733.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 414.67,
+    "high" : 421.01,
+    "low" : 412.4,
+    "last" : 418.57,
+    "close" : 410.17,
+    "volume" : 286744.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 414.67,
+    "high" : 420.47,
+    "low" : 412.4,
+    "last" : 419.31,
+    "close" : 410.17,
+    "volume" : 213974.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 414.67,
+    "high" : 419.025,
+    "low" : 413.35,
+    "last" : 415.335,
+    "close" : 410.17,
+    "volume" : 91093.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 413.41,
+    "high" : 420.86,
+    "low" : 411.51,
+    "last" : 412.34,
+    "close" : 422.39,
+    "volume" : 917764.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 413.41,
+    "high" : 420.86,
+    "low" : 411.51,
+    "last" : 414.2,
+    "close" : 422.39,
+    "volume" : 885844.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 413.41,
+    "high" : 420.86,
+    "low" : 411.51,
+    "last" : 413.25,
+    "close" : 422.39,
+    "volume" : 840771.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 413.41,
+    "high" : 420.86,
+    "low" : 411.51,
+    "last" : 413.98,
+    "close" : 422.39,
+    "volume" : 806360.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 413.41,
+    "high" : 420.86,
+    "low" : 411.51,
+    "last" : 415.77,
+    "close" : 422.39,
+    "volume" : 741142.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 413.41,
+    "high" : 420.86,
+    "low" : 411.51,
+    "last" : 413.9,
+    "close" : 422.39,
+    "volume" : 343350.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 413.41,
+    "high" : 414.35,
+    "low" : 411.51,
+    "last" : 412.75,
+    "close" : 422.39,
+    "volume" : 8379.0,
+    "date" : "2023-09-21T13:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 433.93,
+    "high" : 438.92,
+    "low" : 429.26,
+    "last" : 431.15,
+    "close" : 435.2,
+    "volume" : 240067.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 433.93,
+    "high" : 438.92,
+    "low" : 430.05,
+    "last" : 431.07,
+    "close" : 435.2,
+    "volume" : 191208.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 433.93,
+    "high" : 438.92,
+    "low" : 432.69,
+    "last" : 434.49,
+    "close" : 435.2,
+    "volume" : 142789.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 433.93,
+    "high" : 438.92,
+    "low" : 432.69,
+    "last" : 435.385,
+    "close" : 435.2,
+    "volume" : 123625.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 433.93,
+    "high" : 438.92,
+    "low" : 432.965,
+    "last" : 433.82,
+    "close" : 435.2,
+    "volume" : 95701.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 433.93,
+    "high" : 438.92,
+    "low" : 432.965,
+    "last" : 437.52,
+    "close" : 435.2,
+    "volume" : 62436.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 434.46,
+    "high" : 434.62,
+    "low" : 434.25,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 441.01,
+    "high" : 441.13,
+    "low" : 430.04,
+    "last" : 435.56,
+    "close" : 439.66,
+    "volume" : 275504.0,
+    "date" : "2023-09-19T18:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 441.01,
+    "high" : 441.13,
+    "low" : 430.04,
+    "last" : 433.035,
+    "close" : 439.66,
+    "volume" : 253875.0,
+    "date" : "2023-09-19T17:00:00+0000",
+    "symbol" : "NVDA",
+    "exchange" : "IEXG"
+  } ]
+}

@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 9.61,
+    "high" : 9.63,
+    "low" : 9.565,
+    "last" : 9.63,
+    "close" : 9.48,
+    "volume" : 29122.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.61,
+    "high" : 9.625,
+    "low" : 9.565,
+    "last" : 9.59,
+    "close" : 9.48,
+    "volume" : 24381.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.32,
+    "high" : 9.48,
+    "low" : 9.31,
+    "last" : 9.48,
+    "close" : 9.32,
+    "volume" : 4681736.0,
+    "date" : "2023-10-10T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.315,
+    "high" : 9.46,
+    "low" : 9.305,
+    "last" : 9.46,
+    "close" : 9.32,
+    "volume" : 60360.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.315,
+    "high" : 9.435,
+    "low" : 9.305,
+    "last" : 9.43,
+    "close" : 9.32,
+    "volume" : 50455.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.315,
+    "high" : 9.435,
+    "low" : 9.305,
+    "last" : 9.38,
+    "close" : 9.32,
+    "volume" : 43099.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.315,
+    "high" : 9.435,
+    "low" : 9.305,
+    "last" : 9.415,
+    "close" : 9.32,
+    "volume" : 34961.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.315,
+    "high" : 9.435,
+    "low" : 9.305,
+    "last" : 9.38,
+    "close" : 9.32,
+    "volume" : 26993.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.315,
+    "high" : 9.435,
+    "low" : 9.305,
+    "last" : 9.41,
+    "close" : 9.32,
+    "volume" : 10650.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.21,
+    "high" : 9.34,
+    "low" : 9.09,
+    "last" : 9.32,
+    "close" : 9.43,
+    "volume" : 5005277.0,
+    "date" : "2023-10-07T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.22,
+    "high" : 9.335,
+    "low" : 9.085,
+    "last" : 9.325,
+    "close" : 9.43,
+    "volume" : 70773.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.22,
+    "high" : 9.315,
+    "low" : 9.085,
+    "last" : 9.315,
+    "close" : 9.43,
+    "volume" : 67556.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.22,
+    "high" : 9.315,
+    "low" : 9.085,
+    "last" : 9.29,
+    "close" : 9.43,
+    "volume" : 60099.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.22,
+    "high" : 9.315,
+    "low" : 9.085,
+    "last" : 9.315,
+    "close" : 9.43,
+    "volume" : 44051.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.22,
+    "high" : 9.245,
+    "low" : 9.085,
+    "last" : 9.195,
+    "close" : 9.43,
+    "volume" : 20789.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.155,
+    "high" : 9.165,
+    "low" : 9.155,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.24,
+    "high" : 9.44,
+    "low" : 9.235,
+    "last" : 9.43,
+    "close" : 9.26,
+    "volume" : 4540831.0,
+    "date" : "2023-10-06T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.415,
+    "high" : 9.42,
+    "low" : 9.415,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.25,
+    "high" : 9.405,
+    "low" : 9.235,
+    "last" : 9.405,
+    "close" : 9.26,
+    "volume" : 19083.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.36,
+    "high" : 9.365,
+    "low" : 9.36,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.25,
+    "high" : 9.355,
+    "low" : 9.235,
+    "last" : 9.34,
+    "close" : 9.26,
+    "volume" : 9883.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.25,
+    "high" : 9.34,
+    "low" : 9.235,
+    "last" : 9.32,
+    "close" : 9.26,
+    "volume" : 4636.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.335,
+    "high" : 9.335,
+    "low" : 9.325,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.34,
+    "low" : 9.18,
+    "last" : 9.26,
+    "close" : 9.25,
+    "volume" : 4733807.0,
+    "date" : "2023-10-05T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.34,
+    "low" : 9.175,
+    "last" : 9.27,
+    "close" : 9.25,
+    "volume" : 87957.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.34,
+    "low" : 9.175,
+    "last" : 9.25,
+    "close" : 9.25,
+    "volume" : 63938.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.34,
+    "low" : 9.175,
+    "last" : 9.24,
+    "close" : 9.25,
+    "volume" : 51490.0,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.235,
+    "high" : 9.235,
+    "low" : 9.235,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.34,
+    "low" : 9.175,
+    "last" : 9.2,
+    "close" : 9.25,
+    "volume" : 19100.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.245,
+    "high" : 9.27,
+    "low" : 9.24,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.335,
+    "low" : 9.23,
+    "last" : 9.25,
+    "close" : 9.4,
+    "volume" : 5063952.0,
+    "date" : "2023-10-04T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.265,
+    "high" : 9.265,
+    "low" : 9.265,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.255,
+    "high" : 9.255,
+    "low" : 9.255,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.335,
+    "low" : 9.23,
+    "last" : 9.27,
+    "close" : 9.4,
+    "volume" : 53796.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.335,
+    "low" : 9.23,
+    "last" : 9.26,
+    "close" : 9.4,
+    "volume" : 33945.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.335,
+    "low" : 9.23,
+    "last" : 9.295,
+    "close" : 9.4,
+    "volume" : 22248.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.33,
+    "high" : 9.335,
+    "low" : 9.255,
+    "last" : 9.275,
+    "close" : 9.4,
+    "volume" : 6555.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.53,
+    "high" : 9.545,
+    "low" : 9.36,
+    "last" : 9.4,
+    "close" : 9.48,
+    "volume" : 5438670.0,
+    "date" : "2023-10-03T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.415,
+    "high" : 9.415,
+    "low" : 9.415,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.415,
+    "high" : 9.415,
+    "low" : 9.415,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.405,
+    "high" : 9.405,
+    "low" : 9.405,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.385,
+    "high" : 9.395,
+    "low" : 9.385,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.52,
+    "high" : 9.545,
+    "low" : 9.365,
+    "last" : 9.39,
+    "close" : 9.48,
+    "volume" : 10287.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.475,
+    "high" : 9.505,
+    "low" : 9.475,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.49,
+    "high" : 9.575,
+    "low" : 9.43,
+    "last" : 9.48,
+    "close" : 9.55,
+    "volume" : 5860546.0,
+    "date" : "2023-09-30T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.5,
+    "high" : 9.575,
+    "low" : 9.43,
+    "last" : 9.49,
+    "close" : 9.55,
+    "volume" : 73527.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.5,
+    "high" : 9.575,
+    "low" : 9.43,
+    "last" : 9.475,
+    "close" : 9.55,
+    "volume" : 64312.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.5,
+    "high" : 9.575,
+    "low" : 9.445,
+    "last" : 9.45,
+    "close" : 9.55,
+    "volume" : 49773.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.5,
+    "high" : 9.575,
+    "low" : 9.445,
+    "last" : 9.49,
+    "close" : 9.55,
+    "volume" : 37427.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.475,
+    "high" : 9.475,
+    "low" : 9.475,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.51,
+    "high" : 9.51,
+    "low" : 9.505,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.64,
+    "high" : 9.69,
+    "low" : 9.54,
+    "last" : 9.55,
+    "close" : 9.74,
+    "volume" : 6468571.0,
+    "date" : "2023-09-29T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.565,
+    "high" : 9.565,
+    "low" : 9.565,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.565,
+    "high" : 9.565,
+    "low" : 9.565,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.635,
+    "high" : 9.695,
+    "low" : 9.59,
+    "last" : 9.6,
+    "close" : 9.74,
+    "volume" : 52552.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.615,
+    "high" : 9.615,
+    "low" : 9.615,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.635,
+    "high" : 9.695,
+    "low" : 9.605,
+    "last" : 9.615,
+    "close" : 9.74,
+    "volume" : 16032.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.635,
+    "high" : 9.695,
+    "low" : 9.605,
+    "last" : 9.65,
+    "close" : 9.74,
+    "volume" : 3721.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.76,
+    "high" : 9.77,
+    "low" : 9.67,
+    "last" : 9.74,
+    "close" : 9.86,
+    "volume" : 4422331.0,
+    "date" : "2023-09-28T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.725,
+    "high" : 9.725,
+    "low" : 9.725,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.685,
+    "high" : 9.685,
+    "low" : 9.685,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.76,
+    "high" : 9.77,
+    "low" : 9.705,
+    "last" : 9.72,
+    "close" : 9.86,
+    "volume" : 27279.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.725,
+    "high" : 9.725,
+    "low" : 9.725,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.76,
+    "high" : 9.77,
+    "low" : 9.705,
+    "last" : 9.725,
+    "close" : 9.86,
+    "volume" : 14577.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.755,
+    "high" : 9.765,
+    "low" : 9.755,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.89,
+    "high" : 9.935,
+    "low" : 9.84,
+    "last" : 9.86,
+    "close" : 9.87,
+    "volume" : 5077148.0,
+    "date" : "2023-09-27T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.875,
+    "high" : 9.875,
+    "low" : 9.875,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.89,
+    "high" : 9.935,
+    "low" : 9.83,
+    "last" : 9.9,
+    "close" : 9.87,
+    "volume" : 45524.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.895,
+    "high" : 9.9,
+    "low" : 9.895,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.895,
+    "high" : 9.9,
+    "low" : 9.895,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.89,
+    "high" : 9.935,
+    "low" : 9.83,
+    "last" : 9.895,
+    "close" : 9.87,
+    "volume" : 12857.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.89,
+    "high" : 9.935,
+    "low" : 9.83,
+    "last" : 9.935,
+    "close" : 9.87,
+    "volume" : 4257.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.84,
+    "high" : 9.89,
+    "low" : 9.72,
+    "last" : 9.87,
+    "close" : 10.01,
+    "volume" : 6026104.0,
+    "date" : "2023-09-26T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.84,
+    "high" : 9.885,
+    "low" : 9.715,
+    "last" : 9.885,
+    "close" : 10.01,
+    "volume" : 85352.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.84,
+    "high" : 9.88,
+    "low" : 9.715,
+    "last" : 9.875,
+    "close" : 10.01,
+    "volume" : 82369.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.855,
+    "high" : 9.855,
+    "low" : 9.855,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.845,
+    "high" : 9.845,
+    "low" : 9.845,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.77,
+    "high" : 9.775,
+    "low" : 9.765,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.785,
+    "high" : 9.805,
+    "low" : 9.785,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.09,
+    "high" : 10.0999,
+    "low" : 9.99,
+    "last" : 10.01,
+    "close" : 9.98,
+    "volume" : 4256204.0,
+    "date" : "2023-09-23T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.095,
+    "high" : 10.105,
+    "low" : 10.0,
+    "last" : 10.015,
+    "close" : 9.98,
+    "volume" : 47828.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.015,
+    "high" : 10.015,
+    "low" : 10.015,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.035,
+    "high" : 10.035,
+    "low" : 10.035,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.025,
+    "high" : 10.025,
+    "low" : 10.025,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.095,
+    "high" : 10.105,
+    "low" : 10.01,
+    "last" : 10.035,
+    "close" : 9.98,
+    "volume" : 14059.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.095,
+    "high" : 10.1,
+    "low" : 10.01,
+    "last" : 10.065,
+    "close" : 9.98,
+    "volume" : 1930.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.99,
+    "high" : 10.06,
+    "low" : 9.96,
+    "last" : 9.98,
+    "close" : 10.07,
+    "volume" : 4545464.0,
+    "date" : "2023-09-22T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.985,
+    "high" : 10.065,
+    "low" : 9.96,
+    "last" : 10.025,
+    "close" : 10.07,
+    "volume" : 62528.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.985,
+    "high" : 10.065,
+    "low" : 9.96,
+    "last" : 10.04,
+    "close" : 10.07,
+    "volume" : 59383.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.985,
+    "high" : 10.065,
+    "low" : 9.96,
+    "last" : 10.035,
+    "close" : 10.07,
+    "volume" : 52624.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.985,
+    "high" : 10.065,
+    "low" : 9.96,
+    "last" : 10.03,
+    "close" : 10.07,
+    "volume" : 44262.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.985,
+    "high" : 10.065,
+    "low" : 9.96,
+    "last" : 10.01,
+    "close" : 10.07,
+    "volume" : 29131.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 9.985,
+    "high" : 10.03,
+    "low" : 9.96,
+    "last" : 10.02,
+    "close" : 10.07,
+    "volume" : 11928.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.15,
+    "high" : 10.19,
+    "low" : 10.07,
+    "last" : 10.07,
+    "close" : 10.03,
+    "volume" : 4035470.0,
+    "date" : "2023-09-21T00:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.16,
+    "high" : 10.185,
+    "low" : 10.075,
+    "last" : 10.1,
+    "close" : 10.03,
+    "volume" : 73089.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.16,
+    "high" : 10.185,
+    "low" : 10.11,
+    "last" : 10.12,
+    "close" : 10.03,
+    "volume" : 53670.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.155,
+    "high" : 10.155,
+    "low" : 10.155,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.16,
+    "high" : 10.185,
+    "low" : 10.11,
+    "last" : 10.125,
+    "close" : 10.03,
+    "volume" : 43179.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.155,
+    "high" : 10.155,
+    "low" : 10.155,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 10.16,
+    "high" : 10.185,
+    "low" : 10.135,
+    "last" : 10.16,
+    "close" : 10.03,
+    "volume" : 3653.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "VOD",
+    "exchange" : "IEXG"
+  } ]
+}

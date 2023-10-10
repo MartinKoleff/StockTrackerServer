@@ -1,0 +1,1003 @@
+{
+  "data" : [ {
+    "open" : 58.01,
+    "high" : 58.5,
+    "low" : 57.41,
+    "last" : 58.035,
+    "close" : 57.96,
+    "volume" : 141221.0,
+    "date" : "2023-10-10T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.01,
+    "high" : 58.5,
+    "low" : 57.41,
+    "last" : 57.9,
+    "close" : 57.96,
+    "volume" : 98959.0,
+    "date" : "2023-10-10T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.01,
+    "high" : 58.03,
+    "low" : 57.41,
+    "last" : 57.71,
+    "close" : 57.96,
+    "volume" : 41604.0,
+    "date" : "2023-10-10T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.08,
+    "high" : 58.095,
+    "low" : 56.315,
+    "last" : 57.95,
+    "close" : 57.77,
+    "volume" : 157588.0,
+    "date" : "2023-10-09T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.08,
+    "high" : 57.895,
+    "low" : 56.315,
+    "last" : 57.8,
+    "close" : 57.77,
+    "volume" : 131224.0,
+    "date" : "2023-10-09T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.08,
+    "high" : 57.365,
+    "low" : 56.315,
+    "last" : 57.11,
+    "close" : 57.77,
+    "volume" : 105536.0,
+    "date" : "2023-10-09T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.08,
+    "high" : 57.17,
+    "low" : 56.315,
+    "last" : 57.01,
+    "close" : 57.77,
+    "volume" : 77233.0,
+    "date" : "2023-10-09T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.08,
+    "high" : 57.14,
+    "low" : 56.315,
+    "last" : 56.845,
+    "close" : 57.77,
+    "volume" : 59250.0,
+    "date" : "2023-10-09T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.08,
+    "high" : 57.14,
+    "low" : 56.425,
+    "last" : 56.63,
+    "close" : 57.77,
+    "volume" : 26888.0,
+    "date" : "2023-10-09T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.08,
+    "high" : 57.09,
+    "low" : 56.88,
+    "last" : 57.09,
+    "close" : 57.77,
+    "volume" : 340.0,
+    "date" : "2023-10-09T13:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.62,
+    "high" : 58.25,
+    "low" : 55.87,
+    "last" : 58.035,
+    "close" : 57.48,
+    "volume" : 245258.0,
+    "date" : "2023-10-06T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.62,
+    "high" : 57.69,
+    "low" : 55.87,
+    "last" : 57.545,
+    "close" : 57.48,
+    "volume" : 218199.0,
+    "date" : "2023-10-06T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.62,
+    "high" : 57.69,
+    "low" : 55.87,
+    "last" : 57.445,
+    "close" : 57.48,
+    "volume" : 184364.0,
+    "date" : "2023-10-06T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.62,
+    "high" : 57.625,
+    "low" : 55.87,
+    "last" : 57.595,
+    "close" : 57.48,
+    "volume" : 149922.0,
+    "date" : "2023-10-06T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.62,
+    "high" : 57.62,
+    "low" : 55.87,
+    "last" : 56.675,
+    "close" : 57.48,
+    "volume" : 106987.0,
+    "date" : "2023-10-06T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.62,
+    "high" : 57.62,
+    "low" : 56.255,
+    "last" : 56.365,
+    "close" : 57.48,
+    "volume" : 55294.0,
+    "date" : "2023-10-06T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.51,
+    "high" : 58.665,
+    "low" : 57.26,
+    "last" : 57.885,
+    "close" : 58.57,
+    "volume" : 358059.0,
+    "date" : "2023-10-05T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.51,
+    "high" : 58.665,
+    "low" : 57.26,
+    "last" : 58.01,
+    "close" : 58.57,
+    "volume" : 279551.0,
+    "date" : "2023-10-05T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.51,
+    "high" : 58.665,
+    "low" : 57.26,
+    "last" : 57.705,
+    "close" : 58.57,
+    "volume" : 203895.0,
+    "date" : "2023-10-05T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.51,
+    "high" : 58.665,
+    "low" : 57.26,
+    "last" : 57.515,
+    "close" : 58.57,
+    "volume" : 175261.0,
+    "date" : "2023-10-05T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.51,
+    "high" : 58.665,
+    "low" : 57.435,
+    "last" : 57.455,
+    "close" : 58.57,
+    "volume" : 109403.0,
+    "date" : "2023-10-05T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.51,
+    "high" : 58.665,
+    "low" : 57.62,
+    "last" : 57.65,
+    "close" : 58.57,
+    "volume" : 27625.0,
+    "date" : "2023-10-05T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.79,
+    "high" : 58.405,
+    "low" : 57.31,
+    "last" : 58.16,
+    "close" : 57.3,
+    "volume" : 131305.0,
+    "date" : "2023-10-04T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.79,
+    "high" : 58.405,
+    "low" : 57.31,
+    "last" : 57.925,
+    "close" : 57.3,
+    "volume" : 113956.0,
+    "date" : "2023-10-04T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.14,
+    "high" : 58.175,
+    "low" : 58.14,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-04T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.79,
+    "high" : 58.405,
+    "low" : 57.31,
+    "last" : 58.3,
+    "close" : 57.3,
+    "volume" : 77085.0,
+    "date" : "2023-10-04T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.79,
+    "high" : 58.405,
+    "low" : 57.31,
+    "last" : 57.705,
+    "close" : 57.3,
+    "volume" : 61268.0,
+    "date" : "2023-10-04T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.79,
+    "high" : 58.405,
+    "low" : 57.53,
+    "last" : 57.635,
+    "close" : 57.3,
+    "volume" : 22670.0,
+    "date" : "2023-10-04T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.79,
+    "high" : 58.08,
+    "low" : 57.75,
+    "last" : 58.01,
+    "close" : 57.3,
+    "volume" : 1327.0,
+    "date" : "2023-10-04T13:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.18,
+    "high" : 58.65,
+    "low" : 57.135,
+    "last" : 57.14,
+    "close" : 58.56,
+    "volume" : 103081.0,
+    "date" : "2023-10-03T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.18,
+    "high" : 58.65,
+    "low" : 57.45,
+    "last" : 57.48,
+    "close" : 58.56,
+    "volume" : 87071.0,
+    "date" : "2023-10-03T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.18,
+    "high" : 58.65,
+    "low" : 57.49,
+    "last" : 57.84,
+    "close" : 58.56,
+    "volume" : 69446.0,
+    "date" : "2023-10-03T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.18,
+    "high" : 58.65,
+    "low" : 57.49,
+    "last" : 57.88,
+    "close" : 58.56,
+    "volume" : 50304.0,
+    "date" : "2023-10-03T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.18,
+    "high" : 58.65,
+    "low" : 57.49,
+    "last" : 57.63,
+    "close" : 58.56,
+    "volume" : 31394.0,
+    "date" : "2023-10-03T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.18,
+    "high" : 58.65,
+    "low" : 57.815,
+    "last" : 58.31,
+    "close" : 58.56,
+    "volume" : 12246.0,
+    "date" : "2023-10-03T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.64,
+    "low" : 58.005,
+    "last" : 58.265,
+    "close" : 58.46,
+    "volume" : 189509.0,
+    "date" : "2023-10-02T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.43,
+    "high" : 58.445,
+    "low" : 58.4,
+    "last" : null,
+    "close" : null,
+    "volume" : null,
+    "date" : "2023-10-02T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.64,
+    "low" : 58.115,
+    "last" : 58.17,
+    "close" : 58.46,
+    "volume" : 149909.0,
+    "date" : "2023-10-02T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.64,
+    "low" : 58.34,
+    "last" : 58.4,
+    "close" : 58.46,
+    "volume" : 128240.0,
+    "date" : "2023-10-02T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.64,
+    "low" : 58.43,
+    "last" : 58.795,
+    "close" : 58.46,
+    "volume" : 66146.0,
+    "date" : "2023-10-02T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.495,
+    "low" : 58.43,
+    "last" : 59.46,
+    "close" : 58.46,
+    "volume" : 27485.0,
+    "date" : "2023-10-02T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.63,
+    "high" : 59.32,
+    "low" : 58.07,
+    "last" : 58.555,
+    "close" : 58.18,
+    "volume" : 100213.0,
+    "date" : "2023-09-29T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.63,
+    "high" : 59.32,
+    "low" : 58.07,
+    "last" : 58.17,
+    "close" : 58.18,
+    "volume" : 82655.0,
+    "date" : "2023-09-29T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.63,
+    "high" : 59.32,
+    "low" : 58.28,
+    "last" : 58.35,
+    "close" : 58.18,
+    "volume" : 68893.0,
+    "date" : "2023-09-29T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.63,
+    "high" : 59.32,
+    "low" : 58.385,
+    "last" : 58.57,
+    "close" : 58.18,
+    "volume" : 55850.0,
+    "date" : "2023-09-29T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.63,
+    "high" : 59.32,
+    "low" : 58.56,
+    "last" : 58.78,
+    "close" : 58.18,
+    "volume" : 38489.0,
+    "date" : "2023-09-29T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.63,
+    "high" : 59.32,
+    "low" : 58.61,
+    "last" : 58.87,
+    "close" : 58.18,
+    "volume" : 15119.0,
+    "date" : "2023-09-29T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.37,
+    "high" : 58.415,
+    "low" : 57.015,
+    "last" : 58.09,
+    "close" : 57.34,
+    "volume" : 208434.0,
+    "date" : "2023-09-28T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.37,
+    "high" : 58.415,
+    "low" : 57.015,
+    "last" : 57.87,
+    "close" : 57.34,
+    "volume" : 175440.0,
+    "date" : "2023-09-28T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.37,
+    "high" : 58.415,
+    "low" : 57.015,
+    "last" : 58.125,
+    "close" : 57.34,
+    "volume" : 154442.0,
+    "date" : "2023-09-28T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.37,
+    "high" : 58.415,
+    "low" : 57.015,
+    "last" : 58.24,
+    "close" : 57.34,
+    "volume" : 109900.0,
+    "date" : "2023-09-28T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.37,
+    "high" : 57.88,
+    "low" : 57.015,
+    "last" : 57.675,
+    "close" : 57.34,
+    "volume" : 60294.0,
+    "date" : "2023-09-28T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.37,
+    "high" : 57.88,
+    "low" : 57.21,
+    "last" : 57.86,
+    "close" : 57.34,
+    "volume" : 22692.0,
+    "date" : "2023-09-28T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 59.25,
+    "high" : 59.58,
+    "low" : 56.54,
+    "last" : 57.39,
+    "close" : 58.93,
+    "volume" : 276776.0,
+    "date" : "2023-09-27T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 59.25,
+    "high" : 59.58,
+    "low" : 56.54,
+    "last" : 56.89,
+    "close" : 58.93,
+    "volume" : 216544.0,
+    "date" : "2023-09-27T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 59.25,
+    "high" : 59.58,
+    "low" : 57.125,
+    "last" : 57.175,
+    "close" : 58.93,
+    "volume" : 173238.0,
+    "date" : "2023-09-27T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 59.25,
+    "high" : 59.58,
+    "low" : 57.36,
+    "last" : 57.37,
+    "close" : 58.93,
+    "volume" : 138984.0,
+    "date" : "2023-09-27T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 59.25,
+    "high" : 59.58,
+    "low" : 57.85,
+    "last" : 57.88,
+    "close" : 58.93,
+    "volume" : 84261.0,
+    "date" : "2023-09-27T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 59.25,
+    "high" : 59.58,
+    "low" : 59.03,
+    "last" : 59.35,
+    "close" : 58.93,
+    "volume" : 28649.0,
+    "date" : "2023-09-27T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.225,
+    "low" : 58.24,
+    "last" : 58.8,
+    "close" : 58.86,
+    "volume" : 141918.0,
+    "date" : "2023-09-26T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.225,
+    "low" : 58.24,
+    "last" : 58.675,
+    "close" : 58.86,
+    "volume" : 115782.0,
+    "date" : "2023-09-26T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.225,
+    "low" : 58.24,
+    "last" : 59.13,
+    "close" : 58.86,
+    "volume" : 95079.0,
+    "date" : "2023-09-26T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.04,
+    "low" : 58.24,
+    "last" : 58.92,
+    "close" : 58.86,
+    "volume" : 74943.0,
+    "date" : "2023-09-26T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 59.02,
+    "low" : 58.24,
+    "last" : 58.905,
+    "close" : 58.86,
+    "volume" : 51007.0,
+    "date" : "2023-09-26T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.57,
+    "high" : 58.97,
+    "low" : 58.24,
+    "last" : 58.65,
+    "close" : 58.86,
+    "volume" : 15447.0,
+    "date" : "2023-09-26T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.52,
+    "high" : 58.85,
+    "low" : 57.43,
+    "last" : 58.665,
+    "close" : 57.88,
+    "volume" : 145340.0,
+    "date" : "2023-09-25T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.52,
+    "high" : 58.69,
+    "low" : 57.43,
+    "last" : 58.615,
+    "close" : 57.88,
+    "volume" : 127523.0,
+    "date" : "2023-09-25T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.52,
+    "high" : 58.69,
+    "low" : 57.43,
+    "last" : 58.255,
+    "close" : 57.88,
+    "volume" : 105573.0,
+    "date" : "2023-09-25T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.52,
+    "high" : 58.69,
+    "low" : 57.43,
+    "last" : 58.375,
+    "close" : 57.88,
+    "volume" : 78307.0,
+    "date" : "2023-09-25T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.52,
+    "high" : 58.46,
+    "low" : 57.43,
+    "last" : 58.09,
+    "close" : 57.88,
+    "volume" : 58608.0,
+    "date" : "2023-09-25T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 57.52,
+    "high" : 58.46,
+    "low" : 57.43,
+    "last" : 58.425,
+    "close" : 57.88,
+    "volume" : 37084.0,
+    "date" : "2023-09-25T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.99,
+    "high" : 59.195,
+    "low" : 57.835,
+    "last" : 58.03,
+    "close" : 58.62,
+    "volume" : 209824.0,
+    "date" : "2023-09-22T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.99,
+    "high" : 59.195,
+    "low" : 58.145,
+    "last" : 58.17,
+    "close" : 58.62,
+    "volume" : 122469.0,
+    "date" : "2023-09-22T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.99,
+    "high" : 59.195,
+    "low" : 58.43,
+    "last" : 58.8,
+    "close" : 58.62,
+    "volume" : 96926.0,
+    "date" : "2023-09-22T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.99,
+    "high" : 59.195,
+    "low" : 58.43,
+    "last" : 58.52,
+    "close" : 58.62,
+    "volume" : 82138.0,
+    "date" : "2023-09-22T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.99,
+    "high" : 59.195,
+    "low" : 58.43,
+    "last" : 58.74,
+    "close" : 58.62,
+    "volume" : 42230.0,
+    "date" : "2023-09-22T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 58.99,
+    "high" : 59.195,
+    "low" : 58.43,
+    "last" : 58.69,
+    "close" : 58.62,
+    "volume" : 11993.0,
+    "date" : "2023-09-22T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 60.03,
+    "high" : 60.29,
+    "low" : 58.655,
+    "last" : 58.85,
+    "close" : 60.86,
+    "volume" : 232285.0,
+    "date" : "2023-09-21T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 60.03,
+    "high" : 60.29,
+    "low" : 58.655,
+    "last" : 58.86,
+    "close" : 60.86,
+    "volume" : 208806.0,
+    "date" : "2023-09-21T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 60.03,
+    "high" : 60.29,
+    "low" : 58.655,
+    "last" : 58.66,
+    "close" : 60.86,
+    "volume" : 182960.0,
+    "date" : "2023-09-21T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 60.03,
+    "high" : 60.29,
+    "low" : 58.895,
+    "last" : 58.99,
+    "close" : 60.86,
+    "volume" : 159957.0,
+    "date" : "2023-09-21T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 60.03,
+    "high" : 60.29,
+    "low" : 58.895,
+    "last" : 58.91,
+    "close" : 60.86,
+    "volume" : 137970.0,
+    "date" : "2023-09-21T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 60.03,
+    "high" : 60.29,
+    "low" : 59.16,
+    "last" : 59.17,
+    "close" : 60.86,
+    "volume" : 64662.0,
+    "date" : "2023-09-21T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.46,
+    "high" : 62.605,
+    "low" : 61.485,
+    "last" : 61.54,
+    "close" : 62.19,
+    "volume" : 91513.0,
+    "date" : "2023-09-20T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.46,
+    "high" : 62.605,
+    "low" : 61.625,
+    "last" : 61.7,
+    "close" : 62.19,
+    "volume" : 64077.0,
+    "date" : "2023-09-20T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.46,
+    "high" : 62.605,
+    "low" : 61.695,
+    "last" : 62.06,
+    "close" : 62.19,
+    "volume" : 57069.0,
+    "date" : "2023-09-20T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.46,
+    "high" : 62.605,
+    "low" : 61.695,
+    "last" : 61.87,
+    "close" : 62.19,
+    "volume" : 47087.0,
+    "date" : "2023-09-20T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.46,
+    "high" : 62.605,
+    "low" : 61.935,
+    "last" : 62.01,
+    "close" : 62.19,
+    "volume" : 25579.0,
+    "date" : "2023-09-20T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.46,
+    "high" : 62.605,
+    "low" : 62.01,
+    "last" : 62.225,
+    "close" : 62.19,
+    "volume" : 9225.0,
+    "date" : "2023-09-20T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.08,
+    "high" : 62.42,
+    "low" : 61.455,
+    "last" : 62.06,
+    "close" : 62.94,
+    "volume" : 132746.0,
+    "date" : "2023-09-19T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.08,
+    "high" : 62.42,
+    "low" : 61.455,
+    "last" : 62.155,
+    "close" : 62.94,
+    "volume" : 114675.0,
+    "date" : "2023-09-19T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.08,
+    "high" : 62.42,
+    "low" : 61.455,
+    "last" : 61.97,
+    "close" : 62.94,
+    "volume" : 100586.0,
+    "date" : "2023-09-19T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.08,
+    "high" : 62.42,
+    "low" : 61.455,
+    "last" : 61.835,
+    "close" : 62.94,
+    "volume" : 88093.0,
+    "date" : "2023-09-19T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.08,
+    "high" : 62.42,
+    "low" : 61.48,
+    "last" : 61.565,
+    "close" : 62.94,
+    "volume" : 71581.0,
+    "date" : "2023-09-19T15:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 62.08,
+    "high" : 62.42,
+    "low" : 61.81,
+    "last" : 61.9,
+    "close" : 62.94,
+    "volume" : 28979.0,
+    "date" : "2023-09-19T14:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 63.35,
+    "high" : 63.515,
+    "low" : 62.75,
+    "last" : 62.94,
+    "close" : 64.21,
+    "volume" : 1.404997E7,
+    "date" : "2023-09-19T00:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 63.38,
+    "high" : 63.53,
+    "low" : 62.75,
+    "last" : 63.12,
+    "close" : 64.21,
+    "volume" : 158054.0,
+    "date" : "2023-09-18T19:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 63.38,
+    "high" : 63.53,
+    "low" : 62.75,
+    "last" : 63.25,
+    "close" : 64.21,
+    "volume" : 124391.0,
+    "date" : "2023-09-18T18:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 63.38,
+    "high" : 63.505,
+    "low" : 62.75,
+    "last" : 63.36,
+    "close" : 64.21,
+    "volume" : 106297.0,
+    "date" : "2023-09-18T17:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  }, {
+    "open" : 63.38,
+    "high" : 63.505,
+    "low" : 62.75,
+    "last" : 63.385,
+    "close" : 64.21,
+    "volume" : 93549.0,
+    "date" : "2023-09-18T16:00:00+0000",
+    "symbol" : "PYPL",
+    "exchange" : "IEXG"
+  } ]
+}
