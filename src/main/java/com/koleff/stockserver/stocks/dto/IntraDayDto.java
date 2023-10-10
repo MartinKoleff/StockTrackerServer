@@ -20,6 +20,8 @@ public record IntraDayDto(
         Double high,
         @SerializedName("low")
         Double low,
+        @SerializedName("last")
+        Double last,
         @SerializedName("volume")
         Double volume,
         @SerializedName("date")

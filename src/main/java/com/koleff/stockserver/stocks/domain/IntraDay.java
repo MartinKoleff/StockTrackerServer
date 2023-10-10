@@ -48,7 +48,7 @@ public @Data class IntraDay implements Serializable {
 
     @Column(
             name = "close",
-            nullable = false
+            nullable = true
     )
     @SerializedName("close")
     private Double close;
@@ -68,8 +68,15 @@ public @Data class IntraDay implements Serializable {
     private Double low;
 
     @Column(
+            name = "last",
+            nullable = true
+    )
+    @SerializedName("last")
+    private Double last;
+
+    @Column(
             name = "volume",
-            nullable = false
+            nullable = true
     )
     @SerializedName("volume")
     private Double volume;
@@ -103,6 +110,7 @@ public @Data class IntraDay implements Serializable {
                 ", close=" + close +
                 ", high=" + high +
                 ", low=" + low +
+                ", last=" + last +
                 ", volume=" + volume +
                 ", date=" + date +
                 '}';
