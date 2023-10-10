@@ -42,12 +42,21 @@ public class StockService {
                 .stream()
                 .map(stockDtoMapper)
                 .findFirst()
-                .orElseThrow(() -> new StockNotFoundException(
-                        String.format("Stock with id %d not found.", id)));
+                .orElseThrow(
+                        () -> new StockNotFoundException(
+                                String.format("Stock with id %d not found.",
+                                        id
+                                )
+                        )
+                );
+    }
+
+    public void saveStock(String stockTag) {
     }
 
     public void saveStocks() {
-        Type stockType = new TypeToken<DataWrapper<Stock>>() {}.getType();
+        Type stockType = new TypeToken<DataWrapper<Stock>>() {
+        }.getType();
         jsonUtil.setType(stockType);
 
         //Load data from json
@@ -57,4 +66,6 @@ public class StockService {
         System.out.println(data);
         stockRepository.saveAll(data.getData());
     }
+
+
 }

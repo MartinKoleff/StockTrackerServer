@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.controller;
 
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.dto.StockDto;
 import com.koleff.stockserver.stocks.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import java.util.List;
 @RequestMapping(path = "api/v1/stock/")
 public class StockController {
 
-    @Autowired
     private final StockService stockService;
 
     @Autowired
@@ -30,7 +28,12 @@ public class StockController {
         return stockService.getStock(id);
     }
 
-    @PutMapping(path = "save")
+    @PutMapping(path = "save/{stockTag}")
+    public void saveStock(@PathVariable("stockTag") String stockTag){
+        stockService.saveStock(stockTag);
+    }
+
+    @PutMapping(path = "save/all")
     public void saveStocks(){
         stockService.saveStocks();
     }

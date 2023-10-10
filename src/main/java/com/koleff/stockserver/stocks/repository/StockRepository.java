@@ -20,16 +20,21 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
     Optional<Stock> findStockByStockTag(String stockTag);
 
     @Query(
+            value = "SELECT s.tag FROM stock s",
+            nativeQuery = true)
+    Optional<List<String>> getStockTags();
+
+    @Query(
             value = "SELECT * FROM stock s WHERE s.has_intraday = :hasIntraDay",
             nativeQuery = true)
-    List<Stock> selectStockWhereHasIntraDayEqualTrue(
+    List<Stock> selectStocksWhereHasIntraDayEqualTrue(
             @Param("hasIntraDay") Boolean hasIntraDay
     );
 
     @Query(
             value = "SELECT * FROM stock WHERE has_end_of_day = :hasEndOfDay",
             nativeQuery = true)
-    List<Stock> selectStockWhereHasEndOfDayEqualTrue(
+    List<Stock> selectStocksWhereHasEndOfDayEqualTrue(
             @Param("hasEndOfDay") Boolean hasEndOfDay
     );
 
