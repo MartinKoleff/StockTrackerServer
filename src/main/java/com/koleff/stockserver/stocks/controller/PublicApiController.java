@@ -2,21 +2,23 @@ package com.koleff.stockserver.stocks.controller;
 
 import com.koleff.stockserver.stocks.client.PublicApiClient;
 import com.koleff.stockserver.stocks.domain.IntraDay;
+import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.service.PublicApiService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "publicApi/v1/")
-public class PublicApiController {
+public class PublicApiController<T extends SupportTable> {
 
-    private final PublicApiService publicApiService;
-    private final PublicApiClient publicApiClient;
+    private final PublicApiService<T> publicApiService;
+    private final PublicApiClient<T> publicApiClient;
 
     @Autowired
-    public PublicApiController(PublicApiService publicApiService,
-                               PublicApiClient publicApiClient) {
+    public PublicApiController(PublicApiService<T> publicApiService,
+                               PublicApiClient<T> publicApiClient) {
         this.publicApiService = publicApiService;
         this.publicApiClient = publicApiClient;
     }
