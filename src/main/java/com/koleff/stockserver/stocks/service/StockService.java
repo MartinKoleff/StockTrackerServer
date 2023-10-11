@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.service;
 
-import com.google.gson.reflect.TypeToken;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.StockDto;
@@ -11,7 +10,6 @@ import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 @Service
@@ -19,12 +17,12 @@ public class StockService {
 
     private final StockRepository stockRepository;
     private final StockDtoMapper stockDtoMapper;
-    private final JsonUtil<DataWrapper> jsonUtil;
+    private final JsonUtil<DataWrapper<Stock>> jsonUtil;
 
     @Autowired
     public StockService(StockRepository stockRepository,
                         StockDtoMapper stockDtoMapper,
-                        JsonUtil<DataWrapper> jsonUtil) { //@Qualifier(value = "fake")
+                        JsonUtil<DataWrapper<Stock>> jsonUtil) {
         this.stockRepository = stockRepository;
         this.stockDtoMapper = stockDtoMapper;
         this.jsonUtil = jsonUtil;
@@ -55,11 +53,8 @@ public class StockService {
     }
 
     public void saveStocks() {
-        Type stockType = new TypeToken<DataWrapper<Stock>>() {
-        }.getType();
-        jsonUtil.setType(stockType);
-
         //Load data from json
+        jsonUtil.setType(Stock.class);
         String json = jsonUtil.loadJson("tickers.json");
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
 

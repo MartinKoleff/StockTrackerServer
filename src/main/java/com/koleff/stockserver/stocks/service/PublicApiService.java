@@ -2,9 +2,9 @@ package com.koleff.stockserver.stocks.service;
 
 import com.google.gson.reflect.TypeToken;
 import com.koleff.stockserver.stocks.client.PublicApiClient;
-import com.koleff.stockserver.stocks.controller.StockController;
+import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
+import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.exceptions.IntraDayNotSavedException;
 import com.koleff.stockserver.stocks.repository.IntraDayRepository;
@@ -21,29 +21,30 @@ import java.util.Objects;
 @Service
 public class PublicApiService {
 
-    private final JsonUtil<DataWrapper> jsonUtil;
+    private final JsonUtil<DataWrapper<T>> jsonUtil;
     private final StockRepository stockRepository;
     private final StockService stockService;
     private final IntraDayRepository intraDayRepository;
-    private final PublicApiClient publicApiClient;
+    private final PublicApiClient<T> publicApiClient;
 
     @Autowired
     public PublicApiService(
             StockRepository stockRepository,
             StockService stockService,
             IntraDayRepository intraDayRepository,
-            PublicApiClient publicApiClient,
-            JsonUtil<DataWrapper> jsonUtil) {
+            PublicApiClient<T> publicApiClient,
+            JsonUtil<DataWrapper<T>> jsonUtil) {
         this.stockRepository = stockRepository;
         this.stockService = stockService;
         this.intraDayRepository = intraDayRepository;
         this.publicApiClient = publicApiClient;
         this.jsonUtil = jsonUtil;
+
     }
 
-    public void saveIntraDay(String stockTag) {
+    public void saveData(String databaseTable, String stockTag) {
         //Load data
-        List<IntraDay> data = loadIntraDay(stockTag);
+        List<T> data = loadData(databaseTable, stockTag);
 
         //Configure stock_id
         data.forEach(intraDay -> {
@@ -67,45 +68,42 @@ public class PublicApiService {
         System.out.printf("Data successfully added to DB!\nData: %s\n",data);
     }
 
-    /**AUTOMATE FOR ALL ENTITIES*/
-    public List<IntraDay> loadIntraDay(String stockTag) {
-        //Configure JsonUtil
-        Type intraDayType = new TypeToken<DataWrapper<IntraDay>>() {
-        }.getType();
-        jsonUtil.setType(intraDayType);
-
+    public List<T> loadData(String databaseTable, String stockTag) {
         //Find JSON file
-        String filePath = String.format("intraday%s.json", stockTag);
+        String filePath = String.format("%s%s.json",
+                databaseTable,
+                stockTag);
 
-        //Load data from json
+        //Load data from JSON
+        jsonUtil.setType(JsonUtil.extractType(databaseTable));
         String json = jsonUtil.loadJson(filePath);
         if (Objects.isNull(json)) {
-
-            //Call client to create json...
-            publicApiClient.saveIntraDayToJSON(stockTag);
+            //Call client to create JSON...
+            publicApiClient.saveDataToJSON(databaseTable, stockTag);
 
             //Re-call...
-            return loadIntraDay(stockTag);
+            return loadData(databaseTable, stockTag);
         }
 
-        //Parse json to entity
-        DataWrapper<IntraDay> data = jsonUtil.convertJson(json);
+        //Parse JSON to entity
+        DataWrapper<T> data = jsonUtil.convertJson(json);
         return data.getData();
     }
 
-    public void loadIntraDays() {
+    public void loadBulkData(String databaseTable) {
         //Load stock tags
         List<String> stockTags = loadStockTags();
 
         //Load all JSON files
-        stockTags.forEach(this::loadIntraDay);
+        stockTags.forEach(stockTag -> loadData(databaseTable, stockTag));
     }
 
-    public void saveIntraDays() {
+    public void saveBulkData(String databaseTable) {
         //Load stock tags
         List<String> stockTags = loadStockTags();
 
-        stockTags.forEach(this::saveIntraDay);
+        //Run multiple threads...
+        stockTags.forEach(stockTag -> saveData(databaseTable, stockTag));
     }
 
     private List<String> loadStockTags() {
@@ -114,7 +112,7 @@ public class PublicApiService {
                 .stream()
                 .toList();
 
-        if(stockTags.isEmpty()){
+        if (stockTags.isEmpty()) {
             stockService.saveStocks();
             return loadStockTags();
         }

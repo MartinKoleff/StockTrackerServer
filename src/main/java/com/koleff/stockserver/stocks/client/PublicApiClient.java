@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.client;
 
-import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-public class PublicApiClient {
+public class PublicApiClient<T> {
     private final String url = "http://api.marketstack.com/v1/";
 
     @Value("${apiKey}")
@@ -22,28 +21,30 @@ public class PublicApiClient {
         this.jsonUtil = jsonUtil;
     }
 
-    public DataWrapper<IntraDay> getIntraDay(String stockTag) {
-        String intraDayUrl = String.format("%sintraday?access_key=%s&symbols=%s",
+    public DataWrapper<T> getData(String databaseTable, String stockTag) {
+        String requestUrl = String.format("%s%s?access_key=%s&symbols=%s",
                 url,
+                databaseTable,
                 apiKey,
                 stockTag);
 
         //Call remote API
-        DataWrapper<IntraDay> response = restTemplate.getForObject(intraDayUrl, DataWrapper.class);
+        DataWrapper<T> response = restTemplate.getForObject(requestUrl, DataWrapper.class);
         return response;
     }
 
-    public void saveIntraDayToJSON(String stockTag) {
-        String intraDayUrl = String.format("%sintraday?access_key=%s&symbols=%s",
+    public void saveDataToJSON(String databaseTable, String stockTag) {
+        String requestUrl = String.format("%s%s?access_key=%s&symbols=%s",
                 url,
+                databaseTable,
                 apiKey,
                 stockTag);
 
         //Call remote API
-        DataWrapper<IntraDay> response = restTemplate.getForObject(intraDayUrl, DataWrapper.class);
+        DataWrapper<T> response = restTemplate.getForObject(requestUrl, DataWrapper.class);
 
         //Export to JSON
-        jsonUtil.setType(DataWrapper.class);
-        jsonUtil.exportToJson(response, "intraday", stockTag);
+        jsonUtil.setType(JsonUtil.extractType(databaseTable));
+        jsonUtil.exportToJson(response, databaseTable, stockTag);
     }
 }

@@ -1,11 +1,11 @@
 package com.koleff.stockserver.stocks.utils;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import org.json.simple.JSONObject;
@@ -22,10 +22,21 @@ import java.lang.reflect.Type;
 @Component
 public class JsonUtil<T> {
 
-    private Type type;
     private final String resourcePath = "src/main/resources/json/%s";
+    private Type type;
 
-    //Generics are created on build time. They are lost on run time.
+    //Used because generics are not stored during runtime.
+    @SuppressWarnings("Generics")
+    public static Type extractType(String databaseTable) {
+        return switch (databaseTable) {
+            case "intraday" -> new TypeToken<DataWrapper<IntraDay>>() {
+            }.getType();
+            case "eod" -> new TypeToken<DataWrapper<EndOfDay>>() {
+            }.getType();
+            default -> null;
+        };
+    }
+
     public void setType(Type type) {
         this.type = type;
     }
@@ -64,18 +75,21 @@ public class JsonUtil<T> {
     /**
      * Saves data to JSON
      */
-    public void exportToJson(T response, String requestName, String stockTag) { //To automate requestName and stockTag to fetch from response...
-        String filePath;
+    public void exportToJson(T response, String requestName, String stockTag) {
+        String filePath, jsonPath;
 
         //Create file path based on request
         switch (requestName) {
             case "intraday":
-                String jsonPath = String.format("intraday%s.json", stockTag);
-                filePath = String.format(resourcePath, jsonPath);
+                jsonPath = String.format("intraday%s.json", stockTag);
+                break;
+            case "eod":
+                jsonPath = String.format("eod%s.json", stockTag);
                 break;
             default:
                 return;
         }
+        filePath = String.format(resourcePath, jsonPath);
 
         //Convert response to JSON
         String json;

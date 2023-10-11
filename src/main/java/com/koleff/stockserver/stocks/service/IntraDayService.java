@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.service;
 
-import com.google.gson.reflect.TypeToken;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
@@ -14,7 +13,6 @@ import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 @Service
@@ -22,13 +20,13 @@ public class IntraDayService {
     private final IntraDayRepository intraDayRepository;
     private final StockRepository stockRepository;
     private final IntraDayDtoMapper intraDayDtoMapper;
-    private final JsonUtil<DataWrapper> jsonUtil;
+    private final JsonUtil<DataWrapper<IntraDay>> jsonUtil;
 
     @Autowired
     public IntraDayService(IntraDayRepository intraDayRepository,
                            IntraDayDtoMapper intraDayDtoMapper,
                            StockRepository stockRepository,
-                           JsonUtil<DataWrapper> jsonUtil) {
+                           JsonUtil<DataWrapper<IntraDay>> jsonUtil) {
         this.intraDayRepository = intraDayRepository;
         this.intraDayDtoMapper = intraDayDtoMapper;
         this.stockRepository = stockRepository;
@@ -63,11 +61,8 @@ public class IntraDayService {
                 .toList();
     }
 
+    /**REFACTOR TO NOT TAKE FROM JSON...*/
     public void saveIntraDay() {
-        Type intraDayType = new TypeToken<DataWrapper<IntraDay>>() {
-        }.getType();
-        jsonUtil.setType(intraDayType);
-
         stockRepository.findAll().stream()
                 .map(Stock::getTag)
                 .forEach(stockTag -> {
@@ -75,6 +70,7 @@ public class IntraDayService {
                     String filePath = String.format("intraday%s.json", stockTag);
 
                     //Load data from json
+                    jsonUtil.setType(IntraDay.class);
                     String json = jsonUtil.loadJson(filePath);
                     DataWrapper<IntraDay> data = jsonUtil.convertJson(json);
 

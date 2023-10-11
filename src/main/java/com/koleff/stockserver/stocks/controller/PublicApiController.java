@@ -24,40 +24,43 @@ public class PublicApiController {
     /**
      * Get from remote API
      */
-    @GetMapping("intraday/get/{stockTag}")
-    public DataWrapper<IntraDay> getIntraDay(@PathVariable("stockTag") String stockTag) {
-        return publicApiClient.getIntraDay(stockTag);
+    @GetMapping("{databaseTable}/get/{stockTag}")
+    public DataWrapper<T> getData(@PathVariable("databaseTable") String databaseTable,
+                                  @PathVariable("stockTag") String stockTag) {
+        return publicApiClient.getData(databaseTable, stockTag);
     }
 
     /**
      * Save to DB
      */
-    @PutMapping("intraday/save/{stockTag}")
-    public void saveIntraDay(@PathVariable("stockTag") String stockTag) {
-        publicApiService.saveIntraDay(stockTag);
+    @PutMapping("{databaseTable}/save/{stockTag}")
+    public void saveData(@PathVariable("databaseTable") String databaseTable,
+                         @PathVariable("stockTag") String stockTag) {
+        publicApiService.saveData(databaseTable, stockTag);
     }
 
     /**
      * Save all to DB
      */
-    @PutMapping("intraday/save/all")
-    public void saveIntraDays() {
-        publicApiService.saveIntraDays();
+    @PutMapping("{databaseTable}/save/all")
+    public void saveBulkData(@PathVariable("databaseTable") String databaseTable) {
+        publicApiService.saveBulkData(databaseTable);
     }
 
     /**
      * Load from JSON
      */
-    @GetMapping("intraday/load/{stockTag}")
-    public void loadIntraDay(@PathVariable("stockTag") String stockTag) {
-        publicApiService.loadIntraDay(stockTag);
+    @GetMapping("{databaseTable}/load/{stockTag}")
+    public void loadData(@PathVariable("databaseTable") String databaseTable,
+                         @PathVariable("stockTag") String stockTag) {
+        publicApiService.loadData(databaseTable, stockTag);
     }
 
     /**
      * Load all from JSON
      */
-    @GetMapping("intraday/load/all")
-    public void loadIntraDays() {
-        publicApiService.loadIntraDays();
+    @GetMapping("{databaseTable}/load/all")
+    public void loadBulkData(@PathVariable("databaseTable") String databaseTable) {
+        publicApiService.loadBulkData(databaseTable);
     }
 }
