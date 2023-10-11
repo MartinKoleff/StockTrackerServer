@@ -14,7 +14,7 @@ import java.sql.Date;
 @Table(name = "end_of_day")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class EndOfDay implements Serializable { //rename to EOD
+public @Data class EndOfDay implements Serializable, SupportTable { //rename to EOD
     @Id
     @SequenceGenerator(
             name = "eod_sequence",

@@ -14,7 +14,7 @@ import java.sql.Date;
 @Table(name = "intra_day")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class IntraDay implements Serializable {
+public @Data class IntraDay implements Serializable, SupportTable {
     @Id
     @SequenceGenerator(
             name = "intra_day_sequence",

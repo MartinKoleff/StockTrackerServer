@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Table(name = "stock_exchange")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class StockExchange implements Serializable {
+public @Data class StockExchange implements Serializable, SupportTable {
     @Id
     @SequenceGenerator(
             name = "stock_exchange_sequence",
