@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Table(name = "stock_exchange")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class StockExchange implements Serializable, SupportTable {
+public @Data class StockExchange implements Serializable {
     @Id
     @SequenceGenerator(
             name = "stock_exchange_sequence",
@@ -30,15 +30,6 @@ public @Data class StockExchange implements Serializable, SupportTable {
     )
     @SerializedName("id")
     private Long id;
-
-    @Column(
-            name = "stock_id",
-            nullable = false
-    )
-    @NotNull(message = "Stock id must not be empty.")
-    @Expose(deserialize = false)
-    @SerializedName("stock_id")
-    private Long stockId;
 
     @Column(
             name = "name",
@@ -103,13 +94,13 @@ public @Data class StockExchange implements Serializable, SupportTable {
     @SerializedName("website")
     private String website;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "stock_id",
+            name = "id",
             nullable = false,
             insertable = false,
             updatable = false,
-            referencedColumnName = "id",
+            referencedColumnName = "stock_exchange_id",
             foreignKey = @ForeignKey(
                     name = "stock_exchange_fk"
             )
@@ -120,7 +111,6 @@ public @Data class StockExchange implements Serializable, SupportTable {
     public String toString() {
         return "StockExchange{" +
                 "id=" + id +
-                ", stockId=" + stockId +
                 ", name='" + name + '\'' +
                 ", acronym='" + acronym + '\'' +
                 ", exchange='" + exchange + '\'' +

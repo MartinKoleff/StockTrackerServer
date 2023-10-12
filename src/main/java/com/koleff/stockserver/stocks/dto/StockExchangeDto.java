@@ -7,10 +7,6 @@ public record StockExchangeDto (
     @SerializedName("id")
     Long id,
 
-    @SerializedName("stock_id")
-    @Expose(deserialize = false)
-    Long stockId,
-
     @SerializedName("name")
     String name,
 

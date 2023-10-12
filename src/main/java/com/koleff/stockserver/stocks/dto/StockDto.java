@@ -8,6 +8,8 @@ import java.util.List;
 public record StockDto (
         @SerializedName("id")
         Long id,
+        @SerializedName("stock_exchange_id")
+        Long stockExchangeId,
 
         @SerializedName("name")
         String name,

@@ -10,14 +10,23 @@ import java.util.function.Function;
 @Service
 public class StockDtoMapper implements Function<Stock, StockDto> {
 
-    private IntraDayDtoMapper intraDayDtoMapper;
+    private final IntraDayDtoMapper intraDayDtoMapper;
 
-    private EndOfDayDtoMapper endOfDayDtoMapper;
-    private StockExchangeDtoMapper stockExchangeDtoMapper;
+    private final EndOfDayDtoMapper endOfDayDtoMapper;
+    private final StockExchangeDtoMapper stockExchangeDtoMapper;
+
+    @Autowired
+    public StockDtoMapper(IntraDayDtoMapper intraDayDtoMapper, EndOfDayDtoMapper endOfDayDtoMapper, StockExchangeDtoMapper stockExchangeDtoMapper) {
+        this.intraDayDtoMapper = intraDayDtoMapper;
+        this.endOfDayDtoMapper = endOfDayDtoMapper;
+        this.stockExchangeDtoMapper = stockExchangeDtoMapper;
+    }
+
     @Override
     public StockDto apply(Stock stock) {
         return new StockDto(
                 stock.getId(),
+                stock.getStockExchangeId(),
                 stock.getName(),
                 stock.getTag(),
                 stock.getHasIntraDay(),

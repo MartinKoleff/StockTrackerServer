@@ -1,5 +1,6 @@
 package com.koleff.stockserver.stocks.domain;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -31,6 +32,15 @@ public @Data class Stock implements Serializable {
     )
     @SerializedName("id")
     private Long id;
+
+    @Column(
+            name = "stock_exchange_id",
+            nullable = false
+    )
+    @NotNull(message = "Stock exchange id must not be empty.")
+    @Expose(deserialize = false)
+    @SerializedName("stock_exchange_id")
+    private Long stockExchangeId;
 
     @Column(
             name = "name",
@@ -84,7 +94,7 @@ public @Data class Stock implements Serializable {
     )
     private List<IntraDay> intraDay;
 
-    @OneToOne(
+    @OneToMany(
             mappedBy = "stock",
             orphanRemoval = true,
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
