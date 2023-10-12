@@ -10,7 +10,7 @@ public record IntraDayDto(
         @SerializedName("id")
         Long id,
         @SerializedName("stock_id")
-        @Expose(serialize = false, deserialize = false)
+        @Expose(deserialize = false)
         Long stockId,
         @SerializedName("open")
         Double open,

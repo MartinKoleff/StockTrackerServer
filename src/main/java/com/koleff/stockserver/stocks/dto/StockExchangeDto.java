@@ -8,7 +8,7 @@ public record StockExchangeDto (
     Long id,
 
     @SerializedName("stock_id")
-    @Expose(serialize = false, deserialize = false)
+    @Expose(deserialize = false)
     Long stockId,
 
     @SerializedName("name")
