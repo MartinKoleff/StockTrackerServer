@@ -1,26 +1,27 @@
 package com.koleff.stockserver.stocks.controller;
 
-import com.koleff.stockserver.stocks.client.PublicApiClient;
-import com.koleff.stockserver.stocks.domain.IntraDay;
+import com.koleff.stockserver.stocks.client.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.service.PublicApiService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "publicApi/v1/")
 public class PublicApiController<T extends SupportTable> {
 
+    @Value("${apiKey}")
+    private String apiKey;
     private final PublicApiService<T> publicApiService;
-    private final PublicApiClient<T> publicApiClient;
+    private final PublicApiClientV2<T> publicApiClientV2;
 
     @Autowired
     public PublicApiController(PublicApiService<T> publicApiService,
-                               PublicApiClient<T> publicApiClient) {
+                               PublicApiClientV2<T> publicApiClientV2) {
         this.publicApiService = publicApiService;
-        this.publicApiClient = publicApiClient;
+        this.publicApiClientV2 = publicApiClientV2;
     }
 
     /**
@@ -29,7 +30,8 @@ public class PublicApiController<T extends SupportTable> {
     @GetMapping("{databaseTable}/get/{stockTag}")
     public DataWrapper<T> getData(@PathVariable("databaseTable") String databaseTable,
                                   @PathVariable("stockTag") String stockTag) {
-        return publicApiClient.getData(databaseTable, stockTag);
+        return publicApiClientV2.getData(apiKey, stockTag, databaseTable);
+    }
     }
 
     /**
