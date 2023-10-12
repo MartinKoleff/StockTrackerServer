@@ -2,13 +2,15 @@ package com.koleff.stockserver.stocks.service;
 
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
+import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
 import com.koleff.stockserver.stocks.exceptions.DataNotSavedException;
 import com.koleff.stockserver.stocks.exceptions.JsonNotFoundException;
+import com.koleff.stockserver.stocks.repository.EndOfDayRepository;
 import com.koleff.stockserver.stocks.repository.IntraDayRepository;
+import com.koleff.stockserver.stocks.repository.StockExchangeRepository;
 import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,24 +23,30 @@ public class PublicApiService<T extends SupportTable> {
     private final StockRepository stockRepository;
     private final StockService stockService;
     private final IntraDayRepository intraDayRepository;
+    private final EndOfDayRepository endOfDayRepository;
+    private final StockExchangeRepository stockExchangeRepository;
     @Autowired
     public PublicApiService(
             StockRepository stockRepository,
             StockService stockService,
             IntraDayRepository intraDayRepository,
+            EndOfDayRepository endOfDayRepository,
+            StockExchangeRepository stockExchangeRepository,
             JsonUtil<DataWrapper<T>> jsonUtil) {
         this.stockRepository = stockRepository;
         this.stockService = stockService;
         this.intraDayRepository = intraDayRepository;
+        this.endOfDayRepository = endOfDayRepository;
+        this.stockExchangeRepository = stockExchangeRepository;
         this.jsonUtil = jsonUtil;
-
     }
 
-    public void saveData(String databaseTable, String stockTag) {
+    public void saveData(DatabaseTableDto databaseTableDto, String stockTag) {
         //Load data
-        List<T> data = loadData(databaseTable, stockTag);
+        String databaseTable = databaseTableDto.databaseTable();
+        List<T> data = loadData(databaseTableDto, stockTag);
 
-        //Configure stock_id
+        //Configure stock_id/ stock_exchange_id?
         data.forEach(entity -> {
             entity.setStockId(
                     stockRepository.findStockByStockTag(stockTag)
@@ -56,12 +64,28 @@ public class PublicApiService<T extends SupportTable> {
         });
 
         //Save data entities to DB
-        intraDayRepository.saveAll(data);
+        saveToRepository(databaseTable, data);
 
         System.out.printf("Data successfully added to DB!\nData: %s\n", data);
     }
 
-    public List<T> loadData(String databaseTable, String stockTag) {
+    private void saveToRepository(String databaseTable, List<T> data) {
+        switch (databaseTable){
+            case"intraday":
+                intraDayRepository.saveAll(data);
+                break;
+            case"eod":
+                endOfDayRepository.saveAll(data);
+                break;
+            case"exchange":
+                stockExchangeRepository.saveAll(data);
+                break;
+        }
+    }
+
+    public List<T> loadData(DatabaseTableDto databaseTableDto, String stockTag) {
+        String databaseTable = databaseTableDto.databaseTable();
+
         //Find JSON file
         String filePath = String.format("%s%s.json",
                 databaseTable,
@@ -81,40 +105,28 @@ public class PublicApiService<T extends SupportTable> {
     }
 
 
-    public void exportDataToJson(DataWrapper<T> response, String databaseTable, String stockTag) {
+    public void exportDataToJson(DataWrapper<T> response, DatabaseTableDto databaseTableDto, String stockTag) {
+        String databaseTable = databaseTableDto.databaseTable();
+
         //Export to JSON
         jsonUtil.setType(JsonUtil.extractType(databaseTable));
         jsonUtil.exportToJson(response, databaseTable, stockTag);
     }
 
-    public void loadBulkData(String databaseTable) {
+    public void loadBulkData(DatabaseTableDto databaseTableDto) {
         //Load stock tags
-        List<String> stockTags = loadStockTags();
+        List<String> stockTags = stockService.getStockTags();
 
         //Load all JSON files
-        stockTags.forEach(stockTag -> loadData(databaseTable, stockTag));
+        stockTags.forEach(stockTag -> loadData(databaseTableDto, stockTag));
     }
 
-    public void saveBulkData(String databaseTable) {
+    public void saveBulkData(DatabaseTableDto databaseTableDto) {
         //Load stock tags
-        List<String> stockTags = loadStockTags();
+        List<String> stockTags = stockService.getStockTags();
 
         //Run multiple threads...
-        stockTags.forEach(stockTag -> saveData(databaseTable, stockTag));
-    }
-
-    private List<String> loadStockTags() {
-        List<String> stockTags = stockRepository.getStockTags()
-                .orElseThrow()
-                .stream()
-                .toList();
-
-        if (stockTags.isEmpty()) {
-            stockService.saveStocks();
-            return loadStockTags();
-        }
-
-        return stockTags;
+        stockTags.forEach(stockTag -> saveData(databaseTableDto, stockTag));
     }
 }
 

@@ -4,7 +4,9 @@ import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.StockDto;
 import com.koleff.stockserver.stocks.dto.mapper.StockDtoMapper;
+import com.koleff.stockserver.stocks.exceptions.IntraDayNotSavedException;
 import com.koleff.stockserver.stocks.exceptions.StockNotFoundException;
+import com.koleff.stockserver.stocks.exceptions.StocksNotFoundException;
 import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,16 +51,64 @@ public class StockService {
                 );
     }
 
-    public void saveStock(String stockTag) {
+    public StockDto getStock(String stockTag) {
+        return stockRepository.findStockByStockTag(stockTag)
+                .stream()
+                .map(stockDtoMapper)
+                .findFirst()
+                .orElseThrow(
+                        () -> new StockNotFoundException(
+                                String.format("Stock with tag %s not found.",
+                                        stockTag
+                                )
+                        )
+                );
     }
 
-    public void saveStocks() {
-        //Load data from json
+    public List<String> getStockTags() {
+        return stockRepository.getStockTags()
+                .orElseThrow(
+                        () -> new StocksNotFoundException("Stocks not found. Please load them.")
+                )
+                .stream()
+                .toList();
+    }
+
+    public void saveStock(Stock stock) {
+        stockRepository.save(stock);
+    }
+
+    public void saveStocks(List<Stock> data) {
+     stockRepository.saveAll(data);
+    }
+
+    //Load data from JSON
+    public Stock loadStock(String stockTag) {
         jsonUtil.setType(Stock.class);
         String json = jsonUtil.loadJson("tickers.json");
+
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
 
+        Stock stockData = data.getData()
+                .stream()
+                .filter(stock -> stock.getTag().equals(stockTag))
+                .findFirst()
+                .orElseThrow(
+                        () -> new StockNotFoundException("Stock not found in the JSON with all stocks.")
+                );
+        System.out.println(stockData);
+
+        return stockData;
+    }
+
+    //Load data from JSON
+    public List<Stock> loadStocks() {
+        jsonUtil.setType(Stock.class);
+        String json = jsonUtil.loadJson("tickers.json");
+
+        DataWrapper<Stock> data = jsonUtil.convertJson(json);
         System.out.println(data);
-        stockRepository.saveAll(data.getData());
+
+        return data.getData();
     }
 }
