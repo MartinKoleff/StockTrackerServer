@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
 @Configuration
-public class StockConfig {
+public class AppConfig {
 
-    @Value("${app.useFakeStockRepository:false}")
-    private Boolean useFakeStockRepository;
+    @Value("${app.useFakeRepository:false}")
+    private Boolean useFakeRepository;
 
     @Value("${info.company.name}")
     private String companyName;
