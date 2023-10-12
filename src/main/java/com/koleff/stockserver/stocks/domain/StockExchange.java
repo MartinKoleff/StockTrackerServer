@@ -34,8 +34,8 @@ public @Data class StockExchange implements Serializable, SupportTable {
             name = "stock_id",
             nullable = false
     )
+    @Expose(deserialize = false)
     @SerializedName("stock_id")
-    @Expose(serialize = false, deserialize = false)
     private Long stockId;
 
     @Column(

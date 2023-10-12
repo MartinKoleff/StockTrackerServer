@@ -35,8 +35,8 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "stock_id",
             nullable = false
     )
+    @Expose(deserialize = false)
     @SerializedName("stock_id")
-    @Expose(serialize = false, deserialize = false)
     private Long stockId;
 
 
