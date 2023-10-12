@@ -4,11 +4,12 @@ import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Function;
 
-@Service
+@Component
 public class EndOfDayDtoMapper implements Function<EndOfDay, EndOfDayDto> {
 
     @Override

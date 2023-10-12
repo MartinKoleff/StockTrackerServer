@@ -1,14 +1,12 @@
 package com.koleff.stockserver.stocks.dto.mapper;
 
 import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
-import com.koleff.stockserver.stocks.dto.StockDto;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.function.Function;
 
-@Service
+@Component
 public class IntraDayDtoMapper implements Function<IntraDay, IntraDayDto> {
 
     @Override
