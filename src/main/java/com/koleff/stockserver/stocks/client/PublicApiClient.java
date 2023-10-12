@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Migrated to Feign Client
+ */
+@Deprecated
 @Component
 public class PublicApiClient<T> {
     private final String url = "http://api.marketstack.com/v1/";
