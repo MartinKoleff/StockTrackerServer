@@ -3,6 +3,8 @@ package com.koleff.stockserver.stocks.domain;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,6 +37,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
             name = "stock_id",
             nullable = false
     )
+    @NotNull(message = "Stock id must not be empty.")
     @Expose(deserialize = false)
     @SerializedName("stock_id")
     private Long stockId;
@@ -43,6 +46,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
             name = "open",
             nullable = false
     )
+    @NotNull(message = "Open must not be empty.")
     @SerializedName("open")
     private Double open;
 
@@ -57,6 +61,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
             name = "high",
             nullable = false
     )
+    @NotNull(message = "High must not be empty.")
     @SerializedName("high")
     private Double high;
 
@@ -64,6 +69,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
             name = "low",
             nullable = false
     )
+    @NotNull(message = "Low must not be empty.")
     @SerializedName("low")
     private Double low;
 
@@ -85,6 +91,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
             name = "date",
             nullable = false
     )
+    @NotNull(message = "Date must not be empty.")
     @SerializedName("date")
     private String date;
 
@@ -92,8 +99,8 @@ public @Data class IntraDay implements Serializable, SupportTable {
     @JoinColumn(
             name = "stock_id",
             nullable = false,
-            insertable=false,
-            updatable=false,
+            insertable = false,
+            updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
                     name = "intra_day_fk"

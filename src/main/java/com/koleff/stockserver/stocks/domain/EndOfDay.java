@@ -3,6 +3,7 @@ package com.koleff.stockserver.stocks.domain;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,6 +36,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "stock_id",
             nullable = false
     )
+    @NotNull(message = "Stock id must not be empty.")
     @Expose(deserialize = false)
     @SerializedName("stock_id")
     private Long stockId;
@@ -44,6 +46,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "open",
             nullable = false
     )
+    @NotNull(message = "Open must not be empty.")
     @SerializedName("open")
     private Double open;
 
@@ -51,6 +54,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "close",
             nullable = false
     )
+    @NotNull(message = "Close must not be empty.")
     @SerializedName("close")
     private Double close;
 
@@ -58,6 +62,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "high",
             nullable = false
     )
+    @NotNull(message = "High must not be empty.")
     @SerializedName("high")
     private Double high;
 
@@ -65,6 +70,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "low",
             nullable = false
     )
+    @NotNull(message = "Low must not be empty.")
     @SerializedName("low")
     private Double low;
 
@@ -72,6 +78,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "volume",
             nullable = false
     )
+    @NotNull(message = "Volume must not be empty.")
     @SerializedName("volume")
     private Double volume;
 
@@ -79,6 +86,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "adj_open",
             nullable = false
     )
+    @NotNull(message = "Adjust open must not be empty.")
     @SerializedName("adj_open")
     private Double adjOpen;
 
@@ -86,6 +94,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "adj_close",
             nullable = false
     )
+    @NotNull(message = "Adjust close must not be empty.")
     @SerializedName("adj_close")
     private Double adjClose;
 
@@ -93,6 +102,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "adj_high",
             nullable = false
     )
+    @NotNull(message = "Adjust high must not be empty.")
     @SerializedName("adj_high")
     private Double adjHigh;
 
@@ -100,6 +110,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "adj_low",
             nullable = false
     )
+    @NotNull(message = "Adjust low must not be empty.")
     @SerializedName("adj_low")
     private Double adjLow;
 
@@ -107,6 +118,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "adj_volume",
             nullable = false
     )
+    @NotNull(message = "Adjust volume must not be empty.")
     @SerializedName("adj_volume")
     private Double adjVolume;
 
@@ -114,6 +126,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "split_factor",
             nullable = false
     )
+    @NotNull(message = "Split factor volume must not be empty.")
     @SerializedName("split_factor")
     private Double splitFactor;
 
@@ -121,6 +134,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "date",
             nullable = false
     )
+    @NotNull(message = "Date volume must not be empty.")
     @SerializedName("date")
     private String date;
 
@@ -128,8 +142,8 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
     @JoinColumn(
             name = "stock_id",
             nullable = false,
-            insertable=false,
-            updatable=false,
+            insertable = false,
+            updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
                     name = "intra_day_fk"

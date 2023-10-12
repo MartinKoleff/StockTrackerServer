@@ -3,6 +3,7 @@ package com.koleff.stockserver.stocks.domain;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             name = "stock_id",
             nullable = false
     )
+    @NotNull(message = "Stock id must not be empty.")
     @Expose(deserialize = false)
     @SerializedName("stock_id")
     private Long stockId;
@@ -43,6 +45,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Name must not be empty.")
     @SerializedName("name")
     private String name;
 
@@ -51,6 +54,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Acronym must not be empty.")
     @SerializedName("acronym")
     private String acronym;
 
@@ -59,6 +63,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Exchange must not be empty.")
     @SerializedName("exchange")
     private String exchange;
 
@@ -67,6 +72,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Country must not be empty.")
     @SerializedName("country")
     private String country;
 
@@ -75,6 +81,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Country code must not be empty.")
     @SerializedName("country_code")
     private String countryCode;
 
@@ -83,6 +90,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "City must not be empty.")
     @SerializedName("city")
     private String city;
 
@@ -91,6 +99,7 @@ public @Data class StockExchange implements Serializable, SupportTable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Website must not be empty.")
     @SerializedName("website")
     private String website;
 
@@ -98,8 +107,8 @@ public @Data class StockExchange implements Serializable, SupportTable {
     @JoinColumn(
             name = "stock_id",
             nullable = false,
-            insertable=false,
-            updatable=false,
+            insertable = false,
+            updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
                     name = "stock_exchange_fk"

@@ -2,6 +2,8 @@ package com.koleff.stockserver.stocks.domain;
 
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,6 +37,7 @@ public @Data class Stock implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Name must not be empty.")
     @SerializedName("name")
     private String name;
 
@@ -43,20 +46,25 @@ public @Data class Stock implements Serializable {
             nullable = false,
             columnDefinition = "TEXT"
     )
+    @NotNull(message = "Tag must not be empty.")
     @SerializedName("tag")
     private String tag;
 
     @Column(
             name = "has_intraday",
-            nullable = false
+            nullable = false,
+            columnDefinition = "boolean default false"
     )
+    @NotNull(message = "Has intraday must not be empty.")
     @SerializedName("has_intraday")
     private Boolean hasIntraDay;
 
     @Column(
             name = "has_end_of_day",
-            nullable = false
+            nullable = false,
+            columnDefinition = "boolean default false"
     )
+    @NotNull(message = "Has end of day must not be empty.")
     @SerializedName("has_end_of_day")
     private Boolean hasEndOfDay;
 
