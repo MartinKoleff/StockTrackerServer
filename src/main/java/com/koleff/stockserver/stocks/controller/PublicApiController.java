@@ -32,6 +32,15 @@ public class PublicApiController<T extends SupportTable> {
                                   @PathVariable("stockTag") String stockTag) {
         return publicApiClientV2.getData(apiKey, stockTag, databaseTable);
     }
+
+    /**
+     * Get from remote API and export to JSON
+     */
+    @GetMapping("{databaseTable}/export/{stockTag}")
+    public void exportDataToJson(@PathVariable("databaseTable") String databaseTable,
+                                 @PathVariable("stockTag") String stockTag) {
+        DataWrapper<T> response = publicApiClientV2.getData(apiKey, stockTag, databaseTable);
+        publicApiService.exportDataToJson(response, databaseTable, stockTag);
     }
 
     /**
