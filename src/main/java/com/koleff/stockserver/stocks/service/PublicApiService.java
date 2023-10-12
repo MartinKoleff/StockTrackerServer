@@ -1,43 +1,35 @@
 package com.koleff.stockserver.stocks.service;
 
-import com.google.gson.reflect.TypeToken;
-import com.koleff.stockserver.stocks.client.PublicApiClient;
-import com.koleff.stockserver.stocks.domain.EndOfDay;
-import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
-import com.koleff.stockserver.stocks.exceptions.IntraDayNotSavedException;
+import com.koleff.stockserver.stocks.exceptions.DataNotSavedException;
+import com.koleff.stockserver.stocks.exceptions.JsonNotFoundException;
 import com.koleff.stockserver.stocks.repository.IntraDayRepository;
 import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Objects;
 
 
 @Service
-public class PublicApiService {
-
+public class PublicApiService<T extends SupportTable> {
     private final JsonUtil<DataWrapper<T>> jsonUtil;
     private final StockRepository stockRepository;
     private final StockService stockService;
     private final IntraDayRepository intraDayRepository;
-    private final PublicApiClient<T> publicApiClient;
-
     @Autowired
     public PublicApiService(
             StockRepository stockRepository,
             StockService stockService,
             IntraDayRepository intraDayRepository,
-            PublicApiClient<T> publicApiClient,
             JsonUtil<DataWrapper<T>> jsonUtil) {
         this.stockRepository = stockRepository;
         this.stockService = stockService;
         this.intraDayRepository = intraDayRepository;
-        this.publicApiClient = publicApiClient;
         this.jsonUtil = jsonUtil;
 
     }
@@ -47,13 +39,14 @@ public class PublicApiService {
         List<T> data = loadData(databaseTable, stockTag);
 
         //Configure stock_id
-        data.forEach(intraDay -> {
-            intraDay.setStockId(
+        data.forEach(entity -> {
+            entity.setStockId(
                     stockRepository.findStockByStockTag(stockTag)
                             .orElseThrow(
-                                    () -> new IntraDayNotSavedException(
+                                    () -> new DataNotSavedException(
                                             String.format(
-                                                    "Intra day for stock %s could not be saved.",
+                                                    "%s for stock %s could not be saved.",
+                                                    databaseTable,
                                                     stockTag
                                             )
                                     )
@@ -65,7 +58,7 @@ public class PublicApiService {
         //Save data entities to DB
         intraDayRepository.saveAll(data);
 
-        System.out.printf("Data successfully added to DB!\nData: %s\n",data);
+        System.out.printf("Data successfully added to DB!\nData: %s\n", data);
     }
 
     public List<T> loadData(String databaseTable, String stockTag) {
@@ -77,17 +70,21 @@ public class PublicApiService {
         //Load data from JSON
         jsonUtil.setType(JsonUtil.extractType(databaseTable));
         String json = jsonUtil.loadJson(filePath);
-        if (Objects.isNull(json)) {
-            //Call client to create JSON...
-            publicApiClient.saveDataToJSON(databaseTable, stockTag);
 
-            //Re-call...
-            return loadData(databaseTable, stockTag);
+        if (Objects.isNull(json)) {
+            throw new JsonNotFoundException("JSON file doesn't exist. Please call export request first.");
         }
 
         //Parse JSON to entity
         DataWrapper<T> data = jsonUtil.convertJson(json);
         return data.getData();
+    }
+
+
+    public void exportDataToJson(DataWrapper<T> response, String databaseTable, String stockTag) {
+        //Export to JSON
+        jsonUtil.setType(JsonUtil.extractType(databaseTable));
+        jsonUtil.exportToJson(response, databaseTable, stockTag);
     }
 
     public void loadBulkData(String databaseTable) {
