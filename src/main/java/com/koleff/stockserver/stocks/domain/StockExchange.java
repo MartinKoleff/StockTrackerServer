@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -9,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(name = "StockExchange")
 @Table(name = "stock_exchange")
@@ -94,18 +94,13 @@ public @Data class StockExchange implements Serializable {
     @SerializedName("website")
     private String website;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "id",
-            nullable = false,
-            insertable = false,
-            updatable = false,
-            referencedColumnName = "stock_exchange_id",
-            foreignKey = @ForeignKey(
-                    name = "stock_exchange_fk"
-            )
+    @OneToMany(
+            mappedBy = "stockExchange",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.LAZY,
+            orphanRemoval = false
     )
-    private Stock stock;
+    private List<Stock> stock;
 
     @Override
     public String toString() {
