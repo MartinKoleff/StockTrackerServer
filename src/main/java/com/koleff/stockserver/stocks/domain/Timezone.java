@@ -57,6 +57,9 @@ public@Data class Timezone implements Serializable {
     @SerializedName("abbreviation_dst")
     private String abbreviationDst; //Summer time timezone abbreviation (DST -> daylight-saving time)
 
+    @OneToOne //Doesn't need to be bidirectional
+    private StockExchange stockExchange;
+
     @Override
     public String toString() {
         return "Timezone{" +

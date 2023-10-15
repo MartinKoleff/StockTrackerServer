@@ -57,6 +57,9 @@ public@Data class Currency implements Serializable {
     @SerializedName("name")
     private String name;
 
+    @OneToOne //Doesn't need to be bidirectional
+    private StockExchange stockExchange;
+
     @Override
     public String toString() {
         return "Currency{" +

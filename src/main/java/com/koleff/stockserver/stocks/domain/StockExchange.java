@@ -1,5 +1,6 @@
 package com.koleff.stockserver.stocks.domain;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -94,13 +95,62 @@ public @Data class StockExchange implements Serializable {
     @SerializedName("website")
     private String website;
 
+    @Column(
+            name = "timezone_id",
+            nullable = false
+    )
+    @NotNull(message = "Timezone id must not be empty.")
+    @Expose(deserialize = false)
+    @SerializedName("timezone_id")
+    private Long timezoneId;
+
+    @Column(
+            name = "currency_id",
+            nullable = false
+    )
+    @NotNull(message = "Currency id must not be empty.")
+    @Expose(deserialize = false)
+    @SerializedName("currency_id")
+    private Long currencyId;
+
     @OneToMany //Doesn't need to be bidirectional
     private List<Stock> stock;
+
+    @OneToOne(
             mappedBy = "stockExchange",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY,
             orphanRemoval = false
     )
+    @JoinColumn(
+            name = "timezone_id",
+            nullable = false,
+            insertable = false,
+            updatable = false,
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(
+                    name = "timezone_id_fk" //to check for foreign key...
+            )
+    )
+    private Timezone timezone;
+
+    @OneToOne(
+            mappedBy = "stockExchange",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.LAZY,
+            orphanRemoval = false
+    )
+    @JoinColumn(
+            name = "currency_id",
+            nullable = false,
+            insertable = false,
+            updatable = false,
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(
+                    name = "currency_id_fk" //to check for foreign key...
+            )
+    )
+    private Currency currency;
 
     @Override
     public String toString() {
@@ -113,6 +163,8 @@ public @Data class StockExchange implements Serializable {
                 ", countryCode='" + countryCode + '\'' +
                 ", city='" + city + '\'' +
                 ", website='" + website + '\'' +
+                ", timezone=" + timezone +
+                ", currency=" + currency +
                 '}';
     }
 }
