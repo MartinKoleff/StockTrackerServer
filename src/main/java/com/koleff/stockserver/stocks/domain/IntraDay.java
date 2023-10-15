@@ -112,7 +112,6 @@ public @Data class IntraDay implements Serializable, SupportTable {
     public String toString() {
         return "IntraDay{" +
                 "id=" + id +
-                ", stockId=" + stockId +
                 ", open=" + open +
                 ", close=" + close +
                 ", high=" + high +

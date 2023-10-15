@@ -155,7 +155,6 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
     public String toString() {
         return "EndOfDay{" +
                 "id=" + id +
-                ", stockId=" + stockId +
                 ", open=" + open +
                 ", close=" + close +
                 ", high=" + high +
