@@ -94,13 +94,13 @@ public @Data class StockExchange implements Serializable {
     @SerializedName("website")
     private String website;
 
-    @OneToMany(
+    @OneToMany //Doesn't need to be bidirectional
+    private List<Stock> stock;
             mappedBy = "stockExchange",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY,
             orphanRemoval = false
     )
-    private List<Stock> stock;
 
     @Override
     public String toString() {

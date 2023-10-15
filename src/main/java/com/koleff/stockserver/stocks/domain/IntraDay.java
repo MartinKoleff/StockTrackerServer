@@ -95,7 +95,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
     @SerializedName("date")
     private String date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne //Doesn't need to be bidirectional
     @JoinColumn(
             name = "stock_id",
             nullable = false,

@@ -107,7 +107,6 @@ public @Data class Stock implements Serializable {
                     name = "stock_exchange_fk" //to check for foreign key...
             )
     )
-    //should l have join here...
     private StockExchange stockExchange;
 
     @Override
