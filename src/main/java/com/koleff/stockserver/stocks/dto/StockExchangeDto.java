@@ -23,7 +23,13 @@ public record StockExchangeDto (
     String city,
 
     @SerializedName("website")
-    String website
+    String website,
+
+    @SerializedName("timezone")
+    TimezoneDto timezoneDto,
+
+    @SerializedName("currency")
+    CurrencyDto currencyDto
 ){
 
 }
