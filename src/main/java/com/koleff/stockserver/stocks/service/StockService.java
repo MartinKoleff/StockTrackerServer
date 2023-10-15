@@ -79,7 +79,22 @@ public class StockService {
     }
 
     public void saveStocks(List<Stock> data) {
-     stockRepository.saveAll(data);
+        stockRepository.saveAll(data);
+    }
+
+    /**
+     * Delete entry from DB via id
+     */
+    public void delete(Long id) {
+//        stockRepository.deleteStockById(id);
+        stockRepository.deleteById(id);
+    }
+
+    /**
+     * Delete all entries in DB
+     */
+    public void deleteAll() {
+        stockRepository.deleteAll();
     }
 
     //Load data from JSON
