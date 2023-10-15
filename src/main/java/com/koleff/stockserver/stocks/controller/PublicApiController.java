@@ -17,11 +17,11 @@ public class PublicApiController<T extends SupportTable> {
     @Value("${apiKey}")
     private String apiKey;
     private final PublicApiService<T> publicApiService;
-    private final PublicApiClientV2<T> publicApiClientV2;
+    private final PublicApiClientV2 publicApiClientV2;
 
     @Autowired
     public PublicApiController(PublicApiService<T> publicApiService,
-                               PublicApiClientV2<T> publicApiClientV2) {
+                               PublicApiClientV2 publicApiClientV2) {
         this.publicApiService = publicApiService;
         this.publicApiClientV2 = publicApiClientV2;
     }

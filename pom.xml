@@ -15,8 +15,8 @@
     <description>stockServer</description>
 
     <properties>
-        <java.version>17</java.version>
-        <spring.cloud-version>2022.0.0</spring.cloud-version>
+        <java.version>20</java.version>
+        <spring.cloud-version>2022.0.3</spring.cloud-version>
     </properties>
 
     <dependencyManagement>
@@ -55,16 +55,29 @@
             <version>1.0.2</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.hibernate</groupId>-->
-<!--            <artifactId>hibernate-core</artifactId>-->
-<!--            <version>4.1.4.Final</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.9.Final</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-mapper-orm-orm6</artifactId>
+            <version>6.2.2.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-backend-elasticsearch</artifactId>
+            <version>6.2.2.Final</version>
+        </dependency>
+
+        <!--May be replaced with jaxb-api-->
 <!--        <dependency>-->
-<!--            <groupId>org.hibernate</groupId>-->
-<!--            <artifactId>hibernate-entitymanager</artifactId>-->
-<!--            <version>5.2.3.Final</version>-->
+<!--            <groupId>org.javassist</groupId>-->
+<!--            <artifactId>javassist</artifactId>-->
+<!--            <version>3.25.0-GA</version>-->
 <!--        </dependency>-->
 
         <dependency>

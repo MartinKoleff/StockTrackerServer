@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
         value = "publicApiClient", //Used for dependency injection
         url = "http://api.marketstack.com/v1/"
 )
-public interface PublicApiClientV2<T> {
+public interface PublicApiClientV2 {
 
     @GetMapping("{databaseTable}")
-    DataWrapper<T> getData(@RequestParam String apiKey,
+    DataWrapper getData(@RequestParam String apiKey,
                            @RequestParam String stockTag,
                            @Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto);
 }
