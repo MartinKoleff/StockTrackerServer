@@ -11,7 +11,6 @@ public class StockExchangeDtoMapper implements Function<StockExchange, StockExch
     @Override
     public StockExchangeDto apply(StockExchange stockExchange) {
         return new StockExchangeDto(
-                stockExchange.getId(),
                 stockExchange.getName(),
                 stockExchange.getAcronym(),
                 stockExchange.getExchange(),
