@@ -3,7 +3,6 @@ package com.koleff.stockserver.stocks.domain;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -94,12 +93,21 @@ public @Data class Stock implements Serializable {
     )
     private List<IntraDay> intraDay;
 
-    @OneToMany(
-            mappedBy = "stock",
-            orphanRemoval = true,
+    @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
+    @JoinColumn(
+            name = "stock_exchange_id",
+            nullable = false,
+            insertable = false,
+            updatable = false,
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(
+                    name = "stock_exchange_fk" //to check for foreign key...
+            )
+    )
+    //should l have join here...
     private StockExchange stockExchange;
 
     @Override
