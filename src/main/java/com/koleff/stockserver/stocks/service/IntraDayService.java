@@ -66,6 +66,31 @@ public class IntraDayService {
                 .toList();
     }
 
+
+    public List<List<IntraDayDto>> getAllIntraDays() {
+        List<List<IntraDayDto>> data = new ArrayList<>();
+
+        List<String> stockTags = stockService.getStockTags();
+        stockTags.forEach(
+                stockTag -> {
+                    List<IntraDayDto> entry = intraDayRepository.findIntraDayByStockTag(stockTag)
+                            .orElseThrow(
+                                    () -> new IntraDayNotFoundException(
+                                            String.format("Intra day for stock tag %s not found.",
+                                                    stockTag
+                                            )
+                                    )
+                            )
+                            .stream()
+                            .map(intraDayDtoMapper)
+                            .toList();
+                    data.add(entry);
+                }
+        );
+
+        return data;
+    }
+
     //List for all stocks and inside each list -> list of their intraday
     public void saveAllIntraDay(List<List<IntraDay>> data) {
         stockRepository.findAll().stream()
@@ -139,30 +164,6 @@ public class IntraDayService {
         stockTags.forEach(
                 stockTag -> {
                     List<IntraDay> entry = loadIntraDay(stockTag);
-                    data.add(entry);
-                }
-        );
-
-        return data;
-    }
-
-    public List<List<IntraDayDto>> getAllIntraDays() {
-        List<List<IntraDayDto>> data = new ArrayList<>();
-
-        List<String> stockTags = stockService.getStockTags();
-        stockTags.forEach(
-                stockTag -> {
-                    List<IntraDayDto> entry = intraDayRepository.findIntraDayByStockTag(stockTag)
-                            .orElseThrow(
-                                    () -> new IntraDayNotFoundException(
-                                            String.format("Intra day for stock tag %s not found.",
-                                                    stockTag
-                                            )
-                                    )
-                            )
-                            .stream()
-                            .map(intraDayDtoMapper)
-                            .toList();
                     data.add(entry);
                 }
         );
