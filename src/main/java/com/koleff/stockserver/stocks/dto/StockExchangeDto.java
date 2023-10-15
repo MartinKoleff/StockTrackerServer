@@ -4,9 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public record StockExchangeDto (
-    @SerializedName("id")
-    Long id,
-
     @SerializedName("name")
     String name,
 
