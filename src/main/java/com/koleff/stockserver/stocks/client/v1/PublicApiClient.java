@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.client;
+package com.koleff.stockserver.stocks.client.v1;
 
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.utils.JsonUtil;

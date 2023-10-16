@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.client;
+package com.koleff.stockserver.stocks.client.v2;
 
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
@@ -12,11 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
         value = "publicApiClient", //Used for dependency injection
         url = "http://api.marketstack.com/v1/"
 )
-public interface PublicApiClientV2 {
-
-    //TODO: add parametrized entry to DataWrapper<T>
+public interface PublicApiClientV2<T> {
     @GetMapping("{databaseTable}")
-    DataWrapper getData(@RequestParam String apiKey,
+    DataWrapper<T> getData(@RequestParam String apiKey,
                            @RequestParam String stockTag,
                            @Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto);
 }
