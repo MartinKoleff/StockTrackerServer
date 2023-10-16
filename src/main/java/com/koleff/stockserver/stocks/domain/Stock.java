@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "stock")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class Stock implements Serializable {
+public @Data class Stock implements Serializable, SupportTable { //TODO: add SupportTable
     @Id
     @SequenceGenerator(
             name = "stock_sequence",
@@ -118,5 +118,10 @@ public @Data class Stock implements Serializable {
                 ", hasIntraDay=" + hasIntraDay +
                 ", hasEndOfDay=" + hasEndOfDay +
                 '}';
+    }
+
+    @Override
+    public void setStockId(Long id) {
+
     }
 }
