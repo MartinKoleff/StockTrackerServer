@@ -5,6 +5,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 
 @FeignClient(
         value = "stockPublicApiClient", //Used for dependency injection
-        url = "http://api.marketstack.com/v1/" //TODO: append
+        url = "${spring.cloud.openfeign.client.config.postClient.url}"
 )
 public interface StockPublicApiClientV2 extends PublicApiClientV2<Stock>{ }

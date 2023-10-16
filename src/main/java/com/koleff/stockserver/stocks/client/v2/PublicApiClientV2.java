@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(
         value = "publicApiClient", //Used for dependency injection
-        url = "http://api.marketstack.com/v1/"
+        url = "${spring.cloud.openfeign.client.config.postClient.url}"
 )
 public interface PublicApiClientV2<T> {
     @GetMapping("{databaseTable}")
