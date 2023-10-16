@@ -42,4 +42,9 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
     @Modifying
     @Query("DELETE FROM Stock s WHERE s.id = ?1")
     int deleteStockById(Long id);
+
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM Stock s WHERE s.tag = ?1")
+    int deleteByStockTag(String stockTag);
 }
