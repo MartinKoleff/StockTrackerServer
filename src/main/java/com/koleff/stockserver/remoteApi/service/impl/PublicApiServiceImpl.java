@@ -1,12 +1,14 @@
-package com.koleff.stockserver.stocks.service.impl;
+package com.koleff.stockserver.remoteApi.service.impl;
 
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
-import com.koleff.stockserver.stocks.dto.StockDto;
-import com.koleff.stockserver.stocks.dto.mapper.StockDtoMapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
 import com.koleff.stockserver.stocks.exceptions.JsonNotFoundException;
-import com.koleff.stockserver.stocks.service.PublicApiService;
+import com.koleff.stockserver.remoteApi.service.PublicApiService;
+import com.koleff.stockserver.stocks.service.impl.EndOfDayServiceImpl;
+import com.koleff.stockserver.stocks.service.impl.IntraDayServiceImpl;
+import com.koleff.stockserver.stocks.service.impl.StockExchangeServiceImpl;
+import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
 import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +22,7 @@ public class PublicApiServiceImpl<T extends SupportTable>
         implements PublicApiService<T> {
     private final StockServiceImpl stockServiceImpl;
     private final IntraDayServiceImpl intraDayServiceImpl;
-    private final EndOfDayServiceImpl endOfDayServiceImpl; //TODO: add...
+    private final EndOfDayServiceImpl endOfDayServiceImpl;
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final JsonUtil<DataWrapper<T>> jsonUtil;
 
@@ -71,20 +73,20 @@ public class PublicApiServiceImpl<T extends SupportTable>
      */
     private void saveToRepository(String databaseTable, List<T> data) {
         //TODO: Assert T is IntraDay/EndOfDay/StockExchangeService...
-        switch (databaseTable) {
-            case "tickers":
-                stockServiceImpl.saveStocks(data);
-                break;
-            case "intraday":
-                intraDayServiceImpl.saveAllIntraDays(data);
-                break;
-            case "eod":
-                endOfDayServiceImpl.saveAllEndOfDays(data);
-                break;
-            case "exchange":
-                stockExchangeServiceImpl.saveStockExchanges(data);
-                break;
-        }
+//        switch () {
+//            case "tickers":
+//                stockServiceImpl.saveStocks(data);
+//                break;
+//            case "intraday":
+//                intraDayServiceImpl.saveAllIntraDays(data);
+//                break;
+//            case "eod":
+//                endOfDayServiceImpl.saveAllEndOfDays(data);
+//                break;
+//            case "exchange":
+//                stockExchangeServiceImpl.saveStockExchanges(data);
+//                break;
+//        }
     }
 
     /**

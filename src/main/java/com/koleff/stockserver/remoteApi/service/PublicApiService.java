@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.service;
+package com.koleff.stockserver.remoteApi.service;
 
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;

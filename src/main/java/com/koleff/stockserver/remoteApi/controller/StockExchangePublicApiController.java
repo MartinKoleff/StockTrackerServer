@@ -1,21 +1,21 @@
-package com.koleff.stockserver.stocks.controller.publicApiController;
+package com.koleff.stockserver.remoteApi.controller;
 
-import com.koleff.stockserver.stocks.client.v2.EndOfDayPublicApiClientV2;
-import com.koleff.stockserver.stocks.domain.EndOfDay;
+import com.koleff.stockserver.remoteApi.client.v2.StockExchangePublicApiClientV2;
+import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
-import com.koleff.stockserver.stocks.service.impl.PublicApiServiceImpl;
+import com.koleff.stockserver.remoteApi.service.impl.PublicApiServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("publicApi/v1/eod/")
-public class EndOfDayPublicApiController extends PublicApiController<EndOfDay> {
+@RequestMapping("publicApi/v1/stock_exchange")
+public class StockExchangePublicApiController extends PublicApiController<StockExchange> {
 
-  private final DatabaseTableDto databaseTableDto = new DatabaseTableDto("eod");
+    private final DatabaseTableDto databaseTableDto = new DatabaseTableDto("stock_exchange");
 
-    public EndOfDayPublicApiController(PublicApiServiceImpl<EndOfDay> publicApiServiceImpl,
-                                       EndOfDayPublicApiClientV2 endOfDayPublicApiClientV2) {
-        super(publicApiServiceImpl, endOfDayPublicApiClientV2);
+    public StockExchangePublicApiController(PublicApiServiceImpl<StockExchange> publicApiServiceImpl,
+                                            StockExchangePublicApiClientV2 stockExchangePublicApiClientV2) {
+        super(publicApiServiceImpl, stockExchangePublicApiClientV2);
     }
 
     /**
@@ -23,7 +23,7 @@ public class EndOfDayPublicApiController extends PublicApiController<EndOfDay> {
      */
     @Override
     @GetMapping("get/{stockTag}")
-    public DataWrapper<EndOfDay> getData(@PathVariable("stockTag") String stockTag) {
+    public DataWrapper<StockExchange> getData(@PathVariable("stockTag") String stockTag) {
         return super.getData(stockTag);
     }
 

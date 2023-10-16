@@ -1,10 +1,10 @@
-package com.koleff.stockserver.stocks.controller.publicApiController;
+package com.koleff.stockserver.remoteApi.controller;
 
-import com.koleff.stockserver.stocks.client.v2.PublicApiClientV2;
+import com.koleff.stockserver.remoteApi.client.v2.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
-import com.koleff.stockserver.stocks.service.impl.PublicApiServiceImpl;
+import com.koleff.stockserver.remoteApi.service.impl.PublicApiServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
 
 public abstract class PublicApiController<T extends SupportTable>  {

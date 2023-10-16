@@ -1,6 +1,9 @@
 package com.koleff.stockserver;
 
-import com.koleff.stockserver.stocks.client.v2.*;
+import com.koleff.stockserver.remoteApi.client.v2.EndOfDayPublicApiClientV2;
+import com.koleff.stockserver.remoteApi.client.v2.IntraDayPublicApiClientV2;
+import com.koleff.stockserver.remoteApi.client.v2.StockExchangePublicApiClientV2;
+import com.koleff.stockserver.remoteApi.client.v2.StockPublicApiClientV2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration;

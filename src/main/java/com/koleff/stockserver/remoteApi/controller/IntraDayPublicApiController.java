@@ -1,23 +1,21 @@
-package com.koleff.stockserver.stocks.controller.publicApiController;
+package com.koleff.stockserver.remoteApi.controller;
 
-import com.koleff.stockserver.stocks.client.v2.EndOfDayPublicApiClientV2;
-import com.koleff.stockserver.stocks.client.v2.StockExchangePublicApiClientV2;
-import com.koleff.stockserver.stocks.domain.EndOfDay;
-import com.koleff.stockserver.stocks.domain.StockExchange;
+import com.koleff.stockserver.remoteApi.client.v2.IntraDayPublicApiClientV2;
+import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
-import com.koleff.stockserver.stocks.service.impl.PublicApiServiceImpl;
+import com.koleff.stockserver.remoteApi.service.impl.PublicApiServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("publicApi/v1/stock_exchange")
-public class StockExchangePublicApiController extends PublicApiController<StockExchange> {
+@RequestMapping("publicApi/v1/intraday")
+public class IntraDayPublicApiController extends PublicApiController<IntraDay> {
 
-    private final DatabaseTableDto databaseTableDto = new DatabaseTableDto("stock_exchange");
+    private final DatabaseTableDto databaseTableDto = new DatabaseTableDto("intraday");
 
-    public StockExchangePublicApiController(PublicApiServiceImpl<StockExchange> publicApiServiceImpl,
-                                            StockExchangePublicApiClientV2 stockExchangePublicApiClientV2) {
-        super(publicApiServiceImpl, stockExchangePublicApiClientV2);
+    public IntraDayPublicApiController(PublicApiServiceImpl<IntraDay> publicApiServiceImpl,
+                                       IntraDayPublicApiClientV2 intraDayPublicApiClientV2) {
+        super(publicApiServiceImpl, intraDayPublicApiClientV2);
     }
 
     /**
@@ -25,7 +23,7 @@ public class StockExchangePublicApiController extends PublicApiController<StockE
      */
     @Override
     @GetMapping("get/{stockTag}")
-    public DataWrapper<StockExchange> getData(@PathVariable("stockTag") String stockTag) {
+    public DataWrapper<IntraDay> getData(@PathVariable("stockTag") String stockTag) {
         return super.getData(stockTag);
     }
 

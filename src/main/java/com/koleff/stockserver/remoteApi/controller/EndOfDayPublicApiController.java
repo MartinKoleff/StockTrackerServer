@@ -1,22 +1,21 @@
-package com.koleff.stockserver.stocks.controller.publicApiController;
+package com.koleff.stockserver.remoteApi.controller;
 
-import com.koleff.stockserver.stocks.client.v2.IntraDayPublicApiClientV2;
+import com.koleff.stockserver.remoteApi.client.v2.EndOfDayPublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
-import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
-import com.koleff.stockserver.stocks.service.impl.PublicApiServiceImpl;
+import com.koleff.stockserver.remoteApi.service.impl.PublicApiServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("publicApi/v1/intraday")
-public class IntraDayPublicApiController extends PublicApiController<IntraDay> {
+@RequestMapping("publicApi/v1/eod/")
+public class EndOfDayPublicApiController extends PublicApiController<EndOfDay> {
 
-    private final DatabaseTableDto databaseTableDto = new DatabaseTableDto("intraday");
+  private final DatabaseTableDto databaseTableDto = new DatabaseTableDto("eod");
 
-    public IntraDayPublicApiController(PublicApiServiceImpl<IntraDay> publicApiServiceImpl,
-                                       IntraDayPublicApiClientV2 intraDayPublicApiClientV2) {
-        super(publicApiServiceImpl, intraDayPublicApiClientV2);
+    public EndOfDayPublicApiController(PublicApiServiceImpl<EndOfDay> publicApiServiceImpl,
+                                       EndOfDayPublicApiClientV2 endOfDayPublicApiClientV2) {
+        super(publicApiServiceImpl, endOfDayPublicApiClientV2);
     }
 
     /**
@@ -24,7 +23,7 @@ public class IntraDayPublicApiController extends PublicApiController<IntraDay> {
      */
     @Override
     @GetMapping("get/{stockTag}")
-    public DataWrapper<IntraDay> getData(@PathVariable("stockTag") String stockTag) {
+    public DataWrapper<EndOfDay> getData(@PathVariable("stockTag") String stockTag) {
         return super.getData(stockTag);
     }
 
