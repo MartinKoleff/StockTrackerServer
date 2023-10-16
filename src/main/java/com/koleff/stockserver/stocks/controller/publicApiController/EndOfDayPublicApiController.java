@@ -21,9 +21,10 @@ public class EndOfDayPublicApiController extends PublicApiController<EndOfDay> {
     /**
      * Get from remote API
      */
+    @Override
     @GetMapping("get/{stockTag}")
     public DataWrapper<EndOfDay> getData(@PathVariable("stockTag") String stockTag) {
-        return super.getData(databaseTableDto, stockTag);
+        return super.getData(stockTag);
     }
 
     /**

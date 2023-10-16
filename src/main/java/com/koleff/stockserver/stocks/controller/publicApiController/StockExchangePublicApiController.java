@@ -23,9 +23,10 @@ public class StockExchangePublicApiController extends PublicApiController<StockE
     /**
      * Get from remote API
      */
+    @Override
     @GetMapping("get/{stockTag}")
     public DataWrapper<StockExchange> getData(@PathVariable("stockTag") String stockTag) {
-        return super.getData(databaseTableDto, stockTag);
+        return super.getData(stockTag);
     }
 
     /**

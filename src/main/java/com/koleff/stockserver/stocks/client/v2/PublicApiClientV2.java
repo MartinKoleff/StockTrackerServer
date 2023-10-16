@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
         url = "${spring.cloud.openfeign.client.config.postClient.url}"
 )
 public interface PublicApiClientV2<T> {
-    @GetMapping("{databaseTable}")
     DataWrapper<T> getData(@RequestParam String apiKey,
-                           @RequestParam String stockTag,
-                           @Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto);
+                           @RequestParam String stockTag);
 }
