@@ -3,12 +3,15 @@ package com.koleff.stockserver;
 import com.koleff.stockserver.stocks.client.v2.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+@SpringBootApplication(
+        exclude ={ElasticsearchRestClientAutoConfiguration.class}
+)
 @ConfigurationPropertiesScan
 @EnableJpaRepositories
 @EnableFeignClients(
