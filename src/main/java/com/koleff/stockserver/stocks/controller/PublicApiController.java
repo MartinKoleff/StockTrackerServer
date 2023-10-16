@@ -4,7 +4,7 @@ import com.koleff.stockserver.stocks.client.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
-import com.koleff.stockserver.stocks.service.PublicApiService;
+import com.koleff.stockserver.stocks.service.impl.PublicApiServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,13 +16,13 @@ public class PublicApiController<T extends SupportTable> {
 
     @Value("${apiKey}")
     private String apiKey;
-    private final PublicApiService<T> publicApiService;
+    private final PublicApiServiceImpl<T> publicApiServiceImpl;
     private final PublicApiClientV2 publicApiClientV2;
 
     @Autowired
-    public PublicApiController(PublicApiService<T> publicApiService,
+    public PublicApiController(PublicApiServiceImpl<T> publicApiServiceImpl,
                                PublicApiClientV2 publicApiClientV2) {
-        this.publicApiService = publicApiService;
+        this.publicApiServiceImpl = publicApiServiceImpl;
         this.publicApiClientV2 = publicApiClientV2;
     }
 
@@ -42,24 +42,24 @@ public class PublicApiController<T extends SupportTable> {
     public void exportDataToJson(@Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto,
                                  @PathVariable("stockTag") String stockTag) {
         DataWrapper<T> response = publicApiClientV2.getData(apiKey, stockTag, databaseTableDto);
-        publicApiService.exportDataToJson(response, databaseTableDto, stockTag);
+        publicApiServiceImpl.exportDataToJson(response, databaseTableDto, stockTag);
     }
 
     /**
      * Save to DB
      */
-    @PutMapping("{databaseTable}/save/{stockTag}")
+    @PutMapping("{databaseTable}/save/{stockTag}") //TODO: add data as dependency
     public void saveData(@Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto,
                          @PathVariable("stockTag") String stockTag) {
-        publicApiService.saveData(databaseTableDto, stockTag);
+        publicApiServiceImpl.saveData(databaseTableDto, stockTag);
     }
 
     /**
      * Save all to DB
      */
-    @PutMapping("{databaseTable}/save/all")
+    @PutMapping("{databaseTable}/save/all") //TODO: add data as dependency
     public void saveBulkData(@Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto) {
-        publicApiService.saveBulkData(databaseTableDto);
+        publicApiServiceImpl.saveBulkData(databaseTableDto);
     }
 
     /**
@@ -68,7 +68,7 @@ public class PublicApiController<T extends SupportTable> {
     @GetMapping("{databaseTable}/load/{stockTag}")
     public void loadData(@Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto,
                          @PathVariable("stockTag") String stockTag) {
-        publicApiService.loadData(databaseTableDto, stockTag);
+        publicApiServiceImpl.loadData(databaseTableDto, stockTag);
     }
 
     /**
@@ -76,6 +76,6 @@ public class PublicApiController<T extends SupportTable> {
      */
     @GetMapping("{databaseTable}/load/all")
     public void loadBulkData(@Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto) {
-        publicApiService.loadBulkData(databaseTableDto);
+        publicApiServiceImpl.loadBulkData(databaseTableDto);
     }
 }

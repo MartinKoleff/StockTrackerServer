@@ -2,7 +2,7 @@ package com.koleff.stockserver.stocks.controller;
 
 import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.dto.StockExchangeDto;
-import com.koleff.stockserver.stocks.service.StockExchangeService;
+import com.koleff.stockserver.stocks.service.impl.StockExchangeServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,26 +17,26 @@ import java.util.List;
 @RequestMapping(path = "api/v1/stock_exchange/")
 public class StockExchangeController {
 
-    private final StockExchangeService stockExchangeService;
+    private final StockExchangeServiceImpl stockExchangeServiceImpl;
 
     @Autowired
-    public StockExchangeController(StockExchangeService stockExchangeService) {
-        this.stockExchangeService = stockExchangeService;
+    public StockExchangeController(StockExchangeServiceImpl stockExchangeServiceImpl) {
+        this.stockExchangeServiceImpl = stockExchangeServiceImpl;
     }
 
     @GetMapping(path = "get/all")
     public List<StockExchangeDto> getStockExchanges() {
-        return stockExchangeService.getStockExchanges();
+        return stockExchangeServiceImpl.getStockExchanges();
     }
 
     @GetMapping(path = "get/{stock_exchange_id}")
     public StockExchangeDto getStockExchange(@PathVariable("stock_exchange_id") Long id) {
-        return stockExchangeService.getStockExchange(id);
+        return stockExchangeServiceImpl.getStockExchange(id);
     }
 
     @GetMapping(path = "get/{country}")
-    public StockExchangeDto getStock(@PathVariable("country") String country) {
-        return stockExchangeService.getStockExchange(country);
+    public List<StockExchangeDto> getStockExchangesByCountry(@PathVariable("country") String country) {
+        return stockExchangeServiceImpl.getStockExchange(country);
     }
 
 
@@ -45,7 +45,7 @@ public class StockExchangeController {
      */
     @PutMapping(path = "save/all")
     public void saveStockExchanges(@Valid List<StockExchange> stockExchanges) {
-        stockExchangeService.saveStockExchanges(stockExchanges);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
     }
 
     /**
@@ -53,14 +53,14 @@ public class StockExchangeController {
      */
     @PutMapping(path = "save")
     public void saveStockExchange(@Valid StockExchange stockExchange) {
-        stockExchangeService.saveStockExchange(stockExchange);
+        stockExchangeServiceImpl.saveStockExchange(stockExchange);
     }
 
     /**
      * Load all from JSON
      */
     @GetMapping(path = "load/all")
-    public List<StockExchange> loadStockExchanges() {
-        return stockExchangeService.loadStockExchanges();
+    public List<StockExchange> loadAllStockExchanges() {
+        return stockExchangeServiceImpl.loadAllStockExchanges();
     }
 }

@@ -2,7 +2,7 @@ package com.koleff.stockserver.stocks.controller;
 
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.dto.StockDto;
-import com.koleff.stockserver.stocks.service.StockService;
+import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,26 +13,26 @@ import java.util.List;
 @RequestMapping(path = "api/v1/stock/")
 public class StockController {
 
-    private final StockService stockService;
+    private final StockServiceImpl stockServiceImpl;
 
     @Autowired
-    public StockController(StockService stockService) {
-        this.stockService = stockService;
+    public StockController(StockServiceImpl stockServiceImpl) {
+        this.stockServiceImpl = stockServiceImpl;
     }
 
     @GetMapping(path = "get/all")
     public List<StockDto> getStocks() {
-        return stockService.getStocks();
+        return stockServiceImpl.getStocks();
     }
 
     @GetMapping(path = "get/{stock_id}")
     public StockDto getStock(@PathVariable("stock_id") Long id) {
-        return stockService.getStock(id);
+        return stockServiceImpl.getStock(id);
     }
 
     @GetMapping(path = "get/{stock_tag}")
     public StockDto getStock(@PathVariable("stock_tag") String stockTag) {
-        return stockService.getStock(stockTag);
+        return stockServiceImpl.getStock(stockTag);
     }
 
     /**
@@ -40,7 +40,7 @@ public class StockController {
      */
     @PutMapping(path = "save/all")
     public void saveStocks(@Valid List<Stock> stocks) {
-        stockService.saveStocks(stocks);
+        stockServiceImpl.saveStocks(stocks);
     }
 
     /**
@@ -48,15 +48,15 @@ public class StockController {
      */
     @PutMapping(path = "save")
     public void saveStock(@Valid Stock stock) {
-        stockService.saveStock(stock);
+        stockServiceImpl.saveStock(stock);
     }
 
     /**
      * Load all from JSON
      */
     @GetMapping(path = "load/all")
-    public List<Stock> loadStocks() {
-        return stockService.loadStocks();
+    public List<Stock> loadAllStocks() {
+        return stockServiceImpl.loadAllStocks();
     }
 
     /**
@@ -64,6 +64,6 @@ public class StockController {
      */
     @PutMapping(path = "load/{stockTag}")
     public Stock loadStock(@PathVariable("stockTag") String stockTag) {
-        return stockService.loadStock(stockTag);
+        return stockServiceImpl.loadStock(stockTag);
     }
 }
