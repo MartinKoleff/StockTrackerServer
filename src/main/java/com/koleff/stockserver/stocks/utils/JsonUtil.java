@@ -13,6 +13,7 @@ import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.core.ResolvableType;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -25,31 +26,24 @@ import java.lang.reflect.Type;
 public class JsonUtil<T> {
 
     private final String resourcePath = "src/main/resources/json/%s";
-    private Type type;
+    private ResolvableType type;
 
     /**
-     * Stores parametrized type
+     * Sets parametrized type
      * Function is used because generics are not stored during runtime.
-     * @param databaseTable type of request
-     * @return type of parametrized type T
      */
-    @SuppressWarnings("Generics")
-    public static Type extractType(String databaseTable) {
-        return switch (databaseTable) {
-            case "intraday" -> new TypeToken<DataWrapper<IntraDay>>() {
-            }.getType();
-            case "eod" -> new TypeToken<DataWrapper<EndOfDay>>() {
-            }.getType();
-            case "exchange" -> new TypeToken<DataWrapper<StockExchange>>() {
-            }.getType();
-            case "tickers" -> new TypeToken<DataWrapper<Stock>>() {
-            }.getType();
-            default -> null;
-        };
+    public void setType(ResolvableType type) {
+        this.type = type;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public static ResolvableType extractType(String databaseTable) {
+        return switch (databaseTable) {
+            case "intraday" -> ResolvableType.forClass(IntraDay.class);
+            case "eod" -> ResolvableType.forClass(EndOfDay.class);
+            case "exchange" -> ResolvableType.forClass(StockExchange.class);
+            case "tickers" -> ResolvableType.forClass(Stock.class);
+            default -> null;
+        };
     }
 
     /**
@@ -86,7 +80,7 @@ public class JsonUtil<T> {
      */
     public T convertJson(String json) {
         Gson gson = new Gson();
-        return gson.fromJson(json, type);
+        return gson.fromJson(json, type.getType());
     }
 
     /**

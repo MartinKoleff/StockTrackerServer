@@ -10,6 +10,7 @@ import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.service.StockService;
 import com.koleff.stockserver.stocks.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ResolvableType;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -153,7 +154,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public Stock loadStock(String stockTag) {
-        jsonUtil.setType(Stock.class);
+        jsonUtil.setType(ResolvableType.forClass(Stock.class));
         String json = jsonUtil.loadJson("tickers.json");
 
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
@@ -175,7 +176,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public List<Stock> loadAllStocks() {
-        jsonUtil.setType(Stock.class);
+        jsonUtil.setType(ResolvableType.forClass(Stock.class));
         String json = jsonUtil.loadJson("tickers.json");
 
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
