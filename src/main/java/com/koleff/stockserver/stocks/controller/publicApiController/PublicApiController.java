@@ -1,6 +1,6 @@
-package com.koleff.stockserver.stocks.controller;
+package com.koleff.stockserver.stocks.controller.publicApiController;
 
-import com.koleff.stockserver.stocks.client.PublicApiClientV2;
+import com.koleff.stockserver.stocks.client.v2.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
@@ -11,17 +11,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "publicApi/v1/")
-public class PublicApiController<T extends SupportTable> {
+@RequestMapping("publicApi/v1/")
+public abstract class PublicApiController<T extends SupportTable>  {
 
     @Value("${apiKey}")
     private String apiKey;
     private final PublicApiServiceImpl<T> publicApiServiceImpl;
-    private final PublicApiClientV2 publicApiClientV2;
+    private final PublicApiClientV2<T> publicApiClientV2;
 
     @Autowired
     public PublicApiController(PublicApiServiceImpl<T> publicApiServiceImpl,
-                               PublicApiClientV2 publicApiClientV2) {
+                               PublicApiClientV2<T> publicApiClientV2) {
         this.publicApiServiceImpl = publicApiServiceImpl;
         this.publicApiClientV2 = publicApiClientV2;
     }
@@ -29,7 +29,7 @@ public class PublicApiController<T extends SupportTable> {
     /**
      * Get from remote API
      */
-    @GetMapping("{databaseTable}/get/{stockTag}")
+    @GetMapping("{databaseTable}/get/{stockTag}") //TODO: can be removed if l don't want to use this controller
     public DataWrapper<T> getData(@Valid @PathVariable("databaseTable") DatabaseTableDto databaseTableDto,
                                   @PathVariable("stockTag") String stockTag) {
         return publicApiClientV2.getData(apiKey, stockTag, databaseTableDto);
