@@ -1,6 +1,6 @@
-package com.koleff.stockserver.remoteApi.controller;
+package com.koleff.stockserver.remoteApi.controller.base;
 
-import com.koleff.stockserver.remoteApi.client.v2.PublicApiClientV2;
+import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
