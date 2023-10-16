@@ -7,6 +7,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
+import com.koleff.stockserver.stocks.domain.Stock;
+import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,13 +27,22 @@ public class JsonUtil<T> {
     private final String resourcePath = "src/main/resources/json/%s";
     private Type type;
 
-    //Used because generics are not stored during runtime.
+    /**
+     * Stores parametrized type
+     * Function is used because generics are not stored during runtime.
+     * @param databaseTable type of request
+     * @return type of parametrized type T
+     */
     @SuppressWarnings("Generics")
     public static Type extractType(String databaseTable) {
         return switch (databaseTable) {
             case "intraday" -> new TypeToken<DataWrapper<IntraDay>>() {
             }.getType();
             case "eod" -> new TypeToken<DataWrapper<EndOfDay>>() {
+            }.getType();
+            case "exchange" -> new TypeToken<DataWrapper<StockExchange>>() {
+            }.getType();
+            case "tickers" -> new TypeToken<DataWrapper<Stock>>() {
             }.getType();
             default -> null;
         };
@@ -43,6 +54,9 @@ public class JsonUtil<T> {
 
     /**
      * Load JSON from file
+     *
+     * @param jsonPath path to JSON file with data
+     * @return json data
      */
     public String loadJson(String jsonPath) {
         String filePath = String.format(resourcePath, jsonPath);
@@ -66,6 +80,9 @@ public class JsonUtil<T> {
 
     /**
      * Map JSON to custom object
+     *
+     * @param json data in JSON format
+     * @return json mapped to custom object T
      */
     public T convertJson(String json) {
         Gson gson = new Gson();
@@ -74,6 +91,10 @@ public class JsonUtil<T> {
 
     /**
      * Saves data to JSON
+     *
+     * @param response    data
+     * @param requestName remote api request name used for configuring JSON file name
+     * @param stockTag    stock tag
      */
     public void exportToJson(T response, String requestName, String stockTag) {
         String filePath, jsonPath;
@@ -86,6 +107,8 @@ public class JsonUtil<T> {
             case "eod":
                 jsonPath = String.format("eod%s.json", stockTag);
                 break;
+            case "exchange":
+            case "tickers":
             default:
                 return;
         }
