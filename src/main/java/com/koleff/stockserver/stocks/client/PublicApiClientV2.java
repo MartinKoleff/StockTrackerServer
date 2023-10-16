@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 )
 public interface PublicApiClientV2 {
 
+    //TODO: add parametrized entry to DataWrapper<T>
     @GetMapping("{databaseTable}")
     DataWrapper getData(@RequestParam String apiKey,
                            @RequestParam String stockTag,

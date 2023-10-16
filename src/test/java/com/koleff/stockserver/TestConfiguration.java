@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         IntraDayRepository.class,
         EndOfDayRepository.class,
         StockExchangeRepository.class
+        //TODO: add more in future...
     }
 )
 public class TestConfiguration {

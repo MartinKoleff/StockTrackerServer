@@ -27,6 +27,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @SpringBootTest(
         webEnvironment = RANDOM_PORT
+        webEnvironment = RANDOM_PORT //TODO: look up
 )
 @TestInstance(PER_CLASS)
 @ContextConfiguration(
@@ -36,6 +37,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 /**
  * Using VM options to configure PostgreSQL DB login
  */
+@ExtendWith(SpringExtension.class) //TODO: look up
 class StockServerApplicationTests {
 
     private final StockService stockService;
