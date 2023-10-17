@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
  * Migrated to Feign Client
  */
 @Deprecated
-@Component
+//@Component
 public class PublicApiClient<T> {
     private final String url = "http://api.marketstack.com/v1/";
 
@@ -20,7 +20,7 @@ public class PublicApiClient<T> {
     private final JsonUtil jsonUtil;
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @Autowired
+//    @Autowired
     public PublicApiClient(JsonUtil jsonUtil) {
         this.jsonUtil = jsonUtil;
     }
