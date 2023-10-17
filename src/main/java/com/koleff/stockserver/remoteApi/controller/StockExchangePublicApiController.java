@@ -9,7 +9,7 @@ import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("publicApi/v1/stock_exchange")
+@RequestMapping("publicApi/v1/exchange")
 public class StockExchangePublicApiController extends PublicApiController<StockExchange> {
 
     public StockExchangePublicApiController(PublicApiServiceImpl<StockExchange> publicApiServiceImpl,

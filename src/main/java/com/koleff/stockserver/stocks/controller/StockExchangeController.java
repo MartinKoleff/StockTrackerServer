@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping(path = "api/v1/stock_exchange/")
+@RequestMapping(path = "api/v1/exchange/")
 public class StockExchangeController {
 
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
