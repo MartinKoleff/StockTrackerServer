@@ -5,14 +5,12 @@ import com.koleff.stockserver.remoteApi.controller.base.PublicApiController;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
-import com.koleff.stockserver.remoteApi.service.impl.PublicApiServiceImpl;
+import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("publicApi/v1/tickers")
 public class StockPublicApiController extends PublicApiController<Stock> {
-
-    private final DatabaseTableDto databaseTableDto = new DatabaseTableDto("tickers");
 
     public StockPublicApiController(PublicApiServiceImpl<Stock> publicApiServiceImpl,
                                     StockPublicApiClientV2 stockPublicApiClientV2) {
@@ -31,40 +29,45 @@ public class StockPublicApiController extends PublicApiController<Stock> {
     /**
      * Get from remote API and export to JSON
      */
+    @Override
     @GetMapping("export/{stockTag}")
     public void exportDataToJson(@PathVariable("stockTag") String stockTag) {
-        super.exportDataToJson(databaseTableDto, stockTag);
+        super.exportDataToJson(stockTag);
     }
 
     /**
      * Save to DB
      */
+    @Override
     @PutMapping("save/{stockTag}") //TODO: add data as dependency
     public void saveData(@PathVariable("stockTag") String stockTag) {
-        super.saveData(databaseTableDto, stockTag);
+        super.saveData(stockTag);
     }
 
     /**
      * Save all to DB
      */
+    @Override
     @PutMapping("save/all") //TODO: add data as dependency
     public void saveBulkData() {
-        super.saveBulkData(databaseTableDto);
+        super.saveBulkData();
     }
 
     /**
      * Load from JSON
      */
+    @Override
     @GetMapping("load/{stockTag}")
     public void loadData(@PathVariable("stockTag") String stockTag) {
-        super.loadData(databaseTableDto, stockTag);
+        super.loadData(stockTag);
     }
 
     /**
      * Load all from JSON
      */
+    @Override
     @GetMapping("load/all")
     public void loadBulkData() {
-        super.loadBulkData(databaseTableDto);
+        super.loadBulkData();
     }
 }

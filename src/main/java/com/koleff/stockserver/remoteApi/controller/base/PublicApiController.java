@@ -4,7 +4,7 @@ import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
-import com.koleff.stockserver.remoteApi.service.impl.PublicApiServiceImpl;
+import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
 
 public abstract class PublicApiController<T extends SupportTable>  {
@@ -30,39 +30,36 @@ public abstract class PublicApiController<T extends SupportTable>  {
     /**
      * Get from remote API and export to JSON
      */
-    public void exportDataToJson(DatabaseTableDto databaseTableDto,
-                                 String stockTag) {
+    public void exportDataToJson(String stockTag) {
         DataWrapper<T> response = publicApiClientV2.getData(apiKey, stockTag);
-        publicApiServiceImpl.exportDataToJson(response, databaseTableDto, stockTag);
+        publicApiServiceImpl.exportDataToJson(response, stockTag);
     }
 
     /**
      * Save to DB
      */
-    public void saveData(DatabaseTableDto databaseTableDto,
-                         String stockTag) {
-        publicApiServiceImpl.saveData(databaseTableDto, stockTag);
+    public void saveData(String stockTag) {
+        publicApiServiceImpl.saveData(stockTag);
     }
 
     /**
      * Save all to DB
      */
-    public void saveBulkData(DatabaseTableDto databaseTableDto) {
-        publicApiServiceImpl.saveBulkData(databaseTableDto);
+    public void saveBulkData() {
+        publicApiServiceImpl.saveBulkData();
     }
 
     /**
      * Load from JSON
      */
-    public void loadData(DatabaseTableDto databaseTableDto,
-                         String stockTag) {
-        publicApiServiceImpl.loadData(databaseTableDto, stockTag);
+    public void loadData(String stockTag) {
+        publicApiServiceImpl.loadData(stockTag);
     }
 
     /**
      * Load all from JSON
      */
-    public void loadBulkData(DatabaseTableDto databaseTableDto) {
-        publicApiServiceImpl.loadBulkData(databaseTableDto);
+    public void loadBulkData() {
+        publicApiServiceImpl.loadBulkData();
     }
 }
