@@ -7,9 +7,8 @@ import com.koleff.stockserver.stocks.dto.mapper.StockExchangeDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.StockExchangeNotFoundException;
 import com.koleff.stockserver.stocks.repository.StockExchangeRepository;
 import com.koleff.stockserver.stocks.service.StockExchangeService;
-import com.koleff.stockserver.stocks.utils.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ResolvableType;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -107,7 +106,6 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public List<StockExchange> loadAllStockExchanges() {
-        jsonUtil.setType(ResolvableType.forClass(StockExchange.class));
         String json = jsonUtil.loadJson("stockExchanges.json");
 
         DataWrapper<StockExchange> data = jsonUtil.convertJson(json);

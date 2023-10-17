@@ -10,9 +10,8 @@ import com.koleff.stockserver.stocks.exceptions.IntraDayNotSavedException;
 import com.koleff.stockserver.stocks.repository.IntraDayRepository;
 import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.service.IntraDayService;
-import com.koleff.stockserver.stocks.utils.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ResolvableType;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -201,7 +200,6 @@ public class IntraDayServiceImpl implements IntraDayService {
         String filePath = String.format("intraday%s.json", stockTag);
 
         //Load data from json
-        jsonUtil.setType(ResolvableType.forClass(IntraDay.class));
         String json = jsonUtil.loadJson(filePath);
         DataWrapper<IntraDay> data = jsonUtil.convertJson(json);
 
