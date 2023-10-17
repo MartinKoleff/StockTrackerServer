@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.utils;
+package com.koleff.stockserver.stocks.utils.jsonUtil.base;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,29 +22,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
-@Component
-public class JsonUtil<T> {
+public abstract class JsonUtil<T> {
 
     private final String resourcePath = "src/main/resources/json/%s";
-    private ResolvableType type;
 
     /**
-     * Sets parametrized type
-     * Function is used because generics are not stored during runtime.
+     * Used to parse JSON to class T
+     *
+     * @return parametrized type T initialized in different child classes
      */
-    public void setType(ResolvableType type) {
-        this.type = type;
-    }
-
-    public static ResolvableType extractType(String databaseTable) {
-        return switch (databaseTable) {
-            case "intraday" -> ResolvableType.forClass(IntraDay.class);
-            case "eod" -> ResolvableType.forClass(EndOfDay.class);
-            case "exchange" -> ResolvableType.forClass(StockExchange.class);
-            case "tickers" -> ResolvableType.forClass(Stock.class);
-            default -> null;
-        };
-    }
+    protected abstract Type getType();
 
     /**
      * Load JSON from file
@@ -80,7 +67,7 @@ public class JsonUtil<T> {
      */
     public T convertJson(String json) {
         Gson gson = new Gson();
-        return gson.fromJson(json, type.getType());
+        return gson.fromJson(json, getType());
     }
 
     /**
