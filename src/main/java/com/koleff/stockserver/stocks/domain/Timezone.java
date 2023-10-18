@@ -66,7 +66,7 @@ public@Data class Timezone implements Serializable {
                 "id=" + id +
                 ", timezone='" + timezone + '\'' +
                 ", abbreviation='" + abbreviation + '\'' +
-                ", abbreviationDst='" + abbreviationDst + '\'' +
+                ", abbreviation_dst='" + abbreviationDst + '\'' +
                 '}';
     }
 }
