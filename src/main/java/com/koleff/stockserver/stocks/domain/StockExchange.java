@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "stock_exchange")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class StockExchange implements Serializable, SupportTable { //TODO: add SupportTable
+public @Data class StockExchange implements Serializable{
     @Id
     @SequenceGenerator(
             name = "stock_exchange_sequence",
@@ -166,9 +166,5 @@ public @Data class StockExchange implements Serializable, SupportTable { //TODO:
                 ", timezone=" + timezone +
                 ", currency=" + currency +
                 '}';
-    }
-
-    @Override
-    public void setStockId(Long id) {
     }
 }
