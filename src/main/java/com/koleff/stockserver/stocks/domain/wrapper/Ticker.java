@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.domain;
+package com.koleff.stockserver.stocks.domain.wrapper;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;

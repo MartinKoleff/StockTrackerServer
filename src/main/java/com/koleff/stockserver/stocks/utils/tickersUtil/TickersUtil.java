@@ -1,7 +1,7 @@
 package com.koleff.stockserver.stocks.utils.tickersUtil;
 
 import com.koleff.stockserver.stocks.domain.StockExchange;
-import com.koleff.stockserver.stocks.domain.Ticker;
+import com.koleff.stockserver.stocks.domain.wrapper.Ticker;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.domain.wrapper.StockWithStockExchange;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;

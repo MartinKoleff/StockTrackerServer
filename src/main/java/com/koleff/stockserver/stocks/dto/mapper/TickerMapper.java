@@ -1,6 +1,6 @@
 package com.koleff.stockserver.stocks.dto.mapper;
 
-import com.koleff.stockserver.stocks.domain.Ticker;
+import com.koleff.stockserver.stocks.domain.wrapper.Ticker;
 import com.koleff.stockserver.stocks.domain.wrapper.StockWithStockExchange;
 import org.springframework.stereotype.Component;
 
