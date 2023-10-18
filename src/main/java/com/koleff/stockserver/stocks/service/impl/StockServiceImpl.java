@@ -153,7 +153,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public Stock loadStock(String stockTag) {
-        String json = jsonUtil.loadJson("tickers.json");
+        String json = jsonUtil.loadJson("tickersV2.json");
 
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
 
@@ -174,7 +174,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public List<Stock> loadAllStocks() {
-        String json = jsonUtil.loadJson("tickers.json");
+        String json = jsonUtil.loadJson("tickersV2.json");
 
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
         System.out.println(data);
