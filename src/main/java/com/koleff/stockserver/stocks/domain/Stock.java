@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -37,7 +36,6 @@ public @Data class Stock implements Serializable {
             nullable = false
     )
     @NotNull(message = "Stock exchange id must not be empty.")
-    @Expose(deserialize = false)
     @SerializedName("stock_exchange_id")
     private Long stockExchangeId;
 

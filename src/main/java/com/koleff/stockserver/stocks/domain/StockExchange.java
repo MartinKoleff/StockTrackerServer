@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -100,7 +99,6 @@ public @Data class StockExchange implements Serializable{
             nullable = false
     )
     @NotNull(message = "Timezone id must not be empty.")
-    @Expose(deserialize = false)
     @SerializedName("timezone_id")
     private Long timezoneId;
 
@@ -109,7 +107,6 @@ public @Data class StockExchange implements Serializable{
             nullable = false
     )
     @NotNull(message = "Currency id must not be empty.")
-    @Expose(deserialize = false)
     @SerializedName("currency_id")
     private Long currencyId;
 

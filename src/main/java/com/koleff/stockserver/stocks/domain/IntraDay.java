@@ -1,16 +1,13 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 @Entity(name = "IntraDay")
 @Table(name = "intra_day")
@@ -38,7 +35,6 @@ public @Data class IntraDay implements Serializable {
             nullable = false
     )
     @NotNull(message = "Stock id must not be empty.")
-    @Expose(deserialize = false)
     @SerializedName("stock_id")
     private Long stockId;
 
