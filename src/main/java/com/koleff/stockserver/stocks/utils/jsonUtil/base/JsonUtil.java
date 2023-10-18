@@ -3,6 +3,7 @@ package com.koleff.stockserver.stocks.utils.jsonUtil.base;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
@@ -61,24 +62,28 @@ public abstract class JsonUtil<T> {
 
     /**
      * Map JSON to custom object
-     *
+     * - SerializedName() only works for serialization.
+     * - For deserialization @JsonAlias from jackson library is supported by Spring.
      * @param json data in JSON format
      * @return json mapped to custom object T
      */
     public T convertJson(String json) {
-        Gson gson = new Gson();
+        Gson gson = new Gson().newBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .create();
         return gson.fromJson(json, getType());
     }
 
     /**
      * Saves data to JSON
+     * Used for IntraDay and EndOfDay entities
      *
      * @param response    data
      * @param requestName remote api request name used for configuring JSON file name
      * @param stockTag    stock tag
      */
     public void exportToJson(T response, String requestName, String stockTag) {
-        String filePath, jsonPath;
+        String jsonPath;
 
         //Create file path based on request
         switch (requestName) {
@@ -88,12 +93,53 @@ public abstract class JsonUtil<T> {
             case "eod":
                 jsonPath = String.format("eod%s.json", stockTag);
                 break;
-            case "exchange":
-            case "tickers":
             default:
                 return;
         }
-        filePath = String.format(resourcePath, jsonPath);
+
+        export(response, jsonPath);
+    }
+
+    /**
+     * Saves data to JSON
+     * Used for Stock and StockExchange entities
+     * - V2 suffix means configured JSON files
+     *
+     * @param response    data
+     * @param requestName remote api request name used for configuring JSON file name
+     */
+    public void exportToJson(T response, String requestName) {
+        String jsonPath;
+
+        //Create file path based on request
+        switch (requestName) {
+            case "exchange":
+                jsonPath = "exchanges.json";
+                break;
+            case "tickers":
+                jsonPath = "tickers.json";
+                break;
+            case "tickersV2":
+                jsonPath = "tickersV2.json";
+                break;
+            case "exchangeV2":
+                jsonPath = "exchangesV2.json";
+                break;
+            default:
+                return;
+        }
+
+        export(response, jsonPath);
+    }
+
+    /**
+     * Saves data to JSON. Writes to file
+     *
+     * @param response data
+     * @param jsonPath file path
+     */
+    private void export(T response, String jsonPath) {
+        String filePath = String.format(resourcePath, jsonPath);
 
         //Convert response to JSON
         String json;
