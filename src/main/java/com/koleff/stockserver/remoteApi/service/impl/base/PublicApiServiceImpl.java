@@ -1,11 +1,13 @@
 package com.koleff.stockserver.remoteApi.service.impl.base;
 
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
+import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.exceptions.JsonNotFoundException;
 import com.koleff.stockserver.remoteApi.service.PublicApiService;
 import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,11 +24,25 @@ public abstract class PublicApiServiceImpl<T>
     }
 
     /**
-     * Used in exportDataToJSON
+     * Used in exportDataToJSON()
      *
      * @return request name / JSON name prefix
      */
     protected abstract String getRequestName();
+
+    /**
+     * Save data for specific entity to repository DB
+     */
+
+    protected abstract void saveToRepository(List<T> data);
+
+
+    /**
+     * Configures all secondary IDs used for joins with other tables
+     *
+     * @param stockTag needed for IntraDay and EndOfDay join
+     */
+    protected abstract void configureJoin(List<T> data, String stockTag);
 
     /**
      * Configures join IDs and saves data to repository DB
@@ -36,17 +52,13 @@ public abstract class PublicApiServiceImpl<T>
     @Override
     public void saveData(String stockTag) {
         //Load data
-        List<T> data = loadData(stockTag);
+        List<T> data = loadData(stockTag); //TODO: add as dependency and load from tests...
 
-        //Configure stock_id/ stock_exchange_id? //TODO: refactor SupportTable
-        data.forEach(entity -> {
-            entity.setStockId(
-                    stockServiceImpl.getStockId(stockTag)
-            );
-        });
+        //Configure all joins for entity -> fill all secondary IDs
+        configureJoin(data, stockTag);
 
         //Save data entities to DB
-        //TODO: override saveData... saveToRepository(data);
+        saveToRepository(data);
 
         System.out.printf("Data successfully added to DB!\nData: %s\n", data);
     }
@@ -91,20 +103,29 @@ public abstract class PublicApiServiceImpl<T>
     }
 
     /**
-     * Loads all JSON files associated with the @databaseTableDto
+     * Loads all JSON files associated with parametrized type
      * - Used for EndOfDay and IntraDay JSONs.
      */
     @Override
-    public void loadBulkData() {
+    public List<List<T>> loadBulkData() {
         //Load stock tags
         List<String> stockTags = stockServiceImpl.getStockTags();
 
+        List<List<T>> data = new ArrayList<>();
+
         //Load all JSON files
-        stockTags.forEach(this::loadData);
+        stockTags.forEach(stockTag -> {
+                    List<T> entry = loadData(stockTag);
+
+                    data.add(entry);
+                }
+        );
+
+        return data;
     }
 
     /**
-     * Saves all entries associated with @databaseTableDto to their repository DB
+     * Saves all entries associated with parametrized type to their repository DB
      */
     @Override
     public void saveBulkData() {
