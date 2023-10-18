@@ -160,8 +160,8 @@ public @Data class StockExchange implements Serializable{
                 ", countryCode='" + countryCode + '\'' +
                 ", city='" + city + '\'' +
                 ", website='" + website + '\'' +
-                ", timezone=" + timezone +
-                ", currency=" + currency +
+                ", timezoneId=" + timezoneId +
+                ", currencyId=" + currencyId +
                 '}';
     }
 }

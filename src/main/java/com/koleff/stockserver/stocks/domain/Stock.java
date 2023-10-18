@@ -111,10 +111,11 @@ public @Data class Stock implements Serializable {
     public String toString() {
         return "Stock{" +
                 "id=" + id +
+                ", stock_exchange_id=" + stockExchangeId +
                 ", name='" + name + '\'' +
                 ", tag='" + tag + '\'' +
-                ", hasIntraDay=" + hasIntraDay +
-                ", hasEndOfDay=" + hasEndOfDay +
+                ", has_intra_day=" + hasIntraDay +
+                ", has_end_of_day=" + hasEndOfDay +
                 '}';
     }
 }

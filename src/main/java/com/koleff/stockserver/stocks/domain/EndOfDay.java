@@ -152,17 +152,18 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
     public String toString() {
         return "EndOfDay{" +
                 "id=" + id +
+                ", stock_id=" + stockId +
                 ", open=" + open +
                 ", close=" + close +
                 ", high=" + high +
                 ", low=" + low +
                 ", volume=" + volume +
-                ", adjOpen=" + adjOpen +
-                ", adjClose=" + adjClose +
-                ", adjHigh=" + adjHigh +
-                ", adjLow=" + adjLow +
-                ", adjVolume=" + adjVolume +
-                ", splitFactor=" + splitFactor +
+                ", adj_open=" + adjOpen +
+                ", adj_close=" + adjClose +
+                ", adj_high=" + adjHigh +
+                ", adj_low=" + adjLow +
+                ", adj_volume=" + adjVolume +
+                ", split_factor=" + splitFactor +
                 ", date=" + date +
                 '}';
     }

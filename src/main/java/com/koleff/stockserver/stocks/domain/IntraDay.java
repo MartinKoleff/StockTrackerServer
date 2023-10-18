@@ -108,6 +108,7 @@ public @Data class IntraDay implements Serializable {
     public String toString() {
         return "IntraDay{" +
                 "id=" + id +
+                ", stock_id=" + stockId +
                 ", open=" + open +
                 ", close=" + close +
                 ", high=" + high +
