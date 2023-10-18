@@ -6,13 +6,17 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-@Transactional(readOnly = true)
+@Transactional(readOnly = true,
+               rollbackFor = Exception.class,
+               propagation = Propagation.REQUIRED
+)
 public interface StockRepository extends JpaRepository<Stock, Long> {
     @Query(
             value = "SELECT * FROM stock s WHERE s.tag = ?1",
@@ -38,12 +42,10 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
             @Param("hasEndOfDay") Boolean hasEndOfDay
     );
 
-    @Transactional
     @Modifying
     @Query("DELETE FROM Stock s WHERE s.id = ?1")
     int deleteStockById(Long id);
 
-    @Transactional
     @Modifying
     @Query("DELETE FROM Stock s WHERE s.tag = ?1")
     int deleteByStockTag(String stockTag);
