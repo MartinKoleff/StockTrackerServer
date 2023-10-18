@@ -1,20 +1,11 @@
 package com.koleff.stockserver.stocks.utils.jsonUtil.base;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.koleff.stockserver.stocks.domain.EndOfDay;
-import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
-import com.koleff.stockserver.stocks.domain.StockExchange;
-import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.core.ResolvableType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -26,6 +17,14 @@ import java.lang.reflect.Type;
 public abstract class JsonUtil<T> {
 
     private final String resourcePath = "src/main/resources/json/%s";
+
+    @Qualifier("gson")
+    private final Gson gson;
+
+    @Autowired
+    protected JsonUtil(Gson gson) {
+        this.gson = gson;
+    }
 
     /**
      * Used to parse JSON to class T
@@ -64,13 +63,11 @@ public abstract class JsonUtil<T> {
      * Map JSON to custom object
      * - SerializedName() only works for serialization.
      * - For deserialization @JsonAlias from jackson library is supported by Spring.
+     *
      * @param json data in JSON format
      * @return json mapped to custom object T
      */
     public T convertJson(String json) {
-        Gson gson = new Gson().newBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                .create();
         return gson.fromJson(json, getType());
     }
 
@@ -143,13 +140,7 @@ public abstract class JsonUtil<T> {
 
         //Convert response to JSON
         String json;
-        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-        try {
-            json = ow.writeValueAsString(response);
-        } catch (JsonProcessingException e) {
-            System.out.println("JSON could not be created.");
-            return;
-        }
+        json = gson.toJson(response);
 
         //Write JSON in file
         File jsonFile = new File(filePath);
