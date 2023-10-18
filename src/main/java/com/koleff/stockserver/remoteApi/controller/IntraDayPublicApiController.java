@@ -4,7 +4,6 @@ import com.koleff.stockserver.remoteApi.client.v2.IntraDayPublicApiClientV2;
 import com.koleff.stockserver.remoteApi.controller.base.PublicApiController;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
-import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
 import org.springframework.web.bind.annotation.*;
 

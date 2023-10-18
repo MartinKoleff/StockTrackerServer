@@ -1,17 +1,15 @@
 package com.koleff.stockserver.remoteApi.controller.base;
 
 import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
-import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
-import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
 
-public abstract class PublicApiController<T extends SupportTable>  {
+public abstract class PublicApiController<T>  {
 
     @Value("${apiKey}")
     private String apiKey;
-    private final PublicApiServiceImpl<T> publicApiServiceImpl; //TODO: migrate like Controller/Client
+    private final PublicApiServiceImpl<T> publicApiServiceImpl;
     private final PublicApiClientV2<T> publicApiClientV2;
 
     public PublicApiController(PublicApiServiceImpl<T> publicApiServiceImpl,

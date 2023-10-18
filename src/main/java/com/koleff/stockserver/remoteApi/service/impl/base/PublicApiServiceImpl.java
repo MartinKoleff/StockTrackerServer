@@ -1,6 +1,5 @@
 package com.koleff.stockserver.remoteApi.service.impl.base;
 
-import com.koleff.stockserver.stocks.domain.SupportTable;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.exceptions.JsonNotFoundException;
 import com.koleff.stockserver.remoteApi.service.PublicApiService;
@@ -10,7 +9,7 @@ import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class PublicApiServiceImpl<T extends SupportTable>
+public abstract class PublicApiServiceImpl<T>
         implements PublicApiService<T> {
     private final StockServiceImpl stockServiceImpl;
     private final JsonUtil<DataWrapper<T>> jsonUtil;
