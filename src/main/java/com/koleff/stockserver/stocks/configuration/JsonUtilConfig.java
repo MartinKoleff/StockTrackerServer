@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.utils.jsonUtil;
+package com.koleff.stockserver.stocks.configuration;
 
 import com.google.gson.Gson;
 import org.springframework.context.annotation.Bean;
