@@ -1,6 +1,8 @@
 package com.koleff.stockserver.stocks.utils.jsonUtil.base;
 
 import com.google.gson.Gson;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -22,7 +24,7 @@ public abstract class JsonUtil<T> {
     private final Gson gson;
 
     @Autowired
-    protected JsonUtil(Gson gson) {
+    public JsonUtil(Gson gson) {
         this.gson = gson;
     }
 
