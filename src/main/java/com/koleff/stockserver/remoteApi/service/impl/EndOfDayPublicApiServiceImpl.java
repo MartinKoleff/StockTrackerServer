@@ -21,7 +21,8 @@ public class EndOfDayPublicApiServiceImpl extends PublicApiServiceImpl<EndOfDay>
     @Autowired
     public EndOfDayPublicApiServiceImpl(StockServiceImpl stockServiceImpl,
                                         EndOfDayJsonUtil jsonUtil,
-                                        EndOfDayServiceImpl endOfDayServiceImpl, StockServiceImpl stockServiceImpl1) {
+                                        EndOfDayServiceImpl endOfDayServiceImpl,
+                                        StockServiceImpl stockServiceImpl1) {
         super(stockServiceImpl, jsonUtil);
         this.endOfDayServiceImpl = endOfDayServiceImpl;
         this.stockServiceImpl = stockServiceImpl1;
