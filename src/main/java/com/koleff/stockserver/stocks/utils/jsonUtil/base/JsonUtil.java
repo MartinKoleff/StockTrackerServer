@@ -1,14 +1,11 @@
 package com.koleff.stockserver.stocks.utils.jsonUtil.base;
 
 import com.google.gson.Gson;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileReader;
@@ -134,6 +131,11 @@ public abstract class JsonUtil<T> {
     /**
      * Saves data to JSON. Writes to file
      *
+     * <p> When using Jackson library for JSON converting:
+     * <p> - serialize data with JsonProperty() instead of SerializedName()
+     * <p> - use ObjectMapper() for converting instead of Gson
+     * <p> - Gson is not compatible with Jackson.
+     * 
      * @param response data
      * @param jsonPath file path
      */
