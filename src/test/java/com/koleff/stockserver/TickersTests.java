@@ -1,11 +1,8 @@
 package com.koleff.stockserver;
 
-import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.Stock;
-import com.koleff.stockserver.stocks.domain.StockExchange;
-import com.koleff.stockserver.stocks.service.impl.IntraDayServiceImpl;
-import com.koleff.stockserver.stocks.service.impl.StockExchangeServiceImpl;
 import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
+import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -21,6 +18,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
@@ -28,7 +26,6 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 /**
  * Using VM options to configure PostgreSQL DB login
  */
-
 @SpringBootTest(
         webEnvironment = RANDOM_PORT //TODO: look up
 )
@@ -37,28 +34,25 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
         classes = {StockServerApplication.class, TestConfiguration.class}
 )
 @ExtendWith(SpringExtension.class) //TODO: look up
-class StockServerApplicationTests {
-
+public class TickersTests { //TODO: have one main test class and run all test classes...
     private final StockServiceImpl stockServiceImpl;
-    private final IntraDayServiceImpl intraDayServiceImpl;
-    private final StockExchangeServiceImpl stockExchangeServiceImpl;
+    private final TickersUtil tickersUtil;
+
+
     @Qualifier("logger")
     private final Logger logger;
     private boolean isInitialized = false;
     private boolean isDoneTesting = false;
 
     @Autowired
-    StockServerApplicationTests(StockServiceImpl stockServiceImpl,
-                                IntraDayServiceImpl intraDayServiceImpl,
-                                StockExchangeServiceImpl stockExchangeServiceImpl,
-                                Logger logger) {
+    TickersTests(StockServiceImpl stockServiceImpl,
+                 TickersUtil tickersUtil, Logger logger) {
         this.stockServiceImpl = stockServiceImpl;
-        this.intraDayServiceImpl = intraDayServiceImpl;
-        this.stockExchangeServiceImpl = stockExchangeServiceImpl;
+        this.tickersUtil = tickersUtil;
         this.logger = logger;
     }
 
-    @Before//@BeforeClass
+    @Before//@BeforeClass //TODO: move to classRule class
     public void setup() {
         if (isInitialized) return;
         stockServiceImpl.deleteAll();
@@ -75,7 +69,7 @@ class StockServerApplicationTests {
         stockServiceImpl.saveStocks(stocks);
     }
 
-    @After //@AfterClass
+    @After //@AfterClass //TODO: move to classRule class
     public void tearDown() {
         if (isDoneTesting) return;
 
@@ -101,23 +95,14 @@ class StockServerApplicationTests {
 
     @Test
     @Order(2)
-    void intradaysLoadingTest() {
-        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+    void tickersConfigureStockExchangeIdTest() {
+        tickersUtil.configureStockExchangeId();
 
-        intraDayServiceImpl.saveAllIntraDays(intraDays);
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
 
-        Assertions.assertNotNull(intraDayServiceImpl.getAllIntraDays());
-    }
-
-    @Test
-    @Order(3)
-    void stockExchangesLoadingTest() {
-        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
-
-        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
-
-        Assertions.assertNotNull(stockExchangeServiceImpl.getStockExchanges());
-
-        isDoneTesting = true;
+        Assertions.assertFalse(stocks.stream()
+                .map(Stock::getStockExchangeId)
+                .anyMatch(Objects::isNull)
+        );
     }
 }
