@@ -6,9 +6,7 @@ import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.dto.mapper.IntraDayDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
-import com.koleff.stockserver.stocks.exceptions.IntraDayNotSavedException;
 import com.koleff.stockserver.stocks.repository.IntraDayRepository;
-import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.service.IntraDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,6 @@ import java.util.List;
 @Service
 public class IntraDayServiceImpl implements IntraDayService {
     private final IntraDayRepository intraDayRepository;
-    private final StockRepository stockRepository;
     private final StockServiceImpl stockServiceImpl;
 
     private final IntraDayDtoMapper intraDayDtoMapper;
@@ -29,12 +26,10 @@ public class IntraDayServiceImpl implements IntraDayService {
     @Autowired
     public IntraDayServiceImpl(IntraDayRepository intraDayRepository,
                                IntraDayDtoMapper intraDayDtoMapper,
-                               StockRepository stockRepository,
                                StockServiceImpl stockServiceImpl,
                                JsonUtil<DataWrapper<IntraDay>> jsonUtil) {
         this.intraDayRepository = intraDayRepository;
         this.intraDayDtoMapper = intraDayDtoMapper;
-        this.stockRepository = stockRepository;
         this.stockServiceImpl = stockServiceImpl;
         this.jsonUtil = jsonUtil;
     }
@@ -110,23 +105,13 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void saveIntraDay(List<IntraDay> data) {
-        stockRepository.findAll().stream()
-                .map(Stock::getTag)
+        stockServiceImpl.getStockTags()
                 .forEach(stockTag -> {
 
                     //Configure stock_id
                     data.forEach(entry ->
                             entry.setStockId(
-                                    stockRepository.findStockByStockTag(stockTag)
-                                            .orElseThrow(
-                                                    () -> new IntraDayNotSavedException(
-                                                            String.format(
-                                                                    "Intra day for stock %s could not be saved.",
-                                                                    stockTag
-                                                            )
-                                                    )
-                                            )
-                                            .getId()
+                                    stockServiceImpl.getStockId(stockTag)
                             )
                     );
 
@@ -140,24 +125,14 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void saveAllIntraDays(List<List<IntraDay>> data) {
-        stockRepository.findAll().stream()
-                .map(Stock::getTag)
+        stockServiceImpl.getStockTags()
                 .forEach(stockTag -> {
 
                     //Configure stock_id
                     data.forEach(intraDay ->
                             intraDay.forEach(entry ->
                                     entry.setStockId(
-                                            stockRepository.findStockByStockTag(stockTag)
-                                                    .orElseThrow(
-                                                            () -> new IntraDayNotSavedException(
-                                                                    String.format(
-                                                                            "Intra day for stock %s could not be saved.",
-                                                                            stockTag
-                                                                    )
-                                                            )
-                                                    )
-                                                    .getId()
+                                            stockServiceImpl.getStockId(stockTag)
                                     )
                             ));
 
