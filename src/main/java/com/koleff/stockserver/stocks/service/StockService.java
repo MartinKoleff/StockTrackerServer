@@ -8,7 +8,8 @@ import java.util.List;
 public interface StockService {
 
     StockDto getStock(Long id);
-    StockDto getStock(String stockTag);
+    StockDto getStockDto(String stockTag);
+    Stock getStock(String stockTag);
     List<StockDto> getStocks();
     List<String> getStockTags();
     Long getStockId(String stockTag);

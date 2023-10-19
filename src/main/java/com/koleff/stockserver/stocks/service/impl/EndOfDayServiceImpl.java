@@ -1,13 +1,16 @@
 package com.koleff.stockserver.stocks.service.impl;
 
+import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
+import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
-import com.koleff.stockserver.stocks.dto.mapper.IntraDayDtoMapper;
+import com.koleff.stockserver.stocks.dto.mapper.EndOfDayDtoMapper;
+import com.koleff.stockserver.stocks.exceptions.EndOfDayNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
-import com.koleff.stockserver.stocks.repository.IntraDayRepository;
-import com.koleff.stockserver.stocks.service.IntraDayService;
+import com.koleff.stockserver.stocks.exceptions.IntraDayNotSavedException;
+import com.koleff.stockserver.stocks.repository.EndOfDayRepository;
+import com.koleff.stockserver.stocks.service.EndOfDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,82 +19,82 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class IntraDayServiceImpl implements IntraDayService {
-    private final IntraDayRepository intraDayRepository;
+public class EndOfDayServiceImpl implements EndOfDayService {
+
+    private final EndOfDayRepository endOfDayRepository;
     private final StockServiceImpl stockServiceImpl;
 
-    private final IntraDayDtoMapper intraDayDtoMapper;
-    private final JsonUtil<DataWrapper<IntraDay>> jsonUtil;
+    private final EndOfDayDtoMapper endOfDayDtoMapper;
+    private final JsonUtil<DataWrapper<EndOfDay>> jsonUtil;
 
     @Autowired
-    public IntraDayServiceImpl(IntraDayRepository intraDayRepository,
-                               IntraDayDtoMapper intraDayDtoMapper,
+    public EndOfDayServiceImpl(EndOfDayRepository endOfDayRepository,
                                StockServiceImpl stockServiceImpl,
-                               JsonUtil<DataWrapper<IntraDay>> jsonUtil) {
-        this.intraDayRepository = intraDayRepository;
-        this.intraDayDtoMapper = intraDayDtoMapper;
+                               EndOfDayDtoMapper endOfDayDtoMapper,
+                               JsonUtil<DataWrapper<EndOfDay>> jsonUtil) {
+        this.endOfDayRepository = endOfDayRepository;
         this.stockServiceImpl = stockServiceImpl;
+        this.endOfDayDtoMapper = endOfDayDtoMapper;
         this.jsonUtil = jsonUtil;
     }
 
     /**
-     * Get intraDay from DB via stockTag
+     * Get end of day from DB via stockTag
      */
     @Override
-    public List<IntraDayDto> getIntraDay(String stockTag) {
-        return intraDayRepository.findIntraDayByStockTag(stockTag)
+    public List<EndOfDayDto> getEndOfDay(String stockTag) {
+        return endOfDayRepository.findEndOfDayByStockTag(stockTag)
                 .orElseThrow(
-                        () -> new IntraDayNotFoundException(
-                                String.format("Intra day for stock tag %s not found.",
+                        () -> new EndOfDayNotFoundException(
+                                String.format("End of day for stock tag %s not found.",
                                         stockTag
                                 )
                         )
                 )
                 .stream()
-                .map(intraDayDtoMapper)
+                .map(endOfDayDtoMapper)
                 .toList();
     }
 
     /**
-     * Get intraDay from DB via id
+     * Get end of day from DB via id
      */
     @Override
-    public List<IntraDayDto> getIntraDay(Long id) {
-        return intraDayRepository.findAllById(id)
+    public List<EndOfDayDto> getEndOfDay(Long id) {
+        return endOfDayRepository.findAllById(id)
                 .orElseThrow(
-                        () -> new IntraDayNotFoundException(
-                                String.format("Intra day with id %d not found.",
+                        () -> new EndOfDayNotFoundException(
+                                String.format("End of day with id %d not found.",
                                         id
                                 )
                         )
                 )
                 .stream()
-                .map(intraDayDtoMapper)
+                .map(endOfDayDtoMapper)
                 .toList();
     }
 
-
     /**
-     * Get all intraDays from DB
-     * List for all stocks and inside each list -> list of their intraDay
+     * Get all end of days from DB
+     * List for all stocks and inside each list -> list of their end of days
      */
     @Override
-    public List<List<IntraDayDto>> getAllIntraDays() {
-        List<List<IntraDayDto>> data = new ArrayList<>();
+    public List<List<EndOfDayDto>> getAllEndOfDays() {
+        List<List<EndOfDayDto>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.getStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<IntraDayDto> entry = intraDayRepository.findIntraDayByStockTag(stockTag)
+                    List<EndOfDayDto> entry = endOfDayRepository.findEndOfDayByStockTag(stockTag)
                             .orElseThrow(
-                                    () -> new IntraDayNotFoundException(
-                                            String.format("Intra day for stock tag %s not found.",
+                                    () -> new EndOfDayNotFoundException(
+                                            String.format("End of day for stock tag %s not found.",
                                                     stockTag
                                             )
                                     )
                             )
                             .stream()
-                            .map(intraDayDtoMapper)
+                            .map(endOfDayDtoMapper)
                             .toList();
                     data.add(entry);
                 }
@@ -104,7 +107,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      * Save one entry to DB
      */
     @Override
-    public void saveIntraDay(List<IntraDay> data) {
+    public void saveEndOfDay(List<EndOfDay> data) {
         stockServiceImpl.getStockTags()
                 .forEach(stockTag -> {
 
@@ -116,7 +119,7 @@ public class IntraDayServiceImpl implements IntraDayService {
                     );
 
                     //Save data entities to DB
-                    intraDayRepository.saveAll(data);
+                    endOfDayRepository.saveAll(data);
                 });
     }
 
@@ -124,20 +127,20 @@ public class IntraDayServiceImpl implements IntraDayService {
      * Save bulk entries to DB
      */
     @Override
-    public void saveAllIntraDays(List<List<IntraDay>> data) {
+    public void saveAllEndOfDays(List<List<EndOfDay>> data) {
         stockServiceImpl.getStockTags()
                 .forEach(stockTag -> {
 
                     //Configure stock_id
-                    data.forEach(intraDay ->
-                            intraDay.forEach(entry ->
+                    data.forEach(endOfDay ->
+                            endOfDay.forEach(entry ->
                                     entry.setStockId(
                                             stockServiceImpl.getStockId(stockTag)
                                     )
                             ));
 
                     //Save data entities to DB
-                    data.forEach(intraDayRepository::saveAll);
+                    data.forEach(endOfDayRepository::saveAll);
                 });
     }
 
@@ -146,7 +149,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void deleteById(Long id) {
-        intraDayRepository.deleteById(id);
+        endOfDayRepository.deleteById(id);
     }
 
     /**
@@ -154,7 +157,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void deleteByStockTag(String stockTag) {
-        intraDayRepository.deleteByStockTag(stockTag);
+        endOfDayRepository.deleteByStockTag(stockTag);
     }
 
     /**
@@ -162,38 +165,35 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void deleteAll() {
-        intraDayRepository.deleteAll();
+        endOfDayRepository.deleteAll();
     }
-
 
     /**
      * Load one entry from JSON
      */
     @Override
-    public List<IntraDay> loadIntraDay(String stockTag) {
+    public List<EndOfDay> loadEndOfDay(String stockTag) {
         //Configure json based on current stock
-        String filePath = String.format("intraday%s.json", stockTag);
+        String filePath = String.format("eod%s.json", stockTag);
 
         //Load data from json
         String json = jsonUtil.loadJson(filePath);
-        DataWrapper<IntraDay> data = jsonUtil.convertJson(json);
+        DataWrapper<EndOfDay> data = jsonUtil.convertJson(json);
 
         return data.getData();
     }
-
-
 
     /**
      * Load data from JSON
      */
     @Override
-    public List<List<IntraDay>> loadAllIntraDays() {
-        List<List<IntraDay>> data = new ArrayList<>();
+    public List<List<EndOfDay>> loadAllEndOfDays() {
+        List<List<EndOfDay>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.getStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<IntraDay> entry = loadIntraDay(stockTag);
+                    List<EndOfDay> entry = loadEndOfDay(stockTag);
                     data.add(entry);
                 }
         );
@@ -201,4 +201,3 @@ public class IntraDayServiceImpl implements IntraDayService {
         return data;
     }
 }
-

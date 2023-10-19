@@ -32,7 +32,7 @@ public class StockController {
 
     @GetMapping(path = "get/{stock_tag}")
     public StockDto getStock(@PathVariable("stock_tag") String stockTag) {
-        return stockServiceImpl.getStock(stockTag);
+        return stockServiceImpl.getStockDto(stockTag);
     }
 
     /**

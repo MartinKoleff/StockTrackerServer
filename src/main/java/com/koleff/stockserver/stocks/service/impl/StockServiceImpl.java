@@ -49,13 +49,30 @@ public class StockServiceImpl implements StockService {
     }
 
     /**
-     * Get stock from DB via stockTag
+     * Get stock from DB via stockTag and map to DTO
      */
     @Override
-    public StockDto getStock(String stockTag) {
+    public StockDto getStockDto(String stockTag) {
         return stockRepository.findStockByStockTag(stockTag)
                 .stream()
                 .map(stockDtoMapper)
+                .findFirst()
+                .orElseThrow(
+                        () -> new StockNotFoundException(
+                                String.format("Stock with tag %s not found.",
+                                        stockTag
+                                )
+                        )
+                );
+    }
+
+    /**
+     * Get stock from DB via stockTag
+     */
+    @Override
+    public Stock getStock(String stockTag) {
+        return stockRepository.findStockByStockTag(stockTag)
+                .stream()
                 .findFirst()
                 .orElseThrow(
                         () -> new StockNotFoundException(
