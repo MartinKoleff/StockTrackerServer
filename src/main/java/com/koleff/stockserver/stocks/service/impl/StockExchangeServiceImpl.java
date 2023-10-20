@@ -106,7 +106,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public List<StockExchange> loadAllStockExchanges() {
-        String json = jsonUtil.loadJson("stockExchanges.json");
+        String json = jsonUtil.loadJson("exchangesV2.json");
 
         DataWrapper<StockExchange> data = jsonUtil.convertJson(json);
         System.out.println(data);

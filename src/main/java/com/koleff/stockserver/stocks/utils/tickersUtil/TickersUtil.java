@@ -43,7 +43,7 @@ public class TickersUtil {
         DataWrapper<StockWithStockExchange> tickers = stockWithExchangeJsonUtil.convertJson(tickersJson);
 
         //Load stock exchanges JSON
-        String stockExchangesJson = stockExchangeJsonUtil.loadJson("stockExchanges.json");
+        String stockExchangesJson = stockExchangeJsonUtil.loadJson("exchangesV2.json");
         List<StockExchange> exchanges = stockExchangeJsonUtil.convertJson(stockExchangesJson).getData();
 
 
