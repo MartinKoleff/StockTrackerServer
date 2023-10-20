@@ -39,6 +39,6 @@ public class StockPublicApiServiceImpl extends PublicApiServiceImpl<Stock> {
     @Override
     protected void configureJoin(List<Stock> data, String stockTag) {
         //Configure stock_exchange_id
-        tickersUtil.configureStockExchangeId();
+        tickersUtil.configureIds();
     }
 }
