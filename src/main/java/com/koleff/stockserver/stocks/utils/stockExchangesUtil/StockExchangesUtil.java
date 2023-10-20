@@ -1,7 +1,6 @@
 package com.koleff.stockserver.stocks.utils.stockExchangesUtil;
 
 import com.koleff.stockserver.stocks.domain.Currency;
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.domain.Timezone;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
@@ -10,7 +9,6 @@ import com.koleff.stockserver.stocks.dto.mapper.StockExchangesExtendedMapper;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.stereotype.Component;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 @Component
@@ -36,16 +34,33 @@ public class StockExchangesUtil {
     public void configureIds() {
         DataWrapper<StockExchange> exchanges = new DataWrapper<>();
 
-        configureCurrencyId(exchanges);
-        configureTimezoneId(exchanges);
+        DataWrapper<StockExchangeExtended> exchangesExtended = loadData();
+
+        configureCurrencyId(exchangesExtended);
+        configureTimezoneId(exchangesExtended);
+
+        updateData(exchanges, exchangesExtended);
         exportToJson(exchanges);
     }
 
-    private void configureCurrencyId(DataWrapper<StockExchange> exchanges) { //TODO: return stockExchange to do method chaining
+    private DataWrapper<StockExchangeExtended> loadData() {
         //Load stockExchanges JSON
-        String stockExchangeExtendedJson = stockExchangeExtendedJsonUtil.loadJson("stockExchanges.json");
+        String stockExchangeExtendedJson = stockExchangeExtendedJsonUtil.loadJson("exchanges.json");
         DataWrapper<StockExchangeExtended> stockExchangeExtended = stockExchangeExtendedJsonUtil.convertJson(stockExchangeExtendedJson);
 
+        return stockExchangeExtended;
+    }
+
+    private void updateData(DataWrapper<StockExchange> exchanges, DataWrapper<StockExchangeExtended> exchangesExtended) {
+        exchanges.setData(
+                exchangesExtended.getData()
+                        .stream()
+                        .map(stockExchangesExtendedMapper)
+                        .toList()
+        );
+    }
+
+    private void configureCurrencyId(DataWrapper<StockExchangeExtended> stockExchangeExtended) { //TODO: return stockExchange to do method chaining
         //Load currencies JSON
         String currenciesJson = currencyJsonUtil.loadJson("currencies.json");
         List<Currency> currencies = currencyJsonUtil.convertJson(currenciesJson).getData();
@@ -65,21 +80,9 @@ public class StockExchangesUtil {
                                 ) + 1)
                         )
                 );
-
-        //Update data
-        exchanges.setData(
-                stockExchangeExtended.getData()
-                        .stream()
-                        .map(stockExchangesExtendedMapper)
-                        .toList()
-        );
     }
 
-    private void configureTimezoneId(DataWrapper<StockExchange> exchanges) {
-        //Load stockExchanges JSON
-        String stockExchangeExtendedJson = stockExchangeExtendedJsonUtil.loadJson("stockExchanges.json");
-        DataWrapper<StockExchangeExtended> stockExchangeExtended = stockExchangeExtendedJsonUtil.convertJson(stockExchangeExtendedJson);
-
+    private void configureTimezoneId(DataWrapper<StockExchangeExtended> stockExchangeExtended) {
         //Load currencies JSON
         String timezonesJson = timezoneJsonUtil.loadJson("timezones.json");
         List<Timezone> timezones = timezoneJsonUtil.convertJson(timezonesJson).getData();
@@ -99,19 +102,11 @@ public class StockExchangesUtil {
                                 ) + 1)
                         )
                 );
-
-        //Update data //TODO overrides currency_id...
-        exchanges.setData(
-                stockExchangeExtended.getData()
-                        .stream()
-                        .map(stockExchangesExtendedMapper)
-                        .toList()
-        );
     }
 
     private void exportToJson(DataWrapper<StockExchange> exchanges) {
         //Convert to JSON
         System.out.println(exchanges.getData());
-        stockExchangeJsonUtil.exportToJson(exchanges, "exchangeV2");
+        stockExchangeJsonUtil.exportToJson(exchanges, "exchangesV2");
     }
 }
