@@ -16,8 +16,8 @@
       "website": "www.nasdaq.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -35,8 +35,8 @@
       "website": "www.nyse.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -54,8 +54,8 @@
       "website": "www.nyse.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -73,8 +73,8 @@
       "website": "www.otcmarkets.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -92,8 +92,8 @@
       "website": "www.bcba.sba.com.ar",
       "timezone": {
         "timezone": "America/Argentina/Buenos_Aires",
-        "abbr": "-03",
-        "abbr_dst": "-03"
+        "abbreviation": "-03",
+        "abbreviation_dst": "-03"
       },
       "currency": {
         "code": "ARS",
@@ -111,8 +111,8 @@
       "website": "www.bahrainbourse.com.bh",
       "timezone": {
         "timezone": "Asia/Bahrain",
-        "abbr": "+03",
-        "abbr_dst": "+03"
+        "abbreviation": "+03",
+        "abbreviation_dst": "+03"
       },
       "currency": {
         "code": "BHD",
@@ -130,8 +130,8 @@
       "website": "www.euronext.com",
       "timezone": {
         "timezone": "Europe/Brussels",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -149,8 +149,8 @@
       "website": "www.bmfbovespa.com.br",
       "timezone": {
         "timezone": "America/Sao_Paulo",
-        "abbr": "-03",
-        "abbr_dst": "-03"
+        "abbreviation": "-03",
+        "abbreviation_dst": "-03"
       },
       "currency": {
         "code": "BRL",
@@ -168,8 +168,8 @@
       "website": "www.tse.com",
       "timezone": {
         "timezone": "America/Toronto",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "CAD",
@@ -187,8 +187,8 @@
       "website": "www.cnsx.ca",
       "timezone": {
         "timezone": "America/Toronto",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "CAD",
@@ -206,8 +206,8 @@
       "website": "www.bolsadesantiago.com",
       "timezone": {
         "timezone": "America/Santiago",
-        "abbr": "-03",
-        "abbr_dst": "-04"
+        "abbreviation": "-03",
+        "abbreviation_dst": "-04"
       },
       "currency": {
         "code": "CLP",
@@ -225,8 +225,8 @@
       "website": "www.sse.com.cn",
       "timezone": {
         "timezone": "Asia/Shanghai",
-        "abbr": "CST",
-        "abbr_dst": "CST"
+        "abbreviation": "CST",
+        "abbreviation_dst": "CST"
       },
       "currency": {
         "code": "CNY",
@@ -244,8 +244,8 @@
       "website": "www.szse.cn",
       "timezone": {
         "timezone": "Asia/Shanghai",
-        "abbr": "CST",
-        "abbr_dst": "CST"
+        "abbreviation": "CST",
+        "abbreviation_dst": "CST"
       },
       "currency": {
         "code": "CNY",
@@ -263,8 +263,8 @@
       "website": "www.bvc.com.co",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "COP",
@@ -282,8 +282,8 @@
       "website": "www.nasdaqomxnordic.com",
       "timezone": {
         "timezone": "Europe/Copenhagen",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "DKK",
@@ -301,8 +301,8 @@
       "website": "www.egyptse.com",
       "timezone": {
         "timezone": "Africa/Cairo",
-        "abbr": "EET",
-        "abbr_dst": "EET"
+        "abbreviation": "EET",
+        "abbreviation_dst": "EET"
       },
       "currency": {
         "code": "EGP",
@@ -320,8 +320,8 @@
       "website": "www.nasdaqbaltic.com",
       "timezone": {
         "timezone": "Europe/Tallinn",
-        "abbr": "EET",
-        "abbr_dst": "EEST"
+        "abbreviation": "EET",
+        "abbreviation_dst": "EEST"
       },
       "currency": {
         "code": "EUR",
@@ -339,8 +339,8 @@
       "website": "www.nasdaqomxnordic.com",
       "timezone": {
         "timezone": "Europe/Helsinki",
-        "abbr": "EET",
-        "abbr_dst": "EEST"
+        "abbreviation": "EET",
+        "abbreviation_dst": "EEST"
       },
       "currency": {
         "code": "EUR",
@@ -358,8 +358,8 @@
       "website": "www.euronext.com",
       "timezone": {
         "timezone": "Europe/Paris",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -377,8 +377,8 @@
       "website": "www.deutsche-boerse.com",
       "timezone": {
         "timezone": "Europe/Berlin",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -396,8 +396,8 @@
       "website": "www.boerse-stuttgart.de",
       "timezone": {
         "timezone": "Europe/Berlin",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -415,8 +415,8 @@
       "website": "",
       "timezone": {
         "timezone": "Europe/Berlin",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -434,8 +434,8 @@
       "website": "www.hkex.com.hk",
       "timezone": {
         "timezone": "Asia/Hong_Kong",
-        "abbr": "HKT",
-        "abbr_dst": "HKT"
+        "abbreviation": "HKT",
+        "abbreviation_dst": "HKT"
       },
       "currency": {
         "code": "HKD",
@@ -453,8 +453,8 @@
       "website": "www.nasdaqomxnordic.com",
       "timezone": {
         "timezone": "Atlantic/Reykjavik",
-        "abbr": "GMT",
-        "abbr_dst": "GMT"
+        "abbreviation": "GMT",
+        "abbreviation_dst": "GMT"
       },
       "currency": {
         "code": "ISK",
@@ -472,8 +472,8 @@
       "website": "www.bseindia.com",
       "timezone": {
         "timezone": "Asia/Kolkata",
-        "abbr": "IST",
-        "abbr_dst": "IST"
+        "abbreviation": "IST",
+        "abbreviation_dst": "IST"
       },
       "currency": {
         "code": "INR",
@@ -491,8 +491,8 @@
       "website": "www.nseindia.com",
       "timezone": {
         "timezone": "Asia/Kolkata",
-        "abbr": "IST",
-        "abbr_dst": "IST"
+        "abbreviation": "IST",
+        "abbreviation_dst": "IST"
       },
       "currency": {
         "code": "INR",
@@ -510,8 +510,8 @@
       "website": "www.idx.co.id",
       "timezone": {
         "timezone": "Asia/Jakarta",
-        "abbr": "WIB",
-        "abbr_dst": "WIB"
+        "abbreviation": "WIB",
+        "abbreviation_dst": "WIB"
       },
       "currency": {
         "code": "IDR",
@@ -529,8 +529,8 @@
       "website": "www.tase.co.il",
       "timezone": {
         "timezone": "Asia/Jerusalem",
-        "abbr": "IST",
-        "abbr_dst": "IDT"
+        "abbreviation": "IST",
+        "abbreviation_dst": "IDT"
       },
       "currency": {
         "code": "ILS",
@@ -548,8 +548,8 @@
       "website": "www.borsaitaliana.it",
       "timezone": {
         "timezone": "Europe/Rome",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -567,8 +567,8 @@
       "website": "www.nse.or.jp",
       "timezone": {
         "timezone": "Asia/Tokyo",
-        "abbr": "JST",
-        "abbr_dst": "JST"
+        "abbreviation": "JST",
+        "abbreviation_dst": "JST"
       },
       "currency": {
         "code": "JPY",
@@ -586,8 +586,8 @@
       "website": "www.fse.or.jp",
       "timezone": {
         "timezone": "Asia/Tokyo",
-        "abbr": "JST",
-        "abbr_dst": "JST"
+        "abbreviation": "JST",
+        "abbreviation_dst": "JST"
       },
       "currency": {
         "code": "JPY",
@@ -605,8 +605,8 @@
       "website": "www.sse.or.jp",
       "timezone": {
         "timezone": "Asia/Tokyo",
-        "abbr": "JST",
-        "abbr_dst": "JST"
+        "abbreviation": "JST",
+        "abbreviation_dst": "JST"
       },
       "currency": {
         "code": "JPY",
@@ -624,8 +624,8 @@
       "website": "www.nasdaqbaltic.com",
       "timezone": {
         "timezone": "Europe/Riga",
-        "abbr": "EET",
-        "abbr_dst": "EEST"
+        "abbreviation": "EET",
+        "abbreviation_dst": "EEST"
       },
       "currency": {
         "code": "EUR",
@@ -643,8 +643,8 @@
       "website": "www.nasdaqbaltic.com",
       "timezone": {
         "timezone": "Europe/Vilnius",
-        "abbr": "EET",
-        "abbr_dst": "EEST"
+        "abbreviation": "EET",
+        "abbreviation_dst": "EEST"
       },
       "currency": {
         "code": "EUR",
@@ -662,8 +662,8 @@
       "website": "www.bursamalaysia.com",
       "timezone": {
         "timezone": "Asia/Kuala_Lumpur",
-        "abbr": "+08",
-        "abbr_dst": "+08"
+        "abbreviation": "+08",
+        "abbreviation_dst": "+08"
       },
       "currency": {
         "code": "MYR",
@@ -681,8 +681,8 @@
       "website": "www.bmv.com.mx",
       "timezone": {
         "timezone": "America/Mexico_City",
-        "abbr": "CST",
-        "abbr_dst": "CDT"
+        "abbreviation": "CST",
+        "abbreviation_dst": "CDT"
       },
       "currency": {
         "code": "MXN",
@@ -700,8 +700,8 @@
       "website": "www.euronext.com",
       "timezone": {
         "timezone": "Europe/Amsterdam",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -719,8 +719,8 @@
       "website": "www.nzx.com",
       "timezone": {
         "timezone": "Pacific/Auckland",
-        "abbr": "NZDT",
-        "abbr_dst": "NZST"
+        "abbreviation": "NZDT",
+        "abbreviation_dst": "NZST"
       },
       "currency": {
         "code": "NZD",
@@ -738,8 +738,8 @@
       "website": "www.nse.com.ng",
       "timezone": {
         "timezone": "Africa/Lagos",
-        "abbr": "WAT",
-        "abbr_dst": "WAT"
+        "abbreviation": "WAT",
+        "abbreviation_dst": "WAT"
       },
       "currency": {
         "code": "NGN",
@@ -757,8 +757,8 @@
       "website": "www.oslobors.no",
       "timezone": {
         "timezone": "Europe/Oslo",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "NOK",
@@ -776,8 +776,8 @@
       "website": "www.bvl.com.pe",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "PEN",
@@ -795,8 +795,8 @@
       "website": "www.gpw.pl",
       "timezone": {
         "timezone": "Europe/Warsaw",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -814,8 +814,8 @@
       "website": "www.euronext.com",
       "timezone": {
         "timezone": "Europe/Lisbon",
-        "abbr": "WET",
-        "abbr_dst": "WEST"
+        "abbreviation": "WET",
+        "abbreviation_dst": "WEST"
       },
       "currency": {
         "code": "EUR",
@@ -833,8 +833,8 @@
       "website": "www.qatarexchange.qa",
       "timezone": {
         "timezone": "Asia/Qatar",
-        "abbr": "+03",
-        "abbr_dst": "+03"
+        "abbreviation": "+03",
+        "abbreviation_dst": "+03"
       },
       "currency": {
         "code": "QAR",
@@ -852,8 +852,8 @@
       "website": "www.moex.com",
       "timezone": {
         "timezone": "Europe/Moscow",
-        "abbr": "MSK",
-        "abbr_dst": "MSK"
+        "abbreviation": "MSK",
+        "abbreviation_dst": "MSK"
       },
       "currency": {
         "code": "RUB",
@@ -871,8 +871,8 @@
       "website": "www.tadawul.com.sa",
       "timezone": {
         "timezone": "Asia/Riyadh",
-        "abbr": "+03",
-        "abbr_dst": "+03"
+        "abbreviation": "+03",
+        "abbreviation_dst": "+03"
       },
       "currency": {
         "code": "SAR",
@@ -890,8 +890,8 @@
       "website": "www.belex.rs",
       "timezone": {
         "timezone": "Europe/Belgrade",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -909,8 +909,8 @@
       "website": "www.sgx.com",
       "timezone": {
         "timezone": "Asia/Singapore",
-        "abbr": "+08",
-        "abbr_dst": "+08"
+        "abbreviation": "+08",
+        "abbreviation_dst": "+08"
       },
       "currency": {
         "code": "SGD",
@@ -928,8 +928,8 @@
       "website": "www.jse.co.za",
       "timezone": {
         "timezone": "Africa/Johannesburg",
-        "abbr": "SAST",
-        "abbr_dst": "SAST"
+        "abbreviation": "SAST",
+        "abbreviation_dst": "SAST"
       },
       "currency": {
         "code": "ZAR",
@@ -947,8 +947,8 @@
       "website": "http://eng.krx.co.kr",
       "timezone": {
         "timezone": "Asia/Seoul",
-        "abbr": "KST",
-        "abbr_dst": "KST"
+        "abbreviation": "KST",
+        "abbreviation_dst": "KST"
       },
       "currency": {
         "code": "KRW",
@@ -966,8 +966,8 @@
       "website": "www.bolsasymercados.es",
       "timezone": {
         "timezone": "Europe/Madrid",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -985,8 +985,8 @@
       "website": "www.nasdaqomxnordic.com",
       "timezone": {
         "timezone": "Europe/Stockholm",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "EUR",
@@ -1004,8 +1004,8 @@
       "website": "www.six-swiss-exchange.com",
       "timezone": {
         "timezone": "Europe/Zurich",
-        "abbr": "CET",
-        "abbr_dst": "CEST"
+        "abbreviation": "CET",
+        "abbreviation_dst": "CEST"
       },
       "currency": {
         "code": "CHF",
@@ -1023,8 +1023,8 @@
       "website": "www.twse.com.tw/en/",
       "timezone": {
         "timezone": "Asia/Taipei",
-        "abbr": "CST",
-        "abbr_dst": "CST"
+        "abbreviation": "CST",
+        "abbreviation_dst": "CST"
       },
       "currency": {
         "code": "TWD",
@@ -1042,8 +1042,8 @@
       "website": "www.set.or.th",
       "timezone": {
         "timezone": "Asia/Bangkok",
-        "abbr": "+07",
-        "abbr_dst": "+07"
+        "abbreviation": "+07",
+        "abbreviation_dst": "+07"
       },
       "currency": {
         "code": "THB",
@@ -1061,8 +1061,8 @@
       "website": "www.borsaistanbul.com",
       "timezone": {
         "timezone": "Europe/Istanbul",
-        "abbr": "+03",
-        "abbr_dst": "+03"
+        "abbreviation": "+03",
+        "abbreviation_dst": "+03"
       },
       "currency": {
         "code": "TRY",
@@ -1080,8 +1080,8 @@
       "website": "www.dfm.co.ae",
       "timezone": {
         "timezone": "Asia/Dubai",
-        "abbr": "+04",
-        "abbr_dst": "+04"
+        "abbreviation": "+04",
+        "abbreviation_dst": "+04"
       },
       "currency": {
         "code": "AED",
@@ -1099,8 +1099,8 @@
       "website": "www.londonstockexchange.com",
       "timezone": {
         "timezone": "Europe/London",
-        "abbr": "GMT",
-        "abbr_dst": "BST"
+        "abbreviation": "GMT",
+        "abbreviation_dst": "BST"
       },
       "currency": {
         "code": "GBP",
@@ -1118,8 +1118,8 @@
       "website": "www.hsx.vn",
       "timezone": {
         "timezone": "Asia/Ho_Chi_Minh",
-        "abbr": "+07",
-        "abbr_dst": "+07"
+        "abbreviation": "+07",
+        "abbreviation_dst": "+07"
       },
       "currency": {
         "code": "VND",
@@ -1137,8 +1137,8 @@
       "website": "www.nyse.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1156,8 +1156,8 @@
       "website": "markets.cboe.com",
       "timezone": {
         "timezone": "America/Chicago",
-        "abbr": "CDT",
-        "abbr_dst": "CDT"
+        "abbreviation": "CDT",
+        "abbreviation_dst": "CDT"
       },
       "currency": {
         "code": "USD",
@@ -1175,8 +1175,8 @@
       "website": "",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1194,8 +1194,8 @@
       "website": "www.otcmarkets.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1213,8 +1213,8 @@
       "website": "www.otcmarkets.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1232,8 +1232,8 @@
       "website": "www.otcmarkets.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1251,8 +1251,8 @@
       "website": "www.otcmarkets.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1270,8 +1270,8 @@
       "website": "www.otcmarkets.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1289,8 +1289,8 @@
       "website": "www.iextrading.com",
       "timezone": {
         "timezone": "America/New_York",
-        "abbr": "EST",
-        "abbr_dst": "EDT"
+        "abbreviation": "EST",
+        "abbreviation_dst": "EDT"
       },
       "currency": {
         "code": "USD",
@@ -1298,16 +1298,5 @@
         "name": "US Dollar"
       }
     },
-    {
-      "name": "INDEX",
-      "acronym": null,
-      "mic": "INDX",
-      "country": null,
-      "country_code": "INDX",
-      "city": null,
-      "website": "",
-      "timezone": null,
-      "currency": null
-    }
   ]
 }
