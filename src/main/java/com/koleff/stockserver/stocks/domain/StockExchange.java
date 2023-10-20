@@ -50,15 +50,6 @@ public @Data class StockExchange implements Serializable{
     private String acronym;
 
     @Column(
-            name = "exchange",
-            nullable = false,
-            columnDefinition = "TEXT"
-    )
-    @NotNull(message = "Exchange must not be empty.")
-    @SerializedName("exchange")
-    private String exchange;
-
-    @Column(
             name = "country",
             nullable = false,
             columnDefinition = "TEXT"
@@ -152,7 +143,6 @@ public @Data class StockExchange implements Serializable{
     public StockExchange(Long id,
                          String name,
                          String acronym,
-                         String exchange,
                          String country,
                          String countryCode,
                          String city,
@@ -162,7 +152,6 @@ public @Data class StockExchange implements Serializable{
         this.id = id;
         this.name = name;
         this.acronym = acronym;
-        this.exchange = exchange;
         this.country = country;
         this.countryCode = countryCode;
         this.city = city;
@@ -177,7 +166,6 @@ public @Data class StockExchange implements Serializable{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", acronym='" + acronym + '\'' +
-                ", exchange='" + exchange + '\'' +
                 ", country='" + country + '\'' +
                 ", countryCode='" + countryCode + '\'' +
                 ", city='" + city + '\'' +

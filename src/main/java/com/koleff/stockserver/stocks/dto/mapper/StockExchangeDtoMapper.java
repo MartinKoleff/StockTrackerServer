@@ -22,7 +22,6 @@ public class StockExchangeDtoMapper implements Function<StockExchange, StockExch
         return new StockExchangeDto(
                 stockExchange.getName(),
                 stockExchange.getAcronym(),
-                stockExchange.getExchange(),
                 stockExchange.getCountry(),
                 stockExchange.getCountryCode(),
                 stockExchange.getCity(),
