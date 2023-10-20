@@ -149,6 +149,28 @@ public @Data class StockExchange implements Serializable{
     )
     private Currency currency;
 
+    public StockExchange(Long id,
+                         String name,
+                         String acronym,
+                         String exchange,
+                         String country,
+                         String countryCode,
+                         String city,
+                         String website,
+                         Long timezoneId,
+                         Long currencyId) {
+        this.id = id;
+        this.name = name;
+        this.acronym = acronym;
+        this.exchange = exchange;
+        this.country = country;
+        this.countryCode = countryCode;
+        this.city = city;
+        this.website = website;
+        this.timezoneId = timezoneId;
+        this.currencyId = currencyId;
+    }
+
     @Override
     public String toString() {
         return "StockExchange{" +
