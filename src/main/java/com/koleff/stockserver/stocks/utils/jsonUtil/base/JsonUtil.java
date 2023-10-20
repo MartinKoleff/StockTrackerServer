@@ -109,7 +109,7 @@ public abstract class JsonUtil<T> {
 
         //Create file path based on request
         switch (requestName) {
-            case "exchange":
+            case "exchanges":
                 jsonPath = "exchanges.json";
                 break;
             case "tickers":
@@ -118,7 +118,7 @@ public abstract class JsonUtil<T> {
             case "tickersV2":
                 jsonPath = "tickersV2.json";
                 break;
-            case "exchangeV2":
+            case "exchangesV2":
                 jsonPath = "exchangesV2.json";
                 break;
             default:

@@ -46,7 +46,8 @@ public class TickersTests { //TODO: have one main test class and run all test cl
 
     @Autowired
     TickersTests(StockServiceImpl stockServiceImpl,
-                 TickersUtil tickersUtil, Logger logger) {
+                 TickersUtil tickersUtil,
+                 Logger logger) {
         this.stockServiceImpl = stockServiceImpl;
         this.tickersUtil = tickersUtil;
         this.logger = logger;
@@ -83,7 +84,7 @@ public class TickersTests { //TODO: have one main test class and run all test cl
 
     @Test
     @Order(1)
-    void tickersLoadingTest() {
+    void tickersLoadingTest() { //First have stock_exchange loaded...
         stockServiceImpl.deleteAll();
 
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
@@ -96,7 +97,7 @@ public class TickersTests { //TODO: have one main test class and run all test cl
     @Test
     @Order(2)
     void tickersConfigureStockExchangeIdTest() {
-        tickersUtil.configureStockExchangeId();
+        tickersUtil.configureIds();
 
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
 

@@ -30,13 +30,20 @@ public class TickersUtil {
         this.tickerMapper = tickerMapper;
     }
 
-    public void configureStockExchangeId() {
+    public void configureIds(){
+        DataWrapper<Ticker> tickersWithExchangeId = new DataWrapper<>();
+
+        configureStockExchangeId(tickersWithExchangeId);
+        exportToJson(tickersWithExchangeId);
+    }
+
+    private void configureStockExchangeId(DataWrapper<Ticker> tickersWithExchangeId) {
         //Load tickers JSON
         String tickersJson = stockWithExchangeJsonUtil.loadJson("tickers.json");
         DataWrapper<StockWithStockExchange> tickers = stockWithExchangeJsonUtil.convertJson(tickersJson);
 
         //Load stock exchanges JSON
-        String stockExchangesJson = stockExchangeJsonUtil.loadJson("stockExchanges.json");
+        String stockExchangesJson = stockExchangeJsonUtil.loadJson("exchangesV2.json");
         List<StockExchange> exchanges = stockExchangeJsonUtil.convertJson(stockExchangesJson).getData();
 
 
@@ -55,19 +62,18 @@ public class TickersUtil {
                 );
 
         //Convert StockWithExchange to Stock
-        DataWrapper<Ticker> tickersWithExchangeId = new DataWrapper<Ticker>();
-
         tickersWithExchangeId.setData(
                 tickers.getData()
                         .stream()
                         .map(tickerMapper)
                         .toList()
         );
+    }
+
+    private void exportToJson(DataWrapper<Ticker> tickersWithExchangeId){
 
         //Convert to JSON
         System.out.println(tickersWithExchangeId.getData());
         tickerJsonUtil.exportToJson(tickersWithExchangeId, "tickersV2");
     }
-
-    //TODO: NEW CLASS -> Create one for StockExchange to configure timezone_id and currency_id
 }
