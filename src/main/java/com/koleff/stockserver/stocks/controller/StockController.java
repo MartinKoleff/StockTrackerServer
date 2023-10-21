@@ -62,8 +62,8 @@ public class StockController {
     /**
      * Load from JSON
      */
-    @PutMapping(path = "load/{stockTag}")
-    public Stock loadStock(@PathVariable("stockTag") String stockTag) {
+    @PutMapping(path = "load/{stock_tag}")
+    public Stock loadStock(@PathVariable("stock_tag") String stockTag) {
         return stockServiceImpl.loadStock(stockTag);
     }
 }
