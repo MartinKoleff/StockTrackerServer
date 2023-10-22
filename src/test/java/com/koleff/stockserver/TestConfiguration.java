@@ -1,9 +1,6 @@
 package com.koleff.stockserver;
 
-import com.koleff.stockserver.stocks.repository.EndOfDayRepository;
-import com.koleff.stockserver.stocks.repository.IntraDayRepository;
-import com.koleff.stockserver.stocks.repository.StockExchangeRepository;
-import com.koleff.stockserver.stocks.repository.StockRepository;
+import com.koleff.stockserver.stocks.repository.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
@@ -12,8 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         StockRepository.class,
         IntraDayRepository.class,
         EndOfDayRepository.class,
-        StockExchangeRepository.class
-        //TODO: add more in future...
+        StockExchangeRepository.class,
+        CurrencyRepository.class,
+        TimezoneRepository.class
     }
 )
 public class TestConfiguration {
