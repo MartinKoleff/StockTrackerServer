@@ -1,11 +1,13 @@
 package com.koleff.stockserver;
 
-import com.koleff.stockserver.stocks.domain.Stock;
-import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
+import com.koleff.stockserver.stocks.domain.*;
+import com.koleff.stockserver.stocks.dto.StockDto;
+import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.ClassRule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -34,64 +36,110 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
         classes = {StockServerApplication.class, TestConfiguration.class}
 )
 @ExtendWith(SpringExtension.class) //TODO: look up
-public class TickersTests { //TODO: have one main test class and run all test classes...
-    private final StockServiceImpl stockServiceImpl;
-    private final TickersUtil tickersUtil;
+public class TickersTests {
+    @ClassRule
+    public static final TestResources res = new TestResources();
 
+    private final StockServiceImpl stockServiceImpl;
+    private final StockExchangeServiceImpl stockExchangeServiceImpl;
+    private final CurrencyServiceImpl currencyServiceImpl;
+    private final TimezoneServiceImpl timezoneServiceImpl;
+    private final EndOfDayServiceImpl endOfDayServiceImpl;
+    private final IntraDayServiceImpl intraDayServiceImpl;
+    private final TickersUtil tickersUtil;
 
     @Qualifier("logger")
     private final Logger logger;
-    private boolean isInitialized = false;
-    private boolean isDoneTesting = false;
+    private boolean isInitialized = false; //To use with @BeforeAll
+    private boolean isDoneTesting = false; //To use with @AfterAll
 
     @Autowired
     TickersTests(StockServiceImpl stockServiceImpl,
-                 TickersUtil tickersUtil,
+                 StockExchangeServiceImpl stockExchangeServiceImpl,
+                 CurrencyServiceImpl currencyServiceImpl,
+                 TimezoneServiceImpl timezoneServiceImpl,
+                 EndOfDayServiceImpl endOfDayServiceImpl, IntraDayServiceImpl intraDayServiceImpl, TickersUtil tickersUtil,
                  Logger logger) {
         this.stockServiceImpl = stockServiceImpl;
+        this.stockExchangeServiceImpl = stockExchangeServiceImpl;
+        this.currencyServiceImpl = currencyServiceImpl;
+        this.timezoneServiceImpl = timezoneServiceImpl;
+        this.endOfDayServiceImpl = endOfDayServiceImpl;
+        this.intraDayServiceImpl = intraDayServiceImpl;
         this.tickersUtil = tickersUtil;
         this.logger = logger;
     }
 
-    @Before//@BeforeClass //TODO: move to classRule class
+    @Before
     public void setup() {
-        if (isInitialized) return;
-        stockServiceImpl.deleteAll();
-
-        logger.info("Creating DB connection");
-        logger.info("Adding tickers to DB");
-
-        //Load tickers from JSON
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
-        isInitialized = !stocks.isEmpty();
-        logger.info("Tickers are loaded: %s", isInitialized);
-
-        //Save tickers to DB
-        stockServiceImpl.saveStocks(stocks);
-    }
-
-    @After //@AfterClass //TODO: move to classRule class
-    public void tearDown() {
-        if (isDoneTesting) return;
-
-        logger.info("Closing DB connection...");
+        logger.info("Setup before test starts...");
         logger.info("Deleting all DB entries...");
 
         stockServiceImpl.deleteAll();
-        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty();
+        intraDayServiceImpl.deleteAll();
+        endOfDayServiceImpl.deleteAll();
+        stockExchangeServiceImpl.deleteAll();
+        currencyServiceImpl.deleteAll();
+        timezoneServiceImpl.deleteAll();
+
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && intraDayServiceImpl.getAllIntraDays().isEmpty()
+                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+
+        logger.info("DB is empty: %s", isDBEmpty);
+    }
+
+    @After
+    public void tearDown() {
+        if (isDoneTesting){
+            logger.info("Testing finished!");
+            return;
+        }
+
+        logger.info("Deleting all DB entries...");
+
+        stockServiceImpl.deleteAll();
+        intraDayServiceImpl.deleteAll();
+        endOfDayServiceImpl.deleteAll();
+        stockExchangeServiceImpl.deleteAll();
+        currencyServiceImpl.deleteAll();
+        timezoneServiceImpl.deleteAll();
+
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && intraDayServiceImpl.getAllIntraDays().isEmpty()
+                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+
         logger.info("DB is empty: %s", isDBEmpty);
     }
 
     @Test
     @Order(1)
-    void tickersLoadingTest() { //First have stock_exchange loaded...
-        stockServiceImpl.deleteAll();
-
+    void tickersLoadingTest() {
+        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
+        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
+        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
 
+        //Saving order matters!
+        currencyServiceImpl.saveCurrencies(currencies);
+        timezoneServiceImpl.saveTimezones(timezones);
+        intraDayServiceImpl.saveAllIntraDays(intraDays);
+        endOfDayServiceImpl.saveAllEndOfDays(eods);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
         stockServiceImpl.saveStocks(stocks);
 
-        Assertions.assertNotNull(stockServiceImpl.getStocks());
+        List<StockDto> stockDtos = stockServiceImpl.getStocks();
+        logger.debug(stockDtos);
+
+        Assertions.assertNotNull(stockDtos);
     }
 
     @Test
@@ -105,5 +153,7 @@ public class TickersTests { //TODO: have one main test class and run all test cl
                 .map(Stock::getStockExchangeId)
                 .anyMatch(Objects::isNull)
         );
+
+        isDoneTesting = true;
     }
 }
