@@ -111,7 +111,7 @@ public @Data class StockExchange implements Serializable{
 
     @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     @JoinColumn(
             name = "timezone_id",
@@ -127,7 +127,7 @@ public @Data class StockExchange implements Serializable{
 
     @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     @JoinColumn(
             name = "currency_id",
