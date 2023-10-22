@@ -1,0 +1,183 @@
+package com.koleff.stockserver.stocks.service.impl;
+
+import com.koleff.stockserver.stocks.domain.Timezone;
+import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
+import com.koleff.stockserver.stocks.dto.TimezoneDto;
+import com.koleff.stockserver.stocks.dto.mapper.TimezoneDtoMapper;
+import com.koleff.stockserver.stocks.exceptions.TimezoneNotFoundException;
+import com.koleff.stockserver.stocks.exceptions.TimezonesNotFoundException;
+import com.koleff.stockserver.stocks.repository.TimezoneRepository;
+import com.koleff.stockserver.stocks.service.TimezoneService;
+import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class TimezoneServiceImpl implements TimezoneService {
+    private final TimezoneRepository timezoneRepository;
+    private final TimezoneDtoMapper timezoneDtoMapper;
+    private final JsonUtil<DataWrapper<Timezone>> jsonUtil;
+
+    @Autowired
+    public TimezoneServiceImpl(TimezoneRepository timezoneRepository,
+                               TimezoneDtoMapper timezoneDtoMapper,
+                               JsonUtil<DataWrapper<Timezone>> jsonUtil) {
+        this.timezoneRepository = timezoneRepository;
+        this.timezoneDtoMapper = timezoneDtoMapper;
+        this.jsonUtil = jsonUtil;
+    }
+
+    /**
+     * Get timezone from DB via id
+     */
+    @Override
+    public TimezoneDto getTimezone(Long id) {
+        return timezoneRepository.findById(id)
+                .stream()
+                .map(timezoneDtoMapper)
+                .findFirst()
+                .orElseThrow(
+                        () -> new TimezoneNotFoundException(
+                                String.format("Timezone with id %d not found.",
+                                        id
+                                )
+                        )
+                );
+    }
+
+    /**
+     * Get timezone from DB via stockTag associated with it
+     */
+    @Override
+    public TimezoneDto getTimezone(String stockTag) {
+        return timezoneRepository.findByStockTag(stockTag)
+                .stream()
+                .map(timezoneDtoMapper)
+                .findFirst()
+                .orElseThrow(
+                        () -> new TimezoneNotFoundException(
+                                String.format("Timezone associated with stock tag %s not found.",
+                                        stockTag
+                                )
+                        )
+                );
+    }
+
+    /**
+     * Get timezone id from DB via timezone string
+     */
+    @Override
+    public Long getTimezoneId(String timezone) {
+        return timezoneRepository.findTimezoneByTimezoneString(timezone)
+                .stream()
+                .findFirst()
+                .orElseThrow(
+                        () -> new TimezoneNotFoundException(
+                                String.format("Timezone with timezone string %s not found.",
+                                        timezone
+                                )
+                        )
+                ).getId();
+    }
+
+    /**
+     * Get all timezones from DB
+     */
+    @Override
+    public List<TimezoneDto> getTimezones() {
+        return timezoneRepository.findAll()
+                .stream()
+                .map(timezoneDtoMapper)
+                .toList();
+    }
+
+
+    /**
+     * Get timezone column from DB
+     */
+    @Override
+    public List<String> getTimezoneStrings() {
+        return timezoneRepository.getTimezoneStrings()
+                .orElseThrow(
+                        () -> new TimezonesNotFoundException("Timezone not found. Please load them.")
+                )
+                .stream()
+                .toList();
+    }
+
+    /**
+     * Save one entry to DB
+     */
+    @Override
+    public void saveTimezone(Timezone timezone) {
+        timezoneRepository.save(timezone);
+    }
+
+    /**
+     * Save bulk entries to DB
+     */
+    @Override
+    public void saveTimezones(List<Timezone> data) {
+        timezoneRepository.saveAll(data);
+    }
+
+    /**
+     * Delete entry from DB via id
+     */
+    @Override
+    public void deleteById(Long id) {
+        timezoneRepository.deleteById(id);
+    }
+
+    /**
+     * Delete entry from DB via currencyCode
+     */
+    @Override
+    public void deleteByTimezone(String timezone) {
+        timezoneRepository.deleteByTimezone(timezone);
+    }
+
+    /**
+     * Delete all entries in DB
+     */
+    @Override
+    public void deleteAll() {
+        timezoneRepository.deleteAll();
+    }
+
+    /**
+     * Load one entry from JSON
+     */
+    @Override
+    public Timezone loadTimezone(String timezone) {
+        String json = jsonUtil.loadJson("timezones.json");
+
+        DataWrapper<Timezone> data = jsonUtil.convertJson(json);
+
+        Timezone selectedTimezone = data.getData()
+                .stream()
+                .filter(currency -> currency.getTimezone().equals(timezone))
+                .findFirst()
+                .orElseThrow(
+                        () -> new TimezoneNotFoundException("Timezone not found in the JSON with all currencies.")
+                );
+        System.out.println(selectedTimezone);
+
+        return selectedTimezone;
+    }
+
+    /**
+     * Load data from JSON
+     */
+    @Override
+    public List<Timezone> loadAllTimezones() {
+        String json = jsonUtil.loadJson("timezones.json");
+
+        DataWrapper<Timezone> data = jsonUtil.convertJson(json);
+        System.out.println(data);
+
+        return data.getData();
+    }
+}

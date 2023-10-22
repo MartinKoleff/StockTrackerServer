@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.domain;
+package com.koleff.stockserver.stocks.domain.extender;
 
 /**
  * All duplicate functionality of these Entities:

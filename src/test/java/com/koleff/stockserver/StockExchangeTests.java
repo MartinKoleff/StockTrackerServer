@@ -1,8 +1,13 @@
 package com.koleff.stockserver;
 
+import com.koleff.stockserver.stocks.domain.Currency;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.StockExchange;
+import com.koleff.stockserver.stocks.domain.Timezone;
+import com.koleff.stockserver.stocks.service.impl.CurrencyServiceImpl;
 import com.koleff.stockserver.stocks.service.impl.StockExchangeServiceImpl;
+import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
+import com.koleff.stockserver.stocks.service.impl.TimezoneServiceImpl;
 import com.koleff.stockserver.stocks.utils.stockExchangesUtil.StockExchangesUtil;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
@@ -35,6 +40,9 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ExtendWith(SpringExtension.class)
 public class StockExchangeTests {
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
+    private final CurrencyServiceImpl currencyServiceImpl;
+    private final TimezoneServiceImpl timezoneServiceImpl;
+    private final StockServiceImpl stockServiceImpl;
 
     @Qualifier("logger")
     private final Logger logger;
@@ -43,19 +51,31 @@ public class StockExchangeTests {
 
     @Autowired
     StockExchangeTests(StockExchangeServiceImpl stockExchangeServiceImpl,
+                       CurrencyServiceImpl currencyServiceImpl,
+                       TimezoneServiceImpl timezoneServiceImpl,
+                       StockServiceImpl stockServiceImpl,
                        StockExchangesUtil stockExchangesUtil,
                        Logger logger) {
         this.stockExchangeServiceImpl = stockExchangeServiceImpl;
+        this.currencyServiceImpl = currencyServiceImpl;
+        this.timezoneServiceImpl = timezoneServiceImpl;
+        this.stockServiceImpl = stockServiceImpl;
         this.stockExchangesUtil = stockExchangesUtil;
         this.logger = logger;
     }
 
     @Test
-    @Order(3)
+    @Order(2)
     void stockExchangesLoadingTest() {
+        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
+        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
         List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
 
+        currencyServiceImpl.saveCurrencies(currencies);
+        timezoneServiceImpl.saveTimezones(timezones);
         stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+        stockServiceImpl.saveStocks(stocks);
 
         Assertions.assertNotNull(stockExchangeServiceImpl.getStockExchanges());
     }

@@ -15,7 +15,6 @@ public class StockExchangesExtendedMapper implements Function<StockExchangeExten
                 stockExchangeExtended.getId(),
                 stockExchangeExtended.getName(),
                 stockExchangeExtended.getAcronym(),
-                stockExchangeExtended.getExchange(),
                 stockExchangeExtended.getCountry(),
                 stockExchangeExtended.getCountryCode(),
                 stockExchangeExtended.getCity(),
