@@ -104,7 +104,7 @@ public @Data class StockExchange implements Serializable{
     @OneToMany(
             mappedBy = "stockExchange",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             orphanRemoval = false
     )
     private List<Stock> stocks;  //Doesn't need to be bidirectional
