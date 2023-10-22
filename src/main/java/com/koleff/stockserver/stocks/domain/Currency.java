@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(name = "Currency")
 @Table(name = "currency")
@@ -57,8 +58,13 @@ public@Data class Currency implements Serializable {
     @SerializedName("name")
     private String name;
 
-    @OneToOne //Doesn't need to be bidirectional
-    private StockExchange stockExchange;
+    @OneToMany(
+            mappedBy = "currency",
+            orphanRemoval = false,
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.LAZY
+    ) //Doesn't need to be bidirectional
+    private List<StockExchange> stockExchanges;
 
     @Override
     public String toString() {
