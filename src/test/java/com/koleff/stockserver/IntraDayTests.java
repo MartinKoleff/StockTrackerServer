@@ -1,8 +1,11 @@
 package com.koleff.stockserver;
 
 import com.koleff.stockserver.stocks.domain.IntraDay;
+import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.service.impl.IntraDayServiceImpl;
 import org.apache.logging.log4j.Logger;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -35,6 +38,7 @@ public class IntraDayTests {
 
     @Qualifier("logger")
     private final Logger logger;
+    private boolean isDoneTesting = false; //To use with @AfterAll
 
     @Autowired
     IntraDayTests(IntraDayServiceImpl intraDayServiceImpl,
@@ -43,13 +47,42 @@ public class IntraDayTests {
         this.logger = logger;
     }
 
+    @Before
+    public void setup() {
+        logger.info("Setup before test starts...");
+        logger.info("Deleting all DB entries...");
+
+        intraDayServiceImpl.deleteAll();
+        boolean isDBEmpty = intraDayServiceImpl.getAllIntraDays().isEmpty();
+        logger.info("DB is empty: %s", isDBEmpty);
+    }
+
+    @After
+    public void tearDown() {
+        if (isDoneTesting){
+            logger.info("Testing finished!");
+            return;
+        }
+
+        logger.info("Deleting all DB entries...");
+        intraDayServiceImpl.deleteAll();
+
+        boolean isDBEmpty = intraDayServiceImpl.getAllIntraDays().isEmpty();
+        logger.info("DB is empty: %s", isDBEmpty);
+    }
+
     @Test
-    @Order(2)
+    @Order(1)
     void intraDaysLoadingTest() {
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         intraDayServiceImpl.saveAllIntraDays(intraDays);
 
-        Assertions.assertNotNull(intraDayServiceImpl.getAllIntraDays());
+        List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
+        logger.info(intraDayDtos);
+
+        Assertions.assertNotNull(intraDayDtos);
+
+        isDoneTesting = true;
     }
 }
