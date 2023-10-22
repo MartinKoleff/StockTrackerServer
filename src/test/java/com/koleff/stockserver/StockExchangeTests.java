@@ -1,19 +1,13 @@
 package com.koleff.stockserver;
 
-import com.koleff.stockserver.stocks.domain.Currency;
-import com.koleff.stockserver.stocks.domain.Stock;
-import com.koleff.stockserver.stocks.domain.StockExchange;
-import com.koleff.stockserver.stocks.domain.Timezone;
-import com.koleff.stockserver.stocks.service.impl.CurrencyServiceImpl;
-import com.koleff.stockserver.stocks.service.impl.StockExchangeServiceImpl;
-import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
-import com.koleff.stockserver.stocks.service.impl.TimezoneServiceImpl;
+import com.koleff.stockserver.stocks.domain.*;
+import com.koleff.stockserver.stocks.dto.StockExchangeDto;
+import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.stockExchangesUtil.StockExchangesUtil;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -46,7 +40,7 @@ public class StockExchangeTests {
 
     @Qualifier("logger")
     private final Logger logger;
-
+    private boolean isDoneTesting = false;
     private final StockExchangesUtil stockExchangesUtil;
 
     @Autowired
@@ -64,24 +58,63 @@ public class StockExchangeTests {
         this.logger = logger;
     }
 
+    @Before
+    public void setup() {
+        logger.info("Setup before test starts...");
+        logger.info("Deleting all DB entries...");
+
+        stockExchangeServiceImpl.deleteAll();
+        currencyServiceImpl.deleteAll();
+        timezoneServiceImpl.deleteAll();
+
+        boolean isDBEmpty = stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+        logger.info("DB is empty: %s", isDBEmpty);
+    }
+
+    @After
+    public void tearDown() {
+        if (isDoneTesting){
+            logger.info("Testing finished!");
+            return;
+        }
+
+        logger.info("Deleting all DB entries...");
+        stockExchangeServiceImpl.deleteAll();
+        currencyServiceImpl.deleteAll();
+        timezoneServiceImpl.deleteAll();
+
+        boolean isDBEmpty = stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                            && currencyServiceImpl.getCurrencies().isEmpty()
+                            && timezoneServiceImpl.getTimezones().isEmpty();
+        logger.info("DB is empty: %s", isDBEmpty);
+    }
+
     @Test
-    @Order(2)
+    @Order(1)
+    @DisplayName("Loading from DB test. Relation between entities test.")
     void stockExchangesLoadingTest() {
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
         List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
         List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
 
+        //Saving order matters!
         currencyServiceImpl.saveCurrencies(currencies);
         timezoneServiceImpl.saveTimezones(timezones);
-        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
         stockServiceImpl.saveStocks(stocks);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
 
-        Assertions.assertNotNull(stockExchangeServiceImpl.getStockExchanges());
+        List<StockExchangeDto> exchanges = stockExchangeServiceImpl.getStockExchanges();
+        logger.debug(exchanges);
+
+        Assertions.assertNotNull(exchanges);
     }
 
     @Test
-    @Order(1)
+    @Order(2)
+    @DisplayName("Configuring currency_id and timezone_id from tickers.json and exporting to tickersV2.json test.")
     void stockExchangesConfigureIdsTest() {
         stockExchangesUtil.configureIds();
 
@@ -96,5 +129,7 @@ public class StockExchangeTests {
                 .anyMatch(Objects::isNull);
 
         Assertions.assertFalse(currencyIdsUpdated && timezoneIdsUpdated);
+
+        isDoneTesting = true;
     }
 }
