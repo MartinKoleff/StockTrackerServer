@@ -5,15 +5,16 @@ import com.koleff.stockserver.remoteApi.controller.base.PublicApiController;
 import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("publicApi/v1/exchange")
 public class StockExchangePublicApiController extends PublicApiController<StockExchange> {
 
-    public StockExchangePublicApiController(PublicApiServiceImpl<StockExchange> publicApiServiceImpl,
-                                            StockExchangePublicApiClientV2 stockExchangePublicApiClientV2) {
-        super(publicApiServiceImpl, stockExchangePublicApiClientV2);
+    @Autowired
+    public StockExchangePublicApiController(PublicApiServiceImpl<StockExchange> publicApiServiceImpl) {
+        super(publicApiServiceImpl);
     }
 
     /**

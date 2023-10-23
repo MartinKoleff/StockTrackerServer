@@ -5,6 +5,7 @@ import com.koleff.stockserver.remoteApi.controller.base.PublicApiController;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("publicApi/v1/eod/")
 public class EndOfDayPublicApiController extends PublicApiController<EndOfDay> {
 
-    public EndOfDayPublicApiController(PublicApiServiceImpl<EndOfDay> publicApiServiceImpl,
-                                       EndOfDayPublicApiClientV2 endOfDayPublicApiClientV2) {
-        super(publicApiServiceImpl, endOfDayPublicApiClientV2);
+    @Autowired
+    public EndOfDayPublicApiController(PublicApiServiceImpl<EndOfDay> publicApiServiceImpl) {
+        super(publicApiServiceImpl);
     }
 
     /**
