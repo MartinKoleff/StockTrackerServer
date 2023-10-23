@@ -6,7 +6,7 @@ import com.koleff.stockserver.stocks.dto.CurrencyDto;
 import com.koleff.stockserver.stocks.dto.mapper.CurrencyDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.CurrenciesNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.CurrencyNotFoundException;
-import com.koleff.stockserver.stocks.repository.CurrencyRepository;
+import com.koleff.stockserver.stocks.repository.impl.CurrencyRepositoryImpl;
 import com.koleff.stockserver.stocks.service.CurrencyService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +17,15 @@ import java.util.List;
 @Service
 public class CurrencyServiceImpl implements CurrencyService {
 
-    private final CurrencyRepository currencyRepository;
+    private final CurrencyRepositoryImpl currencyRepositoryImpl;
     private final CurrencyDtoMapper currencyDtoMapper;
     private final JsonUtil<DataWrapper<Currency>> jsonUtil;
 
     @Autowired
-    public CurrencyServiceImpl(CurrencyRepository currencyRepository,
+    public CurrencyServiceImpl(CurrencyRepositoryImpl currencyRepositoryImpl,
                                CurrencyDtoMapper currencyDtoMapper,
                                JsonUtil<DataWrapper<Currency>> jsonUtil) {
-        this.currencyRepository = currencyRepository;
+        this.currencyRepositoryImpl = currencyRepositoryImpl;
         this.currencyDtoMapper = currencyDtoMapper;
         this.jsonUtil = jsonUtil;
     }
@@ -35,7 +35,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public CurrencyDto getCurrency(Long id) {
-        return currencyRepository.findById(id)
+        return currencyRepositoryImpl.findById(id)
                 .stream()
                 .map(currencyDtoMapper)
                 .findFirst()
@@ -53,7 +53,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public CurrencyDto getCurrency(String stockTag) {
-        return currencyRepository.findByStockTag(stockTag)
+        return currencyRepositoryImpl.findByStockTag(stockTag)
                 .stream()
                 .map(currencyDtoMapper)
                 .findFirst()
@@ -71,7 +71,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public Long getCurrencyId(String currencyCode) {
-        return currencyRepository.findCurrencyByCurrencyCode(currencyCode)
+        return currencyRepositoryImpl.findCurrencyByCurrencyCode(currencyCode)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -89,7 +89,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public List<CurrencyDto> getCurrencies() {
-        return currencyRepository.findAll()
+        return currencyRepositoryImpl.findAll()
                 .stream()
                 .map(currencyDtoMapper)
                 .toList();
@@ -100,7 +100,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public List<String> getCurrencyCodes() {
-        return currencyRepository.getCurrencyCodes()
+        return currencyRepositoryImpl.getCurrencyCodes()
                 .orElseThrow(
                         () -> new CurrenciesNotFoundException("Currencies not found. Please load them.")
                 )
@@ -113,7 +113,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public void saveCurrency(Currency currency) {
-        currencyRepository.save(currency);
+        currencyRepositoryImpl.save(currency);
     }
 
     /**
@@ -121,7 +121,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public void saveCurrencies(List<Currency> data) {
-        currencyRepository.saveAll(data);
+        currencyRepositoryImpl.saveAll(data);
     }
 
     /**
@@ -129,7 +129,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public void deleteById(Long id) {
-        currencyRepository.deleteById(id);
+        currencyRepositoryImpl.deleteById(id);
     }
 
     /**
@@ -137,7 +137,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public void deleteByCurrencyCode(String currencyCode) {
-        currencyRepository.deleteByCurrencyCode(currencyCode);
+        currencyRepositoryImpl.deleteByCurrencyCode(currencyCode);
     }
 
     /**
@@ -145,7 +145,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public void deleteAll() {
-        currencyRepository.deleteAll();
+        currencyRepositoryImpl.deleteAll();
     }
 
     /**

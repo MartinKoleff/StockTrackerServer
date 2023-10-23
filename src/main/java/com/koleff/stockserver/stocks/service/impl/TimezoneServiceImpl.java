@@ -6,7 +6,7 @@ import com.koleff.stockserver.stocks.dto.TimezoneDto;
 import com.koleff.stockserver.stocks.dto.mapper.TimezoneDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.TimezoneNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.TimezonesNotFoundException;
-import com.koleff.stockserver.stocks.repository.TimezoneRepository;
+import com.koleff.stockserver.stocks.repository.impl.TimezoneRepositoryImpl;
 import com.koleff.stockserver.stocks.service.TimezoneService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +16,15 @@ import java.util.List;
 
 @Service
 public class TimezoneServiceImpl implements TimezoneService {
-    private final TimezoneRepository timezoneRepository;
+    private final TimezoneRepositoryImpl timezoneRepositoryImpl;
     private final TimezoneDtoMapper timezoneDtoMapper;
     private final JsonUtil<DataWrapper<Timezone>> jsonUtil;
 
     @Autowired
-    public TimezoneServiceImpl(TimezoneRepository timezoneRepository,
+    public TimezoneServiceImpl(TimezoneRepositoryImpl timezoneRepositoryImpl,
                                TimezoneDtoMapper timezoneDtoMapper,
                                JsonUtil<DataWrapper<Timezone>> jsonUtil) {
-        this.timezoneRepository = timezoneRepository;
+        this.timezoneRepositoryImpl = timezoneRepositoryImpl;
         this.timezoneDtoMapper = timezoneDtoMapper;
         this.jsonUtil = jsonUtil;
     }
@@ -34,7 +34,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public TimezoneDto getTimezone(Long id) {
-        return timezoneRepository.findById(id)
+        return timezoneRepositoryImpl.findById(id)
                 .stream()
                 .map(timezoneDtoMapper)
                 .findFirst()
@@ -52,7 +52,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public TimezoneDto getTimezone(String stockTag) {
-        return timezoneRepository.findByStockTag(stockTag)
+        return timezoneRepositoryImpl.findByStockTag(stockTag)
                 .stream()
                 .map(timezoneDtoMapper)
                 .findFirst()
@@ -70,7 +70,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public Long getTimezoneId(String timezone) {
-        return timezoneRepository.findTimezoneByTimezoneString(timezone)
+        return timezoneRepositoryImpl.findTimezoneByTimezoneString(timezone)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -87,7 +87,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public List<TimezoneDto> getTimezones() {
-        return timezoneRepository.findAll()
+        return timezoneRepositoryImpl.findAll()
                 .stream()
                 .map(timezoneDtoMapper)
                 .toList();
@@ -99,7 +99,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public List<String> getTimezoneStrings() {
-        return timezoneRepository.getTimezoneStrings()
+        return timezoneRepositoryImpl.getTimezoneStrings()
                 .orElseThrow(
                         () -> new TimezonesNotFoundException("Timezone not found. Please load them.")
                 )
@@ -112,7 +112,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public void saveTimezone(Timezone timezone) {
-        timezoneRepository.save(timezone);
+        timezoneRepositoryImpl.save(timezone);
     }
 
     /**
@@ -120,7 +120,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public void saveTimezones(List<Timezone> data) {
-        timezoneRepository.saveAll(data);
+        timezoneRepositoryImpl.saveAll(data);
     }
 
     /**
@@ -128,7 +128,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public void deleteById(Long id) {
-        timezoneRepository.deleteById(id);
+        timezoneRepositoryImpl.deleteById(id);
     }
 
     /**
@@ -136,7 +136,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public void deleteByTimezone(String timezone) {
-        timezoneRepository.deleteByTimezone(timezone);
+        timezoneRepositoryImpl.deleteByTimezone(timezone);
     }
 
     /**
@@ -144,7 +144,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public void deleteAll() {
-        timezoneRepository.deleteAll();
+        timezoneRepositoryImpl.deleteAll();
     }
 
     /**
