@@ -1,35 +1,27 @@
 package com.koleff.stockserver.remoteApi.controller.base;
 
-import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
-import org.springframework.beans.factory.annotation.Value;
 
 public abstract class PublicApiController<T>  {
-
-    @Value("${apiKey}")
-    private String apiKey;
     private final PublicApiServiceImpl<T> publicApiServiceImpl;
-    private final PublicApiClientV2<T> publicApiClientV2;
 
-    public PublicApiController(PublicApiServiceImpl<T> publicApiServiceImpl,
-                               PublicApiClientV2<T> publicApiClientV2) {
+    public PublicApiController(PublicApiServiceImpl<T> publicApiServiceImpl) {
         this.publicApiServiceImpl = publicApiServiceImpl;
-        this.publicApiClientV2 = publicApiClientV2;
     }
 
     /**
      * Get from remote API
      */
     public DataWrapper<T> getData(String stockTag) {
-        return publicApiClientV2.getData(apiKey, stockTag);
+        return publicApiServiceImpl.getData(stockTag);
     }
 
     /**
      * Get from remote API and export to JSON
      */
     public void exportDataToJson(String stockTag) {
-        DataWrapper<T> response = publicApiClientV2.getData(apiKey, stockTag);
+        DataWrapper<T> response = publicApiServiceImpl.getData(stockTag); //TODO: add data as dependency
         publicApiServiceImpl.exportDataToJson(response, stockTag);
     }
 
