@@ -125,6 +125,17 @@ public class StockServiceImpl implements StockService {
     }
 
     /**
+     * Load stock tags column from JSON
+     */
+    @Override
+    public List<String> loadStockTags(){
+       return loadAllStocks()
+                .stream()
+                .map(Stock::getTag)
+                .toList();
+    }
+
+    /**
      * Save one entry to DB
      */
     @Override
