@@ -10,4 +10,5 @@ public interface PublicApiService<T> {
     List<List<T>> loadBulkData();
     void saveData(String stockTag);
     void saveBulkData();
+    DataWrapper<T> getData(String stockTag);
 }
