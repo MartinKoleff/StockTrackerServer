@@ -143,7 +143,7 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
             updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
-                    name = "intra_day_fk"
+                    name = "eod_fk"
             )
     )
     private Stock stock;
