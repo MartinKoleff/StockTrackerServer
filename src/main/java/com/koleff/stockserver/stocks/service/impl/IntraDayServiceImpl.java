@@ -173,7 +173,7 @@ public class IntraDayServiceImpl implements IntraDayService {
     @Override
     public List<IntraDay> loadIntraDay(String stockTag) {
         //Configure json based on current stock
-        String filePath = String.format("intraday%s.json", stockTag);
+        String filePath = String.format("intraday%sV2.json", stockTag);
 
         //Load data from json
         String json = jsonUtil.loadJson(filePath);
@@ -186,39 +186,19 @@ public class IntraDayServiceImpl implements IntraDayService {
     /**
      * Load data from JSON
      */
-    //TODO: just load from V2 file...
     @Override
     public List<List<IntraDay>> loadAllIntraDays() {
         List<List<IntraDay>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.loadStockTags();
         stockTags.forEach(
-                stockTag -> new Thread(() -> {
-                    try {
-                        List<IntraDay> entry = loadIntraDay(stockTag);
+                stockTag -> {
+                    List<IntraDay> entry = loadIntraDay(stockTag);
 
-                        configureJoin(entry, stockTag);
-
-                        data.add(entry);
-                    } catch (NullPointerException e) {
-                        System.out.println(stockTag);
-                    }
-                }).start()
+                    data.add(entry);
+                }
         );
-
         return data;
-    }
-
-    /**
-     * Used in PublicApiClient
-     */
-    private void configureJoin(List<IntraDay> data, String stockTag) {
-        //Configure stock_id
-        data.forEach(entity ->
-                entity.setStockId(
-                        stockServiceImpl.getStockId(stockTag)
-                )
-        );
     }
 }
 

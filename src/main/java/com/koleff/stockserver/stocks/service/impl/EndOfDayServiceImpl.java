@@ -173,7 +173,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     @Override
     public List<EndOfDay> loadEndOfDay(String stockTag) {
         //Configure json based on current stock
-        String filePath = String.format("eod%s.json", stockTag);
+        String filePath = String.format("eod%sV2.json", stockTag);
 
         //Load data from json
         String json = jsonUtil.loadJson(filePath);
@@ -185,38 +185,19 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     /**
      * Load data from JSON
      */
-    //TODO: just load from V2 file...
     @Override
     public List<List<EndOfDay>> loadAllEndOfDays() {
         List<List<EndOfDay>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.loadStockTags();
         stockTags.forEach(
-                stockTag -> new Thread(() -> {
-                    try {
-                        List<EndOfDay> entry = loadEndOfDay(stockTag);
+                stockTag -> {
+                    List<EndOfDay> entry = loadEndOfDay(stockTag);
 
-                        configureJoin(entry, stockTag);
-
-                        data.add(entry);
-                    } catch (NullPointerException e) {
-                        System.out.println(stockTag);
-                    }
-                }).start()
+                    data.add(entry);
+                }
         );
 
         return data;
-    }
-
-    /**
-     * Used in PublicApiClient
-     */
-    private void configureJoin(List<EndOfDay> data, String stockTag) {
-        //Configure stock_id
-        data.forEach(entity ->
-                entity.setStockId(
-                        stockServiceImpl.getStockId(stockTag)
-                )
-        );
     }
 }
