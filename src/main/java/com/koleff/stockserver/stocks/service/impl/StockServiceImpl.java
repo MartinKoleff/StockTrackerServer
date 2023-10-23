@@ -6,7 +6,7 @@ import com.koleff.stockserver.stocks.dto.StockDto;
 import com.koleff.stockserver.stocks.dto.mapper.StockDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.StockNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.StocksNotFoundException;
-import com.koleff.stockserver.stocks.repository.StockRepository;
+import com.koleff.stockserver.stocks.repository.impl.StockRepositoryImpl;
 import com.koleff.stockserver.stocks.service.StockService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +17,15 @@ import java.util.List;
 @Service
 public class StockServiceImpl implements StockService {
 
-    private final StockRepository stockRepository;
+    private final StockRepositoryImpl stockRepositoryImpl;
     private final StockDtoMapper stockDtoMapper;
     private final JsonUtil<DataWrapper<Stock>> jsonUtil;
 
     @Autowired
-    public StockServiceImpl(StockRepository stockRepository,
+    public StockServiceImpl(StockRepositoryImpl stockRepositoryImpl,
                             StockDtoMapper stockDtoMapper,
                             JsonUtil<DataWrapper<Stock>> jsonUtil) {
-        this.stockRepository = stockRepository;
+        this.stockRepositoryImpl = stockRepositoryImpl;
         this.stockDtoMapper = stockDtoMapper;
         this.jsonUtil = jsonUtil;
     }
@@ -35,7 +35,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public StockDto getStock(Long id) {
-        return stockRepository.findById(id)
+        return stockRepositoryImpl.findById(id)
                 .stream()
                 .map(stockDtoMapper)
                 .findFirst()
@@ -53,7 +53,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public StockDto getStockDto(String stockTag) {
-        return stockRepository.findStockByStockTag(stockTag)
+        return stockRepositoryImpl.findStockByStockTag(stockTag)
                 .stream()
                 .map(stockDtoMapper)
                 .findFirst()
@@ -71,7 +71,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public Stock getStock(String stockTag) {
-        return stockRepository.findStockByStockTag(stockTag)
+        return stockRepositoryImpl.findStockByStockTag(stockTag)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -88,7 +88,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public Long getStockId(String stockTag) {
-        return stockRepository.findStockByStockTag(stockTag)
+        return stockRepositoryImpl.findStockByStockTag(stockTag)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -105,7 +105,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public List<StockDto> getStocks() {
-        return stockRepository.findAll()
+        return stockRepositoryImpl.findAll()
                 .stream()
                 .map(stockDtoMapper)
                 .toList();
@@ -116,7 +116,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public List<String> getStockTags() {
-        return stockRepository.getStockTags()
+        return stockRepositoryImpl.getStockTags()
                 .orElseThrow(
                         () -> new StocksNotFoundException("Stocks not found. Please load them.")
                 )
@@ -125,11 +125,22 @@ public class StockServiceImpl implements StockService {
     }
 
     /**
+     * Load stock tags column from JSON
+     */
+    @Override
+    public List<String> loadStockTags(){
+       return loadAllStocks()
+                .stream()
+                .map(Stock::getTag)
+                .toList();
+    }
+
+    /**
      * Save one entry to DB
      */
     @Override
     public void saveStock(Stock stock) {
-        stockRepository.save(stock);
+        stockRepositoryImpl.save(stock);
     }
 
     /**
@@ -137,7 +148,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public void saveStocks(List<Stock> data) {
-        stockRepository.saveAll(data);
+        stockRepositoryImpl.saveAll(data);
     }
 
     /**
@@ -145,8 +156,8 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public void deleteById(Long id) {
-//        stockRepository.deleteStockById(id);
-        stockRepository.deleteById(id);
+//        stockRepositoryImpl.deleteStockById(id);
+        stockRepositoryImpl.deleteById(id);
     }
 
     /**
@@ -154,7 +165,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public void deleteByStockTag(String stockTag) {
-        stockRepository.deleteByStockTag(stockTag);
+        stockRepositoryImpl.deleteByStockTag(stockTag);
     }
 
     /**
@@ -162,7 +173,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public void deleteAll() {
-        stockRepository.deleteAll();
+        stockRepositoryImpl.deleteAll();
     }
 
     /**

@@ -1,12 +1,13 @@
 package com.koleff.stockserver.stocks.service.impl;
 
+import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.dto.mapper.IntraDayDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
-import com.koleff.stockserver.stocks.repository.IntraDayRepository;
+import com.koleff.stockserver.stocks.repository.impl.IntraDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.IntraDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,18 +18,18 @@ import java.util.List;
 
 @Service
 public class IntraDayServiceImpl implements IntraDayService {
-    private final IntraDayRepository intraDayRepository;
+    private final IntraDayRepositoryImpl intraDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
 
     private final IntraDayDtoMapper intraDayDtoMapper;
     private final JsonUtil<DataWrapper<IntraDay>> jsonUtil;
 
     @Autowired
-    public IntraDayServiceImpl(IntraDayRepository intraDayRepository,
+    public IntraDayServiceImpl(IntraDayRepositoryImpl intraDayRepositoryImpl,
                                IntraDayDtoMapper intraDayDtoMapper,
                                StockServiceImpl stockServiceImpl,
                                JsonUtil<DataWrapper<IntraDay>> jsonUtil) {
-        this.intraDayRepository = intraDayRepository;
+        this.intraDayRepositoryImpl = intraDayRepositoryImpl;
         this.intraDayDtoMapper = intraDayDtoMapper;
         this.stockServiceImpl = stockServiceImpl;
         this.jsonUtil = jsonUtil;
@@ -39,7 +40,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public List<IntraDayDto> getIntraDay(String stockTag) {
-        return intraDayRepository.findIntraDayByStockTag(stockTag)
+        return intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
                                 String.format("Intra day for stock tag %s not found.",
@@ -57,7 +58,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public List<IntraDayDto> getIntraDay(Long id) {
-        return intraDayRepository.findAllById(id)
+        return intraDayRepositoryImpl.findAllById(id)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
                                 String.format("Intra day with id %d not found.",
@@ -82,7 +83,7 @@ public class IntraDayServiceImpl implements IntraDayService {
         List<String> stockTags = stockServiceImpl.getStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<IntraDayDto> entry = intraDayRepository.findIntraDayByStockTag(stockTag)
+                    List<IntraDayDto> entry = intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
                             .orElseThrow(
                                     () -> new IntraDayNotFoundException(
                                             String.format("Intra day for stock tag %s not found.",
@@ -116,7 +117,7 @@ public class IntraDayServiceImpl implements IntraDayService {
                     );
 
                     //Save data entities to DB
-                    intraDayRepository.saveAll(data);
+                    intraDayRepositoryImpl.saveAll(data);
                 });
     }
 
@@ -137,7 +138,7 @@ public class IntraDayServiceImpl implements IntraDayService {
                             ));
 
                     //Save data entities to DB
-                    data.forEach(intraDayRepository::saveAll);
+                    data.forEach(intraDayRepositoryImpl::saveAll);
                 });
     }
 
@@ -146,7 +147,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void deleteById(Long id) {
-        intraDayRepository.deleteById(id);
+        intraDayRepositoryImpl.deleteById(id);
     }
 
     /**
@@ -154,7 +155,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void deleteByStockTag(String stockTag) {
-        intraDayRepository.deleteByStockTag(stockTag);
+        intraDayRepositoryImpl.deleteByStockTag(stockTag);
     }
 
     /**
@@ -162,7 +163,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void deleteAll() {
-        intraDayRepository.deleteAll();
+        intraDayRepositoryImpl.deleteAll();
     }
 
 
@@ -182,10 +183,10 @@ public class IntraDayServiceImpl implements IntraDayService {
     }
 
 
-
     /**
      * Load data from JSON
      */
+    //TODO: execute multithreaded...
     @Override
     public List<List<IntraDay>> loadAllIntraDays() {
         List<List<IntraDay>> data = new ArrayList<>();

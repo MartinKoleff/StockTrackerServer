@@ -2,16 +2,15 @@ package com.koleff.stockserver.stocks.service.impl;
 
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
+import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
-import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.dto.mapper.EndOfDayDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.EndOfDayNotFoundException;
-import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
-import com.koleff.stockserver.stocks.exceptions.IntraDayNotSavedException;
-import com.koleff.stockserver.stocks.repository.EndOfDayRepository;
+import com.koleff.stockserver.stocks.repository.impl.EndOfDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.EndOfDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,18 +20,18 @@ import java.util.List;
 @Service
 public class EndOfDayServiceImpl implements EndOfDayService {
 
-    private final EndOfDayRepository endOfDayRepository;
+    private final EndOfDayRepositoryImpl endOfDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
 
     private final EndOfDayDtoMapper endOfDayDtoMapper;
     private final JsonUtil<DataWrapper<EndOfDay>> jsonUtil;
 
     @Autowired
-    public EndOfDayServiceImpl(EndOfDayRepository endOfDayRepository,
+    public EndOfDayServiceImpl(EndOfDayRepositoryImpl endOfDayRepositoryImpl,
                                StockServiceImpl stockServiceImpl,
                                EndOfDayDtoMapper endOfDayDtoMapper,
                                JsonUtil<DataWrapper<EndOfDay>> jsonUtil) {
-        this.endOfDayRepository = endOfDayRepository;
+        this.endOfDayRepositoryImpl = endOfDayRepositoryImpl;
         this.stockServiceImpl = stockServiceImpl;
         this.endOfDayDtoMapper = endOfDayDtoMapper;
         this.jsonUtil = jsonUtil;
@@ -43,7 +42,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public List<EndOfDayDto> getEndOfDay(String stockTag) {
-        return endOfDayRepository.findEndOfDayByStockTag(stockTag)
+        return endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
                                 String.format("End of day for stock tag %s not found.",
@@ -61,7 +60,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public List<EndOfDayDto> getEndOfDay(Long id) {
-        return endOfDayRepository.findAllById(id)
+        return endOfDayRepositoryImpl.findAllById(id)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
                                 String.format("End of day with id %d not found.",
@@ -85,7 +84,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         List<String> stockTags = stockServiceImpl.getStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<EndOfDayDto> entry = endOfDayRepository.findEndOfDayByStockTag(stockTag)
+                    List<EndOfDayDto> entry = endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
                             .orElseThrow(
                                     () -> new EndOfDayNotFoundException(
                                             String.format("End of day for stock tag %s not found.",
@@ -119,7 +118,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                     );
 
                     //Save data entities to DB
-                    endOfDayRepository.saveAll(data);
+                    endOfDayRepositoryImpl.saveAll(data);
                 });
     }
 
@@ -140,7 +139,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                             ));
 
                     //Save data entities to DB
-                    data.forEach(endOfDayRepository::saveAll);
+                    data.forEach(endOfDayRepositoryImpl::saveAll);
                 });
     }
 
@@ -149,7 +148,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public void deleteById(Long id) {
-        endOfDayRepository.deleteById(id);
+        endOfDayRepositoryImpl.deleteById(id);
     }
 
     /**
@@ -157,7 +156,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public void deleteByStockTag(String stockTag) {
-        endOfDayRepository.deleteByStockTag(stockTag);
+        endOfDayRepositoryImpl.deleteByStockTag(stockTag);
     }
 
     /**
@@ -165,7 +164,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public void deleteAll() {
-        endOfDayRepository.deleteAll();
+        endOfDayRepositoryImpl.deleteAll();
     }
 
     /**
