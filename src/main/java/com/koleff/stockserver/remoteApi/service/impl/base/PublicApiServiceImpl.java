@@ -70,9 +70,6 @@ public abstract class PublicApiServiceImpl<T>
         //Load data
         List<T> data = loadData(stockTag); //TODO: add as dependency and load from tests...
 
-        //Configure all joins for entity -> fill all secondary IDs
-        configureJoin(data, stockTag);
-
         //Save data entities to DB
         saveToRepository(data);
 
@@ -114,6 +111,9 @@ public abstract class PublicApiServiceImpl<T>
      */
     @Override
     public void exportDataToJson(DataWrapper<T> response, String stockTag) {
+        //Configure all joins for entity -> fill all secondary IDs
+        configureJoin(response.getData(), stockTag);
+
         //Export to JSON
         jsonUtil.exportToJson(response, getRequestName(), stockTag);
     }
