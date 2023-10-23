@@ -84,10 +84,10 @@ public abstract class JsonUtil<T> {
         //Create file path based on request
         switch (requestName) {
             case "intraday":
-                jsonPath = String.format("intraday%s.json", stockTag);
+                jsonPath = String.format("intraday%sV2.json", stockTag);
                 break;
             case "eod":
-                jsonPath = String.format("eod%s.json", stockTag);
+                jsonPath = String.format("eod%sV2.json", stockTag);
                 break;
             default:
                 return;
