@@ -1,11 +1,13 @@
 package com.koleff.stockserver.remoteApi.service.impl.base;
 
+import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
-import com.koleff.stockserver.stocks.dto.IntraDayDto;
+import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
 import com.koleff.stockserver.stocks.exceptions.JsonNotFoundException;
 import com.koleff.stockserver.remoteApi.service.PublicApiService;
 import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +15,19 @@ import java.util.Objects;
 
 public abstract class PublicApiServiceImpl<T>
         implements PublicApiService<T> {
+
+    @Value("${apiKey}")
+    private String apiKey;
     private final StockServiceImpl stockServiceImpl;
+    private final PublicApiClientV2<T> publicApiClientV2;
     private final JsonUtil<DataWrapper<T>> jsonUtil;
 
     public PublicApiServiceImpl(
             StockServiceImpl stockServiceImpl,
+            PublicApiClientV2<T> publicApiClientV2,
             JsonUtil<DataWrapper<T>> jsonUtil) {
         this.stockServiceImpl = stockServiceImpl;
+        this.publicApiClientV2 = publicApiClientV2;
         this.jsonUtil = jsonUtil;
     }
 
@@ -43,6 +51,14 @@ public abstract class PublicApiServiceImpl<T>
      * @param stockTag needed for IntraDay and EndOfDay join
      */
     protected abstract void configureJoin(List<T> data, String stockTag);
+
+    /**
+     * Get data from remote API via OpenFeign Client
+     */
+    @Override
+    public DataWrapper<T> getData(String stockTag) {
+        return publicApiClientV2.getData(new DatabaseTableDto(getRequestName()), apiKey, stockTag);
+    }
 
     /**
      * Configures join IDs and saves data to repository DB
