@@ -186,20 +186,39 @@ public class IntraDayServiceImpl implements IntraDayService {
     /**
      * Load data from JSON
      */
-    //TODO: execute multithreaded...
+    //TODO: just load from V2 file...
     @Override
     public List<List<IntraDay>> loadAllIntraDays() {
         List<List<IntraDay>> data = new ArrayList<>();
 
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.loadStockTags();
         stockTags.forEach(
-                stockTag -> {
-                    List<IntraDay> entry = loadIntraDay(stockTag);
-                    data.add(entry);
-                }
+                stockTag -> new Thread(() -> {
+                    try {
+                        List<IntraDay> entry = loadIntraDay(stockTag);
+
+                        configureJoin(entry, stockTag);
+
+                        data.add(entry);
+                    } catch (NullPointerException e) {
+                        System.out.println(stockTag);
+                    }
+                }).start()
         );
 
         return data;
+    }
+
+    /**
+     * Used in PublicApiClient
+     */
+    private void configureJoin(List<IntraDay> data, String stockTag) {
+        //Configure stock_id
+        data.forEach(entity ->
+                entity.setStockId(
+                        stockServiceImpl.getStockId(stockTag)
+                )
+        );
     }
 }
 
