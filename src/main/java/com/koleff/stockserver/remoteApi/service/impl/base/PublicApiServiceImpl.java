@@ -125,7 +125,7 @@ public abstract class PublicApiServiceImpl<T>
     @Override
     public List<List<T>> loadBulkData() {
         //Load stock tags
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.loadStockTags(); //Not dependent on DB -> load from JSON
 
         List<List<T>> data = new ArrayList<>();
 
@@ -146,7 +146,7 @@ public abstract class PublicApiServiceImpl<T>
     @Override
     public void saveBulkData() {
         //Load stock tags
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.loadStockTags(); //Not dependent on DB -> load from JSON
 
         //TODO: Run multiple threads...
         stockTags.forEach(this::saveData);
