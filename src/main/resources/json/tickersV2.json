@@ -395,7 +395,7 @@
     {
       "stock_exchange_id": 2,
       "name": "HSBC HOLDINGS PLC ADR EACH REPR 1/40 PREF SERIES \u0027",
-      "tag": "HSBC/PA",
+      "tag": "HSBC-PA",
       "has_intraday": false,
       "has_end_of_day": true
     },

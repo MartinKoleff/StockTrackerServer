@@ -848,7 +848,7 @@
     },
     {
       "name": "HSBC HOLDINGS PLC ADR EACH REPR 1/40 PREF SERIES '",
-      "tag": "HSBC/PA",
+      "tag": "HSBC-PA",
       "has_intraday": false,
       "has_end_of_day": true,
       "stock_exchange": {
