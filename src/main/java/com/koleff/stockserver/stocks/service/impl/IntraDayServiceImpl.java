@@ -193,9 +193,13 @@ public class IntraDayServiceImpl implements IntraDayService {
         List<String> stockTags = stockServiceImpl.loadStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<IntraDay> entry = loadIntraDay(stockTag);
+                    try {
+                        List<IntraDay> entry = loadIntraDay(stockTag);
 
-                    data.add(entry);
+                        data.add(entry);
+                    }catch (NullPointerException e){
+                        System.out.printf("JSON file for stock %s is corrupted!\n", stockTag);
+                    }
                 }
         );
         return data;
