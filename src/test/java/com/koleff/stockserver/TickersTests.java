@@ -116,19 +116,26 @@ public class TickersTests {
     @Test
     @Order(1)
     void tickersLoadingTest() {
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+
+        //Need to load and save stock_exchange before saving stock entity
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
         List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
-        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
-        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
         List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
 
-        //Saving order matters!
         currencyServiceImpl.saveCurrencies(currencies);
         timezoneServiceImpl.saveTimezones(timezones);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+
+//        //Saving stocks to use with DB data...
+//        stockServiceImpl.saveStocks(stocks);
+
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
+
+        //Saving order matters!
         intraDayServiceImpl.saveAllIntraDays(intraDays);
         endOfDayServiceImpl.saveAllEndOfDays(eods);
-        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
         stockServiceImpl.saveStocks(stocks);
 
         List<StockDto> stockDtos = stockServiceImpl.getStocks();
