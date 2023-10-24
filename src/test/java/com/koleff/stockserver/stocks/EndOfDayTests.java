@@ -1,13 +1,15 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.EndOfDayServiceImpl;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -31,15 +33,12 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 public class EndOfDayTests {
     private final EndOfDayServiceImpl endOfDayServiceImpl;
 
-    @Qualifier("logger")
-    private final Logger logger;
+    private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
     private boolean isDoneTesting = false; //To use with @AfterAll
 
     @Autowired
-    EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
-                  Logger logger) {
+    EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl) {
         this.endOfDayServiceImpl = endOfDayServiceImpl;
-        this.logger = logger;
     }
 
     @BeforeEach

@@ -1,4 +1,4 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks.resources;
 
 import com.koleff.stockserver.stocks.repository.*;
 import com.koleff.stockserver.stocks.repository.impl.*;

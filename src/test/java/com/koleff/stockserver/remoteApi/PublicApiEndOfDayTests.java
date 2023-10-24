@@ -1,5 +1,7 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.remoteApi;
 
+import com.koleff.stockserver.StockServerApplication;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.remoteApi.service.impl.EndOfDayPublicApiServiceImpl;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 import com.koleff.stockserver.stocks.domain.*;

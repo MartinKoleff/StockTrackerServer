@@ -1,4 +1,4 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks.resources;
 
 import org.junit.rules.ExternalResource;
 

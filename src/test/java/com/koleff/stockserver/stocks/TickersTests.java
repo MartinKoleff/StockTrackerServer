@@ -1,7 +1,10 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.StockDto;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
+import com.koleff.stockserver.stocks.resources.TestResources;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
 import org.apache.logging.log4j.Logger;

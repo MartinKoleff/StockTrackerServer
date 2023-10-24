@@ -1,7 +1,9 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.IntraDayServiceImpl;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;

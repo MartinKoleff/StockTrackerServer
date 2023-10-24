@@ -1,5 +1,7 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.remoteApi;
 
+import com.koleff.stockserver.StockServerApplication;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.remoteApi.service.impl.IntraDayPublicApiServiceImpl;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
