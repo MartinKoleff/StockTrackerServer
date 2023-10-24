@@ -31,10 +31,10 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class)
 public class EndOfDayTests {
-    private final EndOfDayServiceImpl endOfDayServiceImpl;
 
     private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
-    private boolean isDoneTesting = false; //To use with @AfterAll
+    private final EndOfDayServiceImpl endOfDayServiceImpl;
+    private boolean isDoneTesting = false;
 
     @Autowired
     EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl) {
@@ -44,11 +44,7 @@ public class EndOfDayTests {
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
-        logger.info("Deleting all DB entries...");
 
-        endOfDayServiceImpl.deleteAll();
-        boolean isDBEmpty = endOfDayServiceImpl.getAllEndOfDays().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
     }
 
     @AfterEach
@@ -57,12 +53,12 @@ public class EndOfDayTests {
             logger.info("Testing finished!");
             return;
         }
-
+        logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
         endOfDayServiceImpl.deleteAll();
 
         boolean isDBEmpty = endOfDayServiceImpl.getAllEndOfDays().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test
