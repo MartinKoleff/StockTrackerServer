@@ -46,7 +46,7 @@ public abstract class JsonUtil<T> {
         logger.info("Loading JSON...");
 
         String filePath = String.format(resourcePath, jsonPath);
-        logger.info(String.format("Json file path: %s", jsonPath));
+        logger.info(String.format("JSON file path: %s", jsonPath));
 
         File jsonFile = new File(filePath);
 
@@ -63,6 +63,7 @@ public abstract class JsonUtil<T> {
             logger.error(String.format("Failed to parse JSON. File exists -> %s\n", jsonFile.exists()));
         }
 
+        logger.info(String.format("JSON successfully loaded!\n JSON: %s", json));
         return json;
     }
 
@@ -157,6 +158,7 @@ public abstract class JsonUtil<T> {
 
         //Convert response to JSON
         String json;
+        logger.info(String.format("Data before converting to JSON: %s", response));
         json = gson.toJson(response);
 
         //Write JSON in file
