@@ -95,14 +95,14 @@ public class StockExchangeTests {
     void stockExchangesLoadingTest() {
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
         List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
         List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
 
         //Saving order matters!
         currencyServiceImpl.saveCurrencies(currencies);
         timezoneServiceImpl.saveTimezones(timezones);
-        stockServiceImpl.saveStocks(stocks);
         stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+        stockServiceImpl.saveStocks(stocks);
 
         List<StockExchangeDto> exchanges = stockExchangeServiceImpl.getStockExchanges();
         logger.debug(exchanges);
