@@ -1,11 +1,14 @@
 package com.koleff.stockserver.remoteApi;
 
 import com.koleff.stockserver.StockServerApplication;
+import com.koleff.stockserver.stocks.EndOfDayTests;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.remoteApi.service.impl.IntraDayPublicApiServiceImpl;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.service.impl.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,12 +34,15 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class)
 public class PublicApiIntraDayTests {
+
+    private final static Logger logger = LogManager.getLogger(PublicApiIntraDayTests.class);
     private final IntraDayPublicApiServiceImpl intraDayPublicApiServiceImpl;
     private final IntraDayServiceImpl intraDayServiceImpl;
     private final StockServiceImpl stockServiceImpl;
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
+    private boolean isDoneTesting = false;
 
     @Autowired
     public PublicApiIntraDayTests(IntraDayPublicApiServiceImpl intraDayPublicApiServiceImpl,
@@ -55,6 +61,8 @@ public class PublicApiIntraDayTests {
 
     @BeforeEach
     public void setup() {
+        logger.info("Setup before test starts...");
+
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
 
@@ -72,12 +80,27 @@ public class PublicApiIntraDayTests {
 
     @AfterEach
     public void tearDown() {
+        if (isDoneTesting){
+            logger.info("Testing finished!");
+            return;
+        }
+        logger.info("Setup after test ends...");
+        logger.info("Deleting all DB entries...");
+
         //Clear the DB
         currencyServiceImpl.deleteAll();
         timezoneServiceImpl.deleteAll();
         stockExchangeServiceImpl.deleteAll();
         stockServiceImpl.deleteAll();
         intraDayServiceImpl.deleteAll();
+
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && intraDayServiceImpl.getAllIntraDays().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test
@@ -119,5 +142,7 @@ public class PublicApiIntraDayTests {
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
         Assertions.assertNotNull(intraDayDtos);
+
+        isDoneTesting = true;
     }
 }
