@@ -7,12 +7,15 @@ import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.domain.wrapper.StockExchangeExtended;
 import com.koleff.stockserver.stocks.dto.mapper.StockExchangesExtendedMapper;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
 public class StockExchangesUtil {
+    @Value("${koleff.versionAnnotation}")
+    private String versionAnnotation;
     private final JsonUtil<DataWrapper<StockExchange>> stockExchangeJsonUtil;
     private final JsonUtil<DataWrapper<StockExchangeExtended>> stockExchangeExtendedJsonUtil;
     private final JsonUtil<DataWrapper<Currency>> currencyJsonUtil;
@@ -43,6 +46,9 @@ public class StockExchangesUtil {
         exportToJson(exchanges);
     }
 
+    /**
+     * Using V1 JSON and configuring its ids and exporting the result to V2
+     */
     private DataWrapper<StockExchangeExtended> loadData() {
         //Load stockExchanges JSON
         String stockExchangeExtendedJson = stockExchangeExtendedJsonUtil.loadJson("exchanges.json");
@@ -107,6 +113,6 @@ public class StockExchangesUtil {
     private void exportToJson(DataWrapper<StockExchange> exchanges) {
         //Convert to JSON
         System.out.println(exchanges.getData());
-        stockExchangeJsonUtil.exportToJson(exchanges, "exchangesV2");
+        stockExchangeJsonUtil.exportToJson(exchanges, "exchanges", versionAnnotation);
     }
 }

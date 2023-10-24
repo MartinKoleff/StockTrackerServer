@@ -18,6 +18,9 @@ public abstract class PublicApiServiceImpl<T>
 
     @Value("${apiKey}")
     private String apiKey;
+
+    @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
+    private String versionAnnotation;
     private final StockServiceImpl stockServiceImpl;
     private final PublicApiClientV2<T> publicApiClientV2;
     private final JsonUtil<DataWrapper<T>> jsonUtil;
@@ -87,9 +90,10 @@ public abstract class PublicApiServiceImpl<T>
     @Override
     public List<T> loadData(String stockTag) {
         //Find JSON file
-        String filePath = String.format("%s%s.json",
+        String filePath = String.format("%s%s%s.json",
                 getRequestName(),
-                stockTag);
+                stockTag,
+                versionAnnotation);
 
         //Load data from JSON
         String json = jsonUtil.loadJson(filePath);
@@ -115,7 +119,8 @@ public abstract class PublicApiServiceImpl<T>
         configureJoin(response.getData(), stockTag);
 
         //Export to JSON
-        jsonUtil.exportToJson(response, getRequestName(), stockTag);
+        jsonUtil.exportToJson(response, getRequestName(), versionAnnotation, stockTag);
+    }
     }
 
     /**

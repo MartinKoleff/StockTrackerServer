@@ -76,18 +76,19 @@ public abstract class JsonUtil<T> {
      *
      * @param response    data
      * @param requestName remote api request name used for configuring JSON file name
+     * @param versionAnnotation which JSON file to use (V2 is with configured ids)
      * @param stockTag    stock tag
      */
-    public void exportToJson(T response, String requestName, String stockTag) {
+    public void exportToJson(T response, String requestName, String versionAnnotation, String stockTag) {
         String jsonPath;
 
         //Create file path based on request
         switch (requestName) {
             case "intraday":
-                jsonPath = String.format("intraday%sV2.json", stockTag);
+                jsonPath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
                 break;
             case "eod":
-                jsonPath = String.format("eod%sV2.json", stockTag);
+                jsonPath = String.format("eod%s%s.json", stockTag, versionAnnotation);
                 break;
             default:
                 return;
@@ -103,23 +104,18 @@ public abstract class JsonUtil<T> {
      *
      * @param response    data
      * @param requestName remote api request name used for configuring JSON file name
+     * @param versionAnnotation which JSON file to use (V2 is with configured ids)
      */
-    public void exportToJson(T response, String requestName) {
+    public void exportToJson(T response, String requestName, String versionAnnotation) {
         String jsonPath;
 
         //Create file path based on request
         switch (requestName) {
             case "exchanges":
-                jsonPath = "exchanges.json";
+                jsonPath =  String.format("exchanges%s.json", versionAnnotation);
                 break;
             case "tickers":
-                jsonPath = "tickers.json";
-                break;
-            case "tickersV2":
-                jsonPath = "tickersV2.json";
-                break;
-            case "exchangesV2":
-                jsonPath = "exchangesV2.json";
+                jsonPath = String.format("tickers%s.json", versionAnnotation);
                 break;
             default:
                 return;
