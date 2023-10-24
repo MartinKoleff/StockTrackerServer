@@ -68,6 +68,16 @@ public class PublicApiIntraDayTests {
         stockServiceImpl.saveStocks(stocks);
     }
 
+    @AfterEach
+    public void tearDown() {
+        //Clear the DB
+        currencyServiceImpl.deleteAll();
+        timezoneServiceImpl.deleteAll();
+        stockExchangeServiceImpl.deleteAll();
+        stockServiceImpl.deleteAll();
+        intraDayServiceImpl.deleteAll();
+    }
+
     @Test
     @Order(1)
     void intraDayExportingTest() {
@@ -83,10 +93,27 @@ public class PublicApiIntraDayTests {
 
     @Test
     @Order(2)
+    void intraDayFetchingTest() {
+        List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
+
+        Assertions.assertNotNull(intraDayDtos);
+    }
+
+    @Test
+    @Order(3)
     void intraDayLoadingTest() {
-        //Check if V2 file is created...
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+
+        Assertions.assertNotNull(intraDays);
+    }
+
+    @Test
+    @Order(4)
+    void intraDayBulkSavingTest(){
+        //Save to DB
         intraDayPublicApiServiceImpl.saveBulkData();
 
+        //Check if entries are in DB
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
         Assertions.assertNotNull(intraDayDtos);
