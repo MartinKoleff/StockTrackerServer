@@ -11,6 +11,7 @@ import com.koleff.stockserver.stocks.repository.impl.IntraDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.IntraDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +19,9 @@ import java.util.List;
 
 @Service
 public class IntraDayServiceImpl implements IntraDayService {
+
+    @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
+    private String versionAnnotation;
     private final IntraDayRepositoryImpl intraDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
 
@@ -173,7 +177,7 @@ public class IntraDayServiceImpl implements IntraDayService {
     @Override
     public List<IntraDay> loadIntraDay(String stockTag) {
         //Configure json based on current stock
-        String filePath = String.format("intraday%sV2.json", stockTag);
+        String filePath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
 
         //Load data from json
         String json = jsonUtil.loadJson(filePath);

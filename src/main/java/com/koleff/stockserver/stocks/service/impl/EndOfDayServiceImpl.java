@@ -12,6 +12,7 @@ import com.koleff.stockserver.stocks.service.EndOfDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ import java.util.List;
 @Service
 public class EndOfDayServiceImpl implements EndOfDayService {
 
+    @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
+    private String versionAnnotation;
     private final EndOfDayRepositoryImpl endOfDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
 
@@ -173,7 +176,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     @Override
     public List<EndOfDay> loadEndOfDay(String stockTag) {
         //Configure json based on current stock
-        String filePath = String.format("eod%sV2.json", stockTag);
+        String filePath = String.format("eod%s%s.json", stockTag, versionAnnotation);
 
         //Load data from json
         String json = jsonUtil.loadJson(filePath);
