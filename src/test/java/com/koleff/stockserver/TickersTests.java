@@ -5,13 +5,8 @@ import com.koleff.stockserver.stocks.dto.StockDto;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.ClassRule;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -70,7 +65,7 @@ public class TickersTests {
         this.logger = logger;
     }
 
-    @Before
+    @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
         logger.info("Deleting all DB entries...");
@@ -92,7 +87,7 @@ public class TickersTests {
         logger.info("DB is empty: %s", isDBEmpty);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (isDoneTesting){
             logger.info("Testing finished!");
@@ -141,6 +136,7 @@ public class TickersTests {
 
         Assertions.assertNotNull(stockDtos);
     }
+
 
     @Test
     @Order(2)

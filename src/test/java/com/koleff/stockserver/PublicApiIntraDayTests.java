@@ -2,7 +2,6 @@ package com.koleff.stockserver;
 
 import com.koleff.stockserver.remoteApi.service.impl.IntraDayPublicApiServiceImpl;
 import com.koleff.stockserver.stocks.domain.*;
-import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.service.impl.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,7 +13,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
@@ -83,6 +81,7 @@ public class PublicApiIntraDayTests {
     }
 
 
+    @Test
     @Order(2)
     void intraDayLoadingTest() {
         //Check if V2 file is created...
@@ -92,5 +91,4 @@ public class PublicApiIntraDayTests {
 
         Assertions.assertNotNull(intraDayDtos);
     }
-
 }

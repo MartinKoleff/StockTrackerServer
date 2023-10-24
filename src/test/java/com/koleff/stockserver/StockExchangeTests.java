@@ -5,8 +5,6 @@ import com.koleff.stockserver.stocks.dto.StockExchangeDto;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.stockExchangesUtil.StockExchangesUtil;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +56,7 @@ public class StockExchangeTests {
         this.logger = logger;
     }
 
-    @Before
+    @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
         logger.info("Deleting all DB entries...");
@@ -73,7 +71,7 @@ public class StockExchangeTests {
         logger.info("DB is empty: %s", isDBEmpty);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (isDoneTesting){
             logger.info("Testing finished!");
