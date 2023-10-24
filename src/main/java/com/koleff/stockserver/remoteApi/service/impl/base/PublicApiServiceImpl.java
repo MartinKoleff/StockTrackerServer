@@ -8,10 +8,13 @@ import com.koleff.stockserver.remoteApi.service.PublicApiService;
 import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class PublicApiServiceImpl<T>
         implements PublicApiService<T> {
@@ -121,6 +124,46 @@ public abstract class PublicApiServiceImpl<T>
         //Export to JSON
         jsonUtil.exportToJson(response, getRequestName(), versionAnnotation, stockTag);
     }
+
+    /**
+     * Exports all data to JSON
+     * Used for IntraDay and EndOfDay
+     */
+    @Override
+    public void exportAllDataToJson() {
+        //Load Stocks...
+        List<String> stockTags = stockServiceImpl.loadStockTags(); //Not dependent on DB -> load from JSON
+
+        AtomicInteger counter = new AtomicInteger();
+        AtomicInteger delay = new AtomicInteger(1);
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(stockTags.size());
+        CountDownLatch countDownLatch = new CountDownLatch(stockTags.size());
+
+        //Create JSON V2 with configured data
+        stockTags.forEach(
+                stockTag -> scheduler.schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.printf("Thread %d has started!\n", counter.getAndIncrement());
+
+                        DataWrapper<T> data = getData(stockTag);
+
+                        exportDataToJson(data, stockTag);
+
+                        System.out.printf("Data: %s\n", data);
+                        countDownLatch.countDown();
+                    }
+                }, delay.getAndIncrement(), TimeUnit.SECONDS)
+        );
+
+        try {
+            scheduler.shutdown();
+            countDownLatch.await();
+
+            boolean isFinished = scheduler.awaitTermination(1, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
