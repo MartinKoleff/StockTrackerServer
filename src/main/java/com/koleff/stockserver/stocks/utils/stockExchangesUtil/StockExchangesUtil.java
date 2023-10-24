@@ -112,7 +112,6 @@ public class StockExchangesUtil {
 
     private void exportToJson(DataWrapper<StockExchange> exchanges) {
         //Convert to JSON
-        System.out.println(exchanges.getData());
         stockExchangeJsonUtil.exportToJson(exchanges, "exchanges", versionAnnotation);
     }
 }
