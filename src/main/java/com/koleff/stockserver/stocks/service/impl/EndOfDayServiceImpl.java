@@ -1,8 +1,6 @@
 package com.koleff.stockserver.stocks.service.impl;
 
 import com.koleff.stockserver.stocks.domain.EndOfDay;
-import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 import com.koleff.stockserver.stocks.dto.mapper.EndOfDayDtoMapper;
@@ -10,7 +8,8 @@ import com.koleff.stockserver.stocks.exceptions.EndOfDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.EndOfDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.EndOfDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
-import lombok.extern.java.Log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -21,11 +20,12 @@ import java.util.List;
 @Service
 public class EndOfDayServiceImpl implements EndOfDayService {
 
+    private final static Logger logger = LogManager.getLogger(IntraDayServiceImpl.class);
+
     @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
     private String versionAnnotation;
     private final EndOfDayRepositoryImpl endOfDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
-
     private final EndOfDayDtoMapper endOfDayDtoMapper;
     private final JsonUtil<DataWrapper<EndOfDay>> jsonUtil;
 
@@ -195,9 +195,13 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         List<String> stockTags = stockServiceImpl.loadStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<EndOfDay> entry = loadEndOfDay(stockTag);
+                    try {
+                        List<EndOfDay> entry = loadEndOfDay(stockTag);
 
-                    data.add(entry);
+                        data.add(entry);
+                    } catch (NullPointerException e) {
+                        logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
+                    }
                 }
         );
 
