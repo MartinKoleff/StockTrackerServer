@@ -1,5 +1,6 @@
 package com.koleff.stockserver.remoteApi.service.impl.base;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
@@ -7,6 +8,8 @@ import com.koleff.stockserver.stocks.exceptions.JsonNotFoundException;
 import com.koleff.stockserver.remoteApi.service.PublicApiService;
 import com.koleff.stockserver.stocks.service.impl.StockServiceImpl;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 
@@ -24,6 +27,9 @@ public abstract class PublicApiServiceImpl<T>
 
     @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
     private String versionAnnotation;
+
+    private final static Logger logger = LogManager.getLogger(PublicApiServiceImpl.class);
+
     private final StockServiceImpl stockServiceImpl;
     private final PublicApiClientV2<T> publicApiClientV2;
     private final JsonUtil<DataWrapper<T>> jsonUtil;
@@ -63,7 +69,10 @@ public abstract class PublicApiServiceImpl<T>
      */
     @Override
     public DataWrapper<T> getData(String stockTag) {
-        return publicApiClientV2.getData(new DatabaseTableDto(getRequestName()), apiKey, stockTag);
+         DataWrapper<T> data = publicApiClientV2.getData(new DatabaseTableDto(getRequestName()), apiKey, stockTag);
+
+        logger.info(String.format("Data successfully fetched from remote API!\nData: %s\n", data));
+        return data;
     }
 
     /**
@@ -79,7 +88,7 @@ public abstract class PublicApiServiceImpl<T>
         //Save data entities to DB
         saveToRepository(data);
 
-        System.out.printf("Data successfully added to DB!\nData: %s\n", data);
+        logger.info(String.format("Data successfully added to DB!\nData: %s\n", data));
     }
 
 
@@ -107,6 +116,8 @@ public abstract class PublicApiServiceImpl<T>
 
         //Parse JSON to entity
         DataWrapper<T> data = jsonUtil.convertJson(json);
+
+        logger.info(String.format("Data successfully loaded from JSON!\nData: %s\n", data));
         return data.getData();
     }
 
@@ -144,13 +155,13 @@ public abstract class PublicApiServiceImpl<T>
                 stockTag -> scheduler.schedule(new Runnable() {
                     @Override
                     public void run() {
-                        System.out.printf("Thread %d has started!\n", counter.getAndIncrement());
+                        logger.info(String.format("Thread %d has started!\n", counter.getAndIncrement()));
 
                         DataWrapper<T> data = getData(stockTag);
 
                         exportDataToJson(data, stockTag);
 
-                        System.out.printf("Data: %s\n", data);
+                        logger.info(String.format("CountDownLatch count: %s\n", countDownLatch.getCount()));
                         countDownLatch.countDown();
                     }
                 }, delay.getAndIncrement(), TimeUnit.SECONDS)

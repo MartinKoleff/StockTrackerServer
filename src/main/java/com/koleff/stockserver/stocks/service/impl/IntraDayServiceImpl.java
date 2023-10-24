@@ -1,5 +1,6 @@
 package com.koleff.stockserver.stocks.service.impl;
 
+import com.koleff.stockserver.stocks.configuration.AppConfig;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.Stock;
@@ -10,6 +11,8 @@ import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.IntraDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.IntraDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,8 @@ import java.util.List;
 
 @Service
 public class IntraDayServiceImpl implements IntraDayService {
+
+    private final static Logger logger = LogManager.getLogger(IntraDayServiceImpl.class);
 
     @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
     private String versionAnnotation;
@@ -202,7 +207,7 @@ public class IntraDayServiceImpl implements IntraDayService {
 
                         data.add(entry);
                     }catch (NullPointerException e){
-                        System.out.printf("JSON file for stock %s is corrupted!\n", stockTag);
+                        logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
                     }
                 }
         );

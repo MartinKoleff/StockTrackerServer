@@ -36,6 +36,7 @@ public class TickersUtil {
         DataWrapper<Ticker> tickersWithExchangeId = new DataWrapper<>();
 
         configureStockExchangeId(tickersWithExchangeId);
+
         exportToJson(tickersWithExchangeId);
     }
 
@@ -78,7 +79,6 @@ public class TickersUtil {
     private void exportToJson(DataWrapper<Ticker> tickersWithExchangeId){
 
         //Convert to JSON
-        System.out.println(tickersWithExchangeId.getData());
         tickerJsonUtil.exportToJson(tickersWithExchangeId, "tickers", versionAnnotation); //TODO: app.properties
     }
 }

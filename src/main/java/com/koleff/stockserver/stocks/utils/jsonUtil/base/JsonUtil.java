@@ -1,6 +1,9 @@
 package com.koleff.stockserver.stocks.utils.jsonUtil.base;
 
 import com.google.gson.Gson;
+import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -15,6 +18,7 @@ import java.lang.reflect.Type;
 
 public abstract class JsonUtil<T> {
 
+    private final static Logger logger = LogManager.getLogger(JsonUtil.class);
     private final String resourcePath = "src/main/resources/json/%s";
 
     @Qualifier("gson")
@@ -39,7 +43,11 @@ public abstract class JsonUtil<T> {
      * @return json data
      */
     public String loadJson(String jsonPath) {
+        logger.info("Loading JSON...");
+
         String filePath = String.format(resourcePath, jsonPath);
+        logger.info(String.format("JSON file path: %s", jsonPath));
+
         File jsonFile = new File(filePath);
 
         String json = null;
@@ -52,9 +60,10 @@ public abstract class JsonUtil<T> {
 
             json = data.toJSONString();
         } catch (IOException | ParseException e) {
-            System.out.printf("Failed to parse JSON. File exists -> %s\n", jsonFile.exists());
+            logger.error(String.format("Failed to parse JSON. File exists -> %s\n", jsonFile.exists()));
         }
 
+        logger.info(String.format("JSON successfully loaded!\n JSON: %s", json));
         return json;
     }
 
@@ -67,7 +76,12 @@ public abstract class JsonUtil<T> {
      * @return json mapped to custom object T
      */
     public T convertJson(String json) {
-        return gson.fromJson(json, getType());
+        logger.info("Converting JSON...");
+
+        T entity =  gson.fromJson(json, getType());
+
+        logger.info(String.format("JSON was parsed to: %s", entity.toString()));
+        return entity;
     }
 
     /**
@@ -94,6 +108,7 @@ public abstract class JsonUtil<T> {
                 return;
         }
 
+        logger.info(String.format("Json name: %s", jsonPath));
         export(response, jsonPath);
     }
 
@@ -121,6 +136,7 @@ public abstract class JsonUtil<T> {
                 return;
         }
 
+        logger.info(String.format("Json name: %s", jsonPath));
         export(response, jsonPath);
     }
 
@@ -136,10 +152,13 @@ public abstract class JsonUtil<T> {
      * @param jsonPath file path
      */
     private void export(T response, String jsonPath) {
+        logger.info("Exporting data to JSON...");
+
         String filePath = String.format(resourcePath, jsonPath);
 
         //Convert response to JSON
         String json;
+        logger.info(String.format("Data before converting to JSON: %s", response));
         json = gson.toJson(response);
 
         //Write JSON in file
@@ -149,10 +168,10 @@ public abstract class JsonUtil<T> {
             file.write(json);
             file.close();
         } catch (IOException e) {
-            System.out.println("JSON could not be exported to file.");
+            logger.error("JSON could not be exported to file.");
             return;
         }
 
-        System.out.printf("JSON file created: %s\n", json);
+        logger.info(String.format("JSON file successfully created! JSON file content: %s\n", json));
     }
 }

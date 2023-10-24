@@ -116,7 +116,6 @@ public class StockExchangeServiceImpl implements StockExchangeService {
         String json = jsonUtil.loadJson(filePath);
 
         DataWrapper<StockExchange> data = jsonUtil.convertJson(json);
-        System.out.println(data);
 
         return data.getData();
     }

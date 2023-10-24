@@ -197,7 +197,6 @@ public class StockServiceImpl implements StockService {
                 .orElseThrow(
                         () -> new StockNotFoundException("Stock not found in the JSON with all stocks.")
                 );
-        System.out.println(stockData);
 
         return stockData;
     }
@@ -210,7 +209,6 @@ public class StockServiceImpl implements StockService {
         String json = jsonUtil.loadJson("tickersV2.json");
 
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
-        System.out.println(data);
 
         return data.getData();
     }

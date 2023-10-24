@@ -7,6 +7,7 @@ import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.resources.TestResources;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.ClassRule;
 import org.junit.jupiter.api.*;
@@ -35,9 +36,10 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class) //TODO: look up
 public class TickersTests {
+    private final static Logger logger = LogManager.getLogger(TickersTests.class);
+
     @ClassRule
     public static final TestResources res = new TestResources();
-
     private final StockServiceImpl stockServiceImpl;
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
@@ -45,19 +47,17 @@ public class TickersTests {
     private final EndOfDayServiceImpl endOfDayServiceImpl;
     private final IntraDayServiceImpl intraDayServiceImpl;
     private final TickersUtil tickersUtil;
-
-    @Qualifier("logger")
-    private final Logger logger;
-    private boolean isInitialized = false; //To use with @BeforeAll
-    private boolean isDoneTesting = false; //To use with @AfterAll
+    private boolean isInitialized = false;
+    private boolean isDoneTesting = false;
 
     @Autowired
     TickersTests(StockServiceImpl stockServiceImpl,
                  StockExchangeServiceImpl stockExchangeServiceImpl,
                  CurrencyServiceImpl currencyServiceImpl,
                  TimezoneServiceImpl timezoneServiceImpl,
-                 EndOfDayServiceImpl endOfDayServiceImpl, IntraDayServiceImpl intraDayServiceImpl, TickersUtil tickersUtil,
-                 Logger logger) {
+                 EndOfDayServiceImpl endOfDayServiceImpl,
+                 IntraDayServiceImpl intraDayServiceImpl,
+                 TickersUtil tickersUtil) {
         this.stockServiceImpl = stockServiceImpl;
         this.stockExchangeServiceImpl = stockExchangeServiceImpl;
         this.currencyServiceImpl = currencyServiceImpl;
@@ -65,29 +65,12 @@ public class TickersTests {
         this.endOfDayServiceImpl = endOfDayServiceImpl;
         this.intraDayServiceImpl = intraDayServiceImpl;
         this.tickersUtil = tickersUtil;
-        this.logger = logger;
     }
 
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
-        logger.info("Deleting all DB entries...");
 
-        stockServiceImpl.deleteAll();
-        intraDayServiceImpl.deleteAll();
-        endOfDayServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
-
-        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
-                && intraDayServiceImpl.getAllIntraDays().isEmpty()
-                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
-                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
-                && currencyServiceImpl.getCurrencies().isEmpty()
-                && timezoneServiceImpl.getTimezones().isEmpty();
-
-        logger.info("DB is empty: %s", isDBEmpty);
     }
 
     @AfterEach
@@ -96,7 +79,7 @@ public class TickersTests {
             logger.info("Testing finished!");
             return;
         }
-
+        logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
 
         stockServiceImpl.deleteAll();
@@ -113,7 +96,7 @@ public class TickersTests {
                 && currencyServiceImpl.getCurrencies().isEmpty()
                 && timezoneServiceImpl.getTimezones().isEmpty();
 
-        logger.info("DB is empty: %s", isDBEmpty);
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test
