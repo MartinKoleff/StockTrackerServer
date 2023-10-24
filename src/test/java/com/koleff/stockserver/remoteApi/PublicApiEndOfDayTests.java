@@ -6,6 +6,8 @@ import com.koleff.stockserver.remoteApi.service.impl.EndOfDayPublicApiServiceImp
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.service.impl.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +32,15 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class)
 public class PublicApiEndOfDayTests {
+
+    private final static Logger logger = LogManager.getLogger(PublicApiEndOfDayTests.class);
     private final EndOfDayPublicApiServiceImpl endOfDayPublicApiServiceImpl;
     private final EndOfDayServiceImpl endOfDayServiceImpl;
     private final StockServiceImpl stockServiceImpl;
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
+    private boolean isDoneTesting = false;
 
     @Autowired
     public PublicApiEndOfDayTests(EndOfDayPublicApiServiceImpl endOfDayPublicApiServiceImpl,
@@ -54,6 +59,8 @@ public class PublicApiEndOfDayTests {
 
     @BeforeEach
     public void setup() {
+        logger.info("Setup before test starts...");
+
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
 
@@ -71,12 +78,27 @@ public class PublicApiEndOfDayTests {
 
     @AfterEach
     public void tearDown() {
+        if (isDoneTesting){
+            logger.info("Testing finished!");
+            return;
+        }
+        logger.info("Setup after test ends...");
+        logger.info("Deleting all DB entries...");
+
         //Clear the DB
         currencyServiceImpl.deleteAll();
         timezoneServiceImpl.deleteAll();
         stockExchangeServiceImpl.deleteAll();
         stockServiceImpl.deleteAll();
         endOfDayServiceImpl.deleteAll();
+
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test
@@ -117,5 +139,7 @@ public class PublicApiEndOfDayTests {
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
         Assertions.assertNotNull(eodDtos);
+
+        isDoneTesting = true;
     }
 }
