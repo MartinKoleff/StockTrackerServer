@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
+import java.util.concurrent.Executor;
 
 @Configuration
 public class AppConfig {
@@ -39,6 +42,17 @@ public class AppConfig {
     @Bean
     public Logger logger() {
         return LogManager.getLogger(StockServerApplication.class);
+    }
+
+    @Bean
+    public Executor taskExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(2);
+        executor.setMaxPoolSize(2);
+        executor.setQueueCapacity(500);
+        executor.setThreadNamePrefix("PublicApi-");
+        executor.initialize();
+        return executor;
     }
 }
 
