@@ -110,19 +110,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public void saveEndOfDay(List<EndOfDay> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(entry ->
-                            entry.setStockId(
-                                    stockServiceImpl.getStockId(stockTag)
-                            )
-                    );
-
-                    //Save data entities to DB
-                    endOfDayRepositoryImpl.saveAll(data);
-                });
+        endOfDayRepositoryImpl.saveAll(data);
     }
 
     /**
@@ -130,20 +118,9 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public void saveAllEndOfDays(List<List<EndOfDay>> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(endOfDay ->
-                            endOfDay.forEach(entry ->
-                                    entry.setStockId(
-                                            stockServiceImpl.getStockId(stockTag)
-                                    )
-                            ));
-
-                    //Save data entities to DB
-                    data.forEach(endOfDayRepositoryImpl::saveAll);
-                });
+        //Save data entities to DB
+        data.parallelStream()
+                .forEach(endOfDayRepositoryImpl::saveAll);
     }
 
     /**

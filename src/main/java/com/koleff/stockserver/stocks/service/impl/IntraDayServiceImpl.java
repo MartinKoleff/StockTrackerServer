@@ -115,19 +115,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void saveIntraDay(List<IntraDay> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(entry ->
-                            entry.setStockId(
-                                    stockServiceImpl.getStockId(stockTag)
-                            )
-                    );
-
-                    //Save data entities to DB
-                    intraDayRepositoryImpl.saveAll(data);
-                });
+        intraDayRepositoryImpl.saveAll(data);
     }
 
     /**
@@ -135,20 +123,9 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void saveAllIntraDays(List<List<IntraDay>> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(intraDay ->
-                            intraDay.forEach(entry ->
-                                    entry.setStockId(
-                                            stockServiceImpl.getStockId(stockTag)
-                                    )
-                            ));
-
-                    //Save data entities to DB
-                    data.forEach(intraDayRepositoryImpl::saveAll);
-                });
+        //Save data entities to DB
+        data.parallelStream()
+                .forEach(intraDayRepositoryImpl::saveAll);
     }
 
     /**
