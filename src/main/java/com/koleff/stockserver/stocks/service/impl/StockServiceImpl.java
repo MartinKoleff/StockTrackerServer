@@ -4,6 +4,7 @@ import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.StockDto;
 import com.koleff.stockserver.stocks.dto.mapper.StockDtoMapper;
+import com.koleff.stockserver.stocks.exceptions.DBEmptyException;
 import com.koleff.stockserver.stocks.exceptions.StockNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.StocksNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.StockRepositoryImpl;
@@ -122,6 +123,16 @@ public class StockServiceImpl implements StockService {
         return stockRepositoryImpl.getStockTags()
                 .orElseThrow(
                         () -> new StocksNotFoundException("Stocks not found. Please load them.")
+                )
+                .stream()
+                .toList();
+    }
+
+    @Override
+    public List<Long> getStockIds() {
+        return stockRepositoryImpl.getStockIds()
+                .orElseThrow(
+                        () -> new DBEmptyException("Stock DB is empty.")
                 )
                 .stream()
                 .toList();

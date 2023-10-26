@@ -57,6 +57,13 @@ public interface StockRepositoryImpl extends StockRepository {
 
     @Override
     @Query(
+            value = "SELECT s.id FROM stock s",
+            nativeQuery = true
+    )
+    Optional<List<Long>> getStockIds();
+
+    @Override
+    @Query(
             value = "SELECT * FROM stock s WHERE s.has_intraday = :hasIntraDay",
             nativeQuery = true
     )
