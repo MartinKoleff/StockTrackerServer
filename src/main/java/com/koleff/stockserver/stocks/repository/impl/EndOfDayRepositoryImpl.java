@@ -19,7 +19,7 @@ import java.util.Optional;
 public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
     @Override
     @Query(
-            value = "SELECT * FROM end_of_day eod " +
+            value = "SELECT eod.* FROM end_of_day eod " +
                     "JOIN stock s ON (s.id = eod.stock_id) " +
                     "WHERE s.tag = $1",
             nativeQuery = true)

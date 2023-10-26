@@ -20,7 +20,7 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
 
     @Override
     @Query(
-            value = "SELECT * FROM intra_day id " +
+            value = "SELECT id.* FROM intra_day id " +
                     "JOIN stock s ON (s.id = id.stock_id) " +
                     "WHERE s.tag = $1",
             nativeQuery = true)
