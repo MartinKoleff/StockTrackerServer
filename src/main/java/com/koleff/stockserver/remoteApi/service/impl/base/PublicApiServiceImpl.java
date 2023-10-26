@@ -69,7 +69,7 @@ public abstract class PublicApiServiceImpl<T>
      */
     @Override
     public DataWrapper<T> getData(String stockTag) {
-         DataWrapper<T> data = publicApiClientV2.getData(new DatabaseTableDto(getRequestName()), apiKey, stockTag);
+        DataWrapper<T> data = publicApiClientV2.getData(new DatabaseTableDto(getRequestName()), apiKey, stockTag);
 
         logger.info(String.format("Data successfully fetched from remote API!\nData: %s\n", data));
         return data;
@@ -151,21 +151,22 @@ public abstract class PublicApiServiceImpl<T>
         CountDownLatch countDownLatch = new CountDownLatch(stockTags.size());
 
         //Create JSON V2 with configured data
-        stockTags.forEach(
-                stockTag -> scheduler.schedule(new Runnable() {
-                    @Override
-                    public void run() {
-                        logger.info(String.format("Thread %d has started!\n", counter.getAndIncrement()));
+        stockTags.parallelStream()
+                 .forEach(
+                        stockTag -> scheduler.schedule(new Runnable() {
+                            @Override
+                            public void run() {
+                                logger.info(String.format("Thread %d has started!\n", counter.getAndIncrement()));
 
-                        DataWrapper<T> data = getData(stockTag);
+                                DataWrapper<T> data = getData(stockTag);
 
-                        exportDataToJson(data, stockTag);
+                                exportDataToJson(data, stockTag);
 
-                        logger.info(String.format("CountDownLatch count: %s\n", countDownLatch.getCount()));
-                        countDownLatch.countDown();
-                    }
-                }, delay.getAndIncrement(), TimeUnit.SECONDS)
-        );
+                                logger.info(String.format("CountDownLatch count: %s\n", countDownLatch.getCount()));
+                                countDownLatch.countDown();
+                            }
+                        }, delay.getAndIncrement(), TimeUnit.SECONDS)
+                );
 
         try {
             scheduler.shutdown();
