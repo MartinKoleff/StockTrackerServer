@@ -134,16 +134,27 @@ public class IntraDayTests {
         logger.info(intraDay);
         Assertions.assertNotNull(intraDay);
     }
+
+    @Test
+    @Order(4)
+    @Disabled("To optimize...")
+    @DisplayName("Saving all data from JSON to DB.")
+    void intraDayBulkSavingTest(){
+        //Clear DB
+        intraDayServiceImpl.deleteAll();
+
+        //Load data from JSON
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
+        //Save data to DB
         intraDayServiceImpl.saveAllIntraDays(intraDays);
 
+        //Check if entries are in DB
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
         logger.info(intraDayDtos);
 
         Assertions.assertNotNull(intraDayDtos);
 
-        isDoneTesting = true;
     }
 
     @Test
