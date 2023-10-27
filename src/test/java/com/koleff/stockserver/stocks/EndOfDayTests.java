@@ -132,6 +132,19 @@ public class EndOfDayTests {
         Assertions.assertNotNull(eods);
 
     }
+
+    @Test
+    @Order(3)
+    @DisplayName("Fetching 1 entry from DB.")
+    void intraDayFetchingOneEntryTest() {
+        String stockTag = "AAPL";
+
+        List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDay(stockTag);
+
+        logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
+        Assertions.assertNotNull(eodDto);
+
+    }
         endOfDayServiceImpl.saveAllEndOfDays(eods);
 
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
