@@ -47,8 +47,11 @@ public class TickersTests {
     private final EndOfDayServiceImpl endOfDayServiceImpl;
     private final IntraDayServiceImpl intraDayServiceImpl;
     private final TickersUtil tickersUtil;
-    private boolean isInitialized = false;
     private boolean isDoneTesting = false;
+    private boolean hasInitializedDB = false;
+    private long startTime;
+    private long endTime;
+    private long totalTime;
 
     @Autowired
     TickersTests(StockServiceImpl stockServiceImpl,
@@ -69,13 +72,42 @@ public class TickersTests {
 
     @BeforeEach
     public void setup() {
+        if (hasInitializedDB) {
+            return;
+        }
         logger.info("Setup before test starts...");
 
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+
+        //Load and Save stocks to DB
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+
+
+        //Need to load and save stock_exchange before saving stock entity
+        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
+        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
+        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+
+        currencyServiceImpl.saveCurrencies(currencies);
+        timezoneServiceImpl.saveTimezones(timezones);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+
+        stockServiceImpl.saveStocks(stocks);
+
+        intraDayServiceImpl.saveAllIntraDays(intraDays);
+
+        startTime = System.currentTimeMillis();
+
+        hasInitializedDB = true;
     }
 
     @AfterEach
     public void tearDown() {
-        if (isDoneTesting){
+        endTime = System.currentTimeMillis() - startTime;
+        totalTime = endTime - startTime;
+        logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
+
+        if (!isDoneTesting) {
             logger.info("Testing finished!");
             return;
         }

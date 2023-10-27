@@ -40,6 +40,8 @@ public class EndOfDayTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
+    private boolean hasInitializedDB = false;
+
     private long startTime;
     private long endTime;
     private long totalTime;
@@ -59,6 +61,9 @@ public class EndOfDayTests {
 
     @BeforeEach
     public void setup() {
+        if(hasInitializedDB){
+            return;
+        }
         logger.info("Setup before test starts...");
 
         //Load and Save stocks to DB
@@ -80,6 +85,8 @@ public class EndOfDayTests {
         endOfDayServiceImpl.saveAllEndOfDays(eods);
 
         startTime = System.currentTimeMillis();
+
+        hasInitializedDB = true;
     }
 
     @AfterEach
@@ -88,7 +95,7 @@ public class EndOfDayTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (isDoneTesting) {
+        if (!isDoneTesting) {
             logger.info("Testing finished!");
             return;
         }

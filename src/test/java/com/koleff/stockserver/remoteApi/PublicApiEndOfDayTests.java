@@ -42,6 +42,7 @@ public class PublicApiEndOfDayTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
+    private boolean hasInitializedDB = false;
 
     @Autowired
     public PublicApiEndOfDayTests(EndOfDayPublicApiServiceImpl endOfDayPublicApiServiceImpl,
@@ -60,6 +61,9 @@ public class PublicApiEndOfDayTests {
 
     @BeforeEach
     public void setup() {
+        if(hasInitializedDB){
+            return;
+        }
         logger.info("Setup before test starts...");
 
         //Load and Save stocks to DB
@@ -79,11 +83,13 @@ public class PublicApiEndOfDayTests {
         stockServiceImpl.saveStocks(stocks);
 
         endOfDayServiceImpl.saveAllEndOfDays(eods);
+
+        hasInitializedDB = true;
     }
 
     @AfterEach
     public void tearDown() {
-        if (isDoneTesting){
+        if (!isDoneTesting){
             logger.info("Testing finished!");
             return;
         }

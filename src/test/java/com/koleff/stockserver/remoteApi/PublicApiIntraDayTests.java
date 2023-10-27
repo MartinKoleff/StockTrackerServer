@@ -43,6 +43,7 @@ public class PublicApiIntraDayTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
+    private boolean hasInitializedDB = false;
 
     @Autowired
     public PublicApiIntraDayTests(IntraDayPublicApiServiceImpl intraDayPublicApiServiceImpl,
@@ -61,6 +62,9 @@ public class PublicApiIntraDayTests {
 
     @BeforeEach
     public void setup() {
+        if(hasInitializedDB){
+            return;
+        }
         logger.info("Setup before test starts...");
 
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
@@ -81,11 +85,13 @@ public class PublicApiIntraDayTests {
         stockServiceImpl.saveStocks(stocks);
 
         intraDayServiceImpl.saveAllIntraDays(intraDays);
+
+        hasInitializedDB = true;
     }
 
     @AfterEach
     public void tearDown() {
-        if (isDoneTesting){
+        if (!isDoneTesting){
             logger.info("Testing finished!");
             return;
         }
