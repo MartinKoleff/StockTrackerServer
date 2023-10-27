@@ -121,6 +121,19 @@ public class IntraDayTests {
 
         Assertions.assertNotNull(intraDays);
     }
+
+
+    @Test
+    @Order(3)
+    @DisplayName("Fetching 1 entry from DB.")
+    void intraDayFetchingOneEntryTest() {
+        String stockTag = "AAPL";
+
+        List<IntraDayDto> intraDay = intraDayServiceImpl.getIntraDay(stockTag);
+
+        logger.info(intraDay);
+        Assertions.assertNotNull(intraDay);
+    }
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         intraDayServiceImpl.saveAllIntraDays(intraDays);
