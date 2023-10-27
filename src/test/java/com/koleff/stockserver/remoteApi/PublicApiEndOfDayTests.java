@@ -64,6 +64,8 @@ public class PublicApiEndOfDayTests {
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
 
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
+
         //Need to load and save stock_exchange before saving stock entity
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
         List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
@@ -74,6 +76,8 @@ public class PublicApiEndOfDayTests {
         stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
 
         stockServiceImpl.saveStocks(stocks);
+
+        endOfDayServiceImpl.saveAllEndOfDays(eods);
     }
 
     @AfterEach

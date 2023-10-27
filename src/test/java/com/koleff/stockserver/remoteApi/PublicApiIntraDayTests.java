@@ -63,8 +63,11 @@ public class PublicApiIntraDayTests {
     public void setup() {
         logger.info("Setup before test starts...");
 
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
+
 
         //Need to load and save stock_exchange before saving stock entity
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
@@ -76,6 +79,8 @@ public class PublicApiIntraDayTests {
         stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
 
         stockServiceImpl.saveStocks(stocks);
+
+        intraDayServiceImpl.saveAllIntraDays(intraDays);
     }
 
     @AfterEach
