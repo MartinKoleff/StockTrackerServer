@@ -103,6 +103,7 @@ public class PublicApiEndOfDayTests {
 
     @Test
     @Order(1)
+    @Disabled("Does 100 requests traffic to remote API. You only have 1000 requests limit.")
     @DisplayName("Fetching data from remote API and exporting it to JSON.")
     void eodExportingTest() {
         //Fetch data and export it to JSONs
