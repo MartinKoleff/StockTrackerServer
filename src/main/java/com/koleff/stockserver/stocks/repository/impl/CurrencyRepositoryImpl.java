@@ -20,25 +20,22 @@ import java.util.Optional;
 public interface CurrencyRepositoryImpl extends CurrencyRepository {
 
     @Query(
-            value = "SELECT * FROM currency c " +
-                    "JOIN stock_exchange se ON (se.currency_id = c.id)" +
-                    "JOIN stock s ON (s.stock_exchange_id = se.id)" +
-                    "WHERE s.tag = ?1",
-            nativeQuery = true
+            value = "SELECT c FROM Currency c " +
+                    "JOIN StockExchange se ON (se.currencyId = c.id)" +
+                    "JOIN Stock s ON (s.stockExchangeId = se.id)" +
+                    "WHERE s.tag = ?1"
     )
     Optional<Currency> findByStockTag(String stockTag);
 
     @Query(
-            value = "SELECT code FROM currency c ",
-            nativeQuery = true
+            value = "SELECT c.code FROM Currency c "
     )
     Optional<List<String>> getCurrencyCodes();
 
     @Override
     @Query(
-            value = "SELECT * FROM currency c " +
-                    "WHERE c.code = ?1",
-            nativeQuery = true
+            value = "SELECT c FROM Currency c " +
+                    "WHERE c.code = ?1"
     )
     Optional<Currency> findCurrencyByCurrencyCode(String currencyCode);
 

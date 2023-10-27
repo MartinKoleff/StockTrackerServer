@@ -42,43 +42,26 @@ public interface StockRepositoryImpl extends StockRepository {
     List<Stock> findAll();
 
     @Override
-    @Query(
-            value = "SELECT * FROM stock s WHERE s.tag = ?1",
-            nativeQuery = true
-    )
+    @Query(value = "SELECT s FROM Stock s WHERE s.tag = ?1")
     Optional<Stock> findStockByStockTag(String stockTag);
 
     @Override
     @Query(
-            value = "SELECT s.tag FROM stock s",
-            nativeQuery = true
+            value = "SELECT s.tag FROM Stock s"
     )
     Optional<List<String>> getStockTags();
 
     @Override
-    @Query(
-            value = "SELECT s.id FROM stock s",
-            nativeQuery = true
-    )
+    @Query(value = "SELECT s.id FROM Stock s")
     Optional<List<Long>> getStockIds();
 
     @Override
-    @Query(
-            value = "SELECT * FROM stock s WHERE s.has_intraday = :hasIntraDay",
-            nativeQuery = true
-    )
-    List<Stock> selectStocksWhereHasIntraDayEqualTrue(
-            @Param("hasIntraDay") Boolean hasIntraDay
-    );
+    @Query(value = "SELECT s FROM Stock s WHERE s.hasIntraDay = ?1")
+    List<Stock> selectStocksWhereHasIntraDayEqualTrue(Boolean hasIntraDay);
 
     @Override
-    @Query(
-            value = "SELECT * FROM stock WHERE has_end_of_day = :hasEndOfDay",
-            nativeQuery = true
-    )
-    List<Stock> selectStocksWhereHasEndOfDayEqualTrue(
-            @Param("hasEndOfDay") Boolean hasEndOfDay
-    );
+    @Query(value = "SELECT s FROM Stock s WHERE s.hasEndOfDay = ?1")
+    List<Stock> selectStocksWhereHasEndOfDayEqualTrue(Boolean hasEndOfDay);
 
     @Override
     @Modifying

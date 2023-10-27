@@ -22,26 +22,23 @@ public interface TimezoneRepositoryImpl extends TimezoneRepository {
 
     @Override
     @Query(
-            value = "SELECT * FROM timezone t " +
-                    "JOIN stock_exchange se ON (se.timezone_id = t.id)" +
-                    "JOIN stock s ON (s.stock_exchange_id = se.id)" +
-                    "WHERE s.tag = ?1",
-            nativeQuery = true
+            value = "SELECT t FROM Timezone t " +
+                    "JOIN StockExchange se ON (se.timezoneId = t.id)" +
+                    "JOIN Stock s ON (s.stockExchangeId = se.id)" +
+                    "WHERE s.tag = ?1"
     )
     Optional<Timezone> findByStockTag(String stockTag);
 
     @Override
     @Query(
-            value = "SELECT timezone FROM timezone t ",
-            nativeQuery = true
+            value = "SELECT t.timezone FROM Timezone t "
     )
     Optional<List<String>> getTimezoneStrings();
 
     @Override
     @Query(
-            value = "SELECT * FROM timezone t " +
-                    "WHERE t.timezone = ?1",
-            nativeQuery = true
+            value = "SELECT t FROM Timezone t " +
+                    "WHERE t.timezone = ?1"
     )
     Collection<Timezone> findTimezoneByTimezoneString(String timezone);
 
