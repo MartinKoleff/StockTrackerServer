@@ -1,10 +1,10 @@
 package com.koleff.stockserver.stocks;
 
 import com.koleff.stockserver.StockServerApplication;
-import com.koleff.stockserver.stocks.domain.EndOfDay;
+import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
-import com.koleff.stockserver.stocks.service.impl.EndOfDayServiceImpl;
+import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
@@ -34,30 +34,71 @@ public class EndOfDayTests {
 
     private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
     private final EndOfDayServiceImpl endOfDayServiceImpl;
+    private final StockServiceImpl stockServiceImpl;
+    private final StockExchangeServiceImpl stockExchangeServiceImpl;
+    private final CurrencyServiceImpl currencyServiceImpl;
+    private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
 
     @Autowired
     EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl) {
+    EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
+                  StockServiceImpl stockServiceImpl,
+                  StockExchangeServiceImpl stockExchangeServiceImpl,
+                  CurrencyServiceImpl currencyServiceImpl,
+                  TimezoneServiceImpl timezoneServiceImpl) {
         this.endOfDayServiceImpl = endOfDayServiceImpl;
+        this.stockServiceImpl = stockServiceImpl;
+        this.stockExchangeServiceImpl = stockExchangeServiceImpl;
+        this.currencyServiceImpl = currencyServiceImpl;
+        this.timezoneServiceImpl = timezoneServiceImpl;
     }
 
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
 
+        //Load and Save stocks to DB
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
+
+        //Need to load and save stock_exchange before saving stock entity
+        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
+        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
+        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+
+        currencyServiceImpl.saveCurrencies(currencies);
+        timezoneServiceImpl.saveTimezones(timezones);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+
+        stockServiceImpl.saveStocks(stocks);
+
+        endOfDayServiceImpl.saveAllEndOfDays(eods);
     }
 
     @AfterEach
     public void tearDown() {
-        if (isDoneTesting){
+        if (isDoneTesting) {
             logger.info("Testing finished!");
             return;
         }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
+
+        //Clear the DB
+        currencyServiceImpl.deleteAll();
+        timezoneServiceImpl.deleteAll();
+        stockExchangeServiceImpl.deleteAll();
+        stockServiceImpl.deleteAll();
         endOfDayServiceImpl.deleteAll();
 
-        boolean isDBEmpty = endOfDayServiceImpl.getAllEndOfDays().isEmpty();
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+
         logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 

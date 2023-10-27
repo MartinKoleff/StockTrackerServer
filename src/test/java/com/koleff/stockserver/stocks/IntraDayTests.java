@@ -35,16 +35,47 @@ public class IntraDayTests {
 
     private final static Logger logger = LogManager.getLogger(IntraDayTests.class);
     private final IntraDayServiceImpl intraDayServiceImpl;
+    private final StockServiceImpl stockServiceImpl;
+    private final StockExchangeServiceImpl stockExchangeServiceImpl;
+    private final CurrencyServiceImpl currencyServiceImpl;
+    private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
 
     @Autowired
-    IntraDayTests(IntraDayServiceImpl intraDayServiceImpl) {
+    IntraDayTests(IntraDayServiceImpl intraDayServiceImpl,
+                  StockServiceImpl stockServiceImpl,
+                  StockExchangeServiceImpl stockExchangeServiceImpl,
+                  CurrencyServiceImpl currencyServiceImpl,
+                  TimezoneServiceImpl timezoneServiceImpl) {
         this.intraDayServiceImpl = intraDayServiceImpl;
+        this.stockServiceImpl = stockServiceImpl;
+        this.stockExchangeServiceImpl = stockExchangeServiceImpl;
+        this.currencyServiceImpl = currencyServiceImpl;
+        this.timezoneServiceImpl = timezoneServiceImpl;
     }
 
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
+
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+
+        //Load and Save stocks to DB
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+
+
+        //Need to load and save stock_exchange before saving stock entity
+        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
+        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
+        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+
+        currencyServiceImpl.saveCurrencies(currencies);
+        timezoneServiceImpl.saveTimezones(timezones);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+
+        stockServiceImpl.saveStocks(stocks);
+
+        intraDayServiceImpl.saveAllIntraDays(intraDays);
 
     }
 
@@ -56,9 +87,20 @@ public class IntraDayTests {
         }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
+
+        //Clear the DB
+        currencyServiceImpl.deleteAll();
+        timezoneServiceImpl.deleteAll();
+        stockExchangeServiceImpl.deleteAll();
+        stockServiceImpl.deleteAll();
         intraDayServiceImpl.deleteAll();
 
-        boolean isDBEmpty = intraDayServiceImpl.getAllIntraDays().isEmpty();
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && intraDayServiceImpl.getAllIntraDays().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+
         logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
