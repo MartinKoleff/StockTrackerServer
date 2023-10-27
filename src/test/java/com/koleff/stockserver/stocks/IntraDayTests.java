@@ -106,7 +106,12 @@ public class IntraDayTests {
 
     @Test
     @Order(1)
-    void intraDaysLoadingTest() {
+    @DisplayName("Fetching data from DB.")
+    void intraDayFetchingTest() {
+        List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
+
+        Assertions.assertNotNull(intraDayDtos);
+    }
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         intraDayServiceImpl.saveAllIntraDays(intraDays);
