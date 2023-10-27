@@ -1,6 +1,7 @@
 package com.koleff.stockserver.remoteApi;
 
 import com.koleff.stockserver.StockServerApplication;
+import com.koleff.stockserver.remoteApi.service.impl.IntraDayPublicApiServiceImpl;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.remoteApi.service.impl.EndOfDayPublicApiServiceImpl;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
@@ -121,6 +122,18 @@ public class PublicApiEndOfDayTests {
 
     @Test
     @Order(2)
+    @Disabled("Used to investigate bug with fetching IntraDay data for EOD client...")
+    @DisplayName("Fetching 1 entry from remote API and exporting it to JSON.")
+    void eodFetchDataFromRemoteAPIOneEntryTest() {
+        String stockTag = "AAPL";
+
+        List<EndOfDay> entry = endOfDayPublicApiServiceImpl.getData(stockTag).getData();
+
+        Assertions.assertNotNull(entry);
+    }
+
+    @Test
+    @Order(3)
     @DisplayName("Fetching data from DB.")
     void eodFetchingTest() {
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
@@ -129,7 +142,7 @@ public class PublicApiEndOfDayTests {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     @DisplayName("Loading data from JSON.")
     void eodLoadingTest() {
         List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
@@ -138,7 +151,7 @@ public class PublicApiEndOfDayTests {
     }
 
     @Test
-    @Order(4)
+    @Order(5)
     @DisplayName("Saving all data from JSON to DB.")
     void eodBulkSavingTest() {
         //Save to DB

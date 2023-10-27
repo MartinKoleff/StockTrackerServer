@@ -135,7 +135,7 @@ public class EndOfDayTests {
     @Test
     @Order(3)
     @DisplayName("Fetching 1 entry from DB.")
-    void intraDayFetchingOneEntryTest() {
+    void eodFetchingOneEntryTest() {
         String stockTag = "AAPL";
 
         List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDay(stockTag);
@@ -148,7 +148,7 @@ public class EndOfDayTests {
     @Test
     @Order(4)
     @DisplayName("Saving all data from JSON to DB.")
-    void eodBulkSavingTest() {
+    void eodBulkSavingTest() { //TODO: add Spring Batch
         //Clear DB
         endOfDayServiceImpl.deleteAll();
 

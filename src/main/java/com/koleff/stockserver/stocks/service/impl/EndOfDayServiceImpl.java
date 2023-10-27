@@ -88,7 +88,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         stockTags.parallelStream()
                  .forEach(
                         stockTag -> {
-                            List<EndOfDayDto> entry = endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag) //TODO: investigate why stockTag is ""
+                            List<EndOfDayDto> entry = endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
                                     .orElseThrow(
                                             () -> new EndOfDayNotFoundException(
                                                     String.format("End of day for stock tag %s not found.",
