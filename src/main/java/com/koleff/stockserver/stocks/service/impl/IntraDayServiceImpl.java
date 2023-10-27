@@ -90,22 +90,23 @@ public class IntraDayServiceImpl implements IntraDayService {
         List<List<IntraDayDto>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.getStockTags();
-        stockTags.forEach(
-                stockTag -> {
-                    List<IntraDayDto> entry = intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
-                            .orElseThrow(
-                                    () -> new IntraDayNotFoundException(
-                                            String.format("Intra day for stock tag %s not found.",
-                                                    stockTag
+        stockTags.parallelStream()
+                .forEach(
+                        stockTag -> {
+                            List<IntraDayDto> entry = intraDayRepositoryImpl.findIntraDayByStockTag(stockTag) //TODO: investigate why stockTag is ""
+                                    .orElseThrow(
+                                            () -> new IntraDayNotFoundException(
+                                                    String.format("Intra day for stock tag %s not found.",
+                                                            stockTag
+                                                    )
                                             )
                                     )
-                            )
-                            .stream()
-                            .map(intraDayDtoMapper)
-                            .toList();
-                    data.add(entry);
-                }
-        );
+                                    .stream()
+                                    .map(intraDayDtoMapper)
+                                    .toList();
+                            data.add(entry);
+                        }
+                );
 
         return data;
     }
@@ -124,9 +125,21 @@ public class IntraDayServiceImpl implements IntraDayService {
     @Override
     public void saveAllIntraDays(List<List<IntraDay>> data) {
         //Save data entities to DB
-        data.parallelStream()
-                .forEach(intraDayRepositoryImpl::saveAll);
+        data.forEach(intraDayRepositoryImpl::saveAll);
     }
+
+    //        //Validate stock_id
+    //        List<Long> stockIds = stockServiceImpl.getStockIds();
+    //
+    //        //Filter entries with no stock in DB
+    //        data.forEach(
+    //                entry ->
+    //                        entry.stream().filter(
+    //                                intraDay -> stockIds.contains(
+    //                                        intraDay.getStockId()
+    //                                )
+    //                        )
+    //        );
 
     /**
      * Delete entry from DB via id
@@ -177,17 +190,18 @@ public class IntraDayServiceImpl implements IntraDayService {
         List<List<IntraDay>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.loadStockTags();
-        stockTags.forEach(
-                stockTag -> {
-                    try {
-                        List<IntraDay> entry = loadIntraDay(stockTag);
+        stockTags.parallelStream()
+                .forEach(
+                        stockTag -> {
+                            try {
+                                List<IntraDay> entry = loadIntraDay(stockTag);
 
-                        data.add(entry);
-                    }catch (NullPointerException e){
-                        logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
-                    }
-                }
-        );
+                                data.add(entry);
+                            } catch (NullPointerException e) {
+                                logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
+                            }
+                        }
+                );
         return data;
     }
 }

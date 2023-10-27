@@ -85,22 +85,23 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         List<List<EndOfDayDto>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.getStockTags();
-        stockTags.forEach(
-                stockTag -> {
-                    List<EndOfDayDto> entry = endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
-                            .orElseThrow(
-                                    () -> new EndOfDayNotFoundException(
-                                            String.format("End of day for stock tag %s not found.",
-                                                    stockTag
+        stockTags.parallelStream()
+                 .forEach(
+                        stockTag -> {
+                            List<EndOfDayDto> entry = endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag) //TODO: investigate why stockTag is ""
+                                    .orElseThrow(
+                                            () -> new EndOfDayNotFoundException(
+                                                    String.format("End of day for stock tag %s not found.",
+                                                            stockTag
+                                                    )
                                             )
                                     )
-                            )
-                            .stream()
-                            .map(endOfDayDtoMapper)
-                            .toList();
-                    data.add(entry);
-                }
-        );
+                                    .stream()
+                                    .map(endOfDayDtoMapper)
+                                    .toList();
+                            data.add(entry);
+                        }
+                );
 
         return data;
     }
@@ -170,17 +171,18 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         List<List<EndOfDay>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.loadStockTags();
-        stockTags.forEach(
-                stockTag -> {
-                    try {
-                        List<EndOfDay> entry = loadEndOfDay(stockTag);
+        stockTags.parallelStream()
+                .forEach(
+                        stockTag -> {
+                            try {
+                                List<EndOfDay> entry = loadEndOfDay(stockTag);
 
-                        data.add(entry);
-                    } catch (NullPointerException e) {
-                        logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
-                    }
-                }
-        );
+                                data.add(entry);
+                            } catch (NullPointerException e) {
+                                logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
+                            }
+                        }
+                );
 
         return data;
     }
