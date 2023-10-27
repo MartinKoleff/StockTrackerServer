@@ -112,6 +112,15 @@ public class IntraDayTests {
 
         Assertions.assertNotNull(intraDayDtos);
     }
+
+    @Test
+    @Order(2)
+    @DisplayName("Loading data from JSON.")
+    void intraDayLoadingTest() {
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+
+        Assertions.assertNotNull(intraDays);
+    }
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         intraDayServiceImpl.saveAllIntraDays(intraDays);
