@@ -103,6 +103,7 @@ public class PublicApiEndOfDayTests {
 
     @Test
     @Order(1)
+    @DisplayName("Fetching data from remote API and exporting it to JSON.")
     void eodExportingTest() {
         //Fetch data and export it to JSONs
         endOfDayPublicApiServiceImpl.exportAllDataToJson();
@@ -115,6 +116,7 @@ public class PublicApiEndOfDayTests {
 
     @Test
     @Order(2)
+    @DisplayName("Fetching data from DB.")
     void eodFetchingTest() {
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
@@ -123,14 +125,16 @@ public class PublicApiEndOfDayTests {
 
     @Test
     @Order(3)
+    @DisplayName("Loading data from JSON.")
     void eodLoadingTest() {
-        List<List<EndOfDay>> intraDays = endOfDayServiceImpl.loadAllEndOfDays();
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
 
-        Assertions.assertNotNull(intraDays);
+        Assertions.assertNotNull(eods);
     }
 
     @Test
     @Order(4)
+    @DisplayName("Saving all data from JSON to DB.")
     void eodBulkSavingTest() {
         //Save to DB
         endOfDayPublicApiServiceImpl.saveBulkData();

@@ -105,6 +105,7 @@ public class PublicApiIntraDayTests {
 
     @Test
     @Order(1)
+    @DisplayName("Fetching data from remote API and exporting it to JSON.")
     void intraDayExportingTest() {
         //Fetch data and export it to JSONs
         intraDayPublicApiServiceImpl.exportAllDataToJson();
@@ -118,6 +119,7 @@ public class PublicApiIntraDayTests {
 
     @Test
     @Order(2)
+    @DisplayName("Fetching data from DB.")
     void intraDayFetchingTest() {
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
@@ -126,6 +128,7 @@ public class PublicApiIntraDayTests {
 
     @Test
     @Order(3)
+    @DisplayName("Loading data from JSON.")
     void intraDayLoadingTest() {
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
@@ -134,6 +137,7 @@ public class PublicApiIntraDayTests {
 
     @Test
     @Order(4)
+    @DisplayName("Saving all data from JSON to DB.")
     void intraDayBulkSavingTest(){
         //Save to DB
         intraDayPublicApiServiceImpl.saveBulkData();
