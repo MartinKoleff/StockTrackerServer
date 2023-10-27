@@ -1,16 +1,15 @@
 package com.koleff.stockserver.stocks;
 
 import com.koleff.stockserver.StockServerApplication;
-import com.koleff.stockserver.stocks.domain.IntraDay;
+import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
-import com.koleff.stockserver.stocks.service.impl.IntraDayServiceImpl;
+import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -110,6 +109,7 @@ public class IntraDayTests {
     void intraDayFetchingTest() {
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
+        logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
         Assertions.assertNotNull(intraDayDtos);
     }
 
@@ -119,6 +119,7 @@ public class IntraDayTests {
     void intraDayLoadingTest() {
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
+        logger.info(String.format("All IntraDays loaded from all JSONs: %s", intraDays));
         Assertions.assertNotNull(intraDays);
     }
 
@@ -129,10 +130,10 @@ public class IntraDayTests {
     void intraDayFetchingOneEntryTest() {
         String stockTag = "AAPL";
 
-        List<IntraDayDto> intraDay = intraDayServiceImpl.getIntraDay(stockTag);
+        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDay(stockTag);
 
-        logger.info(intraDay);
-        Assertions.assertNotNull(intraDay);
+        logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
+        Assertions.assertNotNull(intraDayDto);
     }
 
     @Test
@@ -151,8 +152,8 @@ public class IntraDayTests {
 
         //Check if entries are in DB
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
-        logger.info(intraDayDtos);
 
+        logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
         Assertions.assertNotNull(intraDayDtos);
 
     }
@@ -175,9 +176,9 @@ public class IntraDayTests {
         //Check if entries are in DB
         List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDay(stockTag);
 
+        logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
         Assertions.assertNotNull(intraDayDto);
 
         isDoneTesting = true;
     }
-
 }
