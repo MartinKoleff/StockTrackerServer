@@ -4,12 +4,14 @@ import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.StockDto;
 import com.koleff.stockserver.stocks.dto.mapper.StockDtoMapper;
+import com.koleff.stockserver.stocks.exceptions.DBEmptyException;
 import com.koleff.stockserver.stocks.exceptions.StockNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.StocksNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.StockRepositoryImpl;
 import com.koleff.stockserver.stocks.service.StockService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +19,8 @@ import java.util.List;
 @Service
 public class StockServiceImpl implements StockService {
 
+    @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
+    private String versionAnnotation;
     private final StockRepositoryImpl stockRepositoryImpl;
     private final StockDtoMapper stockDtoMapper;
     private final JsonUtil<DataWrapper<Stock>> jsonUtil;
@@ -124,6 +128,16 @@ public class StockServiceImpl implements StockService {
                 .toList();
     }
 
+    @Override
+    public List<Long> getStockIds() {
+        return stockRepositoryImpl.getStockIds()
+                .orElseThrow(
+                        () -> new DBEmptyException("Stock DB is empty.")
+                )
+                .stream()
+                .toList();
+    }
+
     /**
      * Load stock tags column from JSON
      */
@@ -181,7 +195,9 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public Stock loadStock(String stockTag) {
-        String json = jsonUtil.loadJson("tickersV2.json");
+        String filePath = String.format("tickers%s.json", versionAnnotation);
+
+        String json = jsonUtil.loadJson(filePath);
 
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
 
@@ -192,7 +208,6 @@ public class StockServiceImpl implements StockService {
                 .orElseThrow(
                         () -> new StockNotFoundException("Stock not found in the JSON with all stocks.")
                 );
-        System.out.println(stockData);
 
         return stockData;
     }
@@ -205,7 +220,6 @@ public class StockServiceImpl implements StockService {
         String json = jsonUtil.loadJson("tickersV2.json");
 
         DataWrapper<Stock> data = jsonUtil.convertJson(json);
-        System.out.println(data);
 
         return data.getData();
     }

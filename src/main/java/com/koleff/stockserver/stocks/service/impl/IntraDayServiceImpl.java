@@ -1,5 +1,6 @@
 package com.koleff.stockserver.stocks.service.impl;
 
+import com.koleff.stockserver.stocks.configuration.AppConfig;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.Stock;
@@ -10,7 +11,10 @@ import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.IntraDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.IntraDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +22,11 @@ import java.util.List;
 
 @Service
 public class IntraDayServiceImpl implements IntraDayService {
+
+    private final static Logger logger = LogManager.getLogger(IntraDayServiceImpl.class);
+
+    @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
+    private String versionAnnotation;
     private final IntraDayRepositoryImpl intraDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
 
@@ -106,19 +115,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void saveIntraDay(List<IntraDay> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(entry ->
-                            entry.setStockId(
-                                    stockServiceImpl.getStockId(stockTag)
-                            )
-                    );
-
-                    //Save data entities to DB
-                    intraDayRepositoryImpl.saveAll(data);
-                });
+        intraDayRepositoryImpl.saveAll(data);
     }
 
     /**
@@ -126,20 +123,9 @@ public class IntraDayServiceImpl implements IntraDayService {
      */
     @Override
     public void saveAllIntraDays(List<List<IntraDay>> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(intraDay ->
-                            intraDay.forEach(entry ->
-                                    entry.setStockId(
-                                            stockServiceImpl.getStockId(stockTag)
-                                    )
-                            ));
-
-                    //Save data entities to DB
-                    data.forEach(intraDayRepositoryImpl::saveAll);
-                });
+        //Save data entities to DB
+        data.parallelStream()
+                .forEach(intraDayRepositoryImpl::saveAll);
     }
 
     /**
@@ -173,7 +159,7 @@ public class IntraDayServiceImpl implements IntraDayService {
     @Override
     public List<IntraDay> loadIntraDay(String stockTag) {
         //Configure json based on current stock
-        String filePath = String.format("intraday%s.json", stockTag);
+        String filePath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
 
         //Load data from json
         String json = jsonUtil.loadJson(filePath);
@@ -186,19 +172,22 @@ public class IntraDayServiceImpl implements IntraDayService {
     /**
      * Load data from JSON
      */
-    //TODO: execute multithreaded...
     @Override
     public List<List<IntraDay>> loadAllIntraDays() {
         List<List<IntraDay>> data = new ArrayList<>();
 
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.loadStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<IntraDay> entry = loadIntraDay(stockTag);
-                    data.add(entry);
+                    try {
+                        List<IntraDay> entry = loadIntraDay(stockTag);
+
+                        data.add(entry);
+                    }catch (NullPointerException e){
+                        logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
+                    }
                 }
         );
-
         return data;
     }
 }

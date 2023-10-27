@@ -1,6 +1,9 @@
 package com.koleff.stockserver.stocks.utils.jsonUtil.base;
 
 import com.google.gson.Gson;
+import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -15,6 +18,7 @@ import java.lang.reflect.Type;
 
 public abstract class JsonUtil<T> {
 
+    private final static Logger logger = LogManager.getLogger(JsonUtil.class);
     private final String resourcePath = "src/main/resources/json/%s";
 
     @Qualifier("gson")
@@ -39,7 +43,11 @@ public abstract class JsonUtil<T> {
      * @return json data
      */
     public String loadJson(String jsonPath) {
+        logger.info("Loading JSON...");
+
         String filePath = String.format(resourcePath, jsonPath);
+        logger.info(String.format("JSON file path: %s", jsonPath));
+
         File jsonFile = new File(filePath);
 
         String json = null;
@@ -52,9 +60,10 @@ public abstract class JsonUtil<T> {
 
             json = data.toJSONString();
         } catch (IOException | ParseException e) {
-            System.out.printf("Failed to parse JSON. File exists -> %s\n", jsonFile.exists());
+            logger.error(String.format("Failed to parse JSON. File exists -> %s\n", jsonFile.exists()));
         }
 
+        logger.info(String.format("JSON successfully loaded!\n JSON: %s", json));
         return json;
     }
 
@@ -67,7 +76,12 @@ public abstract class JsonUtil<T> {
      * @return json mapped to custom object T
      */
     public T convertJson(String json) {
-        return gson.fromJson(json, getType());
+        logger.info("Converting JSON...");
+
+        T entity =  gson.fromJson(json, getType());
+
+        logger.info(String.format("JSON was parsed to: %s", entity.toString()));
+        return entity;
     }
 
     /**
@@ -76,23 +90,25 @@ public abstract class JsonUtil<T> {
      *
      * @param response    data
      * @param requestName remote api request name used for configuring JSON file name
+     * @param versionAnnotation which JSON file to use (V2 is with configured ids)
      * @param stockTag    stock tag
      */
-    public void exportToJson(T response, String requestName, String stockTag) {
+    public void exportToJson(T response, String requestName, String versionAnnotation, String stockTag) {
         String jsonPath;
 
         //Create file path based on request
         switch (requestName) {
             case "intraday":
-                jsonPath = String.format("intraday%s.json", stockTag);
+                jsonPath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
                 break;
             case "eod":
-                jsonPath = String.format("eod%s.json", stockTag);
+                jsonPath = String.format("eod%s%s.json", stockTag, versionAnnotation);
                 break;
             default:
                 return;
         }
 
+        logger.info(String.format("Json name: %s", jsonPath));
         export(response, jsonPath);
     }
 
@@ -103,28 +119,24 @@ public abstract class JsonUtil<T> {
      *
      * @param response    data
      * @param requestName remote api request name used for configuring JSON file name
+     * @param versionAnnotation which JSON file to use (V2 is with configured ids)
      */
-    public void exportToJson(T response, String requestName) {
+    public void exportToJson(T response, String requestName, String versionAnnotation) {
         String jsonPath;
 
         //Create file path based on request
         switch (requestName) {
             case "exchanges":
-                jsonPath = "exchanges.json";
+                jsonPath =  String.format("exchanges%s.json", versionAnnotation);
                 break;
             case "tickers":
-                jsonPath = "tickers.json";
-                break;
-            case "tickersV2":
-                jsonPath = "tickersV2.json";
-                break;
-            case "exchangesV2":
-                jsonPath = "exchangesV2.json";
+                jsonPath = String.format("tickers%s.json", versionAnnotation);
                 break;
             default:
                 return;
         }
 
+        logger.info(String.format("Json name: %s", jsonPath));
         export(response, jsonPath);
     }
 
@@ -140,10 +152,13 @@ public abstract class JsonUtil<T> {
      * @param jsonPath file path
      */
     private void export(T response, String jsonPath) {
+        logger.info("Exporting data to JSON...");
+
         String filePath = String.format(resourcePath, jsonPath);
 
         //Convert response to JSON
         String json;
+        logger.info(String.format("Data before converting to JSON: %s", response));
         json = gson.toJson(response);
 
         //Write JSON in file
@@ -153,10 +168,10 @@ public abstract class JsonUtil<T> {
             file.write(json);
             file.close();
         } catch (IOException e) {
-            System.out.println("JSON could not be exported to file.");
+            logger.error("JSON could not be exported to file.");
             return;
         }
 
-        System.out.printf("JSON file created: %s\n", json);
+        logger.info(String.format("JSON file successfully created! JSON file content: %s\n", json));
     }
 }

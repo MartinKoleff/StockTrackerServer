@@ -14,6 +14,7 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
     Optional<Stock> findStockByStockTag(String stockTag);
 
     Optional<List<String>> getStockTags();
+    Optional<List<Long>> getStockIds();
 
     List<Stock> selectStocksWhereHasIntraDayEqualTrue(
             @Param("hasIntraDay") Boolean hasIntraDay

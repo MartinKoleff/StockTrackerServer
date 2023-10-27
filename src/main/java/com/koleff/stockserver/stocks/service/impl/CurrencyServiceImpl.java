@@ -164,7 +164,6 @@ public class CurrencyServiceImpl implements CurrencyService {
                 .orElseThrow(
                         () -> new CurrencyNotFoundException("Currency not found in the JSON with all currencies.")
                 );
-        System.out.println(selectedCurrency);
 
         return selectedCurrency;
     }
@@ -177,7 +176,6 @@ public class CurrencyServiceImpl implements CurrencyService {
         String json = jsonUtil.loadJson("currencies.json");
 
         DataWrapper<Currency> data = jsonUtil.convertJson(json);
-        System.out.println(data);
 
         return data.getData();
     }

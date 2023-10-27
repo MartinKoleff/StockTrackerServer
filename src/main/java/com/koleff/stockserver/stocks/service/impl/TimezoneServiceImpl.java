@@ -163,7 +163,6 @@ public class TimezoneServiceImpl implements TimezoneService {
                 .orElseThrow(
                         () -> new TimezoneNotFoundException("Timezone not found in the JSON with all currencies.")
                 );
-        System.out.println(selectedTimezone);
 
         return selectedTimezone;
     }
@@ -176,7 +175,6 @@ public class TimezoneServiceImpl implements TimezoneService {
         String json = jsonUtil.loadJson("timezones.json");
 
         DataWrapper<Timezone> data = jsonUtil.convertJson(json);
-        System.out.println(data);
 
         return data.getData();
     }

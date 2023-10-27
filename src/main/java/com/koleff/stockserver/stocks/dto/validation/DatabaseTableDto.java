@@ -5,4 +5,10 @@ import jakarta.validation.constraints.Pattern;
 public record DatabaseTableDto (
     @Pattern(regexp = "intraday|eod|exchange|tickers")
     String databaseTable
-){}
+
+){
+    @Override
+    public String toString() {
+        return databaseTable;
+    }
+}

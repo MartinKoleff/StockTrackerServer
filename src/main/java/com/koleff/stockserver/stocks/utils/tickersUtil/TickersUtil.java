@@ -7,13 +7,15 @@ import com.koleff.stockserver.stocks.domain.wrapper.StockWithStockExchange;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import com.koleff.stockserver.stocks.dto.mapper.TickerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
 public class TickersUtil {
-
+    @Value("${koleff.versionAnnotation}")
+    private String versionAnnotation;
     private final JsonUtil<DataWrapper<StockExchange>> stockExchangeJsonUtil;
     private final JsonUtil<DataWrapper<StockWithStockExchange>> stockWithExchangeJsonUtil;
     private final JsonUtil<DataWrapper<Ticker>> tickerJsonUtil;
@@ -34,9 +36,13 @@ public class TickersUtil {
         DataWrapper<Ticker> tickersWithExchangeId = new DataWrapper<>();
 
         configureStockExchangeId(tickersWithExchangeId);
+
         exportToJson(tickersWithExchangeId);
     }
 
+    /**
+     * Using V1 JSON and configuring its ids and exporting the result to V2
+     */
     private void configureStockExchangeId(DataWrapper<Ticker> tickersWithExchangeId) {
         //Load tickers JSON
         String tickersJson = stockWithExchangeJsonUtil.loadJson("tickers.json");
@@ -73,7 +79,6 @@ public class TickersUtil {
     private void exportToJson(DataWrapper<Ticker> tickersWithExchangeId){
 
         //Convert to JSON
-        System.out.println(tickersWithExchangeId.getData());
-        tickerJsonUtil.exportToJson(tickersWithExchangeId, "tickersV2");
+        tickerJsonUtil.exportToJson(tickersWithExchangeId, "tickers", versionAnnotation); //TODO: app.properties
     }
 }

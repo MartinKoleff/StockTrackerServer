@@ -19,25 +19,25 @@ import java.util.Optional;
 public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
     @Override
     @Query(
-            value = "SELECT * FROM end_of_day eod " +
-                    "JOIN stock s ON (s.id = eod.stock_id) " +
-                    "WHERE s.tag = 1?",
-            nativeQuery = true)
+            value = "SELECT eod FROM EndOfDay eod " +
+                    "JOIN Stock s ON (s.id = eod.stockId) " +
+                    "WHERE s.tag = ?1"
+    )
     Optional<List<EndOfDay>> findEndOfDayByStockTag(String stockTag);
 
     @Override
     @Query(
-            value = "SELECT * FROM end_of_day eod " +
-                    "WHERE eod.id = 1?",
-            nativeQuery = true)
+            value = "SELECT eod FROM EndOfDay eod " +
+                    "WHERE eod.id = ?1"
+    )
     Optional<List<EndOfDay>> findAllById(Long stockId);
 
     @Override
     @Modifying
     @Query(
             value = "DELETE FROM end_of_day eod " +
-                    "JOIN stock s ON (s.id = eod.stock_id) " +
-                    "WHERE s.tag = 1?",
+                    "USING stock s " +
+                    "WHERE s.tag = $1",
             nativeQuery = true)
     int deleteByStockTag(String stockTag);
 }

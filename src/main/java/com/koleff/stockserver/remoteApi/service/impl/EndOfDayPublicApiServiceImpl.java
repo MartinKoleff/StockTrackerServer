@@ -1,5 +1,6 @@
 package com.koleff.stockserver.remoteApi.service.impl;
 
+import com.koleff.stockserver.remoteApi.client.v2.EndOfDayPublicApiClientV2;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.service.impl.EndOfDayServiceImpl;
@@ -15,6 +16,7 @@ import java.util.List;
 public class EndOfDayPublicApiServiceImpl extends PublicApiServiceImpl<EndOfDay> {
 
     private final EndOfDayServiceImpl endOfDayServiceImpl;
+    private final EndOfDayPublicApiClientV2 endOfDayPublicApiClientV2;
     private final StockServiceImpl stockServiceImpl;
 
 
@@ -22,9 +24,11 @@ public class EndOfDayPublicApiServiceImpl extends PublicApiServiceImpl<EndOfDay>
     public EndOfDayPublicApiServiceImpl(StockServiceImpl stockServiceImpl,
                                         EndOfDayJsonUtil jsonUtil,
                                         EndOfDayServiceImpl endOfDayServiceImpl,
+                                        EndOfDayPublicApiClientV2 endOfDayPublicApiClientV2,
                                         StockServiceImpl stockServiceImpl1) {
-        super(stockServiceImpl, jsonUtil);
+        super(stockServiceImpl, endOfDayPublicApiClientV2, jsonUtil);
         this.endOfDayServiceImpl = endOfDayServiceImpl;
+        this.endOfDayPublicApiClientV2 = endOfDayPublicApiClientV2;
         this.stockServiceImpl = stockServiceImpl1;
     }
 

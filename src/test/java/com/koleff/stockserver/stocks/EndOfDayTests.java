@@ -1,18 +1,15 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.EndOfDayServiceImpl;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -34,41 +31,34 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class)
 public class EndOfDayTests {
-    private final EndOfDayServiceImpl endOfDayServiceImpl;
 
-    @Qualifier("logger")
-    private final Logger logger;
-    private boolean isDoneTesting = false; //To use with @AfterAll
+    private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
+    private final EndOfDayServiceImpl endOfDayServiceImpl;
+    private boolean isDoneTesting = false;
 
     @Autowired
-    EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
-                  Logger logger) {
+    EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl) {
         this.endOfDayServiceImpl = endOfDayServiceImpl;
-        this.logger = logger;
     }
 
-    @Before
+    @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
-        logger.info("Deleting all DB entries...");
 
-        endOfDayServiceImpl.deleteAll();
-        boolean isDBEmpty = endOfDayServiceImpl.getAllEndOfDays().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (isDoneTesting){
             logger.info("Testing finished!");
             return;
         }
-
+        logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
         endOfDayServiceImpl.deleteAll();
 
         boolean isDBEmpty = endOfDayServiceImpl.getAllEndOfDays().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test

@@ -1,8 +1,6 @@
 package com.koleff.stockserver.stocks.service.impl;
 
 import com.koleff.stockserver.stocks.domain.EndOfDay;
-import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 import com.koleff.stockserver.stocks.dto.mapper.EndOfDayDtoMapper;
@@ -10,8 +8,10 @@ import com.koleff.stockserver.stocks.exceptions.EndOfDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.EndOfDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.EndOfDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
-import lombok.extern.java.Log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,9 +20,12 @@ import java.util.List;
 @Service
 public class EndOfDayServiceImpl implements EndOfDayService {
 
+    private final static Logger logger = LogManager.getLogger(IntraDayServiceImpl.class);
+
+    @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
+    private String versionAnnotation;
     private final EndOfDayRepositoryImpl endOfDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
-
     private final EndOfDayDtoMapper endOfDayDtoMapper;
     private final JsonUtil<DataWrapper<EndOfDay>> jsonUtil;
 
@@ -107,19 +110,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public void saveEndOfDay(List<EndOfDay> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(entry ->
-                            entry.setStockId(
-                                    stockServiceImpl.getStockId(stockTag)
-                            )
-                    );
-
-                    //Save data entities to DB
-                    endOfDayRepositoryImpl.saveAll(data);
-                });
+        endOfDayRepositoryImpl.saveAll(data);
     }
 
     /**
@@ -127,20 +118,9 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      */
     @Override
     public void saveAllEndOfDays(List<List<EndOfDay>> data) {
-        stockServiceImpl.getStockTags()
-                .forEach(stockTag -> {
-
-                    //Configure stock_id
-                    data.forEach(endOfDay ->
-                            endOfDay.forEach(entry ->
-                                    entry.setStockId(
-                                            stockServiceImpl.getStockId(stockTag)
-                                    )
-                            ));
-
-                    //Save data entities to DB
-                    data.forEach(endOfDayRepositoryImpl::saveAll);
-                });
+        //Save data entities to DB
+        data.parallelStream()
+                .forEach(endOfDayRepositoryImpl::saveAll);
     }
 
     /**
@@ -173,7 +153,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     @Override
     public List<EndOfDay> loadEndOfDay(String stockTag) {
         //Configure json based on current stock
-        String filePath = String.format("eod%s.json", stockTag);
+        String filePath = String.format("eod%s%s.json", stockTag, versionAnnotation);
 
         //Load data from json
         String json = jsonUtil.loadJson(filePath);
@@ -189,11 +169,16 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     public List<List<EndOfDay>> loadAllEndOfDays() {
         List<List<EndOfDay>> data = new ArrayList<>();
 
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.loadStockTags();
         stockTags.forEach(
                 stockTag -> {
-                    List<EndOfDay> entry = loadEndOfDay(stockTag);
-                    data.add(entry);
+                    try {
+                        List<EndOfDay> entry = loadEndOfDay(stockTag);
+
+                        data.add(entry);
+                    } catch (NullPointerException e) {
+                        logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
+                    }
                 }
         );
 

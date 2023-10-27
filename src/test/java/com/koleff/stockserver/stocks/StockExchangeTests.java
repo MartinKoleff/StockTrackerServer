@@ -1,12 +1,13 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.StockExchangeDto;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.stockExchangesUtil.StockExchangesUtil;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,13 +34,12 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class)
 public class StockExchangeTests {
+
+    private final static Logger logger = LogManager.getLogger(StockExchangeTests.class);
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private final StockServiceImpl stockServiceImpl;
-
-    @Qualifier("logger")
-    private final Logger logger;
     private boolean isDoneTesting = false;
     private final StockExchangesUtil stockExchangesUtil;
 
@@ -48,47 +48,38 @@ public class StockExchangeTests {
                        CurrencyServiceImpl currencyServiceImpl,
                        TimezoneServiceImpl timezoneServiceImpl,
                        StockServiceImpl stockServiceImpl,
-                       StockExchangesUtil stockExchangesUtil,
-                       Logger logger) {
+                       StockExchangesUtil stockExchangesUtil) {
         this.stockExchangeServiceImpl = stockExchangeServiceImpl;
         this.currencyServiceImpl = currencyServiceImpl;
         this.timezoneServiceImpl = timezoneServiceImpl;
         this.stockServiceImpl = stockServiceImpl;
         this.stockExchangesUtil = stockExchangesUtil;
-        this.logger = logger;
     }
 
-    @Before
+    @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
-        logger.info("Deleting all DB entries...");
 
-        stockExchangeServiceImpl.deleteAll();
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
-
-        boolean isDBEmpty = stockExchangeServiceImpl.getStockExchanges().isEmpty()
-                && currencyServiceImpl.getCurrencies().isEmpty()
-                && timezoneServiceImpl.getTimezones().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (isDoneTesting){
             logger.info("Testing finished!");
             return;
         }
-
+        logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
+        stockServiceImpl.deleteAll();
         stockExchangeServiceImpl.deleteAll();
         currencyServiceImpl.deleteAll();
         timezoneServiceImpl.deleteAll();
 
-        boolean isDBEmpty = stockExchangeServiceImpl.getStockExchanges().isEmpty()
-                            && currencyServiceImpl.getCurrencies().isEmpty()
-                            && timezoneServiceImpl.getTimezones().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test
@@ -97,14 +88,14 @@ public class StockExchangeTests {
     void stockExchangesLoadingTest() {
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
         List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
         List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
 
         //Saving order matters!
         currencyServiceImpl.saveCurrencies(currencies);
         timezoneServiceImpl.saveTimezones(timezones);
-        stockServiceImpl.saveStocks(stocks);
         stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+        stockServiceImpl.saveStocks(stocks);
 
         List<StockExchangeDto> exchanges = stockExchangeServiceImpl.getStockExchanges();
         logger.debug(exchanges);

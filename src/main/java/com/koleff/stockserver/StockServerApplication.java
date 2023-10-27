@@ -11,6 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication(
         exclude ={ElasticsearchRestClientAutoConfiguration.class}
@@ -26,6 +27,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         }
 )
 @EnableConfigurationProperties
+@EnableAsync
 public class StockServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(StockServerApplication.class, args);

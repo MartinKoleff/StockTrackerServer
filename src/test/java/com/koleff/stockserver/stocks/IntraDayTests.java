@@ -1,15 +1,13 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.IntraDayServiceImpl;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -34,41 +32,34 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class)
 public class IntraDayTests {
-    private final IntraDayServiceImpl intraDayServiceImpl;
 
-    @Qualifier("logger")
-    private final Logger logger;
-    private boolean isDoneTesting = false; //To use with @AfterAll
+    private final static Logger logger = LogManager.getLogger(IntraDayTests.class);
+    private final IntraDayServiceImpl intraDayServiceImpl;
+    private boolean isDoneTesting = false;
 
     @Autowired
-    IntraDayTests(IntraDayServiceImpl intraDayServiceImpl,
-                  Logger logger) {
+    IntraDayTests(IntraDayServiceImpl intraDayServiceImpl) {
         this.intraDayServiceImpl = intraDayServiceImpl;
-        this.logger = logger;
     }
 
-    @Before
+    @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
-        logger.info("Deleting all DB entries...");
 
-        intraDayServiceImpl.deleteAll();
-        boolean isDBEmpty = intraDayServiceImpl.getAllIntraDays().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (isDoneTesting){
             logger.info("Testing finished!");
             return;
         }
-
+        logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
         intraDayServiceImpl.deleteAll();
 
         boolean isDBEmpty = intraDayServiceImpl.getAllIntraDays().isEmpty();
-        logger.info("DB is empty: %s", isDBEmpty);
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test

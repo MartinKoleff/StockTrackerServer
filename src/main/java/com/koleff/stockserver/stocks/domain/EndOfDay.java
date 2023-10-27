@@ -32,9 +32,8 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
 
     @Column(
             name = "stock_id",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Stock id must not be empty.")
     @SerializedName("stock_id")
     private Long stockId;
 

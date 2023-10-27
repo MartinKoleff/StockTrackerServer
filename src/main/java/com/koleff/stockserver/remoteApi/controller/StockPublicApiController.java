@@ -5,15 +5,16 @@ import com.koleff.stockserver.remoteApi.controller.base.PublicApiController;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("publicApi/v1/tickers")
 public class StockPublicApiController extends PublicApiController<Stock> {
 
-    public StockPublicApiController(PublicApiServiceImpl<Stock> publicApiServiceImpl,
-                                    StockPublicApiClientV2 stockPublicApiClientV2) {
-        super(publicApiServiceImpl, stockPublicApiClientV2);
+    @Autowired
+    public StockPublicApiController(PublicApiServiceImpl<Stock> publicApiServiceImpl) {
+        super(publicApiServiceImpl);
     }
 
     /**

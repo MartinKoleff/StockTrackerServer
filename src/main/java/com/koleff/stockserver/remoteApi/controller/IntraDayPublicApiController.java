@@ -5,15 +5,16 @@ import com.koleff.stockserver.remoteApi.controller.base.PublicApiController;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("publicApi/v1/intraday")
 public class IntraDayPublicApiController extends PublicApiController<IntraDay> {
 
-    public IntraDayPublicApiController(PublicApiServiceImpl<IntraDay> publicApiServiceImpl,
-                                       IntraDayPublicApiClientV2 intraDayPublicApiClientV2) {
-        super(publicApiServiceImpl, intraDayPublicApiClientV2);
+    @Autowired
+    public IntraDayPublicApiController(PublicApiServiceImpl<IntraDay> publicApiServiceImpl) {
+        super(publicApiServiceImpl);
     }
 
     /**

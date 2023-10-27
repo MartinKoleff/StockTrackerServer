@@ -1,17 +1,16 @@
-package com.koleff.stockserver;
+package com.koleff.stockserver.stocks;
 
+import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.StockDto;
+import com.koleff.stockserver.stocks.resources.TestConfiguration;
+import com.koleff.stockserver.stocks.resources.TestResources;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.ClassRule;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,9 +36,10 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 )
 @ExtendWith(SpringExtension.class) //TODO: look up
 public class TickersTests {
+    private final static Logger logger = LogManager.getLogger(TickersTests.class);
+
     @ClassRule
     public static final TestResources res = new TestResources();
-
     private final StockServiceImpl stockServiceImpl;
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
@@ -47,19 +47,17 @@ public class TickersTests {
     private final EndOfDayServiceImpl endOfDayServiceImpl;
     private final IntraDayServiceImpl intraDayServiceImpl;
     private final TickersUtil tickersUtil;
-
-    @Qualifier("logger")
-    private final Logger logger;
-    private boolean isInitialized = false; //To use with @BeforeAll
-    private boolean isDoneTesting = false; //To use with @AfterAll
+    private boolean isInitialized = false;
+    private boolean isDoneTesting = false;
 
     @Autowired
     TickersTests(StockServiceImpl stockServiceImpl,
                  StockExchangeServiceImpl stockExchangeServiceImpl,
                  CurrencyServiceImpl currencyServiceImpl,
                  TimezoneServiceImpl timezoneServiceImpl,
-                 EndOfDayServiceImpl endOfDayServiceImpl, IntraDayServiceImpl intraDayServiceImpl, TickersUtil tickersUtil,
-                 Logger logger) {
+                 EndOfDayServiceImpl endOfDayServiceImpl,
+                 IntraDayServiceImpl intraDayServiceImpl,
+                 TickersUtil tickersUtil) {
         this.stockServiceImpl = stockServiceImpl;
         this.stockExchangeServiceImpl = stockExchangeServiceImpl;
         this.currencyServiceImpl = currencyServiceImpl;
@@ -67,38 +65,21 @@ public class TickersTests {
         this.endOfDayServiceImpl = endOfDayServiceImpl;
         this.intraDayServiceImpl = intraDayServiceImpl;
         this.tickersUtil = tickersUtil;
-        this.logger = logger;
     }
 
-    @Before
+    @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
-        logger.info("Deleting all DB entries...");
 
-        stockServiceImpl.deleteAll();
-        intraDayServiceImpl.deleteAll();
-        endOfDayServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
-
-        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
-                && intraDayServiceImpl.getAllIntraDays().isEmpty()
-                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
-                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
-                && currencyServiceImpl.getCurrencies().isEmpty()
-                && timezoneServiceImpl.getTimezones().isEmpty();
-
-        logger.info("DB is empty: %s", isDBEmpty);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (isDoneTesting){
             logger.info("Testing finished!");
             return;
         }
-
+        logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
 
         stockServiceImpl.deleteAll();
@@ -115,25 +96,32 @@ public class TickersTests {
                 && currencyServiceImpl.getCurrencies().isEmpty()
                 && timezoneServiceImpl.getTimezones().isEmpty();
 
-        logger.info("DB is empty: %s", isDBEmpty);
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     @Test
     @Order(1)
     void tickersLoadingTest() {
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+
+        //Need to load and save stock_exchange before saving stock entity
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
         List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
-        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
-        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
         List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
 
-        //Saving order matters!
         currencyServiceImpl.saveCurrencies(currencies);
         timezoneServiceImpl.saveTimezones(timezones);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+
+//        //Saving stocks to use with DB data...
+//        stockServiceImpl.saveStocks(stocks);
+
+        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
+
+        //Saving order matters!
         intraDayServiceImpl.saveAllIntraDays(intraDays);
         endOfDayServiceImpl.saveAllEndOfDays(eods);
-        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
         stockServiceImpl.saveStocks(stocks);
 
         List<StockDto> stockDtos = stockServiceImpl.getStocks();
@@ -141,6 +129,7 @@ public class TickersTests {
 
         Assertions.assertNotNull(stockDtos);
     }
+
 
     @Test
     @Order(2)
