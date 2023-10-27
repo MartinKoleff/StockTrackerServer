@@ -145,4 +145,28 @@ public class IntraDayTests {
 
         isDoneTesting = true;
     }
+
+    @Test
+    @Order(5)
+    @DisplayName("Saving 1 entry from JSON to DB.")
+    void intraDaySavingOneEntryTest(){
+        //Clear DB
+        intraDayServiceImpl.deleteAll();
+
+        String stockTag = "AAPL";
+
+        //Load data from JSON
+        List<IntraDay> intraDays = intraDayServiceImpl.loadIntraDay(stockTag);
+
+        //Save data to DB
+        intraDayServiceImpl.saveIntraDay(intraDays);
+
+        //Check if entries are in DB
+        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDay(stockTag);
+
+        Assertions.assertNotNull(intraDayDto);
+
+        isDoneTesting = true;
+    }
+
 }
