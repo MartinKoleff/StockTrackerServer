@@ -37,7 +37,6 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
     @SerializedName("stock_id")
     private Long stockId;
 
-
     @Column(
             name = "open",
             nullable = false
@@ -122,9 +121,17 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
             name = "split_factor",
             nullable = false
     )
-    @NotNull(message = "Split factor volume must not be empty.")
+    @NotNull(message = "Split factor must not be empty.")
     @SerializedName("split_factor")
     private Double splitFactor;
+
+    @Column(
+            name = "dividend",
+            nullable = false
+    )
+    @NotNull(message = "Dividend must not be empty.")
+    @SerializedName("dividend")
+    private Double dividend;
 
     @Column(
             name = "date",
@@ -163,6 +170,7 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
                 ", adj_low=" + adjLow +
                 ", adj_volume=" + adjVolume +
                 ", split_factor=" + splitFactor +
+                ", dividend=" + dividend +
                 ", date=" + date +
                 '}';
     }
