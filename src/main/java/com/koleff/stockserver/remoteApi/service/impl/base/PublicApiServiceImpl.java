@@ -111,7 +111,7 @@ public abstract class PublicApiServiceImpl<T>
         String json = jsonUtil.loadJson(filePath);
 
         if (Objects.isNull(json)) {
-            throw new JsonNotFoundException("JSON file doesn't exist. Please call export request first.");
+            throw new JsonNotFoundException(String.format("JSON file doesn't exist for stock %s. Please call export request first.", stockTag));
         }
 
         //Parse JSON to entity
