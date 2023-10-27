@@ -93,7 +93,7 @@ public class IntraDayServiceImpl implements IntraDayService {
         stockTags.parallelStream()
                 .forEach(
                         stockTag -> {
-                            List<IntraDayDto> entry = intraDayRepositoryImpl.findIntraDayByStockTag(stockTag) //TODO: investigate why stockTag is ""
+                            List<IntraDayDto> entry = intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
                                     .orElseThrow(
                                             () -> new IntraDayNotFoundException(
                                                     String.format("Intra day for stock tag %s not found.",

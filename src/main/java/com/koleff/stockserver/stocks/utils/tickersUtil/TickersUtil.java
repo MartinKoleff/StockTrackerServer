@@ -32,7 +32,7 @@ public class TickersUtil {
         this.tickerMapper = tickerMapper;
     }
 
-    public void configureIds(){
+    public void configureIds() {
         DataWrapper<Ticker> tickersWithExchangeId = new DataWrapper<>();
 
         configureStockExchangeId(tickersWithExchangeId);
@@ -76,7 +76,7 @@ public class TickersUtil {
         );
     }
 
-    private void exportToJson(DataWrapper<Ticker> tickersWithExchangeId){
+    private void exportToJson(DataWrapper<Ticker> tickersWithExchangeId) {
 
         //Convert to JSON
         tickerJsonUtil.exportToJson(tickersWithExchangeId, "tickers", versionAnnotation); //TODO: app.properties
