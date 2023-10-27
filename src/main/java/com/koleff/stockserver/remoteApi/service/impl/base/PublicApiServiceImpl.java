@@ -210,8 +210,7 @@ public abstract class PublicApiServiceImpl<T>
         List<String> stockTags = stockServiceImpl.loadStockTags(); //Not dependent on DB -> load from JSON
 
         //TODO: Run multiple threads...
-        stockTags.forEach(this::saveData);
-        stockTags.parallelStream()
+        stockTags.parallelStream().forEach(this::saveData);
     }
 }
 
