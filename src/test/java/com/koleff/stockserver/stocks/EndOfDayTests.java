@@ -151,6 +151,28 @@ public class EndOfDayTests {
         logger.info(eodDtos);
 
         Assertions.assertNotNull(eodDtos);
+    }
+
+    @Test
+    @Order(5)
+    @DisplayName("Saving 1 entry from JSON to DB.")
+    void eodSavingOneEntryTest(){
+        //Clear DB
+        endOfDayServiceImpl.deleteAll();
+
+        String stockTag = "AAPL";
+
+        //Load data from JSON
+        List<EndOfDay> eod = endOfDayServiceImpl.loadEndOfDay(stockTag);
+
+        //Save data to DB
+        endOfDayServiceImpl.saveEndOfDay(eod);
+
+        //Check if entries are in DB
+        List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDay(stockTag);
+
+        logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
+        Assertions.assertNotNull(eodDto);
 
         isDoneTesting = true;
     }
