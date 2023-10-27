@@ -3,6 +3,7 @@ package com.koleff.stockserver.stocks;
 import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
+import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
@@ -113,7 +114,13 @@ public class EndOfDayTests {
 
     @Test
     @Order(1)
-    void endOfDaysLoadingTest() {
+    @DisplayName("Fetching data from DB.")
+    void eodFetchingTest() {
+        List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
+
+        logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
+        Assertions.assertNotNull(eodDtos);
+    }
         List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
 
         endOfDayServiceImpl.saveAllEndOfDays(eods);
