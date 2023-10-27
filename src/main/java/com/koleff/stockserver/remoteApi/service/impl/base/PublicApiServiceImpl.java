@@ -159,6 +159,7 @@ public abstract class PublicApiServiceImpl<T>
                                 logger.info(String.format("Thread %d has started!\n", counter.getAndIncrement()));
 
                                 DataWrapper<T> data = getData(stockTag);
+                                logger.info(String.format("Fetched data from remote API: %s\n", data));
 
                                 exportDataToJson(data, stockTag);
 
@@ -210,6 +211,7 @@ public abstract class PublicApiServiceImpl<T>
 
         //TODO: Run multiple threads...
         stockTags.forEach(this::saveData);
+        stockTags.parallelStream()
     }
 }
 
