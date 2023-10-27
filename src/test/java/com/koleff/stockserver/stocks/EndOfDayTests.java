@@ -121,8 +121,17 @@ public class EndOfDayTests {
         logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
         Assertions.assertNotNull(eodDtos);
     }
+
+    @Test
+    @Order(2)
+    @DisplayName("Loading data from JSON.")
+    void eodLoadingTest() {
         List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
 
+        logger.info(String.format("All EODs loaded from all JSONs: %s", eods));
+        Assertions.assertNotNull(eods);
+
+    }
         endOfDayServiceImpl.saveAllEndOfDays(eods);
 
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
