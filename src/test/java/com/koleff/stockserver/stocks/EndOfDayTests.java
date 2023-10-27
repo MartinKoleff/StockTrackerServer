@@ -45,7 +45,6 @@ public class EndOfDayTests {
     private long totalTime;
 
     @Autowired
-    EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl) {
     EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
                   StockServiceImpl stockServiceImpl,
                   StockExchangeServiceImpl stockExchangeServiceImpl,
@@ -145,11 +144,24 @@ public class EndOfDayTests {
         Assertions.assertNotNull(eodDto);
 
     }
+
+    @Test
+    @Order(4)
+    @DisplayName("Saving all data from JSON to DB.")
+    void eodBulkSavingTest() {
+        //Clear DB
+        endOfDayServiceImpl.deleteAll();
+
+        //Load data from JSON
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
+
+        //Save data to DB
         endOfDayServiceImpl.saveAllEndOfDays(eods);
 
+        //Check if entries are in DB
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
-        logger.info(eodDtos);
 
+        logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
         Assertions.assertNotNull(eodDtos);
     }
 
