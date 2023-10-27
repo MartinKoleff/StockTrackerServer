@@ -39,6 +39,9 @@ public class IntraDayTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
+    private long startTime;
+    private long endTime;
+    private long totalTime;
 
     @Autowired
     IntraDayTests(IntraDayServiceImpl intraDayServiceImpl,
@@ -76,10 +79,15 @@ public class IntraDayTests {
 
         intraDayServiceImpl.saveAllIntraDays(intraDays);
 
+        startTime = System.currentTimeMillis();
     }
 
-    @AfterEach
+    //    @AfterEach
     public void tearDown() {
+        endTime = System.currentTimeMillis() - startTime;
+        totalTime = endTime - startTime;
+        logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
+
         if (isDoneTesting){
             logger.info("Testing finished!");
             return;

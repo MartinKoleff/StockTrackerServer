@@ -39,6 +39,9 @@ public class EndOfDayTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
+    private long startTime;
+    private long endTime;
+    private long totalTime;
 
     @Autowired
     EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl) {
@@ -75,10 +78,16 @@ public class EndOfDayTests {
         stockServiceImpl.saveStocks(stocks);
 
         endOfDayServiceImpl.saveAllEndOfDays(eods);
+
+        startTime = System.currentTimeMillis();
     }
 
     @AfterEach
     public void tearDown() {
+        endTime = System.currentTimeMillis() - startTime;
+        totalTime = endTime - startTime;
+        logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
+
         if (isDoneTesting) {
             logger.info("Testing finished!");
             return;
