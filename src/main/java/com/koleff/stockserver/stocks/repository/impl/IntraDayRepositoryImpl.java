@@ -20,24 +20,22 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
 
     @Override
     @Query(
-            value = "SELECT id.* FROM intra_day id " +
-                    "JOIN stock s ON (s.id = id.stock_id) " +
-                    "WHERE s.tag = $1",
-            nativeQuery = true)
+            value = "SELECT id FROM IntraDay id " +
+                    "JOIN Stock s ON (s.id = id.stockId) " +
+                    "WHERE s.tag = ?1")
     Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag);
 
     @Override
     @Query(
-            value = "SELECT * FROM intra_day id " +
-                    "WHERE id.id = $1",
-            nativeQuery = true)
+            value = "SELECT id FROM IntraDay id " +
+                    "WHERE id.id = ?1")
     Optional<List<IntraDay>> findAllById(Long stockId);
 
     @Override
     @Modifying
     @Query(
             value = "DELETE FROM intra_day id " +
-                    "JOIN stock s ON (s.id = id.stock_id) " +
+                    "USING stock s " +
                     "WHERE s.tag = $1",
             nativeQuery = true)
     int deleteByStockTag(String stockTag);
