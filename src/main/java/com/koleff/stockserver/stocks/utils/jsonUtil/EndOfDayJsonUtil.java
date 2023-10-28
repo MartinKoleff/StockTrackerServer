@@ -19,4 +19,9 @@ public class EndOfDayJsonUtil extends JsonUtil<DataWrapper<EndOfDay>> {
     public Type getType() {
         return new TypeToken<DataWrapper<EndOfDay>>() {}.getType();
     }
+
+    @Override
+    protected String getDirectory() {
+        return "eod";
+    }
 }
