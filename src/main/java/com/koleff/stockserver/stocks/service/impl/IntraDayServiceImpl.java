@@ -1,15 +1,13 @@
 package com.koleff.stockserver.stocks.service.impl;
 
-import com.koleff.stockserver.stocks.configuration.AppConfig;
-import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.dto.mapper.IntraDayDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.IntraDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.IntraDayService;
+import com.koleff.stockserver.stocks.utils.jsonUtil.IntraDayJsonUtil;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,17 +29,17 @@ public class IntraDayServiceImpl implements IntraDayService {
     private final StockServiceImpl stockServiceImpl;
 
     private final IntraDayDtoMapper intraDayDtoMapper;
-    private final JsonUtil<DataWrapper<IntraDay>> jsonUtil;
+    private final IntraDayJsonUtil intraDayJsonUtil;
 
     @Autowired
     public IntraDayServiceImpl(IntraDayRepositoryImpl intraDayRepositoryImpl,
                                IntraDayDtoMapper intraDayDtoMapper,
                                StockServiceImpl stockServiceImpl,
-                               JsonUtil<DataWrapper<IntraDay>> jsonUtil) {
+                               IntraDayJsonUtil intraDayJsonUtil) {
         this.intraDayRepositoryImpl = intraDayRepositoryImpl;
         this.intraDayDtoMapper = intraDayDtoMapper;
         this.stockServiceImpl = stockServiceImpl;
-        this.jsonUtil = jsonUtil;
+        this.intraDayJsonUtil = intraDayJsonUtil;
     }
 
     /**
@@ -128,18 +126,6 @@ public class IntraDayServiceImpl implements IntraDayService {
         data.forEach(intraDayRepositoryImpl::saveAll);
     }
 
-    //        //Validate stock_id
-    //        List<Long> stockIds = stockServiceImpl.getStockIds();
-    //
-    //        //Filter entries with no stock in DB
-    //        data.forEach(
-    //                entry ->
-    //                        entry.stream().filter(
-    //                                intraDay -> stockIds.contains(
-    //                                        intraDay.getStockId()
-    //                                )
-    //                        )
-    //        );
 
     /**
      * Delete entry from DB via id
@@ -175,8 +161,8 @@ public class IntraDayServiceImpl implements IntraDayService {
         String filePath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
 
         //Load data from json
-        String json = jsonUtil.loadJson(filePath);
-        DataWrapper<IntraDay> data = jsonUtil.convertJson(json);
+        String json = intraDayJsonUtil.loadJson(filePath);
+        DataWrapper<IntraDay> data = intraDayJsonUtil.convertJson(json);
 
         return data.getData();
     }

@@ -7,6 +7,7 @@ import com.koleff.stockserver.stocks.dto.mapper.StockExchangeDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.StockExchangeNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.StockExchangeRepositoryImpl;
 import com.koleff.stockserver.stocks.service.StockExchangeService;
+import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeJsonUtil;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,15 +22,15 @@ public class StockExchangeServiceImpl implements StockExchangeService {
     private String versionAnnotation;
     private final StockExchangeRepositoryImpl stockExchangeRepositoryImpl;
     private final StockExchangeDtoMapper stockExchangeDtoMapper;
-    private final JsonUtil<DataWrapper<StockExchange>> jsonUtil;
+    private final StockExchangeJsonUtil stockExchangeJsonUtil;
 
     @Autowired
     public StockExchangeServiceImpl(StockExchangeRepositoryImpl stockExchangeRepositoryImpl,
                                     StockExchangeDtoMapper stockExchangeDtoMapper,
-                                    JsonUtil<DataWrapper<StockExchange>> jsonUtil) {
+                                    StockExchangeJsonUtil stockExchangeJsonUtil) {
         this.stockExchangeRepositoryImpl = stockExchangeRepositoryImpl;
         this.stockExchangeDtoMapper = stockExchangeDtoMapper;
-        this.jsonUtil = jsonUtil;
+        this.stockExchangeJsonUtil = stockExchangeJsonUtil;
     }
 
     /**
@@ -113,9 +114,9 @@ public class StockExchangeServiceImpl implements StockExchangeService {
         String filePath = String.format("exchanges%s.json", versionAnnotation);
 
         //Load data from json
-        String json = jsonUtil.loadJson(filePath);
+        String json = stockExchangeJsonUtil.loadJson(filePath);
 
-        DataWrapper<StockExchange> data = jsonUtil.convertJson(json);
+        DataWrapper<StockExchange> data = stockExchangeJsonUtil.convertJson(json);
 
         return data.getData();
     }

@@ -6,7 +6,10 @@ import com.koleff.stockserver.stocks.domain.Timezone;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.domain.wrapper.StockExchangeExtended;
 import com.koleff.stockserver.stocks.dto.mapper.StockExchangesExtendedMapper;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.CurrencyJsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeExtendedJsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeJsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.TimezoneJsonUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,16 +19,16 @@ import java.util.List;
 public class StockExchangesUtil {
     @Value("${koleff.versionAnnotation}")
     private String versionAnnotation;
-    private final JsonUtil<DataWrapper<StockExchange>> stockExchangeJsonUtil;
-    private final JsonUtil<DataWrapper<StockExchangeExtended>> stockExchangeExtendedJsonUtil;
-    private final JsonUtil<DataWrapper<Currency>> currencyJsonUtil;
-    private final JsonUtil<DataWrapper<Timezone>> timezoneJsonUtil;
+    private final StockExchangeJsonUtil stockExchangeJsonUtil;
+    private final StockExchangeExtendedJsonUtil stockExchangeExtendedJsonUtil;
+    private final CurrencyJsonUtil currencyJsonUtil;
+    private final TimezoneJsonUtil timezoneJsonUtil;
     private final StockExchangesExtendedMapper stockExchangesExtendedMapper;
 
-    public StockExchangesUtil(JsonUtil<DataWrapper<StockExchange>> stockExchangeJsonUtil,
-                              JsonUtil<DataWrapper<StockExchangeExtended>> stockExchangeExtendedJsonUtil,
-                              JsonUtil<DataWrapper<Currency>> currencyJsonUtil,
-                              JsonUtil<DataWrapper<Timezone>> timezoneJsonUtil,
+    public StockExchangesUtil(StockExchangeJsonUtil stockExchangeJsonUtil,
+                              StockExchangeExtendedJsonUtil stockExchangeExtendedJsonUtil,
+                              CurrencyJsonUtil currencyJsonUtil,
+                              TimezoneJsonUtil timezoneJsonUtil,
                               StockExchangesExtendedMapper stockExchangesExtendedMapper) {
         this.stockExchangeJsonUtil = stockExchangeJsonUtil;
         this.stockExchangeExtendedJsonUtil = stockExchangeExtendedJsonUtil;
