@@ -4,6 +4,7 @@ import com.koleff.stockserver.remoteApi.client.v2.EndOfDayPublicApiClientV2;
 import com.koleff.stockserver.remoteApi.client.v2.IntraDayPublicApiClientV2;
 import com.koleff.stockserver.remoteApi.client.v2.StockExchangePublicApiClientV2;
 import com.koleff.stockserver.remoteApi.client.v2.StockPublicApiClientV2;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration;
@@ -28,6 +29,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 )
 @EnableConfigurationProperties
 @EnableAsync
+@EnableBatchProcessing
 public class StockServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(StockServerApplication.class, args);
