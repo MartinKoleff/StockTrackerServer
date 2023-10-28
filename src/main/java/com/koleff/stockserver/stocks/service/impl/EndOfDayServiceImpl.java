@@ -7,6 +7,7 @@ import com.koleff.stockserver.stocks.dto.mapper.EndOfDayDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.EndOfDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.EndOfDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.EndOfDayService;
+import com.koleff.stockserver.stocks.utils.jsonUtil.EndOfDayJsonUtil;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,17 +28,17 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     private final EndOfDayRepositoryImpl endOfDayRepositoryImpl;
     private final StockServiceImpl stockServiceImpl;
     private final EndOfDayDtoMapper endOfDayDtoMapper;
-    private final JsonUtil<DataWrapper<EndOfDay>> jsonUtil;
+    private final EndOfDayJsonUtil endOfDayJsonUtil;
 
     @Autowired
     public EndOfDayServiceImpl(EndOfDayRepositoryImpl endOfDayRepositoryImpl,
                                StockServiceImpl stockServiceImpl,
                                EndOfDayDtoMapper endOfDayDtoMapper,
-                               JsonUtil<DataWrapper<EndOfDay>> jsonUtil) {
+                               EndOfDayJsonUtil endOfDayJsonUtil) {
         this.endOfDayRepositoryImpl = endOfDayRepositoryImpl;
         this.stockServiceImpl = stockServiceImpl;
         this.endOfDayDtoMapper = endOfDayDtoMapper;
-        this.jsonUtil = jsonUtil;
+        this.endOfDayJsonUtil = endOfDayJsonUtil;
     }
 
     /**
@@ -157,8 +158,8 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         String filePath = String.format("eod%s%s.json", stockTag, versionAnnotation);
 
         //Load data from json
-        String json = jsonUtil.loadJson(filePath);
-        DataWrapper<EndOfDay> data = jsonUtil.convertJson(json);
+        String json = endOfDayJsonUtil.loadJson(filePath);
+        DataWrapper<EndOfDay> data = endOfDayJsonUtil.convertJson(json);
 
         return data.getData();
     }

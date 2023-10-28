@@ -19,4 +19,9 @@ public class StockJsonUtil extends JsonUtil<DataWrapper<Stock>> {
     public Type getType() {
         return new TypeToken<DataWrapper<Stock>>() {}.getType();
     }
+
+    @Override
+    protected String getDirectory() {
+        return "tickers";
+    }
 }

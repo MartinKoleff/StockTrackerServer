@@ -20,4 +20,9 @@ public class StockExchangeExtendedJsonUtil extends JsonUtil<DataWrapper<StockExc
     public Type getType() {
         return new TypeToken<DataWrapper<StockExchangeExtended>>() {}.getType();
     }
+
+    @Override
+    protected String getDirectory() {
+        return "exchanges";
+    }
 }
