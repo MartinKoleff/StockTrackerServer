@@ -65,6 +65,16 @@ public interface StockRepositoryImpl extends StockRepository {
 
     @Override
     @Modifying
+    @Query("UPDATE Stock s SET s.hasIntraDay = true WHERE s.endOfDay != null")
+    void updateHasIntraDay();
+    
+    @Override
+    @Modifying
+    @Query("UPDATE Stock s SET s.hasEndOfDay = true WHERE s.intraDay != null")
+    void updateHasEndOfDay();
+
+    @Override
+    @Modifying
     @Query("DELETE FROM Stock s WHERE s.id = ?1")
     int deleteStockById(Long id);
 

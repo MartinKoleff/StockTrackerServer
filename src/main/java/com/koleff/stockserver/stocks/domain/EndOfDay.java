@@ -21,7 +21,7 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.SEQUENCE, //If entry with id 1 is deleted no more entries can be with id 1...
             generator = "eod_sequence"
     )
     @Column(
@@ -71,49 +71,43 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
 
     @Column(
             name = "volume",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Volume must not be empty.")
     @SerializedName("volume")
     private Double volume;
 
     @Column(
             name = "adj_open",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust open must not be empty.")
     @SerializedName("adj_open")
     private Double adjOpen;
 
     @Column(
             name = "adj_close",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust close must not be empty.")
     @SerializedName("adj_close")
     private Double adjClose;
 
     @Column(
             name = "adj_high",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust high must not be empty.")
     @SerializedName("adj_high")
     private Double adjHigh;
 
     @Column(
             name = "adj_low",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust low must not be empty.")
     @SerializedName("adj_low")
     private Double adjLow;
 
     @Column(
             name = "adj_volume",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust volume must not be empty.")
     @SerializedName("adj_volume")
     private Double adjVolume;
 

@@ -24,6 +24,10 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
             @Param("hasEndOfDay") Boolean hasEndOfDay
     );
 
+    void updateHasIntraDay();
+
+    void updateHasEndOfDay();
+
     int deleteStockById(Long id);
 
     int deleteByStockTag(String stockTag);

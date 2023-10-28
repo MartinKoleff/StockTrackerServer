@@ -39,6 +39,7 @@ public class IntraDayTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
+    private boolean hasInitializedDB = false;
     private long startTime;
     private long endTime;
     private long totalTime;
@@ -58,6 +59,9 @@ public class IntraDayTests {
 
     @BeforeEach
     public void setup() {
+        if (hasInitializedDB) {
+            return;
+        }
         logger.info("Setup before test starts...");
 
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
@@ -80,15 +84,17 @@ public class IntraDayTests {
         intraDayServiceImpl.saveAllIntraDays(intraDays);
 
         startTime = System.currentTimeMillis();
+
+        hasInitializedDB = true;
     }
 
-    //    @AfterEach
+    @AfterEach
     public void tearDown() {
         endTime = System.currentTimeMillis() - startTime;
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (isDoneTesting){
+        if (!isDoneTesting) {
             logger.info("Testing finished!");
             return;
         }
@@ -148,7 +154,7 @@ public class IntraDayTests {
     @Order(4)
     @Disabled("To optimize...")
     @DisplayName("Saving all data from JSON to DB.")
-    void intraDayBulkSavingTest(){
+    void intraDayBulkSavingTest() {
         //Clear DB
         intraDayServiceImpl.deleteAll();
 
@@ -169,7 +175,7 @@ public class IntraDayTests {
     @Test
     @Order(5)
     @DisplayName("Saving 1 entry from JSON to DB.")
-    void intraDaySavingOneEntryTest(){
+    void intraDaySavingOneEntryTest() {
         //Clear DB
         intraDayServiceImpl.deleteAll();
 

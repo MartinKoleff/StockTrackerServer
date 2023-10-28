@@ -40,8 +40,12 @@ public class StockExchangeTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private final StockServiceImpl stockServiceImpl;
-    private boolean isDoneTesting = false;
     private final StockExchangesUtil stockExchangesUtil;
+    private boolean isDoneTesting = false;
+    private boolean hasInitializedDB = false;
+    private long startTime;
+    private long endTime;
+    private long totalTime;
 
     @Autowired
     StockExchangeTests(StockExchangeServiceImpl stockExchangeServiceImpl,
@@ -58,16 +62,42 @@ public class StockExchangeTests {
 
     @BeforeEach
     public void setup() {
+        if(hasInitializedDB){
+            return;
+        }
         logger.info("Setup before test starts...");
 
+        //Load and Save stocks to DB
+        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+
+
+        //Need to load and save stock_exchange before saving stock entity
+        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
+        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
+        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+
+        currencyServiceImpl.saveCurrencies(currencies);
+        timezoneServiceImpl.saveTimezones(timezones);
+        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+
+        stockServiceImpl.saveStocks(stocks);
+
+        startTime = System.currentTimeMillis();
+
+        hasInitializedDB = true;
     }
 
     @AfterEach
     public void tearDown() {
-        if (isDoneTesting){
+        endTime = System.currentTimeMillis() - startTime;
+        totalTime = endTime - startTime;
+        logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
+
+        if (!isDoneTesting){
             logger.info("Testing finished!");
             return;
         }
+
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
         stockServiceImpl.deleteAll();
