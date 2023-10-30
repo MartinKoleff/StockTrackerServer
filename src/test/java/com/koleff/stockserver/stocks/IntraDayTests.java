@@ -192,6 +192,20 @@ public class IntraDayTests {
 
         logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
         Assertions.assertNotNull(intraDayDto);
+    }
+
+    @Test
+    @Order(6)
+    @DisplayName("Saving all entries via Spring Batch")
+    void intraDaySavingViaSpringBatch(){
+        intraDayServiceImpl.saveViaJob();
+
+        //Check if entries are in DB
+        List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
+
+        logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
+        logger.info(String.format("All IntraDay DTOs size %d", intraDayDtos.size()));
+        Assertions.assertNotNull(intraDayDtos);
 
         isDoneTesting = true;
     }

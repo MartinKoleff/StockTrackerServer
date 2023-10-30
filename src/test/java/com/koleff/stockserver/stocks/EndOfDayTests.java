@@ -192,6 +192,20 @@ public class EndOfDayTests {
 
         logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
         Assertions.assertNotNull(eodDto);
+    }
+
+    @Test
+    @Order(6)
+    @DisplayName("Saving all entries via Spring Batch")
+    void eodSavingViaSpringBatch(){
+        endOfDayServiceImpl.saveViaJob();
+
+        //Check if entries are in DB
+        List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
+
+        logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
+        logger.info(String.format("All EOD DTOs size %d", eodDtos.size()));
+        Assertions.assertNotNull(eodDtos);
 
         isDoneTesting = true;
     }
