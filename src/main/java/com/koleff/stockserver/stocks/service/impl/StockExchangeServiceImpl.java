@@ -8,7 +8,6 @@ import com.koleff.stockserver.stocks.exceptions.StockExchangeNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.StockExchangeRepositoryImpl;
 import com.koleff.stockserver.stocks.service.StockExchangeService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeJsonUtil;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

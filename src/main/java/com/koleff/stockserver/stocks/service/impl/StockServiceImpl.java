@@ -10,7 +10,6 @@ import com.koleff.stockserver.stocks.exceptions.StocksNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.StockRepositoryImpl;
 import com.koleff.stockserver.stocks.service.StockService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.StockJsonUtil;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

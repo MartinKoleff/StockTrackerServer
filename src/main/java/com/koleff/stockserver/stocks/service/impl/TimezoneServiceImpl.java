@@ -9,7 +9,6 @@ import com.koleff.stockserver.stocks.exceptions.TimezonesNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.TimezoneRepositoryImpl;
 import com.koleff.stockserver.stocks.service.TimezoneService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.TimezoneJsonUtil;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,5 @@
 package com.koleff.stockserver.remoteApi.service.impl.base;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
@@ -11,7 +10,6 @@ import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 
 import java.util.ArrayList;
 import java.util.List;
