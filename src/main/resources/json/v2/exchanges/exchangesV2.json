@@ -1,0 +1,684 @@
+{
+  "data": [
+    {
+      "name": "NASDAQ Stock Exchange",
+      "acronym": "NASDAQ",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.nasdaq.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "New York Stock Exchange",
+      "acronym": "NYSE",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.nyse.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "NYSE ARCA",
+      "acronym": "NYSEARCA",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.nyse.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "OTC Markets",
+      "acronym": "",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.otcmarkets.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "Buenos Aires Stock Exchange",
+      "acronym": "BCBA",
+      "country": "Argentina",
+      "country_code": "AR",
+      "city": "Buenos Aires",
+      "website": "www.bcba.sba.com.ar",
+      "timezone_id": 2,
+      "currency_id": 2
+    },
+    {
+      "name": "Bahrein Bourse",
+      "acronym": "BSE",
+      "country": "Bahrain",
+      "country_code": "BH",
+      "city": "Manama",
+      "website": "www.bahrainbourse.com.bh",
+      "timezone_id": 4,
+      "currency_id": 4
+    },
+    {
+      "name": "Euronext Brussels",
+      "acronym": "Euronext",
+      "country": "Belgium",
+      "country_code": "BE",
+      "city": "Brussels",
+      "website": "www.euronext.com",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "B3 - Brasil Bolsa Balcão S.A",
+      "acronym": "Bovespa",
+      "country": "Brazil",
+      "country_code": "BR",
+      "city": "Sao Paulo",
+      "website": "www.bmfbovespa.com.br",
+      "timezone_id": 2,
+      "currency_id": 5
+    },
+    {
+      "name": "Toronto Stock Exchange",
+      "acronym": "TSX",
+      "country": "Canada",
+      "country_code": "CA",
+      "city": "Toronto",
+      "website": "www.tse.com",
+      "timezone_id": 1,
+      "currency_id": 6
+    },
+    {
+      "name": "Canadian Securities Exchange",
+      "acronym": "CNSX",
+      "country": "Canada",
+      "country_code": "CA",
+      "city": "Toronto",
+      "website": "www.cnsx.ca",
+      "timezone_id": 1,
+      "currency_id": 6
+    },
+    {
+      "name": "Santiago Stock Exchange",
+      "acronym": "BVS",
+      "country": "Chile",
+      "country_code": "CL",
+      "city": "Santiago",
+      "website": "www.bolsadesantiago.com",
+      "timezone_id": 2,
+      "currency_id": 7
+    },
+    {
+      "name": "Shanghai Stock Exchange",
+      "acronym": "SSE",
+      "country": "China",
+      "country_code": "CN",
+      "city": "Shanghai",
+      "website": "www.sse.com.cn",
+      "timezone_id": 10,
+      "currency_id": 8
+    },
+    {
+      "name": "Shenzhen Stock Exchange",
+      "acronym": "SZSE",
+      "country": "China",
+      "country_code": "CN",
+      "city": "Shenzhen",
+      "website": "www.szse.cn",
+      "timezone_id": 10,
+      "currency_id": 8
+    },
+    {
+      "name": "Bolsa de Valores de Colombia",
+      "acronym": "BVC",
+      "country": "Colombia",
+      "country_code": "CO",
+      "city": "Bogota",
+      "website": "www.bvc.com.co",
+      "timezone_id": 1,
+      "currency_id": 9
+    },
+    {
+      "name": "Copenhagen Stock Exchange",
+      "acronym": "OMXC",
+      "country": "Denmark",
+      "country_code": "DK",
+      "city": "Copenhagen",
+      "website": "www.nasdaqomxnordic.com",
+      "timezone_id": 3,
+      "currency_id": 10
+    },
+    {
+      "name": "Eqyptian Exchange",
+      "acronym": "EGX",
+      "country": "Egypt",
+      "country_code": "EG",
+      "city": "Cairo",
+      "website": "www.egyptse.com",
+      "timezone_id": 12,
+      "currency_id": 11
+    },
+    {
+      "name": "Tallinn Stock Exchange",
+      "acronym": "OMXT",
+      "country": "Estonia",
+      "country_code": "EE",
+      "city": "Tallinn",
+      "website": "www.nasdaqbaltic.com",
+      "timezone_id": 12,
+      "currency_id": 3
+    },
+    {
+      "name": "Helsinki Stock Exchange",
+      "acronym": "OMXH",
+      "country": "Finland",
+      "country_code": "FI",
+      "city": "Helsinki",
+      "website": "www.nasdaqomxnordic.com",
+      "timezone_id": 12,
+      "currency_id": 3
+    },
+    {
+      "name": "Euronext Paris",
+      "acronym": "Euronext",
+      "country": "France",
+      "country_code": "FR",
+      "city": "Paris",
+      "website": "www.euronext.com",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Deutsche Börse",
+      "acronym": "FSX",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Frankfurt",
+      "website": "www.deutsche-boerse.com",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Börse Stuttgart",
+      "acronym": "XSTU",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Stuttgart",
+      "website": "www.boerse-stuttgart.de",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Deutsche Börse Xetra",
+      "acronym": "XETR",
+      "country": "Germany",
+      "country_code": "DE",
+      "city": "Frankfurt",
+      "website": "",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Hong Kong Stock Exchange",
+      "acronym": "HKEX",
+      "country": "Hong Kong",
+      "country_code": "HK",
+      "city": "Hong Kong",
+      "website": "www.hkex.com.hk",
+      "timezone_id": 18,
+      "currency_id": 12
+    },
+    {
+      "name": "Nasdaq Island",
+      "acronym": "XICE",
+      "country": "Iceland",
+      "country_code": "IS",
+      "city": "Reykjavík",
+      "website": "www.nasdaqomxnordic.com",
+      "timezone_id": 20,
+      "currency_id": 14
+    },
+    {
+      "name": "Bombay Stock Exchange",
+      "acronym": "MSE",
+      "country": "India",
+      "country_code": "IN",
+      "city": "Mumbai",
+      "website": "www.bseindia.com",
+      "timezone_id": 21,
+      "currency_id": 15
+    },
+    {
+      "name": "National Stock Exchange India",
+      "acronym": "NSE",
+      "country": "India",
+      "country_code": "IN",
+      "city": "Mumbai",
+      "website": "www.nseindia.com",
+      "timezone_id": 21,
+      "currency_id": 15
+    },
+    {
+      "name": "Jakarta Stock Exchange",
+      "acronym": "IDX",
+      "country": "Indonesia",
+      "country_code": "ID",
+      "city": "Jakarta",
+      "website": "www.idx.co.id",
+      "timezone_id": 22,
+      "currency_id": 16
+    },
+    {
+      "name": "Tel Aviv Stock Exchange",
+      "acronym": "TASE",
+      "country": "Israel",
+      "country_code": "IL",
+      "city": "Tel Aviv",
+      "website": "www.tase.co.il",
+      "timezone_id": 21,
+      "currency_id": 17
+    },
+    {
+      "name": "Borsa Italiana",
+      "acronym": "MIL",
+      "country": "Italy",
+      "country_code": "IT",
+      "city": "Milano",
+      "website": "www.borsaitaliana.it",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Nagoya Stock Exchange",
+      "acronym": "NSE",
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Nagoya",
+      "website": "www.nse.or.jp",
+      "timezone_id": 26,
+      "currency_id": 18
+    },
+    {
+      "name": "Fukuoka Stock Exchange",
+      "acronym": "XFKA",
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Fukuoka",
+      "website": "www.fse.or.jp",
+      "timezone_id": 26,
+      "currency_id": 18
+    },
+    {
+      "name": "Sapporo Stock Exchange",
+      "acronym": "XSAP",
+      "country": "Japan",
+      "country_code": "JP",
+      "city": "Sapporo",
+      "website": "www.sse.or.jp",
+      "timezone_id": 26,
+      "currency_id": 18
+    },
+    {
+      "name": "Nasdaq Riga",
+      "acronym": "OMXR",
+      "country": "Latvia",
+      "country_code": "LV",
+      "city": "Riga",
+      "website": "www.nasdaqbaltic.com",
+      "timezone_id": 12,
+      "currency_id": 3
+    },
+    {
+      "name": "Nasdaq Vilnius",
+      "acronym": "OMXV",
+      "country": "Lithuania",
+      "country_code": "LT",
+      "city": "Vilnius",
+      "website": "www.nasdaqbaltic.com",
+      "timezone_id": 12,
+      "currency_id": 3
+    },
+    {
+      "name": "Malaysia Stock Exchange",
+      "acronym": "MYX",
+      "country": "Malaysia",
+      "country_code": "MY",
+      "city": "Kuala Lumpur",
+      "website": "www.bursamalaysia.com",
+      "timezone_id": 30,
+      "currency_id": 19
+    },
+    {
+      "name": "Mexican Stock Exchange",
+      "acronym": "BMV",
+      "country": "Mexico",
+      "country_code": "MX",
+      "city": "Mexico City",
+      "website": "www.bmv.com.mx",
+      "timezone_id": 10,
+      "currency_id": 20
+    },
+    {
+      "name": "Euronext Amsterdam",
+      "acronym": "Euronext",
+      "country": "Netherlands",
+      "country_code": "NL",
+      "city": "Amsterdam",
+      "website": "www.euronext.com",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "New Zealand Stock Exchange",
+      "acronym": "NZX",
+      "country": "New Zealand",
+      "country_code": "NZ",
+      "city": "Wellington",
+      "website": "www.nzx.com",
+      "timezone_id": 33,
+      "currency_id": 21
+    },
+    {
+      "name": "Nigerian Stock Exchange",
+      "acronym": "NSE",
+      "country": "Nigeria",
+      "country_code": "NG",
+      "city": "Lagos",
+      "website": "www.nse.com.ng",
+      "timezone_id": 34,
+      "currency_id": 22
+    },
+    {
+      "name": "Oslo Stock Exchange",
+      "acronym": "OSE",
+      "country": "Norway",
+      "country_code": "NO",
+      "city": "Oslo",
+      "website": "www.oslobors.no",
+      "timezone_id": 3,
+      "currency_id": 23
+    },
+    {
+      "name": "Bolsa de Valores de Lima",
+      "acronym": "BVL",
+      "country": "Peru",
+      "country_code": "PE",
+      "city": "Lima",
+      "website": "www.bvl.com.pe",
+      "timezone_id": 1,
+      "currency_id": 25
+    },
+    {
+      "name": "Warsaw Stock Exchange",
+      "acronym": "GPW",
+      "country": "Poland",
+      "country_code": "PL",
+      "city": "Warsaw",
+      "website": "www.gpw.pl",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Euronext Lisbon",
+      "acronym": "Euronext",
+      "country": "Portugal",
+      "country_code": "PT",
+      "city": "Lisboa",
+      "website": "www.euronext.com",
+      "timezone_id": 39,
+      "currency_id": 3
+    },
+    {
+      "name": "Qatar Stock Exchange",
+      "acronym": "QE",
+      "country": "Qatar",
+      "country_code": "QA",
+      "city": "Doha",
+      "website": "www.qatarexchange.qa",
+      "timezone_id": 4,
+      "currency_id": 27
+    },
+    {
+      "name": "Moscow Stock Exchange",
+      "acronym": "MOEX",
+      "country": "Russia",
+      "country_code": "RU",
+      "city": "Moscow",
+      "website": "www.moex.com",
+      "timezone_id": 41,
+      "currency_id": 28
+    },
+    {
+      "name": "Saudi Stock Exchange",
+      "acronym": "TADAWUL",
+      "country": "Saudi Arabia",
+      "country_code": "SA",
+      "city": "Riyadh",
+      "website": "www.tadawul.com.sa",
+      "timezone_id": 4,
+      "currency_id": 29
+    },
+    {
+      "name": "Belgrade Stock Exchange",
+      "acronym": "BELEX",
+      "country": "Serbia",
+      "country_code": "RS",
+      "city": "Belgrade",
+      "website": "www.belex.rs",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Singapore Stock Exchange",
+      "acronym": "SGX",
+      "country": "Singapore",
+      "country_code": "SG",
+      "city": "Singapore",
+      "website": "www.sgx.com",
+      "timezone_id": 30,
+      "currency_id": 30
+    },
+    {
+      "name": "Johannesburg Stock Exchange",
+      "acronym": "JSE",
+      "country": "South Africa",
+      "country_code": "ZA",
+      "city": "Johannesburg",
+      "website": "www.jse.co.za",
+      "timezone_id": 45,
+      "currency_id": 31
+    },
+    {
+      "name": "Korean Stock Exchange",
+      "acronym": "KRX",
+      "country": "South Korea",
+      "country_code": "KR",
+      "city": "Seoul",
+      "website": "http://eng.krx.co.kr",
+      "timezone_id": 46,
+      "currency_id": 32
+    },
+    {
+      "name": "Bolsas y Mercados Españoles",
+      "acronym": "BME",
+      "country": "Spain",
+      "country_code": "ES",
+      "city": "Madrid",
+      "website": "www.bolsasymercados.es",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "Stockholm Stock Exchange",
+      "acronym": "OMX",
+      "country": "Sweden",
+      "country_code": "SE",
+      "city": "Stockholm",
+      "website": "www.nasdaqomxnordic.com",
+      "timezone_id": 3,
+      "currency_id": 3
+    },
+    {
+      "name": "SIX Swiss Exchange",
+      "acronym": "SIX",
+      "country": "Switzerland",
+      "country_code": "CH",
+      "city": "Zurich",
+      "website": "www.six-swiss-exchange.com",
+      "timezone_id": 3,
+      "currency_id": 33
+    },
+    {
+      "name": "Taiwan Stock Exchange",
+      "acronym": "TWSE",
+      "country": "Taiwan",
+      "country_code": "TW",
+      "city": "Taipei",
+      "website": "www.twse.com.tw/en/",
+      "timezone_id": 10,
+      "currency_id": 34
+    },
+    {
+      "name": "Stock Exchange of Thailand",
+      "acronym": "SET",
+      "country": "Thailand",
+      "country_code": "TH",
+      "city": "Bangkok",
+      "website": "www.set.or.th",
+      "timezone_id": 51,
+      "currency_id": 35
+    },
+    {
+      "name": "Istanbul Stock Exchange",
+      "acronym": "BIST",
+      "country": "Turkey",
+      "country_code": "TR",
+      "city": "Istanbul",
+      "website": "www.borsaistanbul.com",
+      "timezone_id": 4,
+      "currency_id": 36
+    },
+    {
+      "name": "Dubai Financial Market",
+      "acronym": "DFM",
+      "country": "United Arab Emirates",
+      "country_code": "AE",
+      "city": "Dubai",
+      "website": "www.dfm.co.ae",
+      "timezone_id": 53,
+      "currency_id": 37
+    },
+    {
+      "name": "London Stock Exchange",
+      "acronym": "LSE",
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "city": "London",
+      "website": "www.londonstockexchange.com",
+      "timezone_id": 20,
+      "currency_id": 38
+    },
+    {
+      "name": "Ho Chi Minh Stock Exchange",
+      "acronym": "HOSE",
+      "country": "Vietnam",
+      "country_code": "VN",
+      "city": "Ho Chi Minh City",
+      "website": "www.hsx.vn",
+      "timezone_id": 51,
+      "currency_id": 39
+    },
+    {
+      "name": "American Stock Exchange",
+      "acronym": "AMEX",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.nyse.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "Cboe BZX U.S. Equities Exchang",
+      "acronym": "BATS",
+      "country": "USA",
+      "country_code": "US",
+      "city": "Chicago",
+      "website": "markets.cboe.com",
+      "timezone_id": 57,
+      "currency_id": 1
+    },
+    {
+      "name": "US Mutual Funds",
+      "acronym": "NMFQS",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "OTC Bulletin Board",
+      "acronym": "OTCBB",
+      "country": "USA",
+      "country_code": "US",
+      "city": "Washington",
+      "website": "www.otcmarkets.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "OTC Grey Market",
+      "acronym": "OTCGREY",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.otcmarkets.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "OTCQB Marketplace",
+      "acronym": "OTCQB",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.otcmarkets.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "OTCQX Marketplace",
+      "acronym": "OTCQX",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.otcmarkets.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "OTC PINK current",
+      "acronym": "PINK",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.otcmarkets.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    },
+    {
+      "name": "Investors Exchange",
+      "acronym": "IEX",
+      "country": "USA",
+      "country_code": "US",
+      "city": "New York",
+      "website": "www.iextrading.com",
+      "timezone_id": 1,
+      "currency_id": 1
+    }
+  ]
+}

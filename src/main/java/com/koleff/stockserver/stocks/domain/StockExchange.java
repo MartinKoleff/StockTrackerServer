@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "stock_exchange")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class StockExchange implements Serializable {
+public @Data class StockExchange implements Serializable{
     @Id
     @SequenceGenerator(
             name = "stock_exchange_sequence",
@@ -48,15 +48,6 @@ public @Data class StockExchange implements Serializable {
     @NotNull(message = "Acronym must not be empty.")
     @SerializedName("acronym")
     private String acronym;
-
-    @Column(
-            name = "exchange",
-            nullable = false,
-            columnDefinition = "TEXT"
-    )
-    @NotNull(message = "Exchange must not be empty.")
-    @SerializedName("exchange")
-    private String exchange;
 
     @Column(
             name = "country",
@@ -94,13 +85,81 @@ public @Data class StockExchange implements Serializable {
     @SerializedName("website")
     private String website;
 
+    @Column(
+            name = "timezone_id",
+            nullable = false
+    )
+    @NotNull(message = "Timezone id must not be empty.")
+    @SerializedName("timezone_id")
+    private Long timezoneId;
+
+    @Column(
+            name = "currency_id",
+            nullable = false
+    )
+    @NotNull(message = "Currency id must not be empty.")
+    @SerializedName("currency_id")
+    private Long currencyId;
+
     @OneToMany(
             mappedBy = "stockExchange",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY,
             orphanRemoval = false
     )
-    private List<Stock> stock;
+    private List<Stock> stocks;  //Doesn't need to be bidirectional
+
+    @ManyToOne(
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(
+            name = "timezone_id",
+            nullable = false,
+            insertable = false,
+            updatable = false,
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(
+                    name = "timezone_id_fk"
+            )
+    )
+    private Timezone timezone;  //Doesn't need to be bidirectional
+
+    @ManyToOne(
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(
+            name = "currency_id",
+            nullable = false,
+            insertable = false,
+            updatable = false,
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(
+                    name = "currency_id_fk"
+            )
+    )
+    private Currency currency;  //Doesn't need to be bidirectional
+
+    public StockExchange(Long id,
+                         String name,
+                         String acronym,
+                         String country,
+                         String countryCode,
+                         String city,
+                         String website,
+                         Long timezoneId,
+                         Long currencyId) {
+        this.id = id;
+        this.name = name;
+        this.acronym = acronym;
+        this.country = country;
+        this.countryCode = countryCode;
+        this.city = city;
+        this.website = website;
+        this.timezoneId = timezoneId;
+        this.currencyId = currencyId;
+    }
 
     @Override
     public String toString() {
@@ -108,11 +167,12 @@ public @Data class StockExchange implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", acronym='" + acronym + '\'' +
-                ", exchange='" + exchange + '\'' +
                 ", country='" + country + '\'' +
                 ", countryCode='" + countryCode + '\'' +
                 ", city='" + city + '\'' +
                 ", website='" + website + '\'' +
+                ", timezoneId=" + timezoneId +
+                ", currencyId=" + currencyId +
                 '}';
     }
 }

@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -37,7 +36,6 @@ public @Data class Stock implements Serializable {
             nullable = false
     )
     @NotNull(message = "Stock exchange id must not be empty.")
-    @Expose(deserialize = false)
     @SerializedName("stock_exchange_id")
     private Long stockExchangeId;
 
@@ -104,20 +102,20 @@ public @Data class Stock implements Serializable {
             updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
-                    name = "stock_exchange_fk" //to check for foreign key...
+                    name = "stock_exchange_fk"
             )
     )
-    //should l have join here...
     private StockExchange stockExchange;
 
     @Override
     public String toString() {
         return "Stock{" +
                 "id=" + id +
+                ", stock_exchange_id=" + stockExchangeId +
                 ", name='" + name + '\'' +
                 ", tag='" + tag + '\'' +
-                ", hasIntraDay=" + hasIntraDay +
-                ", hasEndOfDay=" + hasEndOfDay +
+                ", has_intra_day=" + hasIntraDay +
+                ", has_end_of_day=" + hasEndOfDay +
                 '}';
     }
 }

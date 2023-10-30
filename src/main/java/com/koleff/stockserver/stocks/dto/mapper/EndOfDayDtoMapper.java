@@ -15,8 +15,6 @@ public class EndOfDayDtoMapper implements Function<EndOfDay, EndOfDayDto> {
     @Override
     public EndOfDayDto apply(EndOfDay endOfDay) {
         return new EndOfDayDto(
-                endOfDay.getId(),
-                endOfDay.getStockId(),
                 endOfDay.getOpen(),
                 endOfDay.getClose(),
                 endOfDay.getHigh(),
@@ -28,6 +26,7 @@ public class EndOfDayDtoMapper implements Function<EndOfDay, EndOfDayDto> {
                 endOfDay.getAdjLow(),
                 endOfDay.getAdjVolume(),
                 endOfDay.getSplitFactor(),
+                endOfDay.getDividend(),
                 endOfDay.getDate()
         );
     }

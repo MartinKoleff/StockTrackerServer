@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -9,13 +8,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 @Entity(name = "EndOfDay")
 @Table(name = "end_of_day")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class EndOfDay implements Serializable, SupportTable { //rename to EOD
+public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
     @Id
     @SequenceGenerator(
             name = "eod_sequence",
@@ -23,7 +21,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.SEQUENCE, //If entry with id 1 is deleted no more entries can be with id 1...
             generator = "eod_sequence"
     )
     @Column(
@@ -34,13 +32,10 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
 
     @Column(
             name = "stock_id",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Stock id must not be empty.")
-    @Expose(deserialize = false)
     @SerializedName("stock_id")
     private Long stockId;
-
 
     @Column(
             name = "open",
@@ -76,49 +71,43 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
 
     @Column(
             name = "volume",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Volume must not be empty.")
     @SerializedName("volume")
     private Double volume;
 
     @Column(
             name = "adj_open",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust open must not be empty.")
     @SerializedName("adj_open")
     private Double adjOpen;
 
     @Column(
             name = "adj_close",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust close must not be empty.")
     @SerializedName("adj_close")
     private Double adjClose;
 
     @Column(
             name = "adj_high",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust high must not be empty.")
     @SerializedName("adj_high")
     private Double adjHigh;
 
     @Column(
             name = "adj_low",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust low must not be empty.")
     @SerializedName("adj_low")
     private Double adjLow;
 
     @Column(
             name = "adj_volume",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Adjust volume must not be empty.")
     @SerializedName("adj_volume")
     private Double adjVolume;
 
@@ -126,9 +115,17 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             name = "split_factor",
             nullable = false
     )
-    @NotNull(message = "Split factor volume must not be empty.")
+    @NotNull(message = "Split factor must not be empty.")
     @SerializedName("split_factor")
     private Double splitFactor;
+
+    @Column(
+            name = "dividend",
+            nullable = false
+    )
+    @NotNull(message = "Dividend must not be empty.")
+    @SerializedName("dividend")
+    private Double dividend;
 
     @Column(
             name = "date",
@@ -138,7 +135,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
     @SerializedName("date")
     private String date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne //Doesn't need to be bidirectional
     @JoinColumn(
             name = "stock_id",
             nullable = false,
@@ -146,7 +143,7 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
             updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
-                    name = "intra_day_fk"
+                    name = "eod_fk"
             )
     )
     private Stock stock;
@@ -155,18 +152,19 @@ public @Data class EndOfDay implements Serializable, SupportTable { //rename to 
     public String toString() {
         return "EndOfDay{" +
                 "id=" + id +
-                ", stockId=" + stockId +
+                ", stock_id=" + stockId +
                 ", open=" + open +
                 ", close=" + close +
                 ", high=" + high +
                 ", low=" + low +
                 ", volume=" + volume +
-                ", adjOpen=" + adjOpen +
-                ", adjClose=" + adjClose +
-                ", adjHigh=" + adjHigh +
-                ", adjLow=" + adjLow +
-                ", adjVolume=" + adjVolume +
-                ", splitFactor=" + splitFactor +
+                ", adj_open=" + adjOpen +
+                ", adj_close=" + adjClose +
+                ", adj_high=" + adjHigh +
+                ", adj_low=" + adjLow +
+                ", adj_volume=" + adjVolume +
+                ", split_factor=" + splitFactor +
+                ", dividend=" + dividend +
                 ", date=" + date +
                 '}';
     }

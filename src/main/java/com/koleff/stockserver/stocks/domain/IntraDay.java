@@ -1,22 +1,19 @@
 package com.koleff.stockserver.stocks.domain;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 @Entity(name = "IntraDay")
 @Table(name = "intra_day")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class IntraDay implements Serializable, SupportTable {
+public @Data class IntraDay implements Serializable {
     @Id
     @SequenceGenerator(
             name = "intra_day_sequence",
@@ -35,10 +32,8 @@ public @Data class IntraDay implements Serializable, SupportTable {
 
     @Column(
             name = "stock_id",
-            nullable = false
+            nullable = true
     )
-    @NotNull(message = "Stock id must not be empty.")
-    @Expose(deserialize = false)
     @SerializedName("stock_id")
     private Long stockId;
 
@@ -95,7 +90,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
     @SerializedName("date")
     private String date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne //Doesn't need to be bidirectional
     @JoinColumn(
             name = "stock_id",
             nullable = false,
@@ -112,7 +107,7 @@ public @Data class IntraDay implements Serializable, SupportTable {
     public String toString() {
         return "IntraDay{" +
                 "id=" + id +
-                ", stockId=" + stockId +
+                ", stock_id=" + stockId +
                 ", open=" + open +
                 ", close=" + close +
                 ", high=" + high +

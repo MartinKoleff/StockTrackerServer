@@ -25,8 +25,6 @@ public class StockDtoMapper implements Function<Stock, StockDto> {
     @Override
     public StockDto apply(Stock stock) {
         return new StockDto(
-                stock.getId(),
-                stock.getStockExchangeId(),
                 stock.getName(),
                 stock.getTag(),
                 stock.getHasIntraDay(),

@@ -8,17 +8,26 @@ import java.util.function.Function;
 
 @Component
 public class StockExchangeDtoMapper implements Function<StockExchange, StockExchangeDto> {
+
+    private final TimezoneDtoMapper timezoneDtoMapper;
+    private final CurrencyDtoMapper currencyDtoMapper;
+
+    public StockExchangeDtoMapper(TimezoneDtoMapper timezoneDtoMapper, CurrencyDtoMapper currencyDtoMapper) {
+        this.timezoneDtoMapper = timezoneDtoMapper;
+        this.currencyDtoMapper = currencyDtoMapper;
+    }
+
     @Override
     public StockExchangeDto apply(StockExchange stockExchange) {
         return new StockExchangeDto(
-                stockExchange.getId(),
                 stockExchange.getName(),
                 stockExchange.getAcronym(),
-                stockExchange.getExchange(),
                 stockExchange.getCountry(),
                 stockExchange.getCountryCode(),
                 stockExchange.getCity(),
-                stockExchange.getWebsite()
+                stockExchange.getWebsite(),
+                timezoneDtoMapper.apply(stockExchange.getTimezone()),
+                currencyDtoMapper.apply(stockExchange.getCurrency())
         );
     }
 }

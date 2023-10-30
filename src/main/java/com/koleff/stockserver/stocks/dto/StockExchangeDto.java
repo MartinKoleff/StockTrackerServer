@@ -1,21 +1,13 @@
 package com.koleff.stockserver.stocks.dto;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public record StockExchangeDto (
-    @SerializedName("id")
-    Long id,
-
     @SerializedName("name")
     String name,
 
     @SerializedName("acronym")
     String acronym,
-
-    @SerializedName("exchange")
-    String exchange,
-
     @SerializedName("country")
     String country,
 
@@ -26,7 +18,13 @@ public record StockExchangeDto (
     String city,
 
     @SerializedName("website")
-    String website
+    String website,
+
+    @SerializedName("timezone")
+    TimezoneDto timezoneDto,
+
+    @SerializedName("currency")
+    CurrencyDto currencyDto
 ){
 
 }

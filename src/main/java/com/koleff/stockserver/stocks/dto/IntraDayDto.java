@@ -1,17 +1,9 @@
 package com.koleff.stockserver.stocks.dto;
 
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.sql.Date;
-
 public record IntraDayDto(
-        @SerializedName("id")
-        Long id,
-        @SerializedName("stock_id")
-        @Expose(deserialize = false)
-        Long stockId,
         @SerializedName("open")
         Double open,
         @SerializedName("close")

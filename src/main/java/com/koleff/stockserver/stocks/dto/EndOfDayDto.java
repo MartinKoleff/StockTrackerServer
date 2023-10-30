@@ -1,16 +1,8 @@
 package com.koleff.stockserver.stocks.dto;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.sql.Date;
-
 public record EndOfDayDto(
-        @SerializedName("id")
-        Long id,
-        @SerializedName("stock_id")
-        @Expose(deserialize = false)
-        Long stockId,
         @SerializedName("open")
         Double open,
         @SerializedName("close")
@@ -33,6 +25,8 @@ public record EndOfDayDto(
         Double adjustVolume,
         @SerializedName("split_factor")
         Double splitFactor,
+        @SerializedName("dividend")
+        Double dividend,
         @SerializedName("date")
         String date
 ) {

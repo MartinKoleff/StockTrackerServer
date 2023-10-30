@@ -12,8 +12,6 @@ public class IntraDayDtoMapper implements Function<IntraDay, IntraDayDto> {
     @Override
     public IntraDayDto apply(IntraDay intraDay) {
         return new IntraDayDto(
-                intraDay.getId(),
-                intraDay.getStockId(),
                 intraDay.getOpen(),
                 intraDay.getClose(),
                 intraDay.getHigh(),
