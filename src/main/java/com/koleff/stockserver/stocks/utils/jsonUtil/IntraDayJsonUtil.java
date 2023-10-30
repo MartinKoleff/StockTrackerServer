@@ -19,4 +19,9 @@ public class IntraDayJsonUtil extends JsonUtil<DataWrapper<IntraDay>> {
     public Type getType() {
         return new TypeToken<DataWrapper<IntraDay>>() {}.getType();
     }
+
+    @Override
+    protected String getDirectory() {
+        return "intraday";
+    }
 }

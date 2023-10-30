@@ -8,7 +8,7 @@ import com.koleff.stockserver.stocks.exceptions.TimezoneNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.TimezonesNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.TimezoneRepositoryImpl;
 import com.koleff.stockserver.stocks.service.TimezoneService;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.TimezoneJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +18,15 @@ import java.util.List;
 public class TimezoneServiceImpl implements TimezoneService {
     private final TimezoneRepositoryImpl timezoneRepositoryImpl;
     private final TimezoneDtoMapper timezoneDtoMapper;
-    private final JsonUtil<DataWrapper<Timezone>> jsonUtil;
+    private final TimezoneJsonUtil timezoneJsonUtil;
 
     @Autowired
     public TimezoneServiceImpl(TimezoneRepositoryImpl timezoneRepositoryImpl,
                                TimezoneDtoMapper timezoneDtoMapper,
-                               JsonUtil<DataWrapper<Timezone>> jsonUtil) {
+                               TimezoneJsonUtil timezoneJsonUtil) {
         this.timezoneRepositoryImpl = timezoneRepositoryImpl;
         this.timezoneDtoMapper = timezoneDtoMapper;
-        this.jsonUtil = jsonUtil;
+        this.timezoneJsonUtil = timezoneJsonUtil;
     }
 
     /**
@@ -152,9 +152,9 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public Timezone loadTimezone(String timezone) {
-        String json = jsonUtil.loadJson("timezones.json");
+        String json = timezoneJsonUtil.loadJson("timezones.json");
 
-        DataWrapper<Timezone> data = jsonUtil.convertJson(json);
+        DataWrapper<Timezone> data = timezoneJsonUtil.convertJson(json);
 
         Timezone selectedTimezone = data.getData()
                 .stream()
@@ -172,9 +172,9 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public List<Timezone> loadAllTimezones() {
-        String json = jsonUtil.loadJson("timezones.json");
+        String json = timezoneJsonUtil.loadJson("timezones.json");
 
-        DataWrapper<Timezone> data = jsonUtil.convertJson(json);
+        DataWrapper<Timezone> data = timezoneJsonUtil.convertJson(json);
 
         return data.getData();
     }

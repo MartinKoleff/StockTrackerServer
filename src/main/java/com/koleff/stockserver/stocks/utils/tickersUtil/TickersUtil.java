@@ -4,6 +4,9 @@ import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.domain.wrapper.Ticker;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.domain.wrapper.StockWithStockExchange;
+import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeJsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.StockWithStockExchangeJsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.TickerJsonUtil;
 import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import com.koleff.stockserver.stocks.dto.mapper.TickerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +19,15 @@ import java.util.List;
 public class TickersUtil {
     @Value("${koleff.versionAnnotation}")
     private String versionAnnotation;
-    private final JsonUtil<DataWrapper<StockExchange>> stockExchangeJsonUtil;
-    private final JsonUtil<DataWrapper<StockWithStockExchange>> stockWithExchangeJsonUtil;
-    private final JsonUtil<DataWrapper<Ticker>> tickerJsonUtil;
+    private final StockExchangeJsonUtil stockExchangeJsonUtil;
+    private final StockWithStockExchangeJsonUtil stockWithExchangeJsonUtil;
+    private final TickerJsonUtil tickerJsonUtil;
     private final TickerMapper tickerMapper;
 
     @Autowired
-    public TickersUtil(JsonUtil<DataWrapper<StockExchange>> stockExchangeJsonUtil,
-                       JsonUtil<DataWrapper<StockWithStockExchange>> stockWithExchangeJsonUtil,
-                       JsonUtil<DataWrapper<Ticker>> tickerJsonUtil,
+    public TickersUtil(StockExchangeJsonUtil stockExchangeJsonUtil,
+                       StockWithStockExchangeJsonUtil stockWithExchangeJsonUtil,
+                       TickerJsonUtil tickerJsonUtil,
                        TickerMapper tickerMapper) {
         this.stockExchangeJsonUtil = stockExchangeJsonUtil;
         this.stockWithExchangeJsonUtil = stockWithExchangeJsonUtil;
@@ -32,7 +35,7 @@ public class TickersUtil {
         this.tickerMapper = tickerMapper;
     }
 
-    public void configureIds(){
+    public void configureIds() {
         DataWrapper<Ticker> tickersWithExchangeId = new DataWrapper<>();
 
         configureStockExchangeId(tickersWithExchangeId);
@@ -76,9 +79,9 @@ public class TickersUtil {
         );
     }
 
-    private void exportToJson(DataWrapper<Ticker> tickersWithExchangeId){
+    private void exportToJson(DataWrapper<Ticker> tickersWithExchangeId) {
 
         //Convert to JSON
-        tickerJsonUtil.exportToJson(tickersWithExchangeId, "tickers", versionAnnotation); //TODO: app.properties
+        tickerJsonUtil.exportToJson(tickersWithExchangeId, "tickers", versionAnnotation);
     }
 }

@@ -19,4 +19,9 @@ public class CurrencyJsonUtil extends JsonUtil<DataWrapper<Currency>> {
     public Type getType() {
         return new TypeToken<DataWrapper<Currency>>() {}.getType();
     }
+
+    @Override
+    protected String getDirectory() {
+        return "currencies";
+    }
 }

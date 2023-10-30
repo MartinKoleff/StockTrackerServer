@@ -1,19 +1,25 @@
 package com.koleff.stockserver.stocks.service.impl;
 
-import com.koleff.stockserver.stocks.configuration.AppConfig;
-import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.domain.IntraDay;
-import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.dto.mapper.IntraDayDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.IntraDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.IntraDayService;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.IntraDayJsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.JobParametersInvalidException;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -31,17 +37,23 @@ public class IntraDayServiceImpl implements IntraDayService {
     private final StockServiceImpl stockServiceImpl;
 
     private final IntraDayDtoMapper intraDayDtoMapper;
-    private final JsonUtil<DataWrapper<IntraDay>> jsonUtil;
+    private final IntraDayJsonUtil intraDayJsonUtil;
 
+    private final JobLauncher jobLauncher;
+    private final Job job;
     @Autowired
     public IntraDayServiceImpl(IntraDayRepositoryImpl intraDayRepositoryImpl,
                                IntraDayDtoMapper intraDayDtoMapper,
                                StockServiceImpl stockServiceImpl,
-                               JsonUtil<DataWrapper<IntraDay>> jsonUtil) {
+                               IntraDayJsonUtil intraDayJsonUtil,
+                               JobLauncher jobLauncher,
+                               @Qualifier("intraDayJob") Job job) {
         this.intraDayRepositoryImpl = intraDayRepositoryImpl;
         this.intraDayDtoMapper = intraDayDtoMapper;
         this.stockServiceImpl = stockServiceImpl;
-        this.jsonUtil = jsonUtil;
+        this.intraDayJsonUtil = intraDayJsonUtil;
+        this.jobLauncher = jobLauncher;
+        this.job = job;
     }
 
     /**
@@ -90,22 +102,23 @@ public class IntraDayServiceImpl implements IntraDayService {
         List<List<IntraDayDto>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.getStockTags();
-        stockTags.forEach(
-                stockTag -> {
-                    List<IntraDayDto> entry = intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
-                            .orElseThrow(
-                                    () -> new IntraDayNotFoundException(
-                                            String.format("Intra day for stock tag %s not found.",
-                                                    stockTag
+        stockTags.parallelStream()
+                .forEach(
+                        stockTag -> {
+                            List<IntraDayDto> entry = intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
+                                    .orElseThrow(
+                                            () -> new IntraDayNotFoundException(
+                                                    String.format("Intra day for stock tag %s not found.",
+                                                            stockTag
+                                                    )
                                             )
                                     )
-                            )
-                            .stream()
-                            .map(intraDayDtoMapper)
-                            .toList();
-                    data.add(entry);
-                }
-        );
+                                    .stream()
+                                    .map(intraDayDtoMapper)
+                                    .toList();
+                            data.add(entry);
+                        }
+                );
 
         return data;
     }
@@ -124,8 +137,23 @@ public class IntraDayServiceImpl implements IntraDayService {
     @Override
     public void saveAllIntraDays(List<List<IntraDay>> data) {
         //Save data entities to DB
-        data.parallelStream()
-                .forEach(intraDayRepositoryImpl::saveAll);
+        data.forEach(intraDayRepositoryImpl::saveAll);
+    }
+
+    /**
+     * Save data using Spring Batch
+     */
+    @Override
+    public void saveViaJob() {
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addLong("startAt", System.currentTimeMillis()).toJobParameters();
+        try {
+            jobLauncher.run(job, jobParameters);
+        } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException |
+                 JobParametersInvalidException e) {
+            logger.error("Error saving EOD data via Spring Batch!");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -162,8 +190,8 @@ public class IntraDayServiceImpl implements IntraDayService {
         String filePath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
 
         //Load data from json
-        String json = jsonUtil.loadJson(filePath);
-        DataWrapper<IntraDay> data = jsonUtil.convertJson(json);
+        String json = intraDayJsonUtil.loadJson(filePath);
+        DataWrapper<IntraDay> data = intraDayJsonUtil.convertJson(json);
 
         return data.getData();
     }
@@ -177,17 +205,18 @@ public class IntraDayServiceImpl implements IntraDayService {
         List<List<IntraDay>> data = new ArrayList<>();
 
         List<String> stockTags = stockServiceImpl.loadStockTags();
-        stockTags.forEach(
-                stockTag -> {
-                    try {
-                        List<IntraDay> entry = loadIntraDay(stockTag);
+        stockTags.parallelStream()
+                .forEach(
+                        stockTag -> {
+                            try {
+                                List<IntraDay> entry = loadIntraDay(stockTag);
 
-                        data.add(entry);
-                    }catch (NullPointerException e){
-                        logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
-                    }
-                }
-        );
+                                data.add(entry);
+                            } catch (NullPointerException e) {
+                                logger.error(String.format("JSON file for stock %s is corrupted!\n", stockTag));
+                            }
+                        }
+                );
         return data;
     }
 }

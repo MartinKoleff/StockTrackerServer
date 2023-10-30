@@ -9,7 +9,7 @@ import com.koleff.stockserver.stocks.exceptions.StockNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.StocksNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.StockRepositoryImpl;
 import com.koleff.stockserver.stocks.service.StockService;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.StockJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -23,15 +23,15 @@ public class StockServiceImpl implements StockService {
     private String versionAnnotation;
     private final StockRepositoryImpl stockRepositoryImpl;
     private final StockDtoMapper stockDtoMapper;
-    private final JsonUtil<DataWrapper<Stock>> jsonUtil;
+    private final StockJsonUtil stockJsonUtil;
 
     @Autowired
     public StockServiceImpl(StockRepositoryImpl stockRepositoryImpl,
                             StockDtoMapper stockDtoMapper,
-                            JsonUtil<DataWrapper<Stock>> jsonUtil) {
+                            StockJsonUtil stockJsonUtil) {
         this.stockRepositoryImpl = stockRepositoryImpl;
         this.stockDtoMapper = stockDtoMapper;
-        this.jsonUtil = jsonUtil;
+        this.stockJsonUtil = stockJsonUtil;
     }
 
     /**
@@ -128,6 +128,9 @@ public class StockServiceImpl implements StockService {
                 .toList();
     }
 
+    /**
+     * Get id column from DB
+     */
     @Override
     public List<Long> getStockIds() {
         return stockRepositoryImpl.getStockIds()
@@ -142,8 +145,8 @@ public class StockServiceImpl implements StockService {
      * Load stock tags column from JSON
      */
     @Override
-    public List<String> loadStockTags(){
-       return loadAllStocks()
+    public List<String> loadStockTags() {
+        return loadAllStocks()
                 .stream()
                 .map(Stock::getTag)
                 .toList();
@@ -197,9 +200,9 @@ public class StockServiceImpl implements StockService {
     public Stock loadStock(String stockTag) {
         String filePath = String.format("tickers%s.json", versionAnnotation);
 
-        String json = jsonUtil.loadJson(filePath);
+        String json = stockJsonUtil.loadJson(filePath);
 
-        DataWrapper<Stock> data = jsonUtil.convertJson(json);
+        DataWrapper<Stock> data = stockJsonUtil.convertJson(json);
 
         Stock stockData = data.getData()
                 .stream()
@@ -217,9 +220,9 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public List<Stock> loadAllStocks() {
-        String json = jsonUtil.loadJson("tickersV2.json");
+        String json = stockJsonUtil.loadJson("tickersV2.json");
 
-        DataWrapper<Stock> data = jsonUtil.convertJson(json);
+        DataWrapper<Stock> data = stockJsonUtil.convertJson(json);
 
         return data.getData();
     }

@@ -1,6 +1,5 @@
 package com.koleff.stockserver.remoteApi.service.impl.base;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.remoteApi.client.v2.base.PublicApiClientV2;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.validation.DatabaseTableDto;
@@ -11,7 +10,6 @@ import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,7 +109,7 @@ public abstract class PublicApiServiceImpl<T>
         String json = jsonUtil.loadJson(filePath);
 
         if (Objects.isNull(json)) {
-            throw new JsonNotFoundException("JSON file doesn't exist. Please call export request first.");
+            throw new JsonNotFoundException(String.format("JSON file doesn't exist for stock %s. Please call export request first.", stockTag));
         }
 
         //Parse JSON to entity
@@ -159,6 +157,7 @@ public abstract class PublicApiServiceImpl<T>
                                 logger.info(String.format("Thread %d has started!\n", counter.getAndIncrement()));
 
                                 DataWrapper<T> data = getData(stockTag);
+                                logger.info(String.format("Fetched data from remote API: %s\n", data));
 
                                 exportDataToJson(data, stockTag);
 
@@ -209,7 +208,7 @@ public abstract class PublicApiServiceImpl<T>
         List<String> stockTags = stockServiceImpl.loadStockTags(); //Not dependent on DB -> load from JSON
 
         //TODO: Run multiple threads...
-        stockTags.forEach(this::saveData);
+        stockTags.parallelStream().forEach(this::saveData);
     }
 }
 

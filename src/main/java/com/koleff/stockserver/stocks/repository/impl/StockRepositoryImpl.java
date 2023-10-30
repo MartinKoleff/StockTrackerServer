@@ -4,7 +4,6 @@ import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.repository.StockRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -62,6 +61,16 @@ public interface StockRepositoryImpl extends StockRepository {
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.hasEndOfDay = ?1")
     List<Stock> selectStocksWhereHasEndOfDayEqualTrue(Boolean hasEndOfDay);
+
+    @Override
+    @Modifying
+    @Query("UPDATE Stock s SET s.hasIntraDay = true WHERE s.endOfDay != null")
+    void updateHasIntraDay();
+    
+    @Override
+    @Modifying
+    @Query("UPDATE Stock s SET s.hasEndOfDay = true WHERE s.intraDay != null")
+    void updateHasEndOfDay();
 
     @Override
     @Modifying

@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "stock_id": 91,
+      "open": 13.8,
+      "close": 14.3,
+      "high": 14.3,
+      "low": 13.8,
+      "volume": 4130.0,
+      "adj_close": 14.3,
+      "split_factor": 1.0,
+      "dividend": 0.0,
+      "date": "2022-11-04T00:00:00+0000"
+    },
+    {
+      "stock_id": 91,
+      "open": 13.48,
+      "close": 13.32,
+      "high": 13.48,
+      "low": 13.32,
+      "volume": 1658.0,
+      "adj_close": 13.32,
+      "split_factor": 1.0,
+      "dividend": 0.0,
+      "date": "2022-11-03T00:00:00+0000"
+    },
+    {
+      "stock_id": 91,
+      "open": 12.06,
+      "close": 13.08,
+      "high": 13.08,
+      "low": 12.06,
+      "volume": 1066.0,
+      "adj_close": 13.08,
+      "split_factor": 1.0,
+      "dividend": 0.0,
+      "date": "2022-11-02T00:00:00+0000"
+    },
+    {
+      "stock_id": 91,
+      "open": 13.02,
+      "close": 12.827,
+      "high": 13.35,
+      "low": 12.827,
+      "volume": 2746.0,
+      "adj_close": 12.827,
+      "split_factor": 1.0,
+      "dividend": 0.0,
+      "date": "2022-11-01T00:00:00+0000"
+    },
+    {
+      "stock_id": 91,
+      "open": 13.84,
+      "close": 13.51,
+      "high": 13.84,
+      "low": 13.48,
+      "volume": 2465.0,
+      "adj_close": 13.51,
+      "split_factor": 1.0,
+      "dividend": 0.0,
+      "date": "2022-10-28T00:00:00+0000"
+    },
+    {
+      "stock_id": 91,
+      "open": 13.98,
+      "close": 14.185,
+      "high": 14.185,
+      "low": 13.98,
+      "volume": 526.0,
+      "adj_close": 14.185,
+      "split_factor": 1.0,
+      "dividend": 0.0,
+      "date": "2022-10-27T00:00:00+0000"
+    }
+  ]
+}

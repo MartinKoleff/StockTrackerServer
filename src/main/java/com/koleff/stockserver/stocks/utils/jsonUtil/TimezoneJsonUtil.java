@@ -19,4 +19,9 @@ public class TimezoneJsonUtil extends JsonUtil<DataWrapper<Timezone>> {
     public Type getType() {
         return new TypeToken<DataWrapper<Timezone>>() {}.getType();
     }
+
+    @Override
+    protected String getDirectory() {
+        return "timezones";
+    }
 }

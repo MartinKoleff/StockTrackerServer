@@ -12,6 +12,7 @@ public interface EndOfDayService {
     List<List<EndOfDayDto>> getAllEndOfDays();
     void saveEndOfDay(List<EndOfDay> data);
     void saveAllEndOfDays(List<List<EndOfDay>> data);
+    void saveViaJob();
     void deleteById(Long id);
     void deleteByStockTag(String stockTag);
     void deleteAll();

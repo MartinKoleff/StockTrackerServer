@@ -8,7 +8,7 @@ import com.koleff.stockserver.stocks.exceptions.CurrenciesNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.CurrencyNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.CurrencyRepositoryImpl;
 import com.koleff.stockserver.stocks.service.CurrencyService;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.CurrencyJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,15 +19,15 @@ public class CurrencyServiceImpl implements CurrencyService {
 
     private final CurrencyRepositoryImpl currencyRepositoryImpl;
     private final CurrencyDtoMapper currencyDtoMapper;
-    private final JsonUtil<DataWrapper<Currency>> jsonUtil;
+    private final CurrencyJsonUtil currencyJsonUtil;
 
     @Autowired
     public CurrencyServiceImpl(CurrencyRepositoryImpl currencyRepositoryImpl,
                                CurrencyDtoMapper currencyDtoMapper,
-                               JsonUtil<DataWrapper<Currency>> jsonUtil) {
+                               CurrencyJsonUtil currencyJsonUtil) {
         this.currencyRepositoryImpl = currencyRepositoryImpl;
         this.currencyDtoMapper = currencyDtoMapper;
-        this.jsonUtil = jsonUtil;
+        this.currencyJsonUtil = currencyJsonUtil;
     }
 
     /**
@@ -153,9 +153,9 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public Currency loadCurrency(String currencyCode) {
-        String json = jsonUtil.loadJson("currencies.json");
+        String json = currencyJsonUtil.loadJson("currencies.json");
 
-        DataWrapper<Currency> data = jsonUtil.convertJson(json);
+        DataWrapper<Currency> data = currencyJsonUtil.convertJson(json);
 
         Currency selectedCurrency = data.getData()
                 .stream()
@@ -173,9 +173,9 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public List<Currency> loadAllCurrencies() {
-        String json = jsonUtil.loadJson("currencies.json");
+        String json = currencyJsonUtil.loadJson("currencies.json");
 
-        DataWrapper<Currency> data = jsonUtil.convertJson(json);
+        DataWrapper<Currency> data = currencyJsonUtil.convertJson(json);
 
         return data.getData();
     }

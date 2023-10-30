@@ -40,6 +40,8 @@ public class EndOfDayTests {
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
     private boolean isDoneTesting = false;
+    private boolean hasInitializedDB = false;
+
     private long startTime;
     private long endTime;
     private long totalTime;
@@ -59,6 +61,9 @@ public class EndOfDayTests {
 
     @BeforeEach
     public void setup() {
+        if(hasInitializedDB){
+            return;
+        }
         logger.info("Setup before test starts...");
 
         //Load and Save stocks to DB
@@ -80,6 +85,8 @@ public class EndOfDayTests {
         endOfDayServiceImpl.saveAllEndOfDays(eods);
 
         startTime = System.currentTimeMillis();
+
+        hasInitializedDB = true;
     }
 
     @AfterEach
@@ -88,7 +95,7 @@ public class EndOfDayTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (isDoneTesting) {
+        if (!isDoneTesting) {
             logger.info("Testing finished!");
             return;
         }
@@ -135,7 +142,7 @@ public class EndOfDayTests {
     @Test
     @Order(3)
     @DisplayName("Fetching 1 entry from DB.")
-    void intraDayFetchingOneEntryTest() {
+    void eodFetchingOneEntryTest() {
         String stockTag = "AAPL";
 
         List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDay(stockTag);
@@ -148,7 +155,7 @@ public class EndOfDayTests {
     @Test
     @Order(4)
     @DisplayName("Saving all data from JSON to DB.")
-    void eodBulkSavingTest() {
+    void eodBulkSavingTest() { //TODO: add Spring Batch
         //Clear DB
         endOfDayServiceImpl.deleteAll();
 
@@ -185,6 +192,20 @@ public class EndOfDayTests {
 
         logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
         Assertions.assertNotNull(eodDto);
+    }
+
+    @Test
+    @Order(6)
+    @DisplayName("Saving all entries via Spring Batch")
+    void eodSavingViaSpringBatch(){
+        endOfDayServiceImpl.saveViaJob();
+
+        //Check if entries are in DB
+        List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
+
+        logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
+        logger.info(String.format("All EOD DTOs size %d", eodDtos.size()));
+        Assertions.assertNotNull(eodDtos);
 
         isDoneTesting = true;
     }
