@@ -8,10 +8,18 @@ import com.koleff.stockserver.stocks.exceptions.IntraDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.IntraDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.IntraDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.IntraDayJsonUtil;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.JobParametersInvalidException;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -31,15 +39,21 @@ public class IntraDayServiceImpl implements IntraDayService {
     private final IntraDayDtoMapper intraDayDtoMapper;
     private final IntraDayJsonUtil intraDayJsonUtil;
 
+    private final JobLauncher jobLauncher;
+    private final Job job;
     @Autowired
     public IntraDayServiceImpl(IntraDayRepositoryImpl intraDayRepositoryImpl,
                                IntraDayDtoMapper intraDayDtoMapper,
                                StockServiceImpl stockServiceImpl,
-                               IntraDayJsonUtil intraDayJsonUtil) {
+                               IntraDayJsonUtil intraDayJsonUtil,
+                               JobLauncher jobLauncher,
+                               @Qualifier("intraDayJob") Job job) {
         this.intraDayRepositoryImpl = intraDayRepositoryImpl;
         this.intraDayDtoMapper = intraDayDtoMapper;
         this.stockServiceImpl = stockServiceImpl;
         this.intraDayJsonUtil = intraDayJsonUtil;
+        this.jobLauncher = jobLauncher;
+        this.job = job;
     }
 
     /**
@@ -126,6 +140,21 @@ public class IntraDayServiceImpl implements IntraDayService {
         data.forEach(intraDayRepositoryImpl::saveAll);
     }
 
+    /**
+     * Save data using Spring Batch
+     */
+    @Override
+    public void saveViaJob() {
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addLong("startAt", System.currentTimeMillis()).toJobParameters();
+        try {
+            jobLauncher.run(job, jobParameters);
+        } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException |
+                 JobParametersInvalidException e) {
+            logger.error("Error saving EOD data via Spring Batch!");
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Delete entry from DB via id

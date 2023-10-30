@@ -8,10 +8,18 @@ import com.koleff.stockserver.stocks.exceptions.EndOfDayNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.EndOfDayRepositoryImpl;
 import com.koleff.stockserver.stocks.service.EndOfDayService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.EndOfDayJsonUtil;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.JobParametersInvalidException;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -30,15 +38,22 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     private final EndOfDayDtoMapper endOfDayDtoMapper;
     private final EndOfDayJsonUtil endOfDayJsonUtil;
 
+    private final JobLauncher jobLauncher;
+    private final Job job;
+
     @Autowired
     public EndOfDayServiceImpl(EndOfDayRepositoryImpl endOfDayRepositoryImpl,
                                StockServiceImpl stockServiceImpl,
                                EndOfDayDtoMapper endOfDayDtoMapper,
-                               EndOfDayJsonUtil endOfDayJsonUtil) {
+                               EndOfDayJsonUtil endOfDayJsonUtil,
+                               JobLauncher jobLauncher,
+                               @Qualifier("eodJob") Job job) {
         this.endOfDayRepositoryImpl = endOfDayRepositoryImpl;
         this.stockServiceImpl = stockServiceImpl;
         this.endOfDayDtoMapper = endOfDayDtoMapper;
         this.endOfDayJsonUtil = endOfDayJsonUtil;
+        this.jobLauncher = jobLauncher;
+        this.job = job;
     }
 
     /**
@@ -123,6 +138,22 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         //Save data entities to DB
         data.parallelStream()
                 .forEach(endOfDayRepositoryImpl::saveAll);
+    }
+
+    /**
+     * Save data using Spring Batch
+     */
+    @Override
+    public void saveViaJob() {
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addLong("startAt", System.currentTimeMillis()).toJobParameters();
+        try {
+            jobLauncher.run(job, jobParameters);
+        } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException |
+                 JobParametersInvalidException e) {
+            logger.error("Error saving EOD data via Spring Batch!");
+            e.printStackTrace();
+        }
     }
 
     /**
