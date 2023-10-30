@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(name = "Timezone")
 @Table(name = "timezone")
@@ -57,8 +58,13 @@ public@Data class Timezone implements Serializable {
     @SerializedName("abbreviation_dst")
     private String abbreviationDst; //Summer time timezone abbreviation (DST -> daylight-saving time)
 
-    @OneToOne //Doesn't need to be bidirectional
-    private StockExchange stockExchange;
+    @OneToMany(
+            mappedBy = "timezone",
+            orphanRemoval = false,
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.LAZY
+    ) //Doesn't need to be bidirectional
+    private List<StockExchange> stockExchange;
 
     @Override
     public String toString() {

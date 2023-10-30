@@ -26,6 +26,7 @@ public class EndOfDayDtoMapper implements Function<EndOfDay, EndOfDayDto> {
                 endOfDay.getAdjLow(),
                 endOfDay.getAdjVolume(),
                 endOfDay.getSplitFactor(),
+                endOfDay.getDividend(),
                 endOfDay.getDate()
         );
     }

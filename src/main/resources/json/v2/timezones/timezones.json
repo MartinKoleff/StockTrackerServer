@@ -1,0 +1,295 @@
+{
+  "pagination": {
+    "limit": 100,
+    "offset": 0,
+    "count": 57,
+    "total": 57
+  },
+  "data": [
+    {
+      "timezone": "America/New_York",
+      "abbreviation": "EST",
+      "abbreviation_dst": "EDT"
+    },
+    {
+      "timezone": "America/Argentina/Buenos_Aires",
+      "abbreviation": "-03",
+      "abbreviation_dst": "-03"
+    },
+    {
+      "timezone": "Europe/Vienna",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Asia/Bahrain",
+      "abbreviation": "+03",
+      "abbreviation_dst": "+03"
+    },
+    {
+      "timezone": "Europe/Brussels",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "America/Sao_Paulo",
+      "abbreviation": "-03",
+      "abbreviation_dst": "-03"
+    },
+    {
+      "timezone": "America/Toronto",
+      "abbreviation": "EST",
+      "abbreviation_dst": "EDT"
+    },
+    {
+      "timezone": "America/Vancouver",
+      "abbreviation": "PST",
+      "abbreviation_dst": "PDT"
+    },
+    {
+      "timezone": "America/Santiago",
+      "abbreviation": "-03",
+      "abbreviation_dst": "-04"
+    },
+    {
+      "timezone": "Asia/Shanghai",
+      "abbreviation": "CST",
+      "abbreviation_dst": "CST"
+    },
+    {
+      "timezone": "Europe/Copenhagen",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Africa/Cairo",
+      "abbreviation": "EET",
+      "abbreviation_dst": "EET"
+    },
+    {
+      "timezone": "Europe/Tallinn",
+      "abbreviation": "EET",
+      "abbreviation_dst": "EEST"
+    },
+    {
+      "timezone": "Europe/Helsinki",
+      "abbreviation": "EET",
+      "abbreviation_dst": "EEST"
+    },
+    {
+      "timezone": "Europe/Paris",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Europe/Berlin",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Europe/Athens",
+      "abbreviation": "EET",
+      "abbreviation_dst": "EEST"
+    },
+    {
+      "timezone": "Asia/Hong_Kong",
+      "abbreviation": "HKT",
+      "abbreviation_dst": "HKT"
+    },
+    {
+      "timezone": "Europe/Budapest",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Atlantic/Reykjavik",
+      "abbreviation": "GMT",
+      "abbreviation_dst": "GMT"
+    },
+    {
+      "timezone": "Asia/Kolkata",
+      "abbreviation": "IST",
+      "abbreviation_dst": "IST"
+    },
+    {
+      "timezone": "Asia/Jakarta",
+      "abbreviation": "WIB",
+      "abbreviation_dst": "WIB"
+    },
+    {
+      "timezone": "Europe/Dublin",
+      "abbreviation": "GMT",
+      "abbreviation_dst": "IST"
+    },
+    {
+      "timezone": "Asia/Jerusalem",
+      "abbreviation": "IST",
+      "abbreviation_dst": "IDT"
+    },
+    {
+      "timezone": "Europe/Rome",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Asia/Tokyo",
+      "abbreviation": "JST",
+      "abbreviation_dst": "JST"
+    },
+    {
+      "timezone": "Europe/Riga",
+      "abbreviation": "EET",
+      "abbreviation_dst": "EEST"
+    },
+    {
+      "timezone": "Europe/Vilnius",
+      "abbreviation": "EET",
+      "abbreviation_dst": "EEST"
+    },
+    {
+      "timezone": "Europe/Luxembourg",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Asia/Kuala_Lumpur",
+      "abbreviation": "+08",
+      "abbreviation_dst": "+08"
+    },
+    {
+      "timezone": "America/Mexico_City",
+      "abbreviation": "CST",
+      "abbreviation_dst": "CDT"
+    },
+    {
+      "timezone": "Europe/Amsterdam",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Pacific/Auckland",
+      "abbreviation": "NZDT",
+      "abbreviation_dst": "NZST"
+    },
+    {
+      "timezone": "Africa/Lagos",
+      "abbreviation": "WAT",
+      "abbreviation_dst": "WAT"
+    },
+    {
+      "timezone": "Europe/Oslo",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Asia/Karachi",
+      "abbreviation": "PKT",
+      "abbreviation_dst": "PKT"
+    },
+    {
+      "timezone": "Asia/Manila",
+      "abbreviation": "PST",
+      "abbreviation_dst": "PST"
+    },
+    {
+      "timezone": "Europe/Warsaw",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Europe/Lisbon",
+      "abbreviation": "WET",
+      "abbreviation_dst": "WEST"
+    },
+    {
+      "timezone": "Asia/Qatar",
+      "abbreviation": "+03",
+      "abbreviation_dst": "+03"
+    },
+    {
+      "timezone": "Europe/Moscow",
+      "abbreviation": "MSK",
+      "abbreviation_dst": "MSK"
+    },
+    {
+      "timezone": "Asia/Riyadh",
+      "abbreviation": "+03",
+      "abbreviation_dst": "+03"
+    },
+    {
+      "timezone": "Europe/Belgrade",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Asia/Singapore",
+      "abbreviation": "+08",
+      "abbreviation_dst": "+08"
+    },
+    {
+      "timezone": "Africa/Johannesburg",
+      "abbreviation": "SAST",
+      "abbreviation_dst": "SAST"
+    },
+    {
+      "timezone": "Asia/Seoul",
+      "abbreviation": "KST",
+      "abbreviation_dst": "KST"
+    },
+    {
+      "timezone": "Europe/Madrid",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Europe/Stockholm",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Europe/Zurich",
+      "abbreviation": "CET",
+      "abbreviation_dst": "CEST"
+    },
+    {
+      "timezone": "Asia/Taipei",
+      "abbreviation": "CST",
+      "abbreviation_dst": "CST"
+    },
+    {
+      "timezone": "Asia/Bangkok",
+      "abbreviation": "+07",
+      "abbreviation_dst": "+07"
+    },
+    {
+      "timezone": "Europe/Istanbul",
+      "abbreviation": "+03",
+      "abbreviation_dst": "+03"
+    },
+    {
+      "timezone": "Asia/Dubai",
+      "abbreviation": "+04",
+      "abbreviation_dst": "+04"
+    },
+    {
+      "timezone": "Europe/London",
+      "abbreviation": "GMT",
+      "abbreviation_dst": "BST"
+    },
+    {
+      "timezone": "Asia/Ho_Chi_Minh",
+      "abbreviation": "+07",
+      "abbreviation_dst": "+07"
+    },
+    {
+      "timezone": "Australia/Sydney",
+      "abbreviation": "AEST",
+      "abbreviation_dst": "AEDT"
+    },
+    {
+      "timezone": "America/Chicago",
+      "abbreviation": "CDT",
+      "abbreviation_dst": "CDT"
+    }
+  ]
+}

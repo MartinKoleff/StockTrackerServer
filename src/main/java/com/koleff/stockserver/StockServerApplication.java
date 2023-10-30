@@ -5,15 +5,23 @@ import com.koleff.stockserver.remoteApi.client.v2.IntraDayPublicApiClientV2;
 import com.koleff.stockserver.remoteApi.client.v2.StockExchangePublicApiClientV2;
 import com.koleff.stockserver.remoteApi.client.v2.StockPublicApiClientV2;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication(
-        exclude ={ElasticsearchRestClientAutoConfiguration.class}
+        exclude = {
+                ElasticsearchRestClientAutoConfiguration.class,
+//                DataSourceAutoConfiguration.class,
+//                HibernateJpaAutoConfiguration.class
+        }
 )
 @ConfigurationPropertiesScan
 @EnableJpaRepositories
@@ -26,6 +34,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         }
 )
 @EnableConfigurationProperties
+@EnableAsync
 public class StockServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(StockServerApplication.class, args);

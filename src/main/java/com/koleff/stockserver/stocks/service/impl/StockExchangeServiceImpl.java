@@ -5,10 +5,11 @@ import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.StockExchangeDto;
 import com.koleff.stockserver.stocks.dto.mapper.StockExchangeDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.StockExchangeNotFoundException;
-import com.koleff.stockserver.stocks.repository.StockExchangeRepository;
+import com.koleff.stockserver.stocks.repository.impl.StockExchangeRepositoryImpl;
 import com.koleff.stockserver.stocks.service.StockExchangeService;
-import com.koleff.stockserver.stocks.utils.jsonUtil.base.JsonUtil;
+import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,17 +17,19 @@ import java.util.List;
 @Service
 public class StockExchangeServiceImpl implements StockExchangeService {
 
-    private final StockExchangeRepository stockExchangeRepository;
+    @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
+    private String versionAnnotation;
+    private final StockExchangeRepositoryImpl stockExchangeRepositoryImpl;
     private final StockExchangeDtoMapper stockExchangeDtoMapper;
-    private final JsonUtil<DataWrapper<StockExchange>> jsonUtil;
+    private final StockExchangeJsonUtil stockExchangeJsonUtil;
 
     @Autowired
-    public StockExchangeServiceImpl(StockExchangeRepository stockExchangeRepository,
+    public StockExchangeServiceImpl(StockExchangeRepositoryImpl stockExchangeRepositoryImpl,
                                     StockExchangeDtoMapper stockExchangeDtoMapper,
-                                    JsonUtil<DataWrapper<StockExchange>> jsonUtil) {
-        this.stockExchangeRepository = stockExchangeRepository;
+                                    StockExchangeJsonUtil stockExchangeJsonUtil) {
+        this.stockExchangeRepositoryImpl = stockExchangeRepositoryImpl;
         this.stockExchangeDtoMapper = stockExchangeDtoMapper;
-        this.jsonUtil = jsonUtil;
+        this.stockExchangeJsonUtil = stockExchangeJsonUtil;
     }
 
     /**
@@ -34,7 +37,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public StockExchangeDto getStockExchange(Long id) {
-        return stockExchangeRepository.findById(id)
+        return stockExchangeRepositoryImpl.findById(id)
                 .stream()
                 .map(stockExchangeDtoMapper)
                 .findFirst()
@@ -52,7 +55,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public List<StockExchangeDto> getStockExchange(String country) {
-        return stockExchangeRepository.getStockExchangeByCountry(country)
+        return stockExchangeRepositoryImpl.getStockExchangeByCountry(country)
                 .stream()
                 .map(stockExchangeDtoMapper)
                 .toList();
@@ -63,7 +66,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public List<StockExchangeDto> getStockExchanges() {
-        return stockExchangeRepository.findAll()
+        return stockExchangeRepositoryImpl.findAll()
                 .stream()
                 .map(stockExchangeDtoMapper)
                 .toList();
@@ -74,7 +77,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public void saveStockExchange(StockExchange stockExchange) {
-        stockExchangeRepository.save(stockExchange);
+        stockExchangeRepositoryImpl.save(stockExchange);
     }
 
     /**
@@ -82,7 +85,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public void saveStockExchanges(List<StockExchange> stockExchanges) {
-        stockExchangeRepository.saveAll(stockExchanges);
+        stockExchangeRepositoryImpl.saveAll(stockExchanges);
     }
 
     /**
@@ -90,7 +93,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public void deleteById(Long id) {
-        stockExchangeRepository.deleteById(id);
+        stockExchangeRepositoryImpl.deleteById(id);
     }
 
     /**
@@ -98,7 +101,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public void deleteAll() {
-        stockExchangeRepository.deleteAll();
+        stockExchangeRepositoryImpl.deleteAll();
     }
 
     /**
@@ -106,10 +109,13 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public List<StockExchange> loadAllStockExchanges() {
-        String json = jsonUtil.loadJson("stockExchanges.json");
+        //Configure json based on current stock
+        String filePath = String.format("exchanges%s.json", versionAnnotation);
 
-        DataWrapper<StockExchange> data = jsonUtil.convertJson(json);
-        System.out.println(data);
+        //Load data from json
+        String json = stockExchangeJsonUtil.loadJson(filePath);
+
+        DataWrapper<StockExchange> data = stockExchangeJsonUtil.convertJson(json);
 
         return data.getData();
     }

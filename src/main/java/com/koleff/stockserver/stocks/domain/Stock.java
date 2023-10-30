@@ -102,7 +102,7 @@ public @Data class Stock implements Serializable {
             updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
-                    name = "stock_exchange_fk" //to check for foreign key...
+                    name = "stock_exchange_fk"
             )
     )
     private StockExchange stockExchange;

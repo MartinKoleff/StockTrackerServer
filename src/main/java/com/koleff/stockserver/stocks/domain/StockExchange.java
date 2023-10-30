@@ -50,15 +50,6 @@ public @Data class StockExchange implements Serializable{
     private String acronym;
 
     @Column(
-            name = "exchange",
-            nullable = false,
-            columnDefinition = "TEXT"
-    )
-    @NotNull(message = "Exchange must not be empty.")
-    @SerializedName("exchange")
-    private String exchange;
-
-    @Column(
             name = "country",
             nullable = false,
             columnDefinition = "TEXT"
@@ -110,14 +101,17 @@ public @Data class StockExchange implements Serializable{
     @SerializedName("currency_id")
     private Long currencyId;
 
-    @OneToMany //Doesn't need to be bidirectional
-    private List<Stock> stock;
-
-    @OneToOne(
+    @OneToMany(
             mappedBy = "stockExchange",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY,
             orphanRemoval = false
+    )
+    private List<Stock> stocks;  //Doesn't need to be bidirectional
+
+    @ManyToOne(
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.LAZY
     )
     @JoinColumn(
             name = "timezone_id",
@@ -126,16 +120,14 @@ public @Data class StockExchange implements Serializable{
             updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
-                    name = "timezone_id_fk" //to check for foreign key...
+                    name = "timezone_id_fk"
             )
     )
-    private Timezone timezone;
+    private Timezone timezone;  //Doesn't need to be bidirectional
 
-    @OneToOne(
-            mappedBy = "stockExchange",
+    @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY,
-            orphanRemoval = false
+            fetch = FetchType.LAZY
     )
     @JoinColumn(
             name = "currency_id",
@@ -144,10 +136,30 @@ public @Data class StockExchange implements Serializable{
             updatable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
-                    name = "currency_id_fk" //to check for foreign key...
+                    name = "currency_id_fk"
             )
     )
-    private Currency currency;
+    private Currency currency;  //Doesn't need to be bidirectional
+
+    public StockExchange(Long id,
+                         String name,
+                         String acronym,
+                         String country,
+                         String countryCode,
+                         String city,
+                         String website,
+                         Long timezoneId,
+                         Long currencyId) {
+        this.id = id;
+        this.name = name;
+        this.acronym = acronym;
+        this.country = country;
+        this.countryCode = countryCode;
+        this.city = city;
+        this.website = website;
+        this.timezoneId = timezoneId;
+        this.currencyId = currencyId;
+    }
 
     @Override
     public String toString() {
@@ -155,7 +167,6 @@ public @Data class StockExchange implements Serializable{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", acronym='" + acronym + '\'' +
-                ", exchange='" + exchange + '\'' +
                 ", country='" + country + '\'' +
                 ", countryCode='" + countryCode + '\'' +
                 ", city='" + city + '\'' +

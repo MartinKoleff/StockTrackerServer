@@ -25,6 +25,8 @@ public record EndOfDayDto(
         Double adjustVolume,
         @SerializedName("split_factor")
         Double splitFactor,
+        @SerializedName("dividend")
+        Double dividend,
         @SerializedName("date")
         String date
 ) {

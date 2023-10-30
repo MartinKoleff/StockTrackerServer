@@ -1,5 +1,6 @@
 package com.koleff.stockserver.remoteApi.service.impl;
 
+import com.koleff.stockserver.remoteApi.client.v2.IntraDayPublicApiClientV2;
 import com.koleff.stockserver.remoteApi.service.impl.base.PublicApiServiceImpl;
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.service.impl.IntraDayServiceImpl;
@@ -15,15 +16,18 @@ import java.util.List;
 public class IntraDayPublicApiServiceImpl extends PublicApiServiceImpl<IntraDay> {
 
     private final IntraDayServiceImpl intraDayServiceImpl;
+    private final IntraDayPublicApiClientV2 intraDayPublicApiClientV2;
     private final StockServiceImpl stockServiceImpl;
 
     @Autowired
     public IntraDayPublicApiServiceImpl(StockServiceImpl stockServiceImpl,
                                         IntraDayJsonUtil jsonUtil,
-                                        IntraDayServiceImpl intraDayServiceImpl) {
-        super(stockServiceImpl, jsonUtil);
+                                        IntraDayServiceImpl intraDayServiceImpl,
+                                        IntraDayPublicApiClientV2 intraDayPublicApiClientV2) {
+        super(stockServiceImpl, intraDayPublicApiClientV2, jsonUtil);
         this.intraDayServiceImpl = intraDayServiceImpl;
         this.stockServiceImpl = stockServiceImpl;
+        this.intraDayPublicApiClientV2 = intraDayPublicApiClientV2;
     }
 
 

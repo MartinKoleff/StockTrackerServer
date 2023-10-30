@@ -8,10 +8,6 @@ public record StockExchangeDto (
 
     @SerializedName("acronym")
     String acronym,
-
-    @SerializedName("exchange")
-    String exchange,
-
     @SerializedName("country")
     String country,
 
