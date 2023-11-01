@@ -35,12 +35,12 @@ public class EndOfDayController {
         return endOfDayServiceImpl.getEndOfDays(stockTag);
     }
 
-    @GetMapping("get/{stock_tag}")
+    @GetMapping("get/filterByDates/{stock_tag}")
     public List<EndOfDayDto> getEndOfDays(@PathVariable("stock_tag") String stockTag, String dateFrom, String dateTo) {
         return endOfDayServiceImpl.getEndOfDays(stockTag, dateFrom, dateTo);
     }
 
-    @GetMapping("get/{stock_tag}")
+    @GetMapping("get/filterByDate/{stock_tag}")
     public EndOfDayDto getEndOfDay(@PathVariable("stock_tag") String stockTag, String date) {
         return endOfDayServiceImpl.getEndOfDay(stockTag, date);
     }

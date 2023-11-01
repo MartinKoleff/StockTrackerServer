@@ -35,12 +35,12 @@ public class IntraDayController {
         return intraDayServiceImpl.getIntraDays(stockTag);
     }
 
-    @GetMapping("get/{stock_tag}")
+    @GetMapping("get/filterByDates/{stock_tag}")
     public List<IntraDayDto> getIntraDays(@PathVariable("stock_tag") String stockTag, String dateFrom, String dateTo) {
         return intraDayServiceImpl.getIntraDays(stockTag, dateFrom, dateTo);
     }
 
-    @GetMapping("get/{stock_tag}")
+    @GetMapping("get/filterByDate/{stock_tag}")
     public IntraDayDto getIntraDay(@PathVariable("stock_tag") String stockTag, String date) {
         return intraDayServiceImpl.getIntraDay(stockTag, date);
     }
