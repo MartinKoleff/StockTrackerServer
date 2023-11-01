@@ -60,7 +60,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      * Get intraDay from DB via stockTag
      */
     @Override
-    public List<IntraDayDto> getIntraDay(String stockTag) {
+    public List<IntraDayDto> getIntraDays(String stockTag) {
         return intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
@@ -74,11 +74,45 @@ public class IntraDayServiceImpl implements IntraDayService {
                 .toList();
     }
 
+    @Override
+    public List<IntraDayDto> getIntraDays(String stockTag, String dateFrom, String dateTo) {
+        return intraDayRepositoryImpl.findIntraDayByStockTag(stockTag, dateFrom, dateTo)
+                .orElseThrow(
+                        () -> new IntraDayNotFoundException(
+                                String.format("Intra day for stock tag %s between dates %s and %s not found.",
+                                        stockTag,
+                                        dateFrom,
+                                        dateTo
+                                )
+                        )
+                )
+                .stream()
+                .map(intraDayDtoMapper)
+                .toList();
+    }
+
+    @Override
+    public IntraDayDto getIntraDay(String stockTag, String date) {
+        return intraDayRepositoryImpl.findIntraDayByStockTag(stockTag, date)
+                .orElseThrow(
+                        () -> new IntraDayNotFoundException(
+                                String.format("Intra day for stock tag %s for date %s not found.",
+                                        stockTag,
+                                        date
+                                )
+                        )
+                )
+                .stream()
+                .map(intraDayDtoMapper)
+                .findFirst()
+                .orElseThrow(); //TODO: add exception
+    }
+
     /**
      * Get intraDay from DB via id
      */
     @Override
-    public List<IntraDayDto> getIntraDay(Long id) {
+    public List<IntraDayDto> getIntraDays(Long id) {
         return intraDayRepositoryImpl.findAllById(id)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
