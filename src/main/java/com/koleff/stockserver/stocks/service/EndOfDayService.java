@@ -7,8 +7,10 @@ import java.util.List;
 
 public interface EndOfDayService {
 
-    List<EndOfDayDto> getEndOfDay(String stockTag);
-    List<EndOfDayDto> getEndOfDay(Long id);
+    List<EndOfDayDto> getEndOfDays(String stockTag);
+    List<EndOfDayDto> getEndOfDays(String stockTag, String dateFrom, String dateTo);
+    EndOfDayDto getEndOfDay(String stockTag, String date);
+    List<EndOfDayDto> getEndOfDays(Long id);
     List<List<EndOfDayDto>> getAllEndOfDays();
     void saveEndOfDay(List<EndOfDay> data);
     void saveAllEndOfDays(List<List<EndOfDay>> data);

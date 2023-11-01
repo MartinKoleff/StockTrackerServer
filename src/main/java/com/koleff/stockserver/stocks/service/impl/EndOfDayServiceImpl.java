@@ -60,7 +60,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      * Get end of day from DB via stockTag
      */
     @Override
-    public List<EndOfDayDto> getEndOfDay(String stockTag) {
+    public List<EndOfDayDto> getEndOfDays(String stockTag) {
         return endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
@@ -74,11 +74,45 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                 .toList();
     }
 
+    @Override
+    public List<EndOfDayDto> getEndOfDays(String stockTag, String dateFrom, String dateTo) {
+        return endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag, dateFrom, dateTo)
+                .orElseThrow(
+                        () -> new EndOfDayNotFoundException(
+                                String.format("End of day for stock tag %s between dates %s and %s not found.",
+                                        stockTag,
+                                        dateFrom,
+                                        dateFrom
+                                )
+                        )
+                )
+                .stream()
+                .map(endOfDayDtoMapper)
+                .toList();
+    }
+
+    @Override
+    public EndOfDayDto getEndOfDay(String stockTag, String date) {
+        return endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag, date)
+                .orElseThrow(
+                        () -> new EndOfDayNotFoundException(
+                                String.format("End of day for stock tag %s for date %s not found.",
+                                        stockTag,
+                                        date
+                                )
+                        )
+                )
+                .stream()
+                .map(endOfDayDtoMapper)
+                .findFirst()
+                .orElseThrow(); //TODO: add exception
+    }
+
     /**
      * Get end of day from DB via id
      */
     @Override
-    public List<EndOfDayDto> getEndOfDay(Long id) {
+    public List<EndOfDayDto> getEndOfDays(Long id) {
         return endOfDayRepositoryImpl.findAllById(id)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
