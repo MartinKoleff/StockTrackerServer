@@ -18,6 +18,6 @@ public interface IntraDayService {
     void deleteById(Long id);
     void deleteByStockTag(String stockTag);
     void deleteAll();
-    List<IntraDay> loadIntraDay(String stockTag);
+    List<IntraDay> loadIntraDays(String stockTag);
     List<List<IntraDay>> loadAllIntraDays();
 }

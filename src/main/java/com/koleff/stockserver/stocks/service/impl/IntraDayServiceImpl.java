@@ -219,7 +219,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      * Load one entry from JSON
      */
     @Override
-    public List<IntraDay> loadIntraDay(String stockTag) {
+    public List<IntraDay> loadIntraDays(String stockTag) {
         //Configure json based on current stock
         String filePath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
 
@@ -243,7 +243,7 @@ public class IntraDayServiceImpl implements IntraDayService {
                 .forEach(
                         stockTag -> {
                             try {
-                                List<IntraDay> entry = loadIntraDay(stockTag);
+                                List<IntraDay> entry = loadIntraDays(stockTag);
 
                                 data.add(entry);
                             } catch (NullPointerException e) {

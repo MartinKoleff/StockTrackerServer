@@ -218,7 +218,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      * Load one entry from JSON
      */
     @Override
-    public List<EndOfDay> loadEndOfDay(String stockTag) {
+    public List<EndOfDay> loadEndOfDays(String stockTag) {
         //Configure json based on current stock
         String filePath = String.format("eod%s%s.json", stockTag, versionAnnotation);
 
@@ -241,7 +241,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                 .forEach(
                         stockTag -> {
                             try {
-                                List<EndOfDay> entry = loadEndOfDay(stockTag);
+                                List<EndOfDay> entry = loadEndOfDays(stockTag);
 
                                 data.add(entry);
                             } catch (NullPointerException e) {

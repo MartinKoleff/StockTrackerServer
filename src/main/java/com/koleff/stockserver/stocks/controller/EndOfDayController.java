@@ -74,7 +74,7 @@ public class EndOfDayController {
      * Load from JSON
      */
     @GetMapping("load/{stock_tag}")
-    public List<EndOfDay> loadEndOfDay(@PathVariable("stock_tag") String stockTag) {
-        return endOfDayServiceImpl.loadEndOfDay(stockTag);
+    public List<EndOfDay> loadEndOfDays(@PathVariable("stock_tag") String stockTag) {
+        return endOfDayServiceImpl.loadEndOfDays(stockTag);
     }
 }

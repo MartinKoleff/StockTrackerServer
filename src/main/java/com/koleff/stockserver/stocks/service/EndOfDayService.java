@@ -18,6 +18,6 @@ public interface EndOfDayService {
     void deleteById(Long id);
     void deleteByStockTag(String stockTag);
     void deleteAll();
-    List<EndOfDay> loadEndOfDay(String stockTag);
+    List<EndOfDay> loadEndOfDays(String stockTag);
     List<List<EndOfDay>> loadAllEndOfDays();
 }

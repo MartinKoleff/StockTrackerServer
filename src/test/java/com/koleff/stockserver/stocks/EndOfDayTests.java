@@ -145,10 +145,10 @@ public class EndOfDayTests {
     void eodFetchingOneEntryTest() {
         String stockTag = "AAPL";
 
-        List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDay(stockTag);
+        List<EndOfDayDto> eodDtos = endOfDayServiceImpl.getEndOfDays(stockTag);
 
-        logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
-        Assertions.assertNotNull(eodDto);
+        logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDtos));
+        Assertions.assertNotNull(eodDtos);
 
     }
 
@@ -166,10 +166,10 @@ public class EndOfDayTests {
         endOfDayServiceImpl.saveAllEndOfDays(eods);
 
         //Check if entries are in DB
-        List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
+        List<List<EndOfDayDto>> allEodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
-        logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
-        Assertions.assertNotNull(eodDtos);
+        logger.info(String.format("All EOD DTOs from DB: %s", allEodDtos));
+        Assertions.assertNotNull(allEodDtos);
     }
 
     @Test
@@ -182,13 +182,13 @@ public class EndOfDayTests {
         String stockTag = "AAPL";
 
         //Load data from JSON
-        List<EndOfDay> eod = endOfDayServiceImpl.loadEndOfDay(stockTag);
+        List<EndOfDay> eod = endOfDayServiceImpl.loadEndOfDays(stockTag);
 
         //Save data to DB
         endOfDayServiceImpl.saveEndOfDay(eod);
 
         //Check if entries are in DB
-        List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDay(stockTag);
+        List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDays(stockTag);
 
         logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
         Assertions.assertNotNull(eodDto);

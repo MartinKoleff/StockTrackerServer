@@ -73,7 +73,7 @@ public class IntraDayController {
      * Load from JSON
      */
     @GetMapping("load/{stock_tag}")
-    public List<IntraDay> loadIntraDay(@PathVariable("stock_tag") String stockTag) {
-        return intraDayServiceImpl.loadIntraDay(stockTag);
+    public List<IntraDay> loadIntraDays(@PathVariable("stock_tag") String stockTag) {
+        return intraDayServiceImpl.loadIntraDays(stockTag);
     }
 }

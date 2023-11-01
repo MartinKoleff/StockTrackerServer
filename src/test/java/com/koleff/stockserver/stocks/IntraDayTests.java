@@ -144,7 +144,7 @@ public class IntraDayTests {
     void intraDayFetchingOneEntryTest() {
         String stockTag = "AAPL";
 
-        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDay(stockTag);
+        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDays(stockTag);
 
         logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
         Assertions.assertNotNull(intraDayDto);
@@ -165,10 +165,10 @@ public class IntraDayTests {
         intraDayServiceImpl.saveAllIntraDays(intraDays);
 
         //Check if entries are in DB
-        List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
+        List<List<IntraDayDto>> allIntraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
-        logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
-        Assertions.assertNotNull(intraDayDtos);
+        logger.info(String.format("All IntraDay DTOs from DB: %s", allIntraDayDtos));
+        Assertions.assertNotNull(allIntraDayDtos);
 
     }
 
@@ -182,13 +182,13 @@ public class IntraDayTests {
         String stockTag = "AAPL";
 
         //Load data from JSON
-        List<IntraDay> intraDays = intraDayServiceImpl.loadIntraDay(stockTag);
+        List<IntraDay> intraDays = intraDayServiceImpl.loadIntraDays(stockTag);
 
         //Save data to DB
         intraDayServiceImpl.saveIntraDay(intraDays);
 
         //Check if entries are in DB
-        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDay(stockTag);
+        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDays(stockTag);
 
         logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
         Assertions.assertNotNull(intraDayDto);
