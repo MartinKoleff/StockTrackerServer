@@ -12,6 +12,8 @@ public interface EndOfDayRepository extends JpaRepository<EndOfDay, Long> {
 
     Optional<List<EndOfDay>> findEndOfDayByStockTag(String stockTag);
 
+    Optional<List<EndOfDay>> findEndOfDayByStockTag(String stockTag, String dateFrom, String dateTo);
+
     Optional<List<EndOfDay>> findAllById(Long stockId);
 
     int deleteByStockTag(String stockTag);

@@ -22,13 +22,25 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
     @Query(
             value = "SELECT id FROM IntraDay id " +
                     "JOIN Stock s ON (s.id = id.stockId) " +
-                    "WHERE s.tag = ?1")
+                    "WHERE s.tag = ?1 AND " +
+                    "id.date BETWEEN ?2 AND ?3"
+    )
     Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag);
+
 
     @Override
     @Query(
             value = "SELECT id FROM IntraDay id " +
-                    "WHERE id.id = ?1")
+                    "JOIN Stock s ON (s.id = id.stockId) " +
+                    "WHERE s.tag = ?1"
+    )
+    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag, String dateFrom, String dateTo);
+
+    @Override
+    @Query(
+            value = "SELECT id FROM IntraDay id " +
+                    "WHERE id.id = ?1"
+    )
     Optional<List<IntraDay>> findAllById(Long stockId);
 
     @Override
@@ -37,7 +49,8 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
             value = "DELETE FROM intra_day id " +
                     "USING stock s " +
                     "WHERE s.tag = $1",
-            nativeQuery = true)
+            nativeQuery = true
+    )
     int deleteByStockTag(String stockTag);
 }
 

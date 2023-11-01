@@ -28,6 +28,15 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
     @Override
     @Query(
             value = "SELECT eod FROM EndOfDay eod " +
+                    "JOIN Stock s ON (s.id = eod.stockId) " +
+                    "WHERE s.tag = ?1 AND " +
+                    "eod.date BETWEEN ?2 AND ?3"
+    )
+    Optional<List<EndOfDay>> findEndOfDayByStockTag(String stockTag, String dateFrom, String dateTo);
+
+    @Override
+    @Query(
+            value = "SELECT eod FROM EndOfDay eod " +
                     "WHERE eod.id = ?1"
     )
     Optional<List<EndOfDay>> findAllById(Long stockId);
@@ -38,7 +47,8 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
             value = "DELETE FROM end_of_day eod " +
                     "USING stock s " +
                     "WHERE s.tag = $1",
-            nativeQuery = true)
+            nativeQuery = true
+    )
     int deleteByStockTag(String stockTag);
 }
 
