@@ -37,6 +37,15 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
     @Override
     @Query(
             value = "SELECT eod FROM EndOfDay eod " +
+                    "JOIN Stock s ON (s.id = eod.stockId) " +
+                    "WHERE s.tag = ?1 AND " +
+                    "eod.date = ?2"
+    )
+    Optional<List<EndOfDay>> findEndOfDayByStockTag(String stockTag, String date);
+
+    @Override
+    @Query(
+            value = "SELECT eod FROM EndOfDay eod " +
                     "WHERE eod.id = ?1"
     )
     Optional<List<EndOfDay>> findAllById(Long stockId);
