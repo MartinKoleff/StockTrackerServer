@@ -22,19 +22,28 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
     @Query(
             value = "SELECT id FROM IntraDay id " +
                     "JOIN Stock s ON (s.id = id.stockId) " +
-                    "WHERE s.tag = ?1 AND " +
-                    "id.date BETWEEN ?2 AND ?3"
+                    "WHERE s.tag = ?1"
     )
-    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag);
+    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag, String dateFrom, String dateTo);
 
 
     @Override
     @Query(
             value = "SELECT id FROM IntraDay id " +
                     "JOIN Stock s ON (s.id = id.stockId) " +
-                    "WHERE s.tag = ?1"
+                    "WHERE s.tag = ?1 AND " +
+                    "id.date BETWEEN ?2 AND ?3"
     )
-    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag, String dateFrom, String dateTo);
+    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag);
+
+    @Override
+    @Query(
+            value = "SELECT id FROM IntraDay id " +
+                    "JOIN Stock s ON (s.id = id.stockId) " +
+                    "WHERE s.tag = ?1 AND " +
+                    "id.date = ?2"
+    )
+    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag, String date);
 
     @Override
     @Query(
