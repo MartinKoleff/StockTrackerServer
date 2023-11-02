@@ -25,23 +25,18 @@ public interface CurrencyRepositoryImpl extends CurrencyRepository {
                     "JOIN Stock s ON (s.stockExchangeId = se.id)" +
                     "WHERE s.tag = ?1"
     )
-    Optional<Currency> findByStockTag(String stockTag);
-
-    @Query(
-            value = "SELECT c.code FROM Currency c "
-    )
-    Optional<List<String>> getCurrencyCodes();
+    Optional<Currency> findByStockExchanges_Stocks_Tag(String stockTag);
 
     @Override
     @Query(
             value = "SELECT c FROM Currency c " +
                     "WHERE c.code = ?1"
     )
-    Optional<Currency> findCurrencyByCurrencyCode(String currencyCode);
+    Optional<Currency> findByCode(String currencyCode);
 
     @Override
     @Modifying
     @Query("DELETE FROM Currency c WHERE c.code = ?1")
-    void deleteByCurrencyCode(String currencyCode);
+    void deleteByCode(String currencyCode);
 }
 
