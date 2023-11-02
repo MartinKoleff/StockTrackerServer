@@ -3,7 +3,6 @@ package com.koleff.stockserver.stocks.service;
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
 
-import java.util.Date;
 import java.util.List;
 
 public interface EndOfDayService {

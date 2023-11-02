@@ -4,7 +4,6 @@ import com.koleff.stockserver.stocks.domain.Currency;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.dto.CurrencyDto;
 import com.koleff.stockserver.stocks.dto.mapper.CurrencyDtoMapper;
-import com.koleff.stockserver.stocks.exceptions.CurrenciesNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.CurrencyNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.CurrencyRepositoryImpl;
 import com.koleff.stockserver.stocks.service.CurrencyService;

@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface StockExchangeRepository extends JpaRepository<StockExchange, Long> {
-
     List<StockExchange> findByCountry(String country);
     void truncateStockExchange();
 }
