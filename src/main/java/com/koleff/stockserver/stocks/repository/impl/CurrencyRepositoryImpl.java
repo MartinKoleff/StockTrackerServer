@@ -42,6 +42,6 @@ public interface CurrencyRepositoryImpl extends CurrencyRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE currency RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncate();
+    void truncateCurrency();
 }
 

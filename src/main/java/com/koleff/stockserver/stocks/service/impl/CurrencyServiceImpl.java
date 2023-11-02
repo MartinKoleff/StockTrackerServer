@@ -147,8 +147,8 @@ public class CurrencyServiceImpl implements CurrencyService {
     }
 
     @Override
-    public void truncate() {
-        currencyRepositoryImpl.truncate();
+    public void truncateTable() {
+        currencyRepositoryImpl.truncateCurrency();
     }
 
     /**

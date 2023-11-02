@@ -64,6 +64,6 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE end_of_day RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncate();
+    void truncateEndOfDay();
 }
 

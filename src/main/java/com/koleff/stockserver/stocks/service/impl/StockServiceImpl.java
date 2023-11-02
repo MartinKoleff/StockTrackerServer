@@ -190,8 +190,8 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
-    public void truncate() {
-        stockRepositoryImpl.truncate();
+    public void truncateTable() {
+        stockRepositoryImpl.truncateStock();
     }
 
     /**

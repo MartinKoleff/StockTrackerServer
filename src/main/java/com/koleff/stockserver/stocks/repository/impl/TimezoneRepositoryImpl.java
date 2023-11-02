@@ -41,6 +41,6 @@ public interface TimezoneRepositoryImpl extends TimezoneRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE timezone RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncate();
+    void truncateTimezone();
 }
 

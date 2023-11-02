@@ -66,6 +66,6 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE intra_day RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncate();
+    void truncateIntraDay();
 }
 

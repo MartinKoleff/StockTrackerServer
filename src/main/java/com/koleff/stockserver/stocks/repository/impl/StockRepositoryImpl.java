@@ -75,5 +75,5 @@ public interface StockRepositoryImpl extends StockRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE stock RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncate();
+    void truncateStock();
 }

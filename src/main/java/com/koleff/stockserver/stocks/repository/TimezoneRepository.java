@@ -17,5 +17,5 @@ public interface TimezoneRepository extends JpaRepository<Timezone, Long> {
 
     Optional<Timezone> findTimezoneByTimezone(String timezone);
     void deleteByTimezone(String timezone);
-    void truncate();
+    void truncateTimezone();
 }

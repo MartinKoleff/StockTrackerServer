@@ -20,7 +20,7 @@ public interface StockService {
     void deleteById(Long id);
     void deleteByStockTag(String stockTag);
     void deleteAll();
-    void truncate();
+    void truncateTable();
     Stock loadStock(String stockTag);
     List<Stock> loadAllStocks();
 }
