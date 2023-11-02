@@ -30,5 +30,5 @@ public interface StockExchangeRepositoryImpl extends StockExchangeRepository {
     @Query(
             value = "SELECT se FROM StockExchange se WHERE se.country = ?1"
     )
-    List<StockExchange> getStockExchangeByCountry(String country);
+    List<StockExchange> findByCountry(String country);
 }
