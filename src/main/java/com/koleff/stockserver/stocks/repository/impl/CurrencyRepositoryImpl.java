@@ -38,5 +38,10 @@ public interface CurrencyRepositoryImpl extends CurrencyRepository {
     @Modifying
     @Query("DELETE FROM Currency c WHERE c.code = ?1")
     void deleteByCode(String currencyCode);
+
+    @Override
+    @Modifying
+    @Query(value = "TRUNCATE TABLE currency RESTART IDENTITY CASCADE", nativeQuery = true)
+    void truncate();
 }
 

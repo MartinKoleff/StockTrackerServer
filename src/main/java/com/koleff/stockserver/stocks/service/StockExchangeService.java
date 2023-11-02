@@ -13,6 +13,7 @@ public interface StockExchangeService {
     void saveStockExchanges(List<StockExchange> data);
     void deleteById(Long id);
     void deleteAll();
+    void truncate();
     // TODO: loadStockExchange()
     List<StockExchange> loadAllStockExchanges();
 }

@@ -215,6 +215,11 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         endOfDayRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncate() {
+        endOfDayRepositoryImpl.truncate();
+    }
+
     /**
      * Load one entry from JSON
      */

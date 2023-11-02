@@ -146,6 +146,11 @@ public class CurrencyServiceImpl implements CurrencyService {
         currencyRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncate() {
+        currencyRepositoryImpl.truncate();
+    }
+
     /**
      * Load one entry from JSON
      */

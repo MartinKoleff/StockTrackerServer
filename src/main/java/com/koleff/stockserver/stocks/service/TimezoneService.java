@@ -18,6 +18,7 @@ public interface TimezoneService {
     void deleteById(Long id);
     void deleteByTimezone(String timezone);
     void deleteAll();
+    void truncate();
     Timezone loadTimezone(String timezone);
     List<Timezone> loadAllTimezones();
 }

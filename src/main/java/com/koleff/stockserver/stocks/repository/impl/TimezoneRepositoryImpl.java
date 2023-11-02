@@ -39,5 +39,11 @@ public interface TimezoneRepositoryImpl extends TimezoneRepository {
     @Modifying
     @Query("DELETE FROM Timezone t WHERE t.timezone = ?1")
     void deleteByTimezone(String timezone);
+
+
+    @Override
+    @Modifying
+    @Query(value = "TRUNCATE TABLE timezone RESTART IDENTITY CASCADE", nativeQuery = true)
+    void truncate();
 }
 

@@ -146,6 +146,11 @@ public class TimezoneServiceImpl implements TimezoneService {
         timezoneRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncate() {
+        timezoneRepositoryImpl.truncate();
+    }
+
     /**
      * Load one entry from JSON
      */

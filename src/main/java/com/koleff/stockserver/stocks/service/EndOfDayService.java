@@ -19,6 +19,7 @@ public interface EndOfDayService {
     void deleteById(Long id);
     void deleteByStockTag(String stockTag);
     void deleteAll();
+    void truncate();
     List<EndOfDay> loadEndOfDays(String stockTag);
     List<List<EndOfDay>> loadAllEndOfDays();
 }

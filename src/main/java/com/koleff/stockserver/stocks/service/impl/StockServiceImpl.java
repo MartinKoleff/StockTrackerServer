@@ -189,6 +189,11 @@ public class StockServiceImpl implements StockService {
         stockRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncate() {
+        stockRepositoryImpl.truncate();
+    }
+
     /**
      * Load one entry from JSON
      */

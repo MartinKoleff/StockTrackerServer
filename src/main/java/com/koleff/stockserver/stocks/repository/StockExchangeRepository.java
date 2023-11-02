@@ -10,4 +10,5 @@ import java.util.List;
 public interface StockExchangeRepository extends JpaRepository<StockExchange, Long> {
 
     List<StockExchange> findByCountry(String country);
+    void truncate();
 }

@@ -104,6 +104,11 @@ public class StockExchangeServiceImpl implements StockExchangeService {
         stockExchangeRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncate() {
+        stockExchangeRepositoryImpl.truncate();
+    }
+
     /**
      * Load data from JSON
      */

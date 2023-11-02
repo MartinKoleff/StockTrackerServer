@@ -17,6 +17,7 @@ public interface CurrencyService {
     void deleteById(Long id);
     void deleteByCode(String currencyCode);
     void deleteAll();
+    void truncate();
     Currency loadCurrency(String currencyCode);
     List<Currency> loadAllCurrencies();
 }

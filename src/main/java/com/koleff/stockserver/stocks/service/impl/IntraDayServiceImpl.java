@@ -215,6 +215,11 @@ public class IntraDayServiceImpl implements IntraDayService {
         intraDayRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncate() {
+        intraDayRepositoryImpl.truncate();
+    }
+
 
     /**
      * Load one entry from JSON

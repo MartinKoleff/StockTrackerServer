@@ -71,4 +71,9 @@ public interface StockRepositoryImpl extends StockRepository {
     @Modifying
     @Query("DELETE FROM Stock s WHERE s.tag = ?1")
     int deleteByStockTag(String stockTag);
+
+    @Override
+    @Modifying
+    @Query(value = "TRUNCATE TABLE stock RESTART IDENTITY CASCADE", nativeQuery = true)
+    void truncate();
 }

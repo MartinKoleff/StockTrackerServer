@@ -60,5 +60,10 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
             nativeQuery = true
     )
     int deleteByStockTag(String stockTag);
+
+    @Override
+    @Modifying
+    @Query(value = "TRUNCATE TABLE end_of_day RESTART IDENTITY CASCADE", nativeQuery = true)
+    void truncate();
 }
 

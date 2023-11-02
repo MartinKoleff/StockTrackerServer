@@ -31,4 +31,9 @@ public interface StockExchangeRepositoryImpl extends StockExchangeRepository {
             value = "SELECT se FROM StockExchange se WHERE se.country = ?1"
     )
     List<StockExchange> findByCountry(String country);
+
+    @Override
+    @Modifying
+    @Query(value = "TRUNCATE TABLE stock_exchange RESTART IDENTITY CASCADE", nativeQuery = true)
+    void truncate();
 }

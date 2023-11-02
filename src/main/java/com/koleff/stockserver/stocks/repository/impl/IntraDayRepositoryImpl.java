@@ -62,5 +62,10 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
             nativeQuery = true
     )
     int deleteByStockTag(String stockTag);
+
+    @Override
+    @Modifying
+    @Query(value = "TRUNCATE TABLE intra_day RESTART IDENTITY CASCADE", nativeQuery = true)
+    void truncate();
 }
 

@@ -18,4 +18,5 @@ public interface IntraDayRepository extends JpaRepository<IntraDay, Long> {
     Optional<List<IntraDay>> findAllById(Long stockId);
 
     int deleteByStockTag(String stockTag);
+    void truncate();
 }
