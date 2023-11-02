@@ -6,20 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EnableJpaRepositories(basePackageClasses = {
-        StockRepositoryImpl.class,
-        IntraDayRepositoryImpl.class,
-        EndOfDayRepositoryImpl.class,
-        StockExchangeRepositoryImpl.class,
-        CurrencyRepositoryImpl.class,
-        TimezoneRepositoryImpl.class,
-        StockRepository.class,
-        IntraDayRepository.class,
-        EndOfDayRepository.class,
-        StockExchangeRepository.class,
-        CurrencyRepository.class,
-        TimezoneRepository.class
-    }
+@EnableJpaRepositories(
+        basePackages = "com.koleff.stockserver.stocks.repository"
 )
 public class TestConfiguration {
 }
