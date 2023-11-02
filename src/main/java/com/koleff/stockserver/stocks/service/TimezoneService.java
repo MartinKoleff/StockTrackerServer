@@ -12,7 +12,7 @@ public interface TimezoneService {
     TimezoneDto getTimezone(String stockTag);
     Long getTimezoneId(String timezone);
     List<TimezoneDto> getTimezones();
-    List<String> getTimezoneStrings(); //TODO: rename
+    List<String> getTimezoneColumn(); //TODO: rename
     void saveTimezone(Timezone timezone);
     void saveTimezones(List<Timezone> data);
     void deleteById(Long id);
