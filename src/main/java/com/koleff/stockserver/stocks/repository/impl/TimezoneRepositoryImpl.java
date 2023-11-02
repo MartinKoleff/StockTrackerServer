@@ -2,15 +2,12 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.Timezone;
 import com.koleff.stockserver.stocks.repository.TimezoneRepository;
-import com.koleff.stockserver.stocks.repository.projection.TimezoneProjection;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -33,7 +30,7 @@ public interface TimezoneRepositoryImpl extends TimezoneRepository {
             value = "SELECT t FROM Timezone t " +
                     "WHERE t.timezone = ?1"
     )
-    Collection<Timezone> findTimezoneByTimezone(String timezone);
+    Optional<Timezone> findTimezoneByTimezone(String timezone);
 
     @Override
     @Modifying
