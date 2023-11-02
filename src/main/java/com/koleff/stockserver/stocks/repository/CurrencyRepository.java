@@ -11,9 +11,9 @@ public interface CurrencyRepository extends JpaRepository<Currency, Long> {
 
     Optional<Currency> findByStockExchanges_Stocks_Tag(String tag);
 
-    Optional<Currency> findByCode(String currencyCode);
+    Optional<Currency> findByCode(String code);
 
-    void deleteByCode(String currencyCode);
+    void deleteByCode(String code);
 
     void truncateCurrency();
 }
