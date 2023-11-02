@@ -14,6 +14,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.repository.query.QueryLookupStrategy;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication(
@@ -25,7 +26,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 )
 @ConfigurationPropertiesScan
 @EnableJpaRepositories(
-        basePackages = "com.koleff.stockserver.stocks.repository"
+        basePackages = "com.koleff.stockserver.stocks.repository",
+        queryLookupStrategy = QueryLookupStrategy.Key.CREATE_IF_NOT_FOUND
 )
 @EnableFeignClients(
         clients = {
