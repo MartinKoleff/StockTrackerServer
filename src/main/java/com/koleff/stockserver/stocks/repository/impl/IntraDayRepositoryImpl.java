@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +25,7 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
                     "JOIN Stock s ON (s.id = id.stockId) " +
                     "WHERE s.tag = ?1"
     )
-    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag, String dateFrom, String dateTo);
+    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag);
 
 
     @Override
@@ -34,7 +35,7 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
                     "WHERE s.tag = ?1 AND " +
                     "id.date BETWEEN ?2 AND ?3"
     )
-    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag);
+    Optional<List<IntraDay>> findIntraDayByStockTagAndDateBetween(String stockTag, String dateFrom, String dateTo);
 
     @Override
     @Query(
@@ -43,7 +44,7 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
                     "WHERE s.tag = ?1 AND " +
                     "id.date = ?2"
     )
-    Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag, String date);
+    Optional<List<IntraDay>> findIntraDayByStockTagAndDate(String stockTag, String date);
 
     @Override
     @Query(
