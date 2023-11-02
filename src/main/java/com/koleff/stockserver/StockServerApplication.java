@@ -13,9 +13,11 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.QueryLookupStrategy;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication(
         exclude = {
@@ -25,6 +27,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
         }
 )
 @ConfigurationPropertiesScan
+//@ComponentScan(basePackages = "com.koleff.stockserver.stocks.repository")
 @EnableJpaRepositories(
         basePackages = "com.koleff.stockserver.stocks.repository",
         queryLookupStrategy = QueryLookupStrategy.Key.CREATE_IF_NOT_FOUND
@@ -39,6 +42,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 )
 @EnableConfigurationProperties
 @EnableAsync
+@EnableWebMvc
 public class StockServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(StockServerApplication.class, args);
