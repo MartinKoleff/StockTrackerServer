@@ -57,7 +57,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public StockDto getStockDto(String stockTag) {
-        return stockRepositoryImpl.findStockByStockTag(stockTag)
+        return stockRepositoryImpl.findStockByTag(stockTag)
                 .stream()
                 .map(stockDtoMapper)
                 .findFirst()
@@ -75,7 +75,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public Stock getStock(String stockTag) {
-        return stockRepositoryImpl.findStockByStockTag(stockTag)
+        return stockRepositoryImpl.findStockByTag(stockTag)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -92,7 +92,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public Long getStockId(String stockTag) {
-        return stockRepositoryImpl.findStockByStockTag(stockTag)
+        return stockRepositoryImpl.findStockByTag(stockTag)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -119,12 +119,10 @@ public class StockServiceImpl implements StockService {
      * Get stock tags column from DB
      */
     @Override
-    public List<String> getStockTags() {
-        return stockRepositoryImpl.getStockTags()
-                .orElseThrow(
-                        () -> new StocksNotFoundException("Stocks not found. Please load them.")
-                )
+    public List<String> getTagsColumn() {
+        return stockRepositoryImpl.findAll()
                 .stream()
+                .map(Stock::getTag)
                 .toList();
     }
 
@@ -132,12 +130,10 @@ public class StockServiceImpl implements StockService {
      * Get id column from DB
      */
     @Override
-    public List<Long> getStockIds() {
-        return stockRepositoryImpl.getStockIds()
-                .orElseThrow(
-                        () -> new DBEmptyException("Stock DB is empty.")
-                )
+    public List<Long> getStockIdsColumn() {
+        return stockRepositoryImpl.findAll()
                 .stream()
+                .map(Stock::getId)
                 .toList();
     }
 

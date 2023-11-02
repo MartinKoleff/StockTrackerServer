@@ -11,8 +11,8 @@ public interface StockService {
     StockDto getStockDto(String stockTag);
     Stock getStock(String stockTag);
     List<StockDto> getStocks();
-    List<String> getStockTags();
-    List<Long> getStockIds();
+    List<String> getTagsColumn();
+    List<Long> getStockIdsColumn();
     List<String> loadStockTags();
     Long getStockId(String stockTag);
     void saveStock(Stock stock);

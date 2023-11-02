@@ -11,22 +11,15 @@ import java.util.Optional;
 @Repository
 public interface StockRepository extends JpaRepository<Stock, Long> {
 
-    Optional<Stock> findStockByStockTag(String stockTag);
+    Optional<Stock> findStockByTag(String stockTag);
 
-    Optional<List<String>> getStockTags();
-    Optional<List<Long>> getStockIds();
+    List<Stock> findByHasIntraDayIsTrue(Boolean hasIntraDay);
 
-    List<Stock> selectStocksWhereHasIntraDayEqualTrue(
-            @Param("hasIntraDay") Boolean hasIntraDay
-    );
+    List<Stock> findByHasEndOfDayIsTrue(Boolean hasEndOfDay);
 
-    List<Stock> selectStocksWhereHasEndOfDayEqualTrue(
-            @Param("hasEndOfDay") Boolean hasEndOfDay
-    );
+    void updateIntraDayStatus();
 
-    void updateHasIntraDay();
-
-    void updateHasEndOfDay();
+    void updateEndOfDayStatus();
 
     int deleteStockById(Long id);
 
