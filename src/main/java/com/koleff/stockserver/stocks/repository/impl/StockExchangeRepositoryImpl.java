@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-@Transactional(readOnly = true,
-               rollbackFor = Exception.class,
-               propagation = Propagation.REQUIRED
+@Transactional(
+        rollbackFor = Exception.class,
+        propagation = Propagation.REQUIRED
 )
 public interface StockExchangeRepositoryImpl extends StockExchangeRepository {
 

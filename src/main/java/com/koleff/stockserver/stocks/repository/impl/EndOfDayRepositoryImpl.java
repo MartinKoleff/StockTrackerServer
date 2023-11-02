@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-@Transactional(readOnly = true,
-               rollbackFor = Exception.class,
-               propagation = Propagation.REQUIRED
+@Transactional(
+        rollbackFor = Exception.class,
+        propagation = Propagation.REQUIRED
 )
 public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
     @Override

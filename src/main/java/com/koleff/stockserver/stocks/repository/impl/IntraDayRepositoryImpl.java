@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-@Transactional(readOnly = true,
+@Transactional(
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
