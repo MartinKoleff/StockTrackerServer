@@ -67,11 +67,6 @@ public@Data class Timezone implements Serializable {
     ) //Doesn't need to be bidirectional
     private List<StockExchange> stockExchanges;
 
-    public List<List<Stock>> getStocks(){
-        return stockExchanges.stream()
-                .map(StockExchange::getStocks)
-                .collect(Collectors.toList());
-    }
     @Override
     public String toString() {
         return "Timezone{" +
