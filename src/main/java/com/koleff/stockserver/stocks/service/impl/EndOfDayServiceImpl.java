@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -76,7 +77,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
 
     @Override
     public List<EndOfDayDto> getEndOfDays(String stockTag, String dateFrom, String dateTo) {
-        return endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag, dateFrom, dateTo)
+        return endOfDayRepositoryImpl.findEndOfDayByStockTagAndDateBetween(stockTag, dateFrom, dateTo)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
                                 String.format("End of day for stock tag %s between dates %s and %s not found.",
@@ -93,7 +94,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
 
     @Override
     public EndOfDayDto getEndOfDay(String stockTag, String date) {
-        return endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag, date)
+        return endOfDayRepositoryImpl.findEndOfDayByStockTagAndDate(stockTag, date)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
                                 String.format("End of day for stock tag %s for date %s not found.",
@@ -134,7 +135,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     public List<List<EndOfDayDto>> getAllEndOfDays() {
         List<List<EndOfDayDto>> data = new ArrayList<>();
 
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.getTagsColumn();
         stockTags.parallelStream()
                  .forEach(
                         stockTag -> {

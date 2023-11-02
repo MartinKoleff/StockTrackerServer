@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity(name = "Timezone")
 @Table(name = "timezone")
@@ -64,7 +65,7 @@ public@Data class Timezone implements Serializable {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     ) //Doesn't need to be bidirectional
-    private List<StockExchange> stockExchange;
+    private List<StockExchange> stockExchanges;
 
     @Override
     public String toString() {

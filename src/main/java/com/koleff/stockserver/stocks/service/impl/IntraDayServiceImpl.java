@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -76,7 +77,7 @@ public class IntraDayServiceImpl implements IntraDayService {
 
     @Override
     public List<IntraDayDto> getIntraDays(String stockTag, String dateFrom, String dateTo) {
-        return intraDayRepositoryImpl.findIntraDayByStockTag(stockTag, dateFrom, dateTo)
+        return intraDayRepositoryImpl.findIntraDayByStockTagAndDateBetween(stockTag, dateFrom, dateTo)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
                                 String.format("Intra day for stock tag %s between dates %s and %s not found.",
@@ -93,7 +94,7 @@ public class IntraDayServiceImpl implements IntraDayService {
 
     @Override
     public IntraDayDto getIntraDay(String stockTag, String date) {
-        return intraDayRepositoryImpl.findIntraDayByStockTag(stockTag, date)
+        return intraDayRepositoryImpl.findIntraDayByStockTagAndDate(stockTag, date)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
                                 String.format("Intra day for stock tag %s for date %s not found.",
@@ -135,7 +136,7 @@ public class IntraDayServiceImpl implements IntraDayService {
     public List<List<IntraDayDto>> getAllIntraDays() {
         List<List<IntraDayDto>> data = new ArrayList<>();
 
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.getTagsColumn();
         stockTags.parallelStream()
                 .forEach(
                         stockTag -> {

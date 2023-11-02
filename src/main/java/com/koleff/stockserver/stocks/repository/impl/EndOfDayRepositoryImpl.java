@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +33,7 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
                     "WHERE s.tag = ?1 AND " +
                     "eod.date BETWEEN ?2 AND ?3"
     )
-    Optional<List<EndOfDay>> findEndOfDayByStockTag(String stockTag, String dateFrom, String dateTo);
+    Optional<List<EndOfDay>> findEndOfDayByStockTagAndDateBetween(String stockTag, String dateFrom, String dateTo);
 
     @Override
     @Query(
@@ -41,7 +42,7 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
                     "WHERE s.tag = ?1 AND " +
                     "eod.date = ?2"
     )
-    Optional<List<EndOfDay>> findEndOfDayByStockTag(String stockTag, String date);
+    Optional<List<EndOfDay>> findEndOfDayByStockTagAndDate(String stockTag, String date);
 
     @Override
     @Query(

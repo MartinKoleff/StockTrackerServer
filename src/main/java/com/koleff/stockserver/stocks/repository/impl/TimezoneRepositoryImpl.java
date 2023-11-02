@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.Timezone;
 import com.koleff.stockserver.stocks.repository.TimezoneRepository;
+import com.koleff.stockserver.stocks.repository.projection.TimezoneProjection;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -22,25 +23,17 @@ public interface TimezoneRepositoryImpl extends TimezoneRepository {
 
     @Override
     @Query(
-            value = "SELECT t FROM Timezone t " +
-                    "JOIN StockExchange se ON (se.timezoneId = t.id)" +
-                    "JOIN Stock s ON (s.stockExchangeId = se.id)" +
-                    "WHERE s.tag = ?1"
+            value = "SELECT t FROM Timezone t, StockExchange se, Stock s " +
+                    "Where s.tag = ?1"
     )
-    Optional<Timezone> findByStockTag(String stockTag);
-
-    @Override
-    @Query(
-            value = "SELECT t.timezone FROM Timezone t "
-    )
-    Optional<List<String>> getTimezoneStrings();
+    Optional<Timezone> findByStockExchanges_Stocks_Tag(String stockTag);
 
     @Override
     @Query(
             value = "SELECT t FROM Timezone t " +
                     "WHERE t.timezone = ?1"
     )
-    Collection<Timezone> findTimezoneByTimezoneString(String timezone);
+    Collection<Timezone> findTimezoneByTimezone(String timezone);
 
     @Override
     @Modifying

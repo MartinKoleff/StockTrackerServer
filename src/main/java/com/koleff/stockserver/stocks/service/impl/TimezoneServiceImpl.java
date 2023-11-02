@@ -7,6 +7,7 @@ import com.koleff.stockserver.stocks.dto.mapper.TimezoneDtoMapper;
 import com.koleff.stockserver.stocks.exceptions.TimezoneNotFoundException;
 import com.koleff.stockserver.stocks.exceptions.TimezonesNotFoundException;
 import com.koleff.stockserver.stocks.repository.impl.TimezoneRepositoryImpl;
+import com.koleff.stockserver.stocks.repository.projection.TimezoneProjection;
 import com.koleff.stockserver.stocks.service.TimezoneService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.TimezoneJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public TimezoneDto getTimezone(String stockTag) {
-        return timezoneRepositoryImpl.findByStockTag(stockTag)
+        return timezoneRepositoryImpl.findByStockExchanges_Stocks_Tag(stockTag)
                 .stream()
                 .map(timezoneDtoMapper)
                 .findFirst()
@@ -70,7 +71,7 @@ public class TimezoneServiceImpl implements TimezoneService {
      */
     @Override
     public Long getTimezoneId(String timezone) {
-        return timezoneRepositoryImpl.findTimezoneByTimezoneString(timezone)
+        return timezoneRepositoryImpl.findTimezoneByTimezone(timezone)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -98,12 +99,10 @@ public class TimezoneServiceImpl implements TimezoneService {
      * Get timezone column from DB
      */
     @Override
-    public List<String> getTimezoneStrings() {
-        return timezoneRepositoryImpl.getTimezoneStrings()
-                .orElseThrow(
-                        () -> new TimezonesNotFoundException("Timezone not found. Please load them.")
-                )
+    public List<String> getTimezoneColumn() {
+        return timezoneRepositoryImpl.findAll()
                 .stream()
+                .map(Timezone::getTimezone)
                 .toList();
     }
 

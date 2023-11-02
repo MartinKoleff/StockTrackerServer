@@ -53,7 +53,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public CurrencyDto getCurrency(String stockTag) {
-        return currencyRepositoryImpl.findByStockTag(stockTag)
+        return currencyRepositoryImpl.findByStockExchanges_Stocks_Tag(stockTag)
                 .stream()
                 .map(currencyDtoMapper)
                 .findFirst()
@@ -71,7 +71,7 @@ public class CurrencyServiceImpl implements CurrencyService {
      */
     @Override
     public Long getCurrencyId(String currencyCode) {
-        return currencyRepositoryImpl.findCurrencyByCurrencyCode(currencyCode)
+        return currencyRepositoryImpl.findByCode(currencyCode)
                 .stream()
                 .findFirst()
                 .orElseThrow(
@@ -99,12 +99,10 @@ public class CurrencyServiceImpl implements CurrencyService {
      * Get currency codes column from DB
      */
     @Override
-    public List<String> getCurrencyCodes() {
-        return currencyRepositoryImpl.getCurrencyCodes()
-                .orElseThrow(
-                        () -> new CurrenciesNotFoundException("Currencies not found. Please load them.")
-                )
+    public List<String> getCodeColumn() {
+        return currencyRepositoryImpl.findAll()
                 .stream()
+                .map(Currency::getCode)
                 .toList();
     }
 
@@ -136,8 +134,8 @@ public class CurrencyServiceImpl implements CurrencyService {
      * Delete entry from DB via currencyCode
      */
     @Override
-    public void deleteByCurrencyCode(String currencyCode) {
-        currencyRepositoryImpl.deleteByCurrencyCode(currencyCode);
+    public void deleteByCode(String currencyCode) {
+        currencyRepositoryImpl.deleteByCode(currencyCode);
     }
 
     /**

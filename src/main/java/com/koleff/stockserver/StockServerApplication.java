@@ -24,7 +24,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
         }
 )
 @ConfigurationPropertiesScan
-@EnableJpaRepositories
+@EnableJpaRepositories(
+        basePackages = "com.koleff.stockserver.stocks.repository"
+)
 @EnableFeignClients(
         clients = {
                 EndOfDayPublicApiClientV2.class,

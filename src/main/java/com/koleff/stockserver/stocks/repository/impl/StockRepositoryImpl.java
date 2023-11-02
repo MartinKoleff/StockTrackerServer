@@ -42,35 +42,25 @@ public interface StockRepositoryImpl extends StockRepository {
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.tag = ?1")
-    Optional<Stock> findStockByStockTag(String stockTag);
-
-    @Override
-    @Query(
-            value = "SELECT s.tag FROM Stock s"
-    )
-    Optional<List<String>> getStockTags();
-
-    @Override
-    @Query(value = "SELECT s.id FROM Stock s")
-    Optional<List<Long>> getStockIds();
+    Optional<Stock> findStockByTag(String stockTag);
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.hasIntraDay = ?1")
-    List<Stock> selectStocksWhereHasIntraDayEqualTrue(Boolean hasIntraDay);
+    List<Stock> findByHasIntraDayIsTrue(Boolean hasIntraDay);
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.hasEndOfDay = ?1")
-    List<Stock> selectStocksWhereHasEndOfDayEqualTrue(Boolean hasEndOfDay);
+    List<Stock> findByHasEndOfDayIsTrue(Boolean hasEndOfDay);
 
     @Override
     @Modifying
-    @Query("UPDATE Stock s SET s.hasIntraDay = true WHERE s.endOfDay != null")
-    void updateHasIntraDay();
+    @Query("UPDATE Stock s SET s.hasIntraDay = true WHERE s.intraDay IS NOT NULL")
+    void updateIntraDayStatus();
     
     @Override
     @Modifying
-    @Query("UPDATE Stock s SET s.hasEndOfDay = true WHERE s.intraDay != null")
-    void updateHasEndOfDay();
+    @Query("UPDATE Stock s SET s.hasEndOfDay = true WHERE s.endOfDay IS NOT NULL")
+    void updateEndOfDayStatus();
 
     @Override
     @Modifying
