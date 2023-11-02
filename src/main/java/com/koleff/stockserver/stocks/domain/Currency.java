@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity(name = "Currency")
 @Table(name = "currency")
@@ -65,6 +66,12 @@ public@Data class Currency implements Serializable {
             fetch = FetchType.LAZY
     ) //Doesn't need to be bidirectional
     private List<StockExchange> stockExchanges;
+
+   public List<List<Stock>> getStocks(){
+        return stockExchanges.stream()
+                .map(StockExchange::getStocks)
+                .collect(Collectors.toList());
+    }
 
     @Override
     public String toString() {
