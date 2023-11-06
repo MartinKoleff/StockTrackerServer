@@ -206,7 +206,29 @@ public class IntraDayTests {
         logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
         logger.info(String.format("All IntraDay DTOs size %d", intraDayDtos.size()));
         Assertions.assertNotNull(intraDayDtos);
+    }
 
+    @Test
+    @Order(7)
+    @DisplayName("Date filtration with dateFrom and dateTo.")
+    void intraDayDateFiltration(){
+        String stockTag = "AAPL";
+        String dateFrom = "2023-10-24T00:00:00+00:00";
+        String dateTo = "2023-10-25T00:00:00+00:00";
+        List<IntraDayDto> intraDayDtos = intraDayServiceImpl.getIntraDays(stockTag, dateFrom, dateTo);
+
+        Assertions.assertEquals(2, intraDayDtos.size());
+    }
+
+    @Test
+    @Order(8)
+    @DisplayName("Date filtration with date.")
+    void intraDayDateFiltration2(){
+        String stockTag = "AAPL";
+        String date = "2023-10-26T00:00:00+00:00";
+        IntraDayDto intraDayDto = intraDayServiceImpl.getIntraDay(stockTag, date);
+
+        Assertions.assertNotNull(intraDayDto);
         isDoneTesting = true;
     }
 }

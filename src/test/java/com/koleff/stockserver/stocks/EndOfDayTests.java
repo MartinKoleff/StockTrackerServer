@@ -206,7 +206,29 @@ public class EndOfDayTests {
         logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
         logger.info(String.format("All EOD DTOs size %d", eodDtos.size()));
         Assertions.assertNotNull(eodDtos);
+    }
 
+    @Test
+    @Order(7)
+    @DisplayName("Date filtration with dateFrom and dateTo.")
+    void eodDateFiltration(){
+        String stockTag = "AAPL";
+        String dateFrom = "2023-10-24T00:00:00+00:00";
+        String dateTo = "2023-10-25T00:00:00+00:00";
+        List<EndOfDayDto> eods = endOfDayServiceImpl.getEndOfDays(stockTag, dateFrom, dateTo);
+
+        Assertions.assertEquals(2, eods.size());
+    }
+
+    @Test
+    @Order(8)
+    @DisplayName("Date filtration with date.")
+    void eodDateFiltration2(){
+        String stockTag = "AAPL";
+        String date = "2023-10-26T00:00:00+00:00";
+        EndOfDayDto eod = endOfDayServiceImpl.getEndOfDay(stockTag, date);
+
+        Assertions.assertNotNull(eod);
         isDoneTesting = true;
     }
 }
