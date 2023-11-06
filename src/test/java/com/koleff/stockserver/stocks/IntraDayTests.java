@@ -59,9 +59,9 @@ public class IntraDayTests {
 
     @BeforeEach
     public void setup() {
-        if (hasInitializedDB) {
-            return;
-        }
+//        if (hasInitializedDB) {
+//            return;
+//        }
         logger.info("Setup before test starts...");
 
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
@@ -100,13 +100,6 @@ public class IntraDayTests {
         }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
-
-        //Clear the DB
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        stockServiceImpl.deleteAll();
-        intraDayServiceImpl.deleteAll();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && intraDayServiceImpl.getAllIntraDays().isEmpty()

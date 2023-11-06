@@ -61,9 +61,6 @@ public class EndOfDayTests {
 
     @BeforeEach
     public void setup() {
-        if(hasInitializedDB){
-            return;
-        }
         logger.info("Setup before test starts...");
 
         //Load and Save stocks to DB
@@ -95,19 +92,12 @@ public class EndOfDayTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (!isDoneTesting) {
+        if (isDoneTesting) {
             logger.info("Testing finished!");
             return;
         }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
-
-        //Clear the DB
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        stockServiceImpl.deleteAll();
-        endOfDayServiceImpl.deleteAll();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
