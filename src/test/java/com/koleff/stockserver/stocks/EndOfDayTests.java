@@ -15,7 +15,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.web.servlet.MockMvc;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -32,12 +31,6 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
         classes = {TestConfiguration.class}
 )
 @Testcontainers
-//@TestInstance(PER_CLASS)
-//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-//@TestExecutionListeners({DirtiesContextTestExecutionListener.class})
-//@DataJpaTest
-//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-//@Transactional(propagation = Propagation.REQUIRES_NEW)
 public class EndOfDayTests {
 
     private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
@@ -46,7 +39,6 @@ public class EndOfDayTests {
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
-//    private MockMvc mockMvc;
     private boolean isDoneTesting = false;
     private boolean hasInitializedDB = false;
 
@@ -69,7 +61,6 @@ public class EndOfDayTests {
 
 
     @Container
-//    @ClassRule
     public static PostgreSQLContainer<?> postgreSQLContainer = (PostgreSQLContainer<?>) new PostgreSQLContainer
             ("postgres:16.0")
             .withDatabaseName("stocks")
@@ -107,7 +98,6 @@ public class EndOfDayTests {
         this.timezoneServiceImpl = timezoneServiceImpl;
     }
 
-    //    @Commit
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
@@ -137,7 +127,6 @@ public class EndOfDayTests {
         hasInitializedDB = true;
     }
 
-    //    @Commit
     @AfterEach
     public void tearDown() {
         endTime = System.currentTimeMillis() - startTime;
