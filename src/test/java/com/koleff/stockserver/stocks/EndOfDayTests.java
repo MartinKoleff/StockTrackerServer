@@ -1,37 +1,43 @@
 package com.koleff.stockserver.stocks;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
-import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.web.servlet.MockMvc;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
  * Using VM options to configure PostgreSQL DB login
  */
-@SpringBootTest(
-        webEnvironment = RANDOM_PORT
-)
-@TestInstance(PER_CLASS)
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 @ContextConfiguration(
-        classes = {StockServerApplication.class, TestConfiguration.class}
+        classes = {TestConfiguration.class}
 )
-@ExtendWith(SpringExtension.class)
+@Testcontainers
+//@TestInstance(PER_CLASS)
+//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+//@TestExecutionListeners({DirtiesContextTestExecutionListener.class})
+//@DataJpaTest
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+//@Transactional(propagation = Propagation.REQUIRES_NEW)
 public class EndOfDayTests {
 
     private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
@@ -40,6 +46,7 @@ public class EndOfDayTests {
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
     private final TimezoneServiceImpl timezoneServiceImpl;
+//    private MockMvc mockMvc;
     private boolean isDoneTesting = false;
     private boolean hasInitializedDB = false;
 
@@ -88,11 +95,11 @@ public class EndOfDayTests {
     }
 
     @Autowired
-    EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
-                  StockServiceImpl stockServiceImpl,
-                  StockExchangeServiceImpl stockExchangeServiceImpl,
-                  CurrencyServiceImpl currencyServiceImpl,
-                  TimezoneServiceImpl timezoneServiceImpl) {
+    public EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
+                         StockServiceImpl stockServiceImpl,
+                         StockExchangeServiceImpl stockExchangeServiceImpl,
+                         CurrencyServiceImpl currencyServiceImpl,
+                         TimezoneServiceImpl timezoneServiceImpl) {
         this.endOfDayServiceImpl = endOfDayServiceImpl;
         this.stockServiceImpl = stockServiceImpl;
         this.stockExchangeServiceImpl = stockExchangeServiceImpl;
@@ -100,6 +107,7 @@ public class EndOfDayTests {
         this.timezoneServiceImpl = timezoneServiceImpl;
     }
 
+    //    @Commit
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
@@ -129,6 +137,7 @@ public class EndOfDayTests {
         hasInitializedDB = true;
     }
 
+    //    @Commit
     @AfterEach
     public void tearDown() {
         endTime = System.currentTimeMillis() - startTime;
@@ -188,7 +197,7 @@ public class EndOfDayTests {
     @Test
     @Order(4)
     @DisplayName("Saving all data from JSON to DB.")
-    void eodBulkSavingTest() { //TODO: add Spring Batch
+    void eodBulkSavingTest() {
         //Clear DB
         endOfDayServiceImpl.deleteAll();
 
@@ -208,7 +217,7 @@ public class EndOfDayTests {
     @Test
     @Order(5)
     @DisplayName("Saving 1 entry from JSON to DB.")
-    void eodSavingOneEntryTest(){
+    void eodSavingOneEntryTest() {
         //Clear DB
         endOfDayServiceImpl.deleteAll();
 
@@ -231,7 +240,7 @@ public class EndOfDayTests {
     @Order(6)
     @Sql("/schema/schema-postgresql.sql")
     @DisplayName("Saving all entries via Spring Batch")
-    void eodSavingViaSpringBatch(){
+    void eodSavingViaSpringBatch() {
         endOfDayServiceImpl.saveViaJob();
 
         //Check if entries are in DB
@@ -245,7 +254,7 @@ public class EndOfDayTests {
     @Test
     @Order(7)
     @DisplayName("Date filtration with dateFrom and dateTo.")
-    void eodDateFiltration(){
+    void eodDateFiltration() {
         String stockTag = "AAPL";
         String dateFrom = "2023-10-24T00:00:00+00:00";
         String dateTo = "2023-10-25T00:00:00+00:00";
@@ -257,7 +266,7 @@ public class EndOfDayTests {
     @Test
     @Order(8)
     @DisplayName("Date filtration with date.")
-    void eodDateFiltration2(){
+    void eodDateFiltration2() {
         String stockTag = "AAPL";
         String date = "2023-10-26T00:00:00+00:00";
         EndOfDayDto eod = endOfDayServiceImpl.getEndOfDay(stockTag, date);
