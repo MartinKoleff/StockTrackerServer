@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
@@ -186,6 +187,7 @@ public class EndOfDayTests {
 
     @Test
     @Order(6)
+    @Sql("/schema/schema-postgresql.sql")
     @DisplayName("Saving all entries via Spring Batch")
     void eodSavingViaSpringBatch(){
         endOfDayServiceImpl.saveViaJob();

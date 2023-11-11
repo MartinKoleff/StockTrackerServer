@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
@@ -189,6 +190,7 @@ public class IntraDayTests {
 
     @Test
     @Order(6)
+    @Sql("/schema/schema-postgresql.sql")
     @DisplayName("Saving all entries via Spring Batch")
     void intraDaySavingViaSpringBatch(){
         intraDayServiceImpl.saveViaJob();
