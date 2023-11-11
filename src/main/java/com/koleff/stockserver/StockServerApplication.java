@@ -24,10 +24,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 //                ElasticsearchRestClientAutoConfiguration.class,
 //                DataSourceAutoConfiguration.class,
 //                HibernateJpaAutoConfiguration.class
-        }
+//                ConfigurationClassPostProcessor.class
+        },
+        scanBasePackages = "com.koleff.stockserver"
 )
 @ConfigurationPropertiesScan
-//@ComponentScan(basePackages = "com.koleff.stockserver.stocks.repository")
+//@ComponentScan(basePackages = "com.koleff.stockserver")
 @EnableJpaRepositories(
         basePackages = "com.koleff.stockserver.stocks.repository",
         queryLookupStrategy = QueryLookupStrategy.Key.CREATE_IF_NOT_FOUND
