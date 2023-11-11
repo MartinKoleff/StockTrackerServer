@@ -21,7 +21,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication(
         exclude = {
-                ElasticsearchRestClientAutoConfiguration.class,
+//                ElasticsearchRestClientAutoConfiguration.class,
 //                DataSourceAutoConfiguration.class,
 //                HibernateJpaAutoConfiguration.class
         }
