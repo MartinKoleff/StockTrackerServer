@@ -47,6 +47,46 @@ public class EndOfDayTests {
     private long endTime;
     private long totalTime;
 
+    /**
+     * Test container setup
+     */
+
+    @LocalServerPort
+    private Integer port;
+
+    @Value("spring.datasource.username") //TODO: wire with VM Options...
+    private static String usernameDB;
+
+    @Value("spring.datasource.password")
+    private static String passwordDB;
+
+
+    @Container
+//    @ClassRule
+    public static PostgreSQLContainer<?> postgreSQLContainer = (PostgreSQLContainer<?>) new PostgreSQLContainer
+            ("postgres:16.0")
+            .withDatabaseName("stocks")
+            .withUsername("postgres")
+            .withPassword("")
+            .withReuse(true);
+
+    @BeforeAll
+    static void beforeAll() {
+        postgreSQLContainer.start();
+    }
+
+    @AfterAll
+    static void afterAll() {
+        postgreSQLContainer.stop();
+    }
+
+    @DynamicPropertySource
+    static void configureProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
+        registry.add("spring.datasource.username", postgreSQLContainer::getUsername);
+        registry.add("spring.datasource.password", postgreSQLContainer::getPassword);
+    }
+
     @Autowired
     EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
                   StockServiceImpl stockServiceImpl,
@@ -63,6 +103,8 @@ public class EndOfDayTests {
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
+
+        logger.info(String.format("Testcontainer JDBC URL: %s", postgreSQLContainer.getJdbcUrl()));
 
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
