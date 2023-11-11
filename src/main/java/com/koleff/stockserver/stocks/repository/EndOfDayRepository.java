@@ -18,6 +18,4 @@ public interface EndOfDayRepository extends JpaRepository<EndOfDay, Long> {
     Optional<List<EndOfDay>> findAllById(Long stockId);
 
     int deleteByStockTag(String stockTag);
-
-    void truncateEndOfDay();
 }

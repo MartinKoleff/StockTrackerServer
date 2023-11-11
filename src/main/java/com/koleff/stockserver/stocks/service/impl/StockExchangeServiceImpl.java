@@ -106,7 +106,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
 
     @Override
     public void truncateTable() {
-        stockExchangeRepositoryImpl.truncateStockExchange();
+        stockExchangeRepositoryImpl.truncate();
     }
 
     /**

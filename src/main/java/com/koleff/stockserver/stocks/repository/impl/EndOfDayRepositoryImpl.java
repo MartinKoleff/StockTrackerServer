@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.EndOfDay;
 import com.koleff.stockserver.stocks.repository.EndOfDayRepository;
+import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
+public interface EndOfDayRepositoryImpl extends EndOfDayRepository, RepositoryCustom {
     @Override
     @Query(
             value = "SELECT eod FROM EndOfDay eod " +
@@ -63,6 +64,6 @@ public interface EndOfDayRepositoryImpl extends EndOfDayRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE end_of_day RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncateEndOfDay();
+    void truncate();
 }
 

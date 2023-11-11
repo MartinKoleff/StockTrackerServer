@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.Currency;
 import com.koleff.stockserver.stocks.repository.CurrencyRepository;
+import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface CurrencyRepositoryImpl extends CurrencyRepository {
+public interface CurrencyRepositoryImpl extends CurrencyRepository, RepositoryCustom {
 
     @Query(
             value = "SELECT c FROM Currency c " +
@@ -41,6 +42,6 @@ public interface CurrencyRepositoryImpl extends CurrencyRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE currency RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncateCurrency();
+    void truncate();
 }
 

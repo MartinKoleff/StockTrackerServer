@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.repository.StockRepository;
+import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,6 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface StockRepositoryImpl extends StockRepository {
 
     @Override
     @Query(
@@ -39,6 +39,7 @@ public interface StockRepositoryImpl extends StockRepository {
             nativeQuery = true
     )
     List<Stock> findAll();
+public interface StockRepositoryImpl extends StockRepository, RepositoryCustom {
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.tag = ?1")
@@ -56,7 +57,6 @@ public interface StockRepositoryImpl extends StockRepository {
     @Modifying
     @Query("UPDATE Stock s SET s.hasIntraDay = true WHERE s.intraDay IS NOT NULL")
     void updateIntraDayStatus();
-    
 
     @Override
     @Modifying
@@ -76,5 +76,5 @@ public interface StockRepositoryImpl extends StockRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE stock RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncateStock();
+    void truncate();
 }

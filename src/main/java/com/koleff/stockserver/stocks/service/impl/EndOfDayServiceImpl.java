@@ -216,7 +216,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
 
     @Override
     public void truncateTable() {
-        endOfDayRepositoryImpl.truncateEndOfDay();
+        endOfDayRepositoryImpl.truncate();
     }
 
     /**
