@@ -17,28 +17,6 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-
-    @Override
-    @Query(
-            value = "SELECT s.id, s.stock_exchange_id, s.name AS company_name, s.tag, s.has_end_of_day, s.has_intraday, " +
-                    "id.id AS intra_day_fk, id.stock_id AS intra_day_stock_id, id.open, id.close, " +
-                    "id.high, id.low, id.last, id.volume, id.date, " +
-                    "eod.id AS eod_fk, eod.stock_id AS eod_stock_id, eod.open AS eod_open, eod.close AS eod_close, " +
-                    "eod.high AS eod_high, eod.low AS eod_low, eod.volume AS eod_volume, eod.adj_open, eod.adj_close, " +
-                    "eod.adj_high, eod.adj_low, eod.adj_volume, eod.split_factor, eod.date AS eod_date, " +
-                    "se.id AS stock_exchange_fk, se.currency_id, se.timezone_id, se.acronym, se.city, se.country, " +
-                    "se.country_code, se.name AS exchange_name, se.website, " +
-                    "c.id AS currency_id_fk, c.code, c.name, c.symbol, " +
-                    "t.id AS timezone_id_fk, t.abbreviation, t.abbreviation_dst, t.timezone " +
-                    "FROM stock s " +
-                    "JOIN intra_day id ON id.stock_id = s.id " +
-                    "JOIN end_of_day eod ON eod.stock_id = s.id " +
-                    "JOIN stock_exchange se ON se.id = s.stock_exchange_id " +
-                    "JOIN currency c ON c.id = se.currency_id " +
-                    "JOIN timezone t ON t.id = se.timezone_id",
-            nativeQuery = true
-    )
-    List<Stock> findAll();
 public interface StockRepositoryImpl extends StockRepository, RepositoryCustom {
 
     @Override
