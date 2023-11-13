@@ -1,4 +1,4 @@
-package com.koleff.stockserver.stocks.controller;
+package com.koleff.stockserver.stocks.exceptions.handler;
 
 import com.koleff.stockserver.stocks.exceptions.ApiException;
 import com.koleff.stockserver.stocks.exceptions.ApiRequestException;
