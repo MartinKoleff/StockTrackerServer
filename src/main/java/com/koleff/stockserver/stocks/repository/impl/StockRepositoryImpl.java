@@ -25,11 +25,11 @@ public interface StockRepositoryImpl extends StockRepository, RepositoryCustom {
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.hasIntraDay = ?1")
-    List<Stock> findByHasIntraDayIsTrue(Boolean hasIntraDay);
+    List<Stock> findByHasIntraDay(Boolean hasIntraDay);
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.hasEndOfDay = ?1")
-    List<Stock> findByHasEndOfDayIsTrue(Boolean hasEndOfDay);
+    List<Stock> findByHasEndOfDay(Boolean hasEndOfDay);
 
     @Override
     @Modifying
