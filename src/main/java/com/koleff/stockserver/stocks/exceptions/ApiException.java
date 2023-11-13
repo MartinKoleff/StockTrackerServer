@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import java.time.ZonedDateTime;
 
 
-public @Data class ApiException { //TODO: rename to DTO?
+public @Data class ApiException {
     @SerializedName("message")
     private final String message;
 
