@@ -16,6 +16,7 @@ import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -108,7 +109,12 @@ public class IntraDayTests {
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
         logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
-        Assertions.assertNotNull(intraDayDtos);
+
+        assertAll(
+                "Validation of intra day fetching data from DB.",
+                () -> assertNotNull(intraDayDtos),
+                () -> assertFalse(intraDayDtos.isEmpty())
+        );
     }
 
     @Test
@@ -118,7 +124,12 @@ public class IntraDayTests {
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         logger.info(String.format("All IntraDays loaded from all JSONs: %s", intraDays));
-        Assertions.assertNotNull(intraDays);
+
+        assertAll(
+                "Validation of intra day loading data from JSON.",
+                () -> assertNotNull(intraDays),
+                () -> assertFalse(intraDays.isEmpty())
+        );
     }
 
 
@@ -131,7 +142,12 @@ public class IntraDayTests {
         List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDays(stockTag);
 
         logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
-        Assertions.assertNotNull(intraDayDto);
+
+        assertAll(
+                "Validation of intra day for 1 stock fetching data from DB.",
+                () -> assertNotNull(intraDayDto),
+                () -> assertFalse(intraDayDto.isEmpty())
+        );
     }
 
     @Test
@@ -152,8 +168,12 @@ public class IntraDayTests {
         List<List<IntraDayDto>> allIntraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
         logger.info(String.format("All IntraDay DTOs from DB: %s", allIntraDayDtos));
-        Assertions.assertNotNull(allIntraDayDtos);
 
+        assertAll(
+                "Validation of intra day fetching data from DB after saving it from JSON loading.",
+                () -> assertNotNull(allIntraDayDtos),
+                () -> assertFalse(allIntraDayDtos.isEmpty())
+        );
     }
 
     @Test
@@ -175,14 +195,23 @@ public class IntraDayTests {
         List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDays(stockTag);
 
         logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
-        Assertions.assertNotNull(intraDayDto);
+
+        assertAll(
+                "Validation of intra day for 1 stock fetching data from DB after saving.",
+                () -> assertNotNull(intraDayDto),
+                () -> assertFalse(intraDayDto.isEmpty())
+        );
     }
 
     @Test
     @Order(6)
-    @Sql("/schema/schema-postgresql.sql")
+    @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
     @DisplayName("Saving all entries via Spring Batch")
     void intraDaySavingViaSpringBatch(){
+        //Clear DB before test
+        intraDayServiceImpl.deleteAll();
+
+        //Save bulk entries
         intraDayServiceImpl.saveViaJob();
 
         //Check if entries are in DB
@@ -190,7 +219,12 @@ public class IntraDayTests {
 
         logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
         logger.info(String.format("All IntraDay DTOs size %d", intraDayDtos.size()));
-        Assertions.assertNotNull(intraDayDtos);
+
+        assertAll(
+                "Validation of intra day fetching data from DB after saving it via SPRING BATCH from JSON loading.",
+                () -> assertNotNull(intraDayDtos),
+                () -> assertFalse(intraDayDtos.isEmpty())
+        );
     }
 
     @Test
