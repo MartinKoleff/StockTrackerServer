@@ -20,6 +20,7 @@ import org.springframework.test.context.ContextConfiguration;
 import java.util.List;
 import java.util.Objects;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -34,9 +35,6 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ExtendWith(DatabaseSetupExtension.class)
 public class TickersTests {
     private final static Logger logger = LogManager.getLogger(TickersTests.class);
-
-    @ClassRule
-    public static final TestResources res = new TestResources();
     private final StockServiceImpl stockServiceImpl;
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
@@ -113,40 +111,81 @@ public class TickersTests {
         logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
-    @Test
-    @Order(1)
-    void tickersLoadingTest() {
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+    @Nested
+    class TickersLoadingNestedClass {
+        @Test
+        @Order(1)
+        @DisplayName("Fetching data from DB.")
+        void tickersLoadingTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
 
-        //Need to load and save stock_exchange before saving stock entity
-        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
-        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
-        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+            assertAll(
+                    "Validation of stock fetching data from DB.",
+                    () -> assertNotNull(stockDtos),
+                    () -> assertFalse(stockDtos.isEmpty())
+            );
+        }
 
-        currencyServiceImpl.saveCurrencies(currencies);
-        timezoneServiceImpl.saveTimezones(timezones);
-        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+        @Test
+        @Order(2)
+        @DisplayName("Fetching data from DB. Checking relation between Stock and EOD entity")
+        void tickersLoadingEODTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
 
-//        //Saving stocks to use with DB data...
-//        stockServiceImpl.saveStocks(stocks);
+            List<List<EndOfDayDto>> eodDtos = stockDtos.stream()
+                    .map(StockDto::endOfDayDtosList)
+                    .toList();
 
-        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
-        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
+            assertAll(
+                    "Validation of end of days fetching data from DB.",
+                    () -> assertNotNull(eodDtos),
+                    () -> assertFalse(eodDtos.isEmpty())
+            );
+        }
 
-        //Saving order matters!
-        intraDayServiceImpl.saveAllIntraDays(intraDays);
-        endOfDayServiceImpl.saveAllEndOfDays(eods);
-        stockServiceImpl.saveStocks(stocks);
+        @Test
+        @Order(3)
+        @DisplayName("Fetching data from DB. Checking relation between Stock and IntraDay entity")
+        void tickersLoadingIntraDayTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
 
-        List<StockDto> stockDtos = stockServiceImpl.getStocks();
-        logger.debug(stockDtos);
+            List<List<IntraDayDto>> intraDayDtos = stockDtos.stream()
+                    .map(StockDto::intraDayDtosList)
+                    .toList();
 
-        Assertions.assertNotNull(stockDtos);
+            assertAll(
+                    "Validation of intra day fetching data from DB.",
+                    () -> assertNotNull(intraDayDtos),
+                    () -> assertFalse(intraDayDtos.isEmpty())
+            );
+        }
+
+        @Test
+        @Order(4)
+        @DisplayName("Fetching data from DB. Checking relation between Stock and StockExchange entity")
+        void tickersLoadingStockExchangeTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
+
+            List<StockExchangeDto> stockExchangeDtos = stockDtos.stream()
+                    .map(StockDto::stockExchangeDto)
+                    .toList();
+
+            assertAll(
+                    "Validation of exchanges fetching data from DB.",
+                    () -> assertNotNull(stockExchangeDtos),
+                    () -> assertFalse(stockExchangeDtos.isEmpty())
+            );
+        }
     }
-
 
     @Test
     @Order(2)
+    @DisplayName("Configuring stock_exchange_id from exchanges.json and exporting to exchangesV2.json test.")
+    @Disabled("Exports to JSON functionality will change current V2 JSON files...")//TODO: add test profile to determine if export or no / delete files / use new naming for testing
     void tickersConfigureStockExchangeIdTest() {
         tickersUtil.configureIds();
 
