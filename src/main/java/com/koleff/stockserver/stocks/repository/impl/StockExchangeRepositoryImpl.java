@@ -2,7 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.repository.StockExchangeRepository;
-import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
+import com.koleff.stockserver.stocks.repository.custom.StockExchangeRepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,7 +16,7 @@ import java.util.List;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface StockExchangeRepositoryImpl extends StockExchangeRepository, RepositoryCustom {
+public interface StockExchangeRepositoryImpl extends StockExchangeRepository, StockExchangeRepositoryCustom {
 
     @Override
     @Query(value = "SELECT se, " +

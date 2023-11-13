@@ -2,7 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.Timezone;
 import com.koleff.stockserver.stocks.repository.TimezoneRepository;
-import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
+import com.koleff.stockserver.stocks.repository.custom.TimezoneRepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,7 +17,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface TimezoneRepositoryImpl extends TimezoneRepository, RepositoryCustom {
+public interface TimezoneRepositoryImpl extends TimezoneRepository, TimezoneRepositoryCustom {
 
     @Override
     @Query(

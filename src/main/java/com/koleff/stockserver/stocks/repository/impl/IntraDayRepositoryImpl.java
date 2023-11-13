@@ -2,7 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.repository.IntraDayRepository;
-import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
+import com.koleff.stockserver.stocks.repository.custom.IntraDayRepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,7 +17,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface IntraDayRepositoryImpl extends IntraDayRepository, RepositoryCustom {
+public interface IntraDayRepositoryImpl extends IntraDayRepository, IntraDayRepositoryCustom {
 
     @Override
     @Query(

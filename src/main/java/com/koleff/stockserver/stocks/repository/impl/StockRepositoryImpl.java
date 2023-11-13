@@ -2,7 +2,8 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.repository.StockRepository;
-import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
+import com.koleff.stockserver.stocks.repository.custom.query.DeleteByTagQueryCustom;
+import com.koleff.stockserver.stocks.repository.custom.query.TruncateQueryCustom;
 import com.koleff.stockserver.stocks.repository.custom.StockRepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,7 +19,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface StockRepositoryImpl extends StockRepository, RepositoryCustom, StockRepositoryCustom {
+public interface StockRepositoryImpl extends StockRepository, StockRepositoryCustom {
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.tag = ?1")
@@ -50,7 +51,7 @@ public interface StockRepositoryImpl extends StockRepository, RepositoryCustom, 
     @Override
     @Modifying
     @Query("DELETE FROM Stock s WHERE s.tag = ?1")
-    int deleteByStockTag(String stockTag);
+    int deleteByTag(String stockTag);
 
     @Override
     @Modifying
