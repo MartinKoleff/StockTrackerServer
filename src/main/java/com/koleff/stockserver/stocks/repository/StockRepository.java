@@ -13,5 +13,4 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
     List<Stock> findByHasIntraDay(Boolean hasIntraDay);
     List<Stock> findByHasEndOfDay(Boolean hasEndOfDay);
     int deleteStockById(Long id);
-    int deleteByStockTag(String stockTag);
 }

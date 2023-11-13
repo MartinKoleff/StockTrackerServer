@@ -202,8 +202,8 @@ public class IntraDayServiceImpl implements IntraDayService {
      * Delete entry from DB via stockTag
      */
     @Override
-    public void deleteByStockTag(String stockTag) {
-        intraDayRepositoryImpl.deleteByStockTag(stockTag);
+    public void deleteByTag(String stockTag) {
+        intraDayRepositoryImpl.deleteByTag(stockTag);
     }
 
     /**

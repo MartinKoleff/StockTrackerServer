@@ -202,8 +202,8 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      * Delete entry from DB via stockTag
      */
     @Override
-    public void deleteByStockTag(String stockTag) {
-        endOfDayRepositoryImpl.deleteByStockTag(stockTag);
+    public void deleteByTag(String stockTag) {
+        endOfDayRepositoryImpl.deleteByTag(stockTag);
     }
 
     /**

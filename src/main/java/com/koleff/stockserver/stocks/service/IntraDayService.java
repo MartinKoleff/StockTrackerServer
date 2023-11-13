@@ -16,7 +16,7 @@ public interface IntraDayService {
     void saveAllIntraDays(List<List<IntraDay>> data);
     void saveViaJob();
     void deleteById(Long id);
-    void deleteByStockTag(String stockTag);
+    void deleteByTag(String stockTag);
     void deleteAll();
     void truncateTable();
     List<IntraDay> loadIntraDays(String stockTag);

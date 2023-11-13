@@ -61,7 +61,7 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository, RepositoryCu
                     "WHERE s.tag = $1",
             nativeQuery = true
     )
-    int deleteByStockTag(String stockTag);
+    int deleteByTag(String stockTag);
 
     @Override
     @Modifying
