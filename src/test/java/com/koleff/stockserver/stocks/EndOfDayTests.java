@@ -16,6 +16,7 @@ import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -102,12 +103,17 @@ public class EndOfDayTests {
 
     @Test
     @Order(1)
-    @DisplayName("Fetching data from DB.")
+    @DisplayName("Fetching data from DB.") //TODO: test with FetchType.Lazy...
     void eodFetchingTest() {
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
         logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
-        Assertions.assertNotNull(eodDtos);
+
+        assertAll(
+                "Validation of EOD fetching data from DB.",
+                () -> assertNotNull(eodDtos),
+                () -> assertFalse(eodDtos.isEmpty())
+        );
     }
 
     @Test
@@ -117,7 +123,12 @@ public class EndOfDayTests {
         List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
 
         logger.info(String.format("All EODs loaded from all JSONs: %s", eods));
-        Assertions.assertNotNull(eods);
+
+        assertAll(
+                "Validation of EOD loading data from JSON.",
+                () -> assertNotNull(eods),
+                () -> assertFalse(eods.isEmpty())
+        );
 
     }
 
@@ -130,8 +141,12 @@ public class EndOfDayTests {
         List<EndOfDayDto> eodDtos = endOfDayServiceImpl.getEndOfDays(stockTag);
 
         logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDtos));
-        Assertions.assertNotNull(eodDtos);
 
+        assertAll(
+                "Validation of EOD for 1 stock fetching data from DB.",
+                () -> assertNotNull(eodDtos),
+                () -> assertFalse(eodDtos.isEmpty())
+        );
     }
 
     @Test
@@ -151,7 +166,12 @@ public class EndOfDayTests {
         List<List<EndOfDayDto>> allEodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
         logger.info(String.format("All EOD DTOs from DB: %s", allEodDtos));
-        Assertions.assertNotNull(allEodDtos);
+
+        assertAll(
+                "Validation of EOD fetching data from DB after saving it from JSON loading.",
+                () -> assertNotNull(allEodDtos),
+                () -> assertFalse(allEodDtos.isEmpty())
+        );
     }
 
     @Test
@@ -173,14 +193,23 @@ public class EndOfDayTests {
         List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDays(stockTag);
 
         logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
-        Assertions.assertNotNull(eodDto);
+
+        assertAll(
+                "Validation of EOD for 1 stock fetching data from DB after saving.",
+                () -> assertNotNull(eodDto),
+                () -> assertFalse(eodDto.isEmpty())
+        );
     }
 
     @Test
     @Order(6)
-    @Sql("/schema/schema-postgresql.sql")
+    @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
     @DisplayName("Saving all entries via Spring Batch")
     void eodSavingViaSpringBatch() {
+        //Clear DB before test
+        endOfDayServiceImpl.deleteAll();
+
+        //Save bulk entries
         endOfDayServiceImpl.saveViaJob();
 
         //Check if entries are in DB
@@ -188,7 +217,12 @@ public class EndOfDayTests {
 
         logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
         logger.info(String.format("All EOD DTOs size %d", eodDtos.size()));
-        Assertions.assertNotNull(eodDtos);
+
+        assertAll(
+                "Validation of EOD fetching data from DB after saving it via SPRING BATCH from JSON loading.",
+                () -> assertNotNull(eodDtos),
+                () -> assertFalse(eodDtos.isEmpty())
+        );
     }
 
     @Test
