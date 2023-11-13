@@ -72,16 +72,12 @@ public class TickersTests {
 
     @BeforeEach
     public void setup() {
-        if (hasInitializedDB) {
-            return;
-        }
         logger.info("Setup before test starts...");
 
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
-
 
         //Need to load and save stock_exchange before saving stock entity
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
@@ -107,19 +103,8 @@ public class TickersTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (!isDoneTesting) {
-            logger.info("Testing finished!");
-            return;
-        }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
-
-        stockServiceImpl.deleteAll();
-        intraDayServiceImpl.deleteAll();
-        endOfDayServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && intraDayServiceImpl.getAllIntraDays().isEmpty()

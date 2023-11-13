@@ -62,9 +62,6 @@ public class StockExchangeTests {
 
     @BeforeEach
     public void setup() {
-        if(hasInitializedDB){
-            return;
-        }
         logger.info("Setup before test starts...");
 
         //Load and Save stocks to DB
@@ -93,17 +90,8 @@ public class StockExchangeTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (!isDoneTesting){
-            logger.info("Testing finished!");
-            return;
-        }
-
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
-        stockServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && stockExchangeServiceImpl.getStockExchanges().isEmpty()
