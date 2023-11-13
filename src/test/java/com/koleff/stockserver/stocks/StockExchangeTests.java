@@ -2,7 +2,10 @@ package com.koleff.stockserver.stocks;
 
 import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
+import com.koleff.stockserver.stocks.dto.CurrencyDto;
 import com.koleff.stockserver.stocks.dto.StockExchangeDto;
+import com.koleff.stockserver.stocks.dto.TimezoneDto;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.stockExchangesUtil.StockExchangesUtil;
@@ -11,15 +14,12 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 import java.util.Objects;
 
-import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -28,11 +28,10 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(
         webEnvironment = RANDOM_PORT
 )
-@TestInstance(PER_CLASS)
 @ContextConfiguration(
-        classes = {StockServerApplication.class, TestConfiguration.class}
+        classes = {TestConfiguration.class}
 )
-@ExtendWith(SpringExtension.class)
+@ExtendWith(DatabaseSetupExtension.class)
 public class StockExchangeTests {
 
     private final static Logger logger = LogManager.getLogger(StockExchangeTests.class);

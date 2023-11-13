@@ -1,8 +1,8 @@
 package com.koleff.stockserver.stocks;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
@@ -26,9 +25,9 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
         webEnvironment = RANDOM_PORT
 )
 @ContextConfiguration(
-        classes = {StockServerApplication.class, TestConfiguration.class}
+        classes = {TestConfiguration.class}
 )
-@ExtendWith(SpringExtension.class)
+@ExtendWith(DatabaseSetupExtension.class)
 public class IntraDayTests {
 
     private final static Logger logger = LogManager.getLogger(IntraDayTests.class);

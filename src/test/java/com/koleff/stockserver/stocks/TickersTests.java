@@ -1,40 +1,37 @@
 package com.koleff.stockserver.stocks;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
+import com.koleff.stockserver.stocks.dto.EndOfDayDto;
+import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.dto.StockDto;
+import com.koleff.stockserver.stocks.dto.StockExchangeDto;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
-import com.koleff.stockserver.stocks.resources.TestResources;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.ClassRule;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 import java.util.Objects;
 
-import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
  * Using VM options to configure PostgreSQL DB login
  */
 @SpringBootTest(
-        webEnvironment = RANDOM_PORT //TODO: look up
+        webEnvironment = RANDOM_PORT
 )
-@TestInstance(PER_CLASS)
 @ContextConfiguration(
-        classes = {StockServerApplication.class, TestConfiguration.class}
+        classes = {TestConfiguration.class}
 )
-@ExtendWith(SpringExtension.class) //TODO: look up
+@ExtendWith(DatabaseSetupExtension.class)
 public class TickersTests {
     private final static Logger logger = LogManager.getLogger(TickersTests.class);
 
