@@ -1,6 +1,5 @@
 package com.koleff.stockserver.stocks;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.CurrencyDto;
 import com.koleff.stockserver.stocks.dto.StockExchangeDto;
@@ -20,6 +19,7 @@ import org.springframework.test.context.ContextConfiguration;
 import java.util.List;
 import java.util.Objects;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -99,29 +99,63 @@ public class StockExchangeTests {
         logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
-    @Test
-    @Order(1)
-    @DisplayName("Loading from DB test. Relation between entities test.")
-    void stockExchangesLoadingTest() {
-        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
-        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
-        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+    @Nested
+    class StockExchangeLoadingNestedClass {
+        @Test
+        @Order(1)
+        @DisplayName("Fetching data from DB.")
+        void stockExchangesLoadingTest() {
+            List<StockExchangeDto> exchanges = stockExchangeServiceImpl.getStockExchanges();
+            logger.debug(exchanges);
 
-        //Saving order matters!
-        currencyServiceImpl.saveCurrencies(currencies);
-        timezoneServiceImpl.saveTimezones(timezones);
-        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
-        stockServiceImpl.saveStocks(stocks);
+            assertAll(
+                    "Validation of exchanges fetching data from DB.",
+                    () -> assertNotNull(exchanges),
+                    () -> assertFalse(exchanges.isEmpty())
+            );
+        }
 
-        List<StockExchangeDto> exchanges = stockExchangeServiceImpl.getStockExchanges();
-        logger.debug(exchanges);
+        @Test
+        @Order(2)
+        @DisplayName("Fetching data from DB. Checking relation between StockExchange and Timezone entity")
+        void stockExchangesLoadingTimezoneTest() {
+            List<StockExchangeDto> exchanges = stockExchangeServiceImpl.getStockExchanges();
+            logger.debug(exchanges);
 
-        Assertions.assertNotNull(exchanges);
+            List<TimezoneDto> timezones = exchanges.stream()
+                    .map(StockExchangeDto::timezoneDto)
+                    .toList();
+
+            assertAll(
+                    "Validation of timezone fetching data from DB.",
+                    () -> assertNotNull(timezones),
+                    () -> assertFalse(timezones.isEmpty())
+            );
+        }
+
+        @Test
+        @Order(3)
+        @DisplayName("Fetching data from DB. Checking relation between StockExchange and Currency entity")
+        void stockExchangesLoadingCurrencyTest() {
+            List<StockExchangeDto> exchanges = stockExchangeServiceImpl.getStockExchanges();
+            logger.debug(exchanges);
+
+            List<CurrencyDto> currencies = exchanges.stream()
+                    .map(StockExchangeDto::currencyDto)
+                    .toList();
+
+            assertAll(
+                    "Validation of currency fetching data from DB.",
+                    () -> assertNotNull(currencies),
+                    () -> assertFalse(currencies.isEmpty())
+            );
+        }
     }
 
     @Test
     @Order(2)
+    @Disabled("Exports to JSON functionality will change current V2 JSON files...")
+    //TODO: add test profile to determine if export or no / delete files / use new naming for testing
     @DisplayName("Configuring currency_id and timezone_id from tickers.json and exporting to tickersV2.json test.")
     void stockExchangesConfigureIdsTest() {
         stockExchangesUtil.configureIds();
@@ -136,7 +170,7 @@ public class StockExchangeTests {
                 .map(StockExchange::getTimezoneId)
                 .anyMatch(Objects::isNull);
 
-        Assertions.assertFalse(currencyIdsUpdated && timezoneIdsUpdated);
+        assertFalse(currencyIdsUpdated && timezoneIdsUpdated);
 
         isDoneTesting = true;
     }
