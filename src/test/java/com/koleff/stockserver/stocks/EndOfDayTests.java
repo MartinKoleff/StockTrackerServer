@@ -2,25 +2,21 @@ package com.koleff.stockserver.stocks;
 
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.jdbc.Sql;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -30,7 +26,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ContextConfiguration(
         classes = {TestConfiguration.class}
 )
-@Testcontainers
+@ExtendWith(DatabaseSetupExtension.class)
 public class EndOfDayTests {
 
     private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
@@ -46,44 +42,6 @@ public class EndOfDayTests {
     private long endTime;
     private long totalTime;
 
-    /**
-     * Test container setup
-     */
-
-    @LocalServerPort
-    private Integer port;
-
-    @Value("spring.datasource.username") //TODO: wire with VM Options...
-    private static String usernameDB;
-
-    @Value("spring.datasource.password")
-    private static String passwordDB;
-
-
-    @Container
-    public static PostgreSQLContainer<?> postgreSQLContainer = (PostgreSQLContainer<?>) new PostgreSQLContainer
-            ("postgres:16.0")
-            .withDatabaseName("stocks")
-            .withUsername("postgres")
-            .withPassword("")
-            .withReuse(true);
-
-    @BeforeAll
-    static void beforeAll() {
-        postgreSQLContainer.start();
-    }
-
-    @AfterAll
-    static void afterAll() {
-        postgreSQLContainer.stop();
-    }
-
-    @DynamicPropertySource
-    static void configureProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
-        registry.add("spring.datasource.username", postgreSQLContainer::getUsername);
-        registry.add("spring.datasource.password", postgreSQLContainer::getPassword);
-    }
 
     @Autowired
     public EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
@@ -101,8 +59,6 @@ public class EndOfDayTests {
     @BeforeEach
     public void setup() {
         logger.info("Setup before test starts...");
-
-        logger.info(String.format("Testcontainer JDBC URL: %s", postgreSQLContainer.getJdbcUrl()));
 
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
@@ -133,10 +89,6 @@ public class EndOfDayTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (isDoneTesting) {
-            logger.info("Testing finished!");
-            return;
-        }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
 
@@ -151,12 +103,17 @@ public class EndOfDayTests {
 
     @Test
     @Order(1)
-    @DisplayName("Fetching data from DB.")
+    @DisplayName("Fetching data from DB.") //TODO: test with FetchType.Lazy...
     void eodFetchingTest() {
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
         logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
-        Assertions.assertNotNull(eodDtos);
+
+        assertAll(
+                "Validation of EOD fetching data from DB.",
+                () -> assertNotNull(eodDtos),
+                () -> assertFalse(eodDtos.isEmpty())
+        );
     }
 
     @Test
@@ -166,7 +123,12 @@ public class EndOfDayTests {
         List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
 
         logger.info(String.format("All EODs loaded from all JSONs: %s", eods));
-        Assertions.assertNotNull(eods);
+
+        assertAll(
+                "Validation of EOD loading data from JSON.",
+                () -> assertNotNull(eods),
+                () -> assertFalse(eods.isEmpty())
+        );
 
     }
 
@@ -179,8 +141,12 @@ public class EndOfDayTests {
         List<EndOfDayDto> eodDtos = endOfDayServiceImpl.getEndOfDays(stockTag);
 
         logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDtos));
-        Assertions.assertNotNull(eodDtos);
 
+        assertAll(
+                "Validation of EOD for 1 stock fetching data from DB.",
+                () -> assertNotNull(eodDtos),
+                () -> assertFalse(eodDtos.isEmpty())
+        );
     }
 
     @Test
@@ -200,7 +166,12 @@ public class EndOfDayTests {
         List<List<EndOfDayDto>> allEodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
         logger.info(String.format("All EOD DTOs from DB: %s", allEodDtos));
-        Assertions.assertNotNull(allEodDtos);
+
+        assertAll(
+                "Validation of EOD fetching data from DB after saving it from JSON loading.",
+                () -> assertNotNull(allEodDtos),
+                () -> assertFalse(allEodDtos.isEmpty())
+        );
     }
 
     @Test
@@ -222,14 +193,23 @@ public class EndOfDayTests {
         List<EndOfDayDto> eodDto = endOfDayServiceImpl.getEndOfDays(stockTag);
 
         logger.info(String.format("EOD DTO for %s stock: %s", stockTag, eodDto));
-        Assertions.assertNotNull(eodDto);
+
+        assertAll(
+                "Validation of EOD for 1 stock fetching data from DB after saving.",
+                () -> assertNotNull(eodDto),
+                () -> assertFalse(eodDto.isEmpty())
+        );
     }
 
     @Test
     @Order(6)
-    @Sql("/schema/schema-postgresql.sql")
+    @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
     @DisplayName("Saving all entries via Spring Batch")
     void eodSavingViaSpringBatch() {
+        //Clear DB before test
+        endOfDayServiceImpl.deleteAll();
+
+        //Save bulk entries
         endOfDayServiceImpl.saveViaJob();
 
         //Check if entries are in DB
@@ -237,7 +217,12 @@ public class EndOfDayTests {
 
         logger.info(String.format("All EOD DTOs from DB: %s", eodDtos));
         logger.info(String.format("All EOD DTOs size %d", eodDtos.size()));
-        Assertions.assertNotNull(eodDtos);
+
+        assertAll(
+                "Validation of EOD fetching data from DB after saving it via SPRING BATCH from JSON loading.",
+                () -> assertNotNull(eodDtos),
+                () -> assertFalse(eodDtos.isEmpty())
+        );
     }
 
     @Test

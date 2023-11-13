@@ -1,45 +1,40 @@
 package com.koleff.stockserver.stocks;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
+import com.koleff.stockserver.stocks.dto.EndOfDayDto;
+import com.koleff.stockserver.stocks.dto.IntraDayDto;
 import com.koleff.stockserver.stocks.dto.StockDto;
+import com.koleff.stockserver.stocks.dto.StockExchangeDto;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
-import com.koleff.stockserver.stocks.resources.TestResources;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.ClassRule;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 import java.util.Objects;
 
-import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
  * Using VM options to configure PostgreSQL DB login
  */
 @SpringBootTest(
-        webEnvironment = RANDOM_PORT //TODO: look up
+        webEnvironment = RANDOM_PORT
 )
-@TestInstance(PER_CLASS)
 @ContextConfiguration(
-        classes = {StockServerApplication.class, TestConfiguration.class}
+        classes = {TestConfiguration.class}
 )
-@ExtendWith(SpringExtension.class) //TODO: look up
+@ExtendWith(DatabaseSetupExtension.class)
 public class TickersTests {
     private final static Logger logger = LogManager.getLogger(TickersTests.class);
-
-    @ClassRule
-    public static final TestResources res = new TestResources();
     private final StockServiceImpl stockServiceImpl;
     private final StockExchangeServiceImpl stockExchangeServiceImpl;
     private final CurrencyServiceImpl currencyServiceImpl;
@@ -72,16 +67,12 @@ public class TickersTests {
 
     @BeforeEach
     public void setup() {
-        if (hasInitializedDB) {
-            return;
-        }
         logger.info("Setup before test starts...");
 
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
-
 
         //Need to load and save stock_exchange before saving stock entity
         List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
@@ -107,19 +98,8 @@ public class TickersTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (!isDoneTesting) {
-            logger.info("Testing finished!");
-            return;
-        }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
-
-        stockServiceImpl.deleteAll();
-        intraDayServiceImpl.deleteAll();
-        endOfDayServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && intraDayServiceImpl.getAllIntraDays().isEmpty()
@@ -131,40 +111,81 @@ public class TickersTests {
         logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
-    @Test
-    @Order(1)
-    void tickersLoadingTest() {
-        List<Stock> stocks = stockServiceImpl.loadAllStocks();
+    @Nested
+    class TickersLoadingNestedClass {
+        @Test
+        @Order(1)
+        @DisplayName("Fetching data from DB.")
+        void tickersLoadingTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
 
-        //Need to load and save stock_exchange before saving stock entity
-        List<Currency> currencies = currencyServiceImpl.loadAllCurrencies();
-        List<Timezone> timezones = timezoneServiceImpl.loadAllTimezones();
-        List<StockExchange> stockExchanges = stockExchangeServiceImpl.loadAllStockExchanges();
+            assertAll(
+                    "Validation of stock fetching data from DB.",
+                    () -> assertNotNull(stockDtos),
+                    () -> assertFalse(stockDtos.isEmpty())
+            );
+        }
 
-        currencyServiceImpl.saveCurrencies(currencies);
-        timezoneServiceImpl.saveTimezones(timezones);
-        stockExchangeServiceImpl.saveStockExchanges(stockExchanges);
+        @Test
+        @Order(2)
+        @DisplayName("Fetching data from DB. Checking relation between Stock and EOD entity")
+        void tickersLoadingEODTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
 
-//        //Saving stocks to use with DB data...
-//        stockServiceImpl.saveStocks(stocks);
+            List<List<EndOfDayDto>> eodDtos = stockDtos.stream()
+                    .map(StockDto::endOfDayDtosList)
+                    .toList();
 
-        List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
-        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
+            assertAll(
+                    "Validation of end of days fetching data from DB.",
+                    () -> assertNotNull(eodDtos),
+                    () -> assertFalse(eodDtos.isEmpty())
+            );
+        }
 
-        //Saving order matters!
-        intraDayServiceImpl.saveAllIntraDays(intraDays);
-        endOfDayServiceImpl.saveAllEndOfDays(eods);
-        stockServiceImpl.saveStocks(stocks);
+        @Test
+        @Order(3)
+        @DisplayName("Fetching data from DB. Checking relation between Stock and IntraDay entity")
+        void tickersLoadingIntraDayTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
 
-        List<StockDto> stockDtos = stockServiceImpl.getStocks();
-        logger.debug(stockDtos);
+            List<List<IntraDayDto>> intraDayDtos = stockDtos.stream()
+                    .map(StockDto::intraDayDtosList)
+                    .toList();
 
-        Assertions.assertNotNull(stockDtos);
+            assertAll(
+                    "Validation of intra day fetching data from DB.",
+                    () -> assertNotNull(intraDayDtos),
+                    () -> assertFalse(intraDayDtos.isEmpty())
+            );
+        }
+
+        @Test
+        @Order(4)
+        @DisplayName("Fetching data from DB. Checking relation between Stock and StockExchange entity")
+        void tickersLoadingStockExchangeTest() {
+            List<StockDto> stockDtos = stockServiceImpl.getStocks();
+            logger.debug(stockDtos);
+
+            List<StockExchangeDto> stockExchangeDtos = stockDtos.stream()
+                    .map(StockDto::stockExchangeDto)
+                    .toList();
+
+            assertAll(
+                    "Validation of exchanges fetching data from DB.",
+                    () -> assertNotNull(stockExchangeDtos),
+                    () -> assertFalse(stockExchangeDtos.isEmpty())
+            );
+        }
     }
-
 
     @Test
     @Order(2)
+    @DisplayName("Configuring stock_exchange_id from exchanges.json and exporting to exchangesV2.json test.")
+    @Disabled("Exports to JSON functionality will change current V2 JSON files...")//TODO: add test profile to determine if export or no / delete files / use new naming for testing
     void tickersConfigureStockExchangeIdTest() {
         tickersUtil.configureIds();
 
