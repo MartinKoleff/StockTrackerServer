@@ -1,7 +1,5 @@
 package com.koleff.stockserver.remoteApi;
 
-import com.koleff.stockserver.StockServerApplication;
-import com.koleff.stockserver.stocks.EndOfDayTests;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.remoteApi.service.impl.IntraDayPublicApiServiceImpl;
 import com.koleff.stockserver.stocks.domain.*;
@@ -11,15 +9,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -28,11 +23,9 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(
         webEnvironment = RANDOM_PORT
 )
-@TestInstance(PER_CLASS)
 @ContextConfiguration(
-        classes = {StockServerApplication.class, TestConfiguration.class}
+        classes = {TestConfiguration.class}
 )
-@ExtendWith(SpringExtension.class)
 public class PublicApiIntraDayTests {
 
     private final static Logger logger = LogManager.getLogger(PublicApiIntraDayTests.class);

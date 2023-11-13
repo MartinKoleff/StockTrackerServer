@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.IntraDay;
 import com.koleff.stockserver.stocks.repository.IntraDayRepository;
+import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface IntraDayRepositoryImpl extends IntraDayRepository {
+public interface IntraDayRepositoryImpl extends IntraDayRepository, RepositoryCustom {
 
     @Override
     @Query(
@@ -65,6 +66,6 @@ public interface IntraDayRepositoryImpl extends IntraDayRepository {
     @Override
     @Modifying
     @Query(value = "TRUNCATE TABLE intra_day RESTART IDENTITY CASCADE", nativeQuery = true)
-    void truncateIntraDay();
+    void truncate();
 }
 

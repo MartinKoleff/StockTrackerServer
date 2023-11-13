@@ -146,7 +146,7 @@ public class TimezoneServiceImpl implements TimezoneService {
 
     @Override
     public void truncateTable() {
-        timezoneRepositoryImpl.truncateTimezone();
+        timezoneRepositoryImpl.truncate();
     }
 
     /**

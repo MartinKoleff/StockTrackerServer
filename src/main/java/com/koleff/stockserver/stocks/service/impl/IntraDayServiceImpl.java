@@ -216,7 +216,7 @@ public class IntraDayServiceImpl implements IntraDayService {
 
     @Override
     public void truncateTable() {
-        intraDayRepositoryImpl.truncateIntraDay();
+        intraDayRepositoryImpl.truncate();
     }
 
 

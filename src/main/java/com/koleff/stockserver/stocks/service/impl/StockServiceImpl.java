@@ -189,7 +189,7 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public void truncateTable() {
-        stockRepositoryImpl.truncateStock();
+        stockRepositoryImpl.truncate();
     }
 
     /**
