@@ -3,6 +3,7 @@ package com.koleff.stockserver.stocks.repository.impl;
 import com.koleff.stockserver.stocks.domain.Stock;
 import com.koleff.stockserver.stocks.repository.StockRepository;
 import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
+import com.koleff.stockserver.stocks.repository.custom.StockRepositoryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,7 +18,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface StockRepositoryImpl extends StockRepository, RepositoryCustom {
+public interface StockRepositoryImpl extends StockRepository, RepositoryCustom, StockRepositoryCustom {
 
     @Override
     @Query(value = "SELECT s FROM Stock s WHERE s.tag = ?1")
