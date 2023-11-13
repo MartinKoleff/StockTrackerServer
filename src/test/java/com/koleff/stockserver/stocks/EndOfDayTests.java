@@ -2,22 +2,17 @@ package com.koleff.stockserver.stocks;
 
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.EndOfDayDto;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.jdbc.Sql;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 
@@ -30,7 +25,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ContextConfiguration(
         classes = {TestConfiguration.class}
 )
-@Testcontainers
+@ExtendWith(DatabaseSetupExtension.class)
 public class EndOfDayTests {
 
     private final static Logger logger = LogManager.getLogger(EndOfDayTests.class);
@@ -46,44 +41,6 @@ public class EndOfDayTests {
     private long endTime;
     private long totalTime;
 
-    /**
-     * Test container setup
-     */
-
-    @LocalServerPort
-    private Integer port;
-
-    @Value("spring.datasource.username") //TODO: wire with VM Options...
-    private static String usernameDB;
-
-    @Value("spring.datasource.password")
-    private static String passwordDB;
-
-
-    @Container
-    public static PostgreSQLContainer<?> postgreSQLContainer = (PostgreSQLContainer<?>) new PostgreSQLContainer
-            ("postgres:16.0")
-            .withDatabaseName("stocks")
-            .withUsername("postgres")
-            .withPassword("")
-            .withReuse(true);
-
-    @BeforeAll
-    static void beforeAll() {
-        postgreSQLContainer.start();
-    }
-
-    @AfterAll
-    static void afterAll() {
-        postgreSQLContainer.stop();
-    }
-
-    @DynamicPropertySource
-    static void configureProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
-        registry.add("spring.datasource.username", postgreSQLContainer::getUsername);
-        registry.add("spring.datasource.password", postgreSQLContainer::getPassword);
-    }
 
     @Autowired
     public EndOfDayTests(EndOfDayServiceImpl endOfDayServiceImpl,
