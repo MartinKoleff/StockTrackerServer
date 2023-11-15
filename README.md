@@ -11,6 +11,8 @@ What is used in this project:
   - Spring Data JPA
   - PostgreSQL DB
   - JUnit for testing
+  - Testcontainer for testing
+  - Custom exception handling
 2. Good practices
   - Controller / Service / Repository defined structures with interface implementations
   - DTO structures
@@ -18,8 +20,6 @@ What is used in this project:
   - Documentation for almost every class and function
 
 To implement in future:
-- Base response for each payload to the client
-- Custom Exception handling
 - Pagination
 - Swagger UI integration
 - Spring Security
@@ -27,6 +27,7 @@ To implement in future:
 - Dockerize DB
 - Deploy server to AWS
 - Multi modular approach for remote API and my API structures
+- To use real time data API
 
 VM options command before running the server:
 -Dspring.datasource.password=... -Dspring.datasource.username=... -DapiKey=...
