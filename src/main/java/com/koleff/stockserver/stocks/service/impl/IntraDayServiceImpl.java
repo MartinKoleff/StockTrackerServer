@@ -41,6 +41,7 @@ public class IntraDayServiceImpl implements IntraDayService {
 
     private final JobLauncher jobLauncher;
     private final Job job;
+
     @Autowired
     public IntraDayServiceImpl(IntraDayRepositoryImpl intraDayRepositoryImpl,
                                IntraDayDtoMapper intraDayDtoMapper,
@@ -60,7 +61,7 @@ public class IntraDayServiceImpl implements IntraDayService {
      * Get intraDay from DB via stockTag
      */
     @Override
-    public List<IntraDayDto> getIntraDay(String stockTag) {
+    public List<IntraDayDto> getIntraDays(String stockTag) {
         return intraDayRepositoryImpl.findIntraDayByStockTag(stockTag)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
@@ -74,11 +75,49 @@ public class IntraDayServiceImpl implements IntraDayService {
                 .toList();
     }
 
+    @Override
+    public List<IntraDayDto> getIntraDays(String stockTag, String dateFrom, String dateTo) {
+        return intraDayRepositoryImpl.findIntraDayByStockTagAndDateBetween(stockTag, dateFrom, dateTo)
+                .orElseThrow(
+                        () -> new IntraDayNotFoundException(
+                                String.format("Intra day for stock tag %s between dates %s and %s not found.",
+                                        stockTag,
+                                        dateFrom,
+                                        dateTo
+                                )
+                        )
+                )
+                .stream()
+                .map(intraDayDtoMapper)
+                .toList();
+    }
+
+    @Override
+    public IntraDayDto getIntraDay(String stockTag, String date) {
+        return intraDayRepositoryImpl.findIntraDayByStockTagAndDate(stockTag, date)
+                .orElseThrow(
+                        () -> new IntraDayNotFoundException(
+                                String.format("Intra day for stock tag %s for date %s not found.",
+                                        stockTag,
+                                        date
+                                )
+                        )
+                )
+                .stream()
+                .map(intraDayDtoMapper)
+                .findFirst()
+                .orElseThrow(() -> new IntraDayNotFoundException(
+                        String.format("Intra day for stock tag %s not found.",
+                                stockTag
+                        )
+                ));
+    }
+
     /**
      * Get intraDay from DB via id
      */
     @Override
-    public List<IntraDayDto> getIntraDay(Long id) {
+    public List<IntraDayDto> getIntraDays(Long id) {
         return intraDayRepositoryImpl.findAllById(id)
                 .orElseThrow(
                         () -> new IntraDayNotFoundException(
@@ -101,7 +140,7 @@ public class IntraDayServiceImpl implements IntraDayService {
     public List<List<IntraDayDto>> getAllIntraDays() {
         List<List<IntraDayDto>> data = new ArrayList<>();
 
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.getTagsColumn();
         stockTags.parallelStream()
                 .forEach(
                         stockTag -> {
@@ -168,8 +207,8 @@ public class IntraDayServiceImpl implements IntraDayService {
      * Delete entry from DB via stockTag
      */
     @Override
-    public void deleteByStockTag(String stockTag) {
-        intraDayRepositoryImpl.deleteByStockTag(stockTag);
+    public void deleteByTag(String stockTag) {
+        intraDayRepositoryImpl.deleteByTag(stockTag);
     }
 
     /**
@@ -180,12 +219,17 @@ public class IntraDayServiceImpl implements IntraDayService {
         intraDayRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncateTable() {
+        intraDayRepositoryImpl.truncate();
+    }
+
 
     /**
      * Load one entry from JSON
      */
     @Override
-    public List<IntraDay> loadIntraDay(String stockTag) {
+    public List<IntraDay> loadIntraDays(String stockTag) {
         //Configure json based on current stock
         String filePath = String.format("intraday%s%s.json", stockTag, versionAnnotation);
 
@@ -209,7 +253,7 @@ public class IntraDayServiceImpl implements IntraDayService {
                 .forEach(
                         stockTag -> {
                             try {
-                                List<IntraDay> entry = loadIntraDay(stockTag);
+                                List<IntraDay> entry = loadIntraDays(stockTag);
 
                                 data.add(entry);
                             } catch (NullPointerException e) {

@@ -2,6 +2,8 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.repository.StockExchangeRepository;
+import com.koleff.stockserver.stocks.repository.custom.StockExchangeRepositoryCustom;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -10,11 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-@Transactional(readOnly = true,
-               rollbackFor = Exception.class,
-               propagation = Propagation.REQUIRED
+@Transactional(
+        rollbackFor = Exception.class,
+        propagation = Propagation.REQUIRED
 )
-public interface StockExchangeRepositoryImpl extends StockExchangeRepository {
+public interface StockExchangeRepositoryImpl extends StockExchangeRepository, StockExchangeRepositoryCustom {
 
     @Override
     @Query(value = "SELECT se, " +
@@ -30,5 +32,10 @@ public interface StockExchangeRepositoryImpl extends StockExchangeRepository {
     @Query(
             value = "SELECT se FROM StockExchange se WHERE se.country = ?1"
     )
-    List<StockExchange> getStockExchangeByCountry(String country);
+    List<StockExchange> findByCountry(String country);
+
+    @Override
+    @Modifying
+    @Query(value = "TRUNCATE TABLE stock_exchange RESTART IDENTITY CASCADE", nativeQuery = true)
+    void truncate();
 }

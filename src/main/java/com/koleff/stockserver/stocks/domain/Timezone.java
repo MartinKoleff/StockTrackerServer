@@ -64,7 +64,7 @@ public@Data class Timezone implements Serializable {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     ) //Doesn't need to be bidirectional
-    private List<StockExchange> stockExchange;
+    private List<StockExchange> stockExchanges;
 
     @Override
     public String toString() {

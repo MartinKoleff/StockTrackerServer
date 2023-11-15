@@ -60,7 +60,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      * Get end of day from DB via stockTag
      */
     @Override
-    public List<EndOfDayDto> getEndOfDay(String stockTag) {
+    public List<EndOfDayDto> getEndOfDays(String stockTag) {
         return endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
@@ -74,11 +74,49 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                 .toList();
     }
 
+    @Override
+    public List<EndOfDayDto> getEndOfDays(String stockTag, String dateFrom, String dateTo) {
+        return endOfDayRepositoryImpl.findEndOfDayByStockTagAndDateBetween(stockTag, dateFrom, dateTo)
+                .orElseThrow(
+                        () -> new EndOfDayNotFoundException(
+                                String.format("End of day for stock tag %s between dates %s and %s not found.",
+                                        stockTag,
+                                        dateFrom,
+                                        dateFrom
+                                )
+                        )
+                )
+                .stream()
+                .map(endOfDayDtoMapper)
+                .toList();
+    }
+
+    @Override
+    public EndOfDayDto getEndOfDay(String stockTag, String date) {
+        return endOfDayRepositoryImpl.findEndOfDayByStockTagAndDate(stockTag, date)
+                .orElseThrow(
+                        () -> new EndOfDayNotFoundException(
+                                String.format("End of day for stock tag %s for date %s not found.",
+                                        stockTag,
+                                        date
+                                )
+                        )
+                )
+                .stream()
+                .map(endOfDayDtoMapper)
+                .findFirst()
+                .orElseThrow(() -> new EndOfDayNotFoundException(
+                        String.format("End of day for stock tag %s not found.",
+                                stockTag
+                        )
+                ));
+    }
+
     /**
      * Get end of day from DB via id
      */
     @Override
-    public List<EndOfDayDto> getEndOfDay(Long id) {
+    public List<EndOfDayDto> getEndOfDays(Long id) {
         return endOfDayRepositoryImpl.findAllById(id)
                 .orElseThrow(
                         () -> new EndOfDayNotFoundException(
@@ -100,9 +138,9 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     public List<List<EndOfDayDto>> getAllEndOfDays() {
         List<List<EndOfDayDto>> data = new ArrayList<>();
 
-        List<String> stockTags = stockServiceImpl.getStockTags();
+        List<String> stockTags = stockServiceImpl.getTagsColumn();
         stockTags.parallelStream()
-                 .forEach(
+                .forEach(
                         stockTag -> {
                             List<EndOfDayDto> entry = endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
                                     .orElseThrow(
@@ -168,8 +206,8 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      * Delete entry from DB via stockTag
      */
     @Override
-    public void deleteByStockTag(String stockTag) {
-        endOfDayRepositoryImpl.deleteByStockTag(stockTag);
+    public void deleteByTag(String stockTag) {
+        endOfDayRepositoryImpl.deleteByTag(stockTag);
     }
 
     /**
@@ -180,11 +218,16 @@ public class EndOfDayServiceImpl implements EndOfDayService {
         endOfDayRepositoryImpl.deleteAll();
     }
 
+    @Override
+    public void truncateTable() {
+        endOfDayRepositoryImpl.truncate();
+    }
+
     /**
      * Load one entry from JSON
      */
     @Override
-    public List<EndOfDay> loadEndOfDay(String stockTag) {
+    public List<EndOfDay> loadEndOfDays(String stockTag) {
         //Configure json based on current stock
         String filePath = String.format("eod%s%s.json", stockTag, versionAnnotation);
 
@@ -207,7 +250,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                 .forEach(
                         stockTag -> {
                             try {
-                                List<EndOfDay> entry = loadEndOfDay(stockTag);
+                                List<EndOfDay> entry = loadEndOfDays(stockTag);
 
                                 data.add(entry);
                             } catch (NullPointerException e) {

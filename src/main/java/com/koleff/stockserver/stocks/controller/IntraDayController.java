@@ -26,13 +26,23 @@ public class IntraDayController {
     }
 
     @GetMapping("get/{stock_id}")
-    public List<IntraDayDto> getIntraDay(@PathVariable("stock_id") Long stockId) {
-        return intraDayServiceImpl.getIntraDay(stockId);
+    public List<IntraDayDto> getIntraDays(@PathVariable("stock_id") Long stockId) {
+        return intraDayServiceImpl.getIntraDays(stockId);
     }
 
     @GetMapping("get/{stock_tag}")
-    public List<IntraDayDto> getIntraDay(@PathVariable("stock_tag") String stockTag) {
-        return intraDayServiceImpl.getIntraDay(stockTag);
+    public List<IntraDayDto> getIntraDays(@PathVariable("stock_tag") String stockTag) {
+        return intraDayServiceImpl.getIntraDays(stockTag);
+    }
+
+    @GetMapping("get/filterByDates/{stock_tag}")
+    public List<IntraDayDto> getIntraDays(@PathVariable("stock_tag") String stockTag, String dateFrom, String dateTo) {
+        return intraDayServiceImpl.getIntraDays(stockTag, dateFrom, dateTo);
+    }
+
+    @GetMapping("get/filterByDate/{stock_tag}")
+    public IntraDayDto getIntraDay(@PathVariable("stock_tag") String stockTag, String date) {
+        return intraDayServiceImpl.getIntraDay(stockTag, date);
     }
 
     /**
@@ -63,7 +73,7 @@ public class IntraDayController {
      * Load from JSON
      */
     @GetMapping("load/{stock_tag}")
-    public List<IntraDay> loadIntraDay(@PathVariable("stock_tag") String stockTag) {
-        return intraDayServiceImpl.loadIntraDay(stockTag);
+    public List<IntraDay> loadIntraDays(@PathVariable("stock_tag") String stockTag) {
+        return intraDayServiceImpl.loadIntraDays(stockTag);
     }
 }

@@ -11,8 +11,7 @@ import java.util.Optional;
 public interface IntraDayRepository extends JpaRepository<IntraDay, Long> {
 
     Optional<List<IntraDay>> findIntraDayByStockTag(String stockTag);
-
+    Optional<List<IntraDay>> findIntraDayByStockTagAndDateBetween(String stockTag, String dateFrom, String dateTo);
+    Optional<List<IntraDay>> findIntraDayByStockTagAndDate(String stockTag, String date);
     Optional<List<IntraDay>> findAllById(Long stockId);
-
-    int deleteByStockTag(String stockTag);
 }

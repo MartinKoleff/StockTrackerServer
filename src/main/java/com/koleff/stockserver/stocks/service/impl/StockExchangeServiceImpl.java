@@ -55,7 +55,7 @@ public class StockExchangeServiceImpl implements StockExchangeService {
      */
     @Override
     public List<StockExchangeDto> getStockExchange(String country) {
-        return stockExchangeRepositoryImpl.getStockExchangeByCountry(country)
+        return stockExchangeRepositoryImpl.findByCountry(country)
                 .stream()
                 .map(stockExchangeDtoMapper)
                 .toList();
@@ -102,6 +102,11 @@ public class StockExchangeServiceImpl implements StockExchangeService {
     @Override
     public void deleteAll() {
         stockExchangeRepositoryImpl.deleteAll();
+    }
+
+    @Override
+    public void truncateTable() {
+        stockExchangeRepositoryImpl.truncate();
     }
 
     /**

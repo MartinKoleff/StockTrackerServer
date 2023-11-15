@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 
-import java.time.ZonedDateTime;
+import java.util.Date;
 
 
-public @Data class ApiException { //TODO: rename to DTO?
+public @Data class ApiException {
     @SerializedName("message")
     private final String message;
 
@@ -20,15 +20,15 @@ public @Data class ApiException { //TODO: rename to DTO?
     @SerializedName("http_status_code")
     private final int httpStatusCode;
 
-    @SerializedName("time")
-    private final ZonedDateTime time;
+    @SerializedName("date")
+    private final Date date;
 
-    public ApiException(String message, Throwable throwable, HttpStatus httpStatus, ZonedDateTime time) {
+    public ApiException(String message, Throwable throwable, HttpStatus httpStatus, Date date) {
         this.message = message;
         this.throwable = throwable;
         this.httpStatus = httpStatus;
         this.httpStatusCode = httpStatus.value();
-        this.time = time;
+        this.date = date;
     }
 }
 

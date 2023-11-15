@@ -1,8 +1,8 @@
 package com.koleff.stockserver.stocks;
 
-import com.koleff.stockserver.StockServerApplication;
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.IntraDayDto;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import org.apache.logging.log4j.LogManager;
@@ -12,11 +12,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 /**
@@ -25,11 +25,10 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(
         webEnvironment = RANDOM_PORT
 )
-@TestInstance(PER_CLASS)
 @ContextConfiguration(
-        classes = {StockServerApplication.class, TestConfiguration.class}
+        classes = {TestConfiguration.class}
 )
-@ExtendWith(SpringExtension.class)
+@ExtendWith(DatabaseSetupExtension.class)
 public class IntraDayTests {
 
     private final static Logger logger = LogManager.getLogger(IntraDayTests.class);
@@ -59,9 +58,6 @@ public class IntraDayTests {
 
     @BeforeEach
     public void setup() {
-        if (hasInitializedDB) {
-            return;
-        }
         logger.info("Setup before test starts...");
 
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
@@ -94,19 +90,8 @@ public class IntraDayTests {
         totalTime = endTime - startTime;
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
-        if (!isDoneTesting) {
-            logger.info("Testing finished!");
-            return;
-        }
         logger.info("Setup after test ends...");
         logger.info("Deleting all DB entries...");
-
-        //Clear the DB
-        currencyServiceImpl.deleteAll();
-        timezoneServiceImpl.deleteAll();
-        stockExchangeServiceImpl.deleteAll();
-        stockServiceImpl.deleteAll();
-        intraDayServiceImpl.deleteAll();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && intraDayServiceImpl.getAllIntraDays().isEmpty()
@@ -124,7 +109,12 @@ public class IntraDayTests {
         List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
         logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
-        Assertions.assertNotNull(intraDayDtos);
+
+        assertAll(
+                "Validation of intra day fetching data from DB.",
+                () -> assertNotNull(intraDayDtos),
+                () -> assertFalse(intraDayDtos.isEmpty())
+        );
     }
 
     @Test
@@ -134,7 +124,12 @@ public class IntraDayTests {
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
 
         logger.info(String.format("All IntraDays loaded from all JSONs: %s", intraDays));
-        Assertions.assertNotNull(intraDays);
+
+        assertAll(
+                "Validation of intra day loading data from JSON.",
+                () -> assertNotNull(intraDays),
+                () -> assertFalse(intraDays.isEmpty())
+        );
     }
 
 
@@ -144,10 +139,15 @@ public class IntraDayTests {
     void intraDayFetchingOneEntryTest() {
         String stockTag = "AAPL";
 
-        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDay(stockTag);
+        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDays(stockTag);
 
         logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
-        Assertions.assertNotNull(intraDayDto);
+
+        assertAll(
+                "Validation of intra day for 1 stock fetching data from DB.",
+                () -> assertNotNull(intraDayDto),
+                () -> assertFalse(intraDayDto.isEmpty())
+        );
     }
 
     @Test
@@ -165,11 +165,15 @@ public class IntraDayTests {
         intraDayServiceImpl.saveAllIntraDays(intraDays);
 
         //Check if entries are in DB
-        List<List<IntraDayDto>> intraDayDtos = intraDayServiceImpl.getAllIntraDays();
+        List<List<IntraDayDto>> allIntraDayDtos = intraDayServiceImpl.getAllIntraDays();
 
-        logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
-        Assertions.assertNotNull(intraDayDtos);
+        logger.info(String.format("All IntraDay DTOs from DB: %s", allIntraDayDtos));
 
+        assertAll(
+                "Validation of intra day fetching data from DB after saving it from JSON loading.",
+                () -> assertNotNull(allIntraDayDtos),
+                () -> assertFalse(allIntraDayDtos.isEmpty())
+        );
     }
 
     @Test
@@ -182,22 +186,32 @@ public class IntraDayTests {
         String stockTag = "AAPL";
 
         //Load data from JSON
-        List<IntraDay> intraDays = intraDayServiceImpl.loadIntraDay(stockTag);
+        List<IntraDay> intraDays = intraDayServiceImpl.loadIntraDays(stockTag);
 
         //Save data to DB
         intraDayServiceImpl.saveIntraDay(intraDays);
 
         //Check if entries are in DB
-        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDay(stockTag);
+        List<IntraDayDto> intraDayDto = intraDayServiceImpl.getIntraDays(stockTag);
 
         logger.info(String.format("IntraDay DTO for %s stock: %s", stockTag, intraDayDto));
-        Assertions.assertNotNull(intraDayDto);
+
+        assertAll(
+                "Validation of intra day for 1 stock fetching data from DB after saving.",
+                () -> assertNotNull(intraDayDto),
+                () -> assertFalse(intraDayDto.isEmpty())
+        );
     }
 
     @Test
     @Order(6)
+    @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
     @DisplayName("Saving all entries via Spring Batch")
     void intraDaySavingViaSpringBatch(){
+        //Clear DB before test
+        intraDayServiceImpl.deleteAll();
+
+        //Save bulk entries
         intraDayServiceImpl.saveViaJob();
 
         //Check if entries are in DB
@@ -205,8 +219,35 @@ public class IntraDayTests {
 
         logger.info(String.format("All IntraDay DTOs from DB: %s", intraDayDtos));
         logger.info(String.format("All IntraDay DTOs size %d", intraDayDtos.size()));
-        Assertions.assertNotNull(intraDayDtos);
 
+        assertAll(
+                "Validation of intra day fetching data from DB after saving it via SPRING BATCH from JSON loading.",
+                () -> assertNotNull(intraDayDtos),
+                () -> assertFalse(intraDayDtos.isEmpty())
+        );
+    }
+
+    @Test
+    @Order(7)
+    @DisplayName("Date filtration with dateFrom and dateTo.")
+    void intraDayDateFiltration(){
+        String stockTag = "AAPL";
+        String dateFrom = "2023-10-24T00:00:00+00:00";
+        String dateTo = "2023-10-25T00:00:00+00:00";
+        List<IntraDayDto> intraDayDtos = intraDayServiceImpl.getIntraDays(stockTag, dateFrom, dateTo);
+
+        Assertions.assertEquals(2, intraDayDtos.size());
+    }
+
+    @Test
+    @Order(8)
+    @DisplayName("Date filtration with date.")
+    void intraDayDateFiltration2(){
+        String stockTag = "AAPL";
+        String date = "2023-10-26T00:00:00+00:00";
+        IntraDayDto intraDayDto = intraDayServiceImpl.getIntraDay(stockTag, date);
+
+        Assertions.assertNotNull(intraDayDto);
         isDoneTesting = true;
     }
 }

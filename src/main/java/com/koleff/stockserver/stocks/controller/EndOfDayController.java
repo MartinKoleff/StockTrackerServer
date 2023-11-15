@@ -26,14 +26,25 @@ public class EndOfDayController {
     }
 
     @GetMapping("get/{stock_id}")
-    public List<EndOfDayDto> getEndOfDay(@PathVariable("stock_id") Long stockId) {
-        return endOfDayServiceImpl.getEndOfDay(stockId);
+    public List<EndOfDayDto> getEndOfDays(@PathVariable("stock_id") Long stockId) {
+        return endOfDayServiceImpl.getEndOfDays(stockId);
     }
 
     @GetMapping("get/{stock_tag}")
-    public List<EndOfDayDto> getEndOfDay(@PathVariable("stock_tag") String stockTag) {
-        return endOfDayServiceImpl.getEndOfDay(stockTag);
+    public List<EndOfDayDto> getEndOfDays(@PathVariable("stock_tag") String stockTag) {
+        return endOfDayServiceImpl.getEndOfDays(stockTag);
     }
+
+    @GetMapping("get/filterByDates/{stock_tag}")
+    public List<EndOfDayDto> getEndOfDays(@PathVariable("stock_tag") String stockTag, String dateFrom, String dateTo) {
+        return endOfDayServiceImpl.getEndOfDays(stockTag, dateFrom, dateTo);
+    }
+
+    @GetMapping("get/filterByDate/{stock_tag}")
+    public EndOfDayDto getEndOfDay(@PathVariable("stock_tag") String stockTag, String date) {
+        return endOfDayServiceImpl.getEndOfDay(stockTag, date);
+    }
+
 
     /**
      * Save bulk to DB
@@ -63,7 +74,7 @@ public class EndOfDayController {
      * Load from JSON
      */
     @GetMapping("load/{stock_tag}")
-    public List<EndOfDay> loadEndOfDay(@PathVariable("stock_tag") String stockTag) {
-        return endOfDayServiceImpl.loadEndOfDay(stockTag);
+    public List<EndOfDay> loadEndOfDays(@PathVariable("stock_tag") String stockTag) {
+        return endOfDayServiceImpl.loadEndOfDays(stockTag);
     }
 }

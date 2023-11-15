@@ -7,15 +7,18 @@ import java.util.List;
 
 public interface EndOfDayService {
 
-    List<EndOfDayDto> getEndOfDay(String stockTag);
-    List<EndOfDayDto> getEndOfDay(Long id);
+    List<EndOfDayDto> getEndOfDays(String stockTag);
+    List<EndOfDayDto> getEndOfDays(String stockTag, String dateFrom, String dateTo);
+    EndOfDayDto getEndOfDay(String stockTag, String date);
+    List<EndOfDayDto> getEndOfDays(Long id);
     List<List<EndOfDayDto>> getAllEndOfDays();
     void saveEndOfDay(List<EndOfDay> data);
     void saveAllEndOfDays(List<List<EndOfDay>> data);
     void saveViaJob();
     void deleteById(Long id);
-    void deleteByStockTag(String stockTag);
+    void deleteByTag(String stockTag);
     void deleteAll();
-    List<EndOfDay> loadEndOfDay(String stockTag);
+    void truncateTable();
+    List<EndOfDay> loadEndOfDays(String stockTag);
     List<List<EndOfDay>> loadAllEndOfDays();
 }

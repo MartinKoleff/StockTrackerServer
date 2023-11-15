@@ -7,15 +7,18 @@ import java.util.List;
 
 public interface IntraDayService {
 
-    List<IntraDayDto> getIntraDay(String stockTag);
-    List<IntraDayDto> getIntraDay(Long id);
+    List<IntraDayDto> getIntraDays(String stockTag);
+    List<IntraDayDto> getIntraDays(String stockTag, String dateFrom, String dateTo);
+    IntraDayDto getIntraDay(String stockTag, String date);
+    List<IntraDayDto> getIntraDays(Long id);
     List<List<IntraDayDto>> getAllIntraDays();
     void saveIntraDay(List<IntraDay> data);
     void saveAllIntraDays(List<List<IntraDay>> data);
     void saveViaJob();
     void deleteById(Long id);
-    void deleteByStockTag(String stockTag);
+    void deleteByTag(String stockTag);
     void deleteAll();
-    List<IntraDay> loadIntraDay(String stockTag);
+    void truncateTable();
+    List<IntraDay> loadIntraDays(String stockTag);
     List<List<IntraDay>> loadAllIntraDays();
 }

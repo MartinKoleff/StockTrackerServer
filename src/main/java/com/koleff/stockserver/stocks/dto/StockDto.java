@@ -1,7 +1,6 @@
 package com.koleff.stockserver.stocks.dto;
 
 import com.google.gson.annotations.SerializedName;
-import jakarta.annotation.Nullable;
 
 import java.util.List;
 

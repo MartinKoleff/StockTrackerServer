@@ -4,6 +4,7 @@ import com.koleff.stockserver.stocks.domain.StockExchange;
 import com.koleff.stockserver.stocks.domain.wrapper.Ticker;
 import com.koleff.stockserver.stocks.domain.wrapper.DataWrapper;
 import com.koleff.stockserver.stocks.domain.wrapper.StockWithStockExchange;
+import com.koleff.stockserver.stocks.exceptions.StockExchangeNotFoundException;
 import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeJsonUtil;
 import com.koleff.stockserver.stocks.utils.jsonUtil.StockWithStockExchangeJsonUtil;
 import com.koleff.stockserver.stocks.utils.jsonUtil.TickerJsonUtil;
@@ -65,7 +66,11 @@ public class TickersUtil {
                                                         exchange.getName().equals(stock.getStockExchange().getName())
                                                 )
                                                 .findFirst()
-                                                .orElseThrow() //TODO: add error...
+                                                .orElseThrow(() -> new StockExchangeNotFoundException(
+                                                        String.format("Stock exchange for stock tag %s not found.",
+                                                                stock.getTag()
+                                                        )
+                                                ))
                                 ) + 1)
                         )
                 );
