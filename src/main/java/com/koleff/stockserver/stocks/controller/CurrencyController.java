@@ -6,10 +6,7 @@ import com.koleff.stockserver.stocks.service.impl.CurrencyServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -45,6 +42,14 @@ public class CurrencyController {
     @PutMapping(path = "save/all")
     public void saveCurrencies(@Valid List<Currency> currencies) {
         currencyServiceImpl.saveCurrencies(currencies);
+    }
+
+    /**
+     * Load and save bulk to DB
+     */
+    @PostMapping("load&save/all")
+    public void loadAndSaveAllCurrencies() {
+        currencyServiceImpl.loadAndSaveAllCurrencies();
     }
 
     /**

@@ -23,4 +23,5 @@ public interface StockService {
     void truncateTable();
     Stock loadStock(String stockTag);
     List<Stock> loadAllStocks();
+    void loadAndSaveAllStocks();
 }

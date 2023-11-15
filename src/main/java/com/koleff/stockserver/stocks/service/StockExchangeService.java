@@ -16,4 +16,5 @@ public interface StockExchangeService {
     void truncateTable();
     // TODO: loadStockExchange()
     List<StockExchange> loadAllStockExchanges();
+    void loadAndSaveAllStockExchanges();
 }

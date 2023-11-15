@@ -20,4 +20,5 @@ public interface CurrencyService {
     void truncateTable();
     Currency loadCurrency(String currencyCode);
     List<Currency> loadAllCurrencies();
+    void loadAndSaveAllCurrencies();
 }
