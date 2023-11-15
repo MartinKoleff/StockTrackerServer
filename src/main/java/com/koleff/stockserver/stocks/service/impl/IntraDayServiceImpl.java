@@ -41,6 +41,7 @@ public class IntraDayServiceImpl implements IntraDayService {
 
     private final JobLauncher jobLauncher;
     private final Job job;
+
     @Autowired
     public IntraDayServiceImpl(IntraDayRepositoryImpl intraDayRepositoryImpl,
                                IntraDayDtoMapper intraDayDtoMapper,
@@ -105,7 +106,11 @@ public class IntraDayServiceImpl implements IntraDayService {
                 .stream()
                 .map(intraDayDtoMapper)
                 .findFirst()
-                .orElseThrow(); //TODO: add exception
+                .orElseThrow(() -> new IntraDayNotFoundException(
+                        String.format("Intra day for stock tag %s not found.",
+                                stockTag
+                        )
+                ));
     }
 
     /**
