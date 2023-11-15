@@ -105,7 +105,11 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                 .stream()
                 .map(endOfDayDtoMapper)
                 .findFirst()
-                .orElseThrow(); //TODO: add exception
+                .orElseThrow(() -> new EndOfDayNotFoundException(
+                        String.format("End of day for stock tag %s not found.",
+                                stockTag
+                        )
+                ));
     }
 
     /**
@@ -136,7 +140,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
 
         List<String> stockTags = stockServiceImpl.getTagsColumn();
         stockTags.parallelStream()
-                 .forEach(
+                .forEach(
                         stockTag -> {
                             List<EndOfDayDto> entry = endOfDayRepositoryImpl.findEndOfDayByStockTag(stockTag)
                                     .orElseThrow(
@@ -202,8 +206,8 @@ public class EndOfDayServiceImpl implements EndOfDayService {
      * Delete entry from DB via stockTag
      */
     @Override
-    public void deleteByStockTag(String stockTag) {
-        endOfDayRepositoryImpl.deleteByStockTag(stockTag);
+    public void deleteByTag(String stockTag) {
+        endOfDayRepositoryImpl.deleteByTag(stockTag);
     }
 
     /**

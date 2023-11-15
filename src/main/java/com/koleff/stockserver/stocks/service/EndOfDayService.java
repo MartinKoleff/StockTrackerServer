@@ -16,7 +16,7 @@ public interface EndOfDayService {
     void saveAllEndOfDays(List<List<EndOfDay>> data);
     void saveViaJob();
     void deleteById(Long id);
-    void deleteByStockTag(String stockTag);
+    void deleteByTag(String stockTag);
     void deleteAll();
     void truncateTable();
     List<EndOfDay> loadEndOfDays(String stockTag);

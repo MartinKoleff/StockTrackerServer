@@ -2,7 +2,8 @@ package com.koleff.stockserver.stocks.repository.impl;
 
 import com.koleff.stockserver.stocks.domain.Currency;
 import com.koleff.stockserver.stocks.repository.CurrencyRepository;
-import com.koleff.stockserver.stocks.repository.custom.RepositoryCustom;
+import com.koleff.stockserver.stocks.repository.custom.CurrencyRepositoryCustom;
+import com.koleff.stockserver.stocks.repository.custom.query.TruncateQueryCustom;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,7 +18,7 @@ import java.util.Optional;
         rollbackFor = Exception.class,
         propagation = Propagation.REQUIRED
 )
-public interface CurrencyRepositoryImpl extends CurrencyRepository, RepositoryCustom {
+public interface CurrencyRepositoryImpl extends CurrencyRepository, CurrencyRepositoryCustom {
 
     @Query(
             value = "SELECT c FROM Currency c " +

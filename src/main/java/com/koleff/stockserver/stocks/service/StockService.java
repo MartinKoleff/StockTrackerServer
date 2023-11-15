@@ -18,7 +18,7 @@ public interface StockService {
     void saveStock(Stock stock);
     void saveStocks(List<Stock> data);
     void deleteById(Long id);
-    void deleteByStockTag(String stockTag);
+    void deleteByTag(String stockTag);
     void deleteAll();
     void truncateTable();
     Stock loadStock(String stockTag);

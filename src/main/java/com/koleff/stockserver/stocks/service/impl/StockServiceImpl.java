@@ -175,8 +175,8 @@ public class StockServiceImpl implements StockService {
      * Delete entry from DB via stockTag
      */
     @Override
-    public void deleteByStockTag(String stockTag) {
-        stockRepositoryImpl.deleteByStockTag(stockTag);
+    public void deleteByTag(String stockTag) {
+        stockRepositoryImpl.deleteByTag(stockTag);
     }
 
     /**

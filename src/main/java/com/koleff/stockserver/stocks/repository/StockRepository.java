@@ -10,10 +10,7 @@ import java.util.Optional;
 @Repository
 public interface StockRepository extends JpaRepository<Stock, Long> {
     Optional<Stock> findStockByTag(String stockTag);
-    List<Stock> findByHasIntraDayIsTrue(Boolean hasIntraDay);
-    List<Stock> findByHasEndOfDayIsTrue(Boolean hasEndOfDay);
-    void updateIntraDayStatus();
-    void updateEndOfDayStatus();
+    List<Stock> findByHasIntraDay(Boolean hasIntraDay);
+    List<Stock> findByHasEndOfDay(Boolean hasEndOfDay);
     int deleteStockById(Long id);
-    int deleteByStockTag(String stockTag);
 }
