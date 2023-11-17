@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stockServer-deployment
+  name: stock-server-deployment
 spec:
   selector:
     matchLabels:
-      app: stockServer
+      app: stock-server
   replicas: 3
   template:
     metadata:
       labels:
-        app: stockServer
+        app: stock-server
     spec:
       containers:
-        - name: stockServer-k8s
-          image: stockServer-k8s:1.0
+        - name: stock-server-k8s
+          image: stock-server-k8s:1.0
           ports:
             - containerPort: 8080
           env:   # Setting Environmental Variables
@@ -46,10 +46,10 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: stockServer-svc
+  name: stock-server-svc
 spec:
   selector:
-    app: stockServer-k8s
+    app: stock-server-k8s
   ports:
     - protocol: "TCP"
       port: 8080 # The port that the service is running on in the cluster
