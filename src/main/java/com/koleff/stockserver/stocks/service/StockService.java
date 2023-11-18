@@ -17,6 +17,8 @@ public interface StockService {
     Long getStockId(String stockTag);
     void saveStock(Stock stock);
     void saveStocks(List<Stock> data);
+    void updateHasIntraDay(String stockTag);
+    void updateHasEndOfDay(String stockTag);
     void deleteById(Long id);
     void deleteByTag(String stockTag);
     void deleteAll();

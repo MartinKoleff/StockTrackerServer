@@ -35,13 +35,13 @@ public interface StockRepositoryImpl extends StockRepository, StockRepositoryCus
 
     @Override
     @Modifying
-    @Query("UPDATE Stock s SET s.hasIntraDay = true WHERE s.intraDay IS NOT NULL")
-    void updateIntraDayStatus();
+    @Query("UPDATE Stock s SET s.hasIntraDay = true WHERE s.intraDay IS NOT NULL AND s.tag = ?1")
+    void updateIntraDayStatus(String stockTag);
 
     @Override
     @Modifying
-    @Query("UPDATE Stock s SET s.hasEndOfDay = true WHERE s.endOfDay IS NOT NULL")
-    void updateEndOfDayStatus();
+    @Query("UPDATE Stock s SET s.hasEndOfDay = true WHERE s.endOfDay IS NOT NULL AND s.tag = ?1")
+    void updateEndOfDayStatus(String stockTag);
 
     @Override
     @Modifying

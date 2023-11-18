@@ -162,6 +162,23 @@ public class StockServiceImpl implements StockService {
         stockRepositoryImpl.saveAll(data);
     }
 
+
+    /**
+     * Update hasIntraDay flag in DB
+     */
+    @Override
+    public void updateHasIntraDay(String stockTag) {
+        stockRepositoryImpl.updateIntraDayStatus(stockTag);
+    }
+
+    /**
+     * Update hasEndOfDay flag in DB
+     */
+    @Override
+    public void updateHasEndOfDay(String stockTag) {
+        stockRepositoryImpl.updateEndOfDayStatus(stockTag);
+    }
+
     /**
      * Delete entry from DB via id
      */
