@@ -54,6 +54,14 @@ public class IntraDayController {
     }
 
     /**
+     * Load and save bulk to DB
+     */
+    @PostMapping("load&save/all")
+    public void loadAndSaveAllIntraDays() {
+        intraDayServiceImpl.saveViaJob();
+    }
+
+    /**
      * Save to DB
      */
     @PutMapping("save")

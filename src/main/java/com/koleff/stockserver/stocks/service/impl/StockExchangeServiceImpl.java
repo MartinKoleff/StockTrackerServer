@@ -124,4 +124,11 @@ public class StockExchangeServiceImpl implements StockExchangeService {
 
         return data.getData();
     }
+
+    @Override
+    public void loadAndSaveAllStockExchanges() {
+        List<StockExchange> data = loadAllStockExchanges();
+
+        saveStockExchanges(data);
+    }
 }

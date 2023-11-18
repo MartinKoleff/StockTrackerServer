@@ -104,14 +104,14 @@ public @Data class StockExchange implements Serializable{
     @OneToMany(
             mappedBy = "stockExchange",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             orphanRemoval = false
     )
     private List<Stock> stocks;  //Doesn't need to be bidirectional
 
     @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     @JoinColumn(
             name = "timezone_id",
@@ -127,7 +127,7 @@ public @Data class StockExchange implements Serializable{
 
     @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     @JoinColumn(
             name = "currency_id",

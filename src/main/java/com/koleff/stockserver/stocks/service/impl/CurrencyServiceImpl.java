@@ -181,4 +181,11 @@ public class CurrencyServiceImpl implements CurrencyService {
 
         return data.getData();
     }
+
+    @Override
+    public void loadAndSaveAllCurrencies() {
+        List<Currency> data = loadAllCurrencies();
+
+        saveCurrencies(data);
+    }
 }
