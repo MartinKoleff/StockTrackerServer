@@ -29,7 +29,7 @@ import java.util.List;
 @Service
 public class EndOfDayServiceImpl implements EndOfDayService {
 
-    private final static Logger logger = LogManager.getLogger(IntraDayServiceImpl.class);
+    private final static Logger logger = LogManager.getLogger(EndOfDayServiceImpl.class);
 
     @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
     private String versionAnnotation;
