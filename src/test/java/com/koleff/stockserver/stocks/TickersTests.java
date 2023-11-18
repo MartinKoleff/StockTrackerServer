@@ -195,6 +195,60 @@ public class TickersTests {
                 .map(Stock::getStockExchangeId)
                 .anyMatch(Objects::isNull)
         );
+    }
+
+    @Test
+    @Order(3)
+    @DisplayName("Update hasIntraDay test.")
+    void tickersUpdateHasIntraDayTest() {
+        //Clear DB
+        stockServiceImpl.deleteAll();
+        intraDayServiceImpl.deleteAll();
+
+        //Load stock
+        Stock stock = stockServiceImpl.loadStock("AAPL");
+
+        //Clear IntraDay, but leave status as true to check if update query works
+        stock.setHasIntraDay(true);
+        stock.setIntraDay(null);
+
+        //Save stock to DB
+        stockServiceImpl.saveStock(stock);
+
+        //Update status
+        stockServiceImpl.updateHasIntraDay("AAPL");
+
+        //Fetch from DB
+        Stock updatedStock = stockServiceImpl.getStock("AAPL");
+
+        assertFalse(updatedStock.getHasIntraDay());
+    }
+
+    @Test
+    @Order(4)
+    @DisplayName("Update hasEndOfDay test.")
+    void tickersUpdateHasEndOfDayTest() {
+        //Clear DB
+        stockServiceImpl.deleteAll();
+        endOfDayServiceImpl.deleteAll();
+
+        //Load stock
+        Stock stock = stockServiceImpl.loadStock("AAPL");
+
+        //Clear EOD, but leave status as true to check if update query works
+        stock.setHasEndOfDay(true);
+        stock.setEndOfDay(null);
+
+        //Save stock to DB
+        stockServiceImpl.saveStock(stock);
+
+        //Update status
+        stockServiceImpl.updateHasEndOfDay("AAPL");
+
+        //Fetch from DB
+        Stock updatedStock = stockServiceImpl.getStock("AAPL");
+
+        assertFalse(updatedStock.getHasEndOfDay());
 
         isDoneTesting = true;
     }
