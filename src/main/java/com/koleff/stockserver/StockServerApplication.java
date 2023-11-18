@@ -32,7 +32,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 )
 @EnableConfigurationProperties
 @EnableAsync
-@EnableWebMvc
 public class StockServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(StockServerApplication.class, args);

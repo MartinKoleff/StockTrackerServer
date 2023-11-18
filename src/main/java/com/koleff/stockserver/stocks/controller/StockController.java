@@ -52,6 +52,14 @@ public class StockController {
     }
 
     /**
+     * Load and save bulk to DB
+     */
+    @PostMapping("load&save/all")
+    public void loadAndSaveAllStocks() {
+        stockServiceImpl.loadAndSaveAllStocks();
+    }
+
+    /**
      * Load all from JSON
      */
     @GetMapping(path = "load/all")

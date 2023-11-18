@@ -55,6 +55,14 @@ public class EndOfDayController {
     }
 
     /**
+     * Load and save bulk to DB
+     */
+    @PostMapping("load&save/all")
+    public void loadAndSaveAllEndOfDays() {
+        endOfDayServiceImpl.saveViaJob();
+    }
+
+    /**
      * Save to DB
      */
     @PutMapping("save")

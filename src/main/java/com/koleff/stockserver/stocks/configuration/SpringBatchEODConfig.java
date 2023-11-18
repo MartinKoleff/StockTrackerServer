@@ -76,7 +76,7 @@ public class SpringBatchEODConfig extends DefaultBatchConfiguration {
      * Step configuration
      * - processor is not needed
      */
-    @Bean("intraDayStep")
+    @Bean("eodStep")
     public Step getStep1() {
         return new StepBuilder("eod-json-step", getJobRepository())
                 .<EndOfDay, EndOfDay>chunk(100, getTransactionManager())
@@ -93,7 +93,7 @@ public class SpringBatchEODConfig extends DefaultBatchConfiguration {
         return asyncTaskExecutor;
     }
 
-    @Bean(name = "transactionManager") //TODO move to other config
+    @Bean(name = "transactionManager")
     public JpaTransactionManager getTransactionManager() {
         return new JpaTransactionManager(); //this.entityManagerFactory
     }
@@ -135,10 +135,17 @@ public class SpringBatchEODConfig extends DefaultBatchConfiguration {
         String selectedJsons = String.format(resourcePath, versionAnnotation, "eod");
 
         try {
-            return getPatternResolver().getResources(selectedJsons);
+            Resource[] resources = getPatternResolver().getResources(selectedJsons);
+
+            if (resources.length == 0) {
+                throw new IllegalStateException("No resources found for the specified pattern: " + selectedJsons);
+            }
+
+            logger.info("EOD Json resources SIZE: " + resources.length);
+            return resources;
         } catch (IOException e) {
             logger.error("EOD Json resources setup failed!");
-            return null;
+            throw new IllegalStateException("Error while setting up EOD Json resources.", e);
         }
     }
 
@@ -167,7 +174,7 @@ public class SpringBatchEODConfig extends DefaultBatchConfiguration {
      * Json file reader
      */
     @Bean
-    protected JsonItemReader<EndOfDay> getJsonItemReader() { //No resource set...
+    protected JsonItemReader<EndOfDay> getJsonItemReader() {
         return new JsonItemReaderBuilder<EndOfDay>()
                 .jsonObjectReader(new GsonJsonObjectReader<>(EndOfDay.class))
                 .name("eodJsonItemReader")

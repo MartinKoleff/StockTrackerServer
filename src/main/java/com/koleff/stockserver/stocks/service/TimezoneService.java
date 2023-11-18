@@ -21,4 +21,5 @@ public interface TimezoneService {
     void truncateTable();
     Timezone loadTimezone(String timezone);
     List<Timezone> loadAllTimezones();
+    void loadAndSaveAllTimezones();
 }

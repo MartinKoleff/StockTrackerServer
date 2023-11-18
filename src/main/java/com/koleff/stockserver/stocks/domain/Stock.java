@@ -79,7 +79,7 @@ public @Data class Stock implements Serializable {
             mappedBy = "stock",
             orphanRemoval = true,
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<EndOfDay> endOfDay;
 
@@ -87,13 +87,13 @@ public @Data class Stock implements Serializable {
             mappedBy = "stock",
             orphanRemoval = true,
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<IntraDay> intraDay;
 
     @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     @JoinColumn(
             name = "stock_exchange_id",

@@ -67,8 +67,6 @@ public class ApiExceptionHandler {
 
     @ExceptionHandler(value = {
             DataNotSavedException.class,
-            IntraDayNotSavedException.class,
-            //TODO: add for each entity...
     })
     public ResponseEntity<Object> handleNotSavedException(RuntimeException e) {
 

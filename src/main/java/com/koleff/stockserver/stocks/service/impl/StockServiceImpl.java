@@ -225,4 +225,11 @@ public class StockServiceImpl implements StockService {
 
         return data.getData();
     }
+
+    @Override
+    public void loadAndSaveAllStocks() {
+        List<Stock> data = loadAllStocks();
+
+        saveStocks(data);
+    }
 }

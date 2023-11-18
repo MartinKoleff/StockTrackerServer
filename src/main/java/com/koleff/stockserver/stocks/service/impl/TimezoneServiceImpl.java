@@ -180,4 +180,11 @@ public class TimezoneServiceImpl implements TimezoneService {
 
         return data.getData();
     }
+
+    @Override
+    public void loadAndSaveAllTimezones() {
+        List<Timezone> timezones = loadAllTimezones();
+
+        saveTimezones(timezones);
+    }
 }
