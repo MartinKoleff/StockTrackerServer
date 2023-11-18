@@ -22,7 +22,7 @@ public class DatabaseSetupExtension implements BeforeAllCallback, AfterAllCallba
     @LocalServerPort
     private Integer port;
 
-    @Value("spring.datasource.username")
+    @Value("spring.datasource.username") //TODO: find a way to inject in container initialization (don't use static)
     private static String usernameDB;
 
     @Value("spring.datasource.password")
@@ -32,12 +32,12 @@ public class DatabaseSetupExtension implements BeforeAllCallback, AfterAllCallba
     public static PostgreSQLContainer<?> postgreSQLContainer = (PostgreSQLContainer<?>) new PostgreSQLContainer
             ("postgres:16.0")
             .withDatabaseName("stocks")
-            .withUsername("postgres")
-            .withPassword("")
-            .withReuse(true);
+            .withUsername(usernameDB)
+            .withPassword(passwordDB)
+            .withReuse(false);
 
 
-    @DynamicPropertySource
+    @DynamicPropertySource //TODO: use 1 class for all tests (This annotation doesn't work with JUnit 5 @ExtendWith() -> manually add for each test class...)
     static void configureProperties(DynamicPropertyRegistry registry) {
         registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
         registry.add("spring.datasource.username", postgreSQLContainer::getUsername);
