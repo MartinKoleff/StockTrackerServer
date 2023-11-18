@@ -1,0 +1,72 @@
+====================================
+        Kubernetes:
+====================================
+1. Deploy:
+kubectl apply -f app-deployment.yaml
+kubectl apply -f db-deployment.yaml
+-------------------------------------
+2. Logs
+kubectl get deployments
+kubectl get pods
+-------------------------------------
+
+====================================
+        Docker:
+====================================
+1. Build and deploy project to docker container
+docker context use default
+docker run -d -p 8080:8080 stockserver-0.0.1-snapshot.jar .
+docker build -t stockserver-0.0.1-snapshot.jar .
+-------------------------------------
+2. Docker delete image by id
+docker rmi
+-------------------------------------
+3. Configurations and logs:
+docker info
+docker container
+docker images
+
+-------------------------------------
+kubectl version
+kubectl version --client
+-------------------------------------
+kubectl cluster-info
+kubectl cluster-info dump
+-------------------------------------
+kubectl config get-contexts
+kubectl config use-context my-cluster-context
+-------------------------------------
+4. Secret generation
+kubectl create secret generic db-credentials --from-literal=username=... --from-literal=password=...
+-------------------------------------
+5. Secret logging to terminal
+kubectl get secret db-credentials -o yaml
+-------------------------------------
+6. Other
+kubectl create -f test.yml -v=8
+-------------------------------------
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+New-Item config -type file
+-------------------------------------
+
+====================================
+        Minikube:
+====================================
+minikube start --driver=docker
+minikube start --memory=4096
+-------------------------------------
+
+====================================
+        Choco:
+====================================
+1. Commands:
+choco install Minikube
+choco install nodejs
+-------------------------------------
+
+====================================
+Migration from C: to D: drive of Docker Desktop
+====================================
+wsl --import docker-desktop-data "D:\Docker\wsl\data" "D:\Docker\wsl\data\docker-desktop-data.tar" --version 2
+wsl --unregister docker-desktop-data
+-------------------------------------
