@@ -13,6 +13,9 @@ What is used in this project:
   - JUnit for testing
   - Testcontainer for testing
   - Custom exception handling
+  - Dockerization
+  - Kubernetes secret and configmap
+  - Spring profiles
 2. Good practices
   - Controller / Service / Repository defined structures with interface implementations
   - DTO structures
@@ -24,8 +27,6 @@ To implement in future:
 - Swagger UI integration
 - Spring Security
 - JWT / OAuth2 authorization
-- Dockerize DB
-- Deploy server to AWS
 - Multi modular approach for remote API and my API structures
 - To use real time data API
 
