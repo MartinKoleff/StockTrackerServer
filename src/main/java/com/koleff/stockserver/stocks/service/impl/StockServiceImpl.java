@@ -10,6 +10,7 @@ import com.koleff.stockserver.stocks.service.StockService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.StockJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,14 +21,17 @@ public class StockServiceImpl implements StockService {
     @Value("${koleff.versionAnnotation}") //Configuring version annotation for Json loading / exporting
     private String versionAnnotation;
     private final StockRepositoryImpl stockRepositoryImpl;
+    private final JdbcTemplate jdbcTemplate;
     private final StockDtoMapper stockDtoMapper;
     private final StockJsonUtil stockJsonUtil;
 
     @Autowired
     public StockServiceImpl(StockRepositoryImpl stockRepositoryImpl,
+                            JdbcTemplate jdbcTemplate,
                             StockDtoMapper stockDtoMapper,
                             StockJsonUtil stockJsonUtil) {
         this.stockRepositoryImpl = stockRepositoryImpl;
+        this.jdbcTemplate = jdbcTemplate;
         this.stockDtoMapper = stockDtoMapper;
         this.stockJsonUtil = stockJsonUtil;
     }
@@ -207,6 +211,9 @@ public class StockServiceImpl implements StockService {
     @Override
     public void truncateTable() {
         stockRepositoryImpl.truncate();
+
+        String sqlStatement = "ALTER SEQUENCE stock_sequence RESTART WITH 1";
+        jdbcTemplate.execute(sqlStatement);
     }
 
     /**

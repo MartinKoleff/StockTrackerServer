@@ -21,6 +21,7 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     private final StockServiceImpl stockServiceImpl;
     private final EndOfDayDtoMapper endOfDayDtoMapper;
     private final EndOfDayJsonUtil endOfDayJsonUtil;
+    private final JdbcTemplate jdbcTemplate;
 
     private final JobLauncher jobLauncher;
     private final Job job;
@@ -46,12 +48,14 @@ public class EndOfDayServiceImpl implements EndOfDayService {
                                StockServiceImpl stockServiceImpl,
                                EndOfDayDtoMapper endOfDayDtoMapper,
                                EndOfDayJsonUtil endOfDayJsonUtil,
+                               JdbcTemplate jdbcTemplate,
                                JobLauncher jobLauncher,
                                @Qualifier("eodJob") Job job) {
         this.endOfDayRepositoryImpl = endOfDayRepositoryImpl;
         this.stockServiceImpl = stockServiceImpl;
         this.endOfDayDtoMapper = endOfDayDtoMapper;
         this.endOfDayJsonUtil = endOfDayJsonUtil;
+        this.jdbcTemplate = jdbcTemplate;
         this.jobLauncher = jobLauncher;
         this.job = job;
     }
@@ -221,6 +225,9 @@ public class EndOfDayServiceImpl implements EndOfDayService {
     @Override
     public void truncateTable() {
         endOfDayRepositoryImpl.truncate();
+
+        String sqlStatement = "ALTER SEQUENCE eod_sequence RESTART WITH 1";
+        jdbcTemplate.execute(sqlStatement);
     }
 
     /**

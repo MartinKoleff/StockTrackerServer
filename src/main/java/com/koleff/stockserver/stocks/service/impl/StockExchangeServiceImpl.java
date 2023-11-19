@@ -10,6 +10,7 @@ import com.koleff.stockserver.stocks.service.StockExchangeService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.StockExchangeJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,14 +23,17 @@ public class StockExchangeServiceImpl implements StockExchangeService {
     private final StockExchangeRepositoryImpl stockExchangeRepositoryImpl;
     private final StockExchangeDtoMapper stockExchangeDtoMapper;
     private final StockExchangeJsonUtil stockExchangeJsonUtil;
+    private final JdbcTemplate jdbcTemplate;
 
     @Autowired
     public StockExchangeServiceImpl(StockExchangeRepositoryImpl stockExchangeRepositoryImpl,
                                     StockExchangeDtoMapper stockExchangeDtoMapper,
-                                    StockExchangeJsonUtil stockExchangeJsonUtil) {
+                                    StockExchangeJsonUtil stockExchangeJsonUtil,
+                                    JdbcTemplate jdbcTemplate) {
         this.stockExchangeRepositoryImpl = stockExchangeRepositoryImpl;
         this.stockExchangeDtoMapper = stockExchangeDtoMapper;
         this.stockExchangeJsonUtil = stockExchangeJsonUtil;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     /**
@@ -107,6 +111,9 @@ public class StockExchangeServiceImpl implements StockExchangeService {
     @Override
     public void truncateTable() {
         stockExchangeRepositoryImpl.truncate();
+
+        String sqlStatement = "ALTER SEQUENCE stock_exchange_sequence RESTART WITH 1";
+        jdbcTemplate.execute(sqlStatement);
     }
 
     /**

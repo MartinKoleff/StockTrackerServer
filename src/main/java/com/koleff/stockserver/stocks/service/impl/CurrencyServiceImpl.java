@@ -9,6 +9,7 @@ import com.koleff.stockserver.stocks.repository.impl.CurrencyRepositoryImpl;
 import com.koleff.stockserver.stocks.service.CurrencyService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.CurrencyJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,13 +21,17 @@ public class CurrencyServiceImpl implements CurrencyService {
     private final CurrencyDtoMapper currencyDtoMapper;
     private final CurrencyJsonUtil currencyJsonUtil;
 
+    private final JdbcTemplate jdbcTemplate;
+
     @Autowired
     public CurrencyServiceImpl(CurrencyRepositoryImpl currencyRepositoryImpl,
                                CurrencyDtoMapper currencyDtoMapper,
-                               CurrencyJsonUtil currencyJsonUtil) {
+                               CurrencyJsonUtil currencyJsonUtil,
+                               JdbcTemplate jdbcTemplate) {
         this.currencyRepositoryImpl = currencyRepositoryImpl;
         this.currencyDtoMapper = currencyDtoMapper;
         this.currencyJsonUtil = currencyJsonUtil;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     /**
@@ -148,6 +153,9 @@ public class CurrencyServiceImpl implements CurrencyService {
     @Override
     public void truncateTable() {
         currencyRepositoryImpl.truncate();
+
+        String sqlStatement = "ALTER SEQUENCE currency_sequence RESTART WITH 1";
+        jdbcTemplate.execute(sqlStatement);
     }
 
     /**

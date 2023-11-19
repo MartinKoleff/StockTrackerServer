@@ -21,7 +21,7 @@ public @Data class EndOfDay implements Serializable { //TODO: rename to EOD
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE, //If entry with id 1 is deleted no more entries can be with id 1...
+            strategy = GenerationType.SEQUENCE,
             generator = "eod_sequence"
     )
     @Column(

@@ -9,6 +9,7 @@ import com.koleff.stockserver.stocks.repository.impl.TimezoneRepositoryImpl;
 import com.koleff.stockserver.stocks.service.TimezoneService;
 import com.koleff.stockserver.stocks.utils.jsonUtil.TimezoneJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,14 +17,17 @@ import java.util.List;
 @Service
 public class TimezoneServiceImpl implements TimezoneService {
     private final TimezoneRepositoryImpl timezoneRepositoryImpl;
+    private final JdbcTemplate jdbcTemplate;
     private final TimezoneDtoMapper timezoneDtoMapper;
     private final TimezoneJsonUtil timezoneJsonUtil;
 
     @Autowired
     public TimezoneServiceImpl(TimezoneRepositoryImpl timezoneRepositoryImpl,
+                               JdbcTemplate jdbcTemplate,
                                TimezoneDtoMapper timezoneDtoMapper,
                                TimezoneJsonUtil timezoneJsonUtil) {
         this.timezoneRepositoryImpl = timezoneRepositoryImpl;
+        this.jdbcTemplate = jdbcTemplate;
         this.timezoneDtoMapper = timezoneDtoMapper;
         this.timezoneJsonUtil = timezoneJsonUtil;
     }
@@ -147,6 +151,9 @@ public class TimezoneServiceImpl implements TimezoneService {
     @Override
     public void truncateTable() {
         timezoneRepositoryImpl.truncate();
+
+        String sqlStatement = "ALTER SEQUENCE timezone_sequence RESTART WITH 1";
+        jdbcTemplate.execute(sqlStatement);
     }
 
     /**

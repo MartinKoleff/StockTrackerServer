@@ -21,6 +21,7 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class IntraDayServiceImpl implements IntraDayService {
 
     private final IntraDayDtoMapper intraDayDtoMapper;
     private final IntraDayJsonUtil intraDayJsonUtil;
+    private final JdbcTemplate jdbcTemplate;
 
     private final JobLauncher jobLauncher;
     private final Job job;
@@ -47,12 +49,14 @@ public class IntraDayServiceImpl implements IntraDayService {
                                IntraDayDtoMapper intraDayDtoMapper,
                                StockServiceImpl stockServiceImpl,
                                IntraDayJsonUtil intraDayJsonUtil,
+                               JdbcTemplate jdbcTemplate,
                                JobLauncher jobLauncher,
                                @Qualifier("intraDayJob") Job job) {
         this.intraDayRepositoryImpl = intraDayRepositoryImpl;
         this.intraDayDtoMapper = intraDayDtoMapper;
         this.stockServiceImpl = stockServiceImpl;
         this.intraDayJsonUtil = intraDayJsonUtil;
+        this.jdbcTemplate = jdbcTemplate;
         this.jobLauncher = jobLauncher;
         this.job = job;
     }
@@ -222,6 +226,9 @@ public class IntraDayServiceImpl implements IntraDayService {
     @Override
     public void truncateTable() {
         intraDayRepositoryImpl.truncate();
+
+        String sqlStatement = "ALTER SEQUENCE intra_day_sequence RESTART WITH 1";
+        jdbcTemplate.execute(sqlStatement);
     }
 
 
