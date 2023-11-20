@@ -2,6 +2,7 @@ package com.koleff.stockserver.stocks;
 
 import com.koleff.stockserver.stocks.domain.*;
 import com.koleff.stockserver.stocks.dto.*;
+import com.koleff.stockserver.stocks.resources.DatabaseSetupExtension;
 import com.koleff.stockserver.stocks.resources.TestConfiguration;
 import com.koleff.stockserver.stocks.service.impl.*;
 import com.koleff.stockserver.stocks.utils.stockExchangesUtil.StockExchangesUtil;
@@ -9,17 +10,11 @@ import com.koleff.stockserver.stocks.utils.tickersUtil.TickersUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
-import org.springframework.test.context.jdbc.Sql;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
 
 import java.util.List;
 import java.util.Objects;
@@ -37,6 +32,8 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ContextConfiguration(
         classes = {TestConfiguration.class}
 )
+@ExtendWith(DatabaseSetupExtension.class)
+@ActiveProfiles("test")
 public class AppTests {
     private final static Logger logger = LogManager.getLogger(AppTests.class);
     private final StockServiceImpl stockServiceImpl;
@@ -76,16 +73,8 @@ public class AppTests {
     public void setup() {
         logger.info("Setup before test starts...");
 
-        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
-                && intraDayServiceImpl.getAllIntraDays().isEmpty()
-                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
-                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
-                && currencyServiceImpl.getCurrencies().isEmpty()
-                && timezoneServiceImpl.getTimezones().isEmpty();
-
-        logger.info(String.format("DB is empty: %s", isDBEmpty));
-
         List<List<IntraDay>> intraDays = intraDayServiceImpl.loadAllIntraDays();
+        List<List<EndOfDay>> eods = endOfDayServiceImpl.loadAllEndOfDays();
 
         //Load and Save stocks to DB
         List<Stock> stocks = stockServiceImpl.loadAllStocks();
@@ -101,7 +90,11 @@ public class AppTests {
 
         stockServiceImpl.saveStocks(stocks);
 
+//        intraDayServiceImpl.saveViaJob();
+//        endOfDayServiceImpl.saveViaJob();
+
         intraDayServiceImpl.saveAllIntraDays(intraDays);
+        endOfDayServiceImpl.saveAllEndOfDays(eods);
 
         startTime = System.currentTimeMillis();
 
@@ -117,45 +110,21 @@ public class AppTests {
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
         logger.info("Deleting all DB entries...");
-    }
+        stockServiceImpl.truncateTable();
+        endOfDayServiceImpl.truncateTable();
+        intraDayServiceImpl.truncateTable();
+        stockExchangeServiceImpl.truncateTable();
+        timezoneServiceImpl.truncateTable();
+        currencyServiceImpl.truncateTable();
 
-    /**
-     * Testcontainer setup
-     */
+        boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
+                && intraDayServiceImpl.getAllIntraDays().isEmpty()
+                && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
+                && stockExchangeServiceImpl.getStockExchanges().isEmpty()
+                && currencyServiceImpl.getCurrencies().isEmpty()
+                && timezoneServiceImpl.getTimezones().isEmpty();
 
-    @LocalServerPort
-    private Integer port;
-
-    @Value("spring.datasource.username")
-    private static String usernameDB;
-
-    @Value("spring.datasource.password")
-    private static String passwordDB;
-    @Container
-    public static PostgreSQLContainer<?> postgreSQLContainer = (PostgreSQLContainer<?>) new PostgreSQLContainer
-            ("postgres:16.0")
-            .withDatabaseName("stocks")
-            .withUsername(usernameDB)
-            .withPassword(passwordDB)
-            .withReuse(false);
-
-
-    @DynamicPropertySource
-    //TODO: use 1 class for all tests (This annotation doesn't work with JUnit 5 @ExtendWith() -> manually add for each test class...)
-    static void configureProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
-        registry.add("spring.datasource.username", postgreSQLContainer::getUsername);
-        registry.add("spring.datasource.password", postgreSQLContainer::getPassword);
-    }
-
-    @BeforeAll
-    public static void beforeAll() {
-        postgreSQLContainer.start();
-    }
-
-    @AfterAll
-    public static void afterAll() {
-        postgreSQLContainer.stop();
+        logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
 
     /**
@@ -488,7 +457,6 @@ public class AppTests {
 
         @Test
         @Order(6)
-        @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
         @DisplayName("Saving all entries via Spring Batch")
         void eodSavingViaSpringBatch() {
             //Clear DB before test
@@ -639,7 +607,6 @@ public class AppTests {
 
         @Test
         @Order(6)
-        @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
         @DisplayName("Saving all entries via Spring Batch")
         void intraDaySavingViaSpringBatch() {
             //Clear DB before test
