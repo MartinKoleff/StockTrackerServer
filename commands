@@ -17,6 +17,8 @@ kubectl get pods
 docker context use default
 docker run -d -p 8080:8080 stockserver-0.0.1-snapshot.jar .
 docker build -t stockserver-0.0.1-snapshot.jar .
+docker build -t test .
+docker run -p 8000:8000 test
 -------------------------------------
 2. Docker delete image by id
 docker rmi
