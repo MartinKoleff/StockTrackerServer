@@ -90,7 +90,12 @@ public class StockExchangeTests {
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
         logger.info("Setup after test ends...");
+
         logger.info("Deleting all DB entries...");
+        stockServiceImpl.truncateTable();
+        stockExchangeServiceImpl.truncateTable();
+        timezoneServiceImpl.truncateTable();
+        currencyServiceImpl.truncateTable();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && stockExchangeServiceImpl.getStockExchanges().isEmpty()

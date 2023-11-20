@@ -12,7 +12,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
@@ -76,6 +75,7 @@ public class EndOfDayTests {
 
         stockServiceImpl.saveStocks(stocks);
 
+//        endOfDayServiceImpl.saveViaJob();
         endOfDayServiceImpl.saveAllEndOfDays(eods);
 
         startTime = System.currentTimeMillis();
@@ -90,7 +90,13 @@ public class EndOfDayTests {
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
         logger.info("Setup after test ends...");
+
         logger.info("Deleting all DB entries...");
+        stockServiceImpl.truncateTable();
+        endOfDayServiceImpl.truncateTable();
+        stockExchangeServiceImpl.truncateTable();
+        timezoneServiceImpl.truncateTable();
+        currencyServiceImpl.truncateTable();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && endOfDayServiceImpl.getAllEndOfDays().isEmpty()
@@ -100,10 +106,9 @@ public class EndOfDayTests {
 
         logger.info(String.format("DB is empty: %s", isDBEmpty));
     }
-
     @Test
     @Order(1)
-    @DisplayName("Fetching data from DB.") //TODO: test with FetchType.Lazy...
+    @DisplayName("Fetching data from DB.")
     void eodFetchingTest() {
         List<List<EndOfDayDto>> eodDtos = endOfDayServiceImpl.getAllEndOfDays();
 
@@ -203,7 +208,6 @@ public class EndOfDayTests {
 
     @Test
     @Order(6)
-    @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
     @DisplayName("Saving all entries via Spring Batch")
     void eodSavingViaSpringBatch() {
         //Clear DB before test

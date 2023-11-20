@@ -12,7 +12,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
@@ -91,7 +90,13 @@ public class IntraDayTests {
         logger.info(String.format("Starting time: %d\n Finish time: %d\n Total time: %d", startTime, endTime, totalTime));
 
         logger.info("Setup after test ends...");
+
         logger.info("Deleting all DB entries...");
+        stockServiceImpl.truncateTable();
+        intraDayServiceImpl.truncateTable();
+        stockExchangeServiceImpl.truncateTable();
+        timezoneServiceImpl.truncateTable();
+        currencyServiceImpl.truncateTable();
 
         boolean isDBEmpty = stockServiceImpl.getStocks().isEmpty()
                 && intraDayServiceImpl.getAllIntraDays().isEmpty()
@@ -205,7 +210,6 @@ public class IntraDayTests {
 
     @Test
     @Order(6)
-    @Sql("/schema/schema-postgresql.sql") //Execute if Spring Batch default tables are not created for you.
     @DisplayName("Saving all entries via Spring Batch")
     void intraDaySavingViaSpringBatch(){
         //Clear DB before test
