@@ -19,6 +19,14 @@ docker run -d -p 8080:8080 stockserver-0.0.1-snapshot.jar .
 docker build -t stockserver-0.0.1-snapshot.jar .
 docker build -t test .
 docker run -p 8000:8000 test
+----------------------
+docker inspect psql-db
+CREATE DATABASE test_table
+\c test_table
+\l
+INSERT INTO test_table VALUES (123);
+SELECT * FROM test_table;
+\q
 -------------------------------------
 2. Docker delete image by id
 docker rmi

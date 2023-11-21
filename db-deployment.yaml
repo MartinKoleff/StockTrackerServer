@@ -38,21 +38,27 @@ spec:
         - image: postgres:16.0 # Image from docker-hub.
           name: postgres
           env:
+            - name: POSTGRES_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: dbUsername
+
             - name: POSTGRES_ROOT_PASSWORD
-              valueFrom :
-                secretKeyRef :
+              valueFrom:
+                secretKeyRef:
                   name: db-credentials
                   key: dbPassword
-            - name: POSTGRES_DATABASE # Setting Database Name from a 'ConfigMap'.
-              valueFrom :
-                configMapKeyRef :
-                  name : db-config
-                  key :  dbName
 
+            - name: POSTGRES_DATABASE # Setting Database Name from a 'ConfigMap'.
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: dbName
           ports:
             - containerPort: 5432
               name: postgres
-          volumeMounts:        # Mounting volume obtained from Persistent Volume Claim.
+          volumeMounts: # Mounting volume obtained from Persistent Volume Claim.
             - name: postgres-persistent-storage
               mountPath: /var/lib/postgres #This is the path in the container on which the mounting will take place.
       volumes:
@@ -72,7 +78,7 @@ spec:
   ports:
     - port: 5432
       targetPort: 5432
-  selector:       # Postgres Pod Should contain same labels.
+  selector: # Postgres Pod Should contain same labels.
     app: postgres
     tier: database
   clusterIP: None  # We Use DNS, Thus ClusterIP is not relevant.

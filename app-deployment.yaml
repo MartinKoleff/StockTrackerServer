@@ -23,6 +23,7 @@ spec:
                 configMapKeyRef :
                   name : db-config
                   key :  host
+
             - name: DB_NAME  # Setting Database name from configMap
               valueFrom :
                 configMapKeyRef :
