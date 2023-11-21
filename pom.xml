@@ -15,7 +15,7 @@
     <description>stockServer</description>
 
     <properties>
-        <java.version>20</java.version>
+        <java.version>16</java.version>
         <spring.cloud-version>2022.0.3</spring.cloud-version>
     </properties>
 
@@ -191,8 +191,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>20</source>
-                    <target>20</target>
+                    <source>16</source>
+                    <target>16</target>
                 </configuration>
             </plugin>
         </plugins>
